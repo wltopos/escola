@@ -1,0 +1,148 @@
+{
+  "medidas": [
+    {
+      "id": "1",
+      "descricao": "UNIDADE",
+      "sigla": "UNID",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    
+    {
+      "id": "2",
+      "descricao": "PACOTE 2KG",
+      "sigla": "PCT2KG",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "3",
+      "descricao": "PACOTE 1KG",
+      "sigla": "PCT1KG",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "4",
+      "descricao": "PACOTE 500G",
+      "sigla": "PCT500G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "5",
+      "descricao": "PACOTE 180G",
+      "sigla": "PCT180G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "6",
+      "descricao": "PACOTE 5KG",
+      "sigla": "PCT5KG",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "7",
+      "descricao": "PACOTE 10KG",
+      "sigla": "PCT10KG",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "8",
+      "descricao": "PACOTE 4KG",
+      "sigla": "PCT4KG",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "9",
+      "descricao": "PACOTE 1.5KG",
+      "sigla": "PCT1_5KG",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "10",
+      "descricao": "PACOTE 400G",
+      "sigla": "PCT400G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "11",
+      "descricao": "PACOTE 85G",
+      "sigla": "PCT85G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "12",
+      "descricao": "PACOTE 50G",
+      "sigla": "PCT50G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "13",
+      "descricao": "PACOTE 20G",
+      "sigla": "PCT20G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "14",
+      "descricao": "PACOTE 28G",
+      "sigla": "PCT28G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "15",
+      "descricao": "PACOTE 450G",
+      "sigla": "PCT450G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "16",
+      "descricao": "GARRAFA 1.5L",
+      "sigla": "GRRF1_5L",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "17",
+      "descricao": "PACOTE 200G",
+      "sigla": "PCT200G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "18",
+      "descricao": "BASTAO 100G",
+      "sigla": "BST100G",
+      "casasDecimais": "0",
+      "multiplicador": "1"
+    },
+    {
+      "id": "19",
+      "descricao": "SACO 25KG",
+      "sigla": "SC25KG",
+      "casasDecimais": "0",
+      "multiplicador": "25000"
+    },
+    {
+      "id": "20",
+      "descricao": "SACO 15KG",
+      "sigla": "SC15KG",
+      "casasDecimais": "0",
+      "multiplicador": "15000"
+    }
+
+
+  ]
+}
+

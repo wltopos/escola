@@ -1,0 +1,56 @@
+.titulo{
+	height: 30px;
+}
+.barcode {
+	padding: 0.5mm;
+	margin: 0;
+	vertical-align: bottom;
+	color: #000000;
+
+}
+
+.barcodecell {
+	text-align: center;
+	vertical-align: bottom;
+	padding: 0;
+}
+
+.detalheProdutoEtiqueta {
+	width: 150px;
+	height: 200px;
+	border: 1px dashed #777;
+	float: left;
+	padding: 7px;
+	page-break-inside:avoid; 
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+
+.detalheProdutoEtiquetaEan13 {
+	width: 150px;
+	height: 200px;
+	border: 1px dashed #777;
+	float: left;
+	padding: 4px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+
+.tipo_produtoEtiqueta {
+	text-align: center;
+	font-size: 70%;
+    
+}
+
+.textoProdutoEtiqueta {
+	font-size: 70%;
+	text-align: end;
+	
+}
+
+.limiteText{
+	max-width: 16ch;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

@@ -1,0 +1,126 @@
+{
+  "marcasAgrotec": [
+    {
+      "sigla": "GENERICA",
+      "nome": "GENERICA",
+      "tipoMarca": [
+        "GENERICA"
+      ]
+    },
+    {
+      "sigla": "LUPPY",
+      "nome": "LUPPY",
+      "tipoMarca": [
+        "ARROZ P/ CACHORRO"
+      ]
+    },
+    {
+      "sigla": "JEL_PLAST",
+      "nome": "JEL PLAST",
+      "tipoMarca": [
+        "KIT P/ GATO"
+      ]
+    },
+    {
+      "sigla": "VETBRAS",
+      "nome": "VETBRAS",
+      "tipoMarca": [
+        "VET GOLD"
+      ]
+    },
+    {
+      "sigla": "SINFONIA",
+      "nome": "SINFONIA",
+      "tipoMarca": [
+        "RAÇÃO PARA GALO DE BRIGA E CARDEAL",
+        "RAÇÃO PARA PAPAGAIO",
+        "RAÇÃO PARA 4 EM 1",
+        "RAÇÃO TRITURADA COM DENDÊ"
+      ]
+    },
+    {
+      "sigla": "CHANIN",
+      "nome": "CHANIN",
+      "tipoMarca": [
+        "PREMIUM MIX"
+      ]
+    },
+    {
+      "sigla": "BIDOG",
+      "nome": "BIDOG",
+      "tipoMarca": [
+        "RACAO P/ CAO"
+      ]
+    },
+    {
+      "sigla": "FOSTER",
+      "nome": "FOSTER",
+      "tipoMarca": [
+        "RACAS PEQUENAS"
+      ]
+    },
+    {
+      "sigla": "ALINUTRI",
+      "nome": "ALINUTRI",
+      "tipoMarca": [
+        "VITAMINA P/ CANÁRIO"
+      ]
+    },
+    {
+      "sigla": "SHOW_DOG",
+      "nome": "SHOW DOG",
+      "tipoMarca": [
+        "GOURMET"
+      ]
+    },
+    {
+      "sigla": "PRUGATO",
+      "nome": "PRUGATO",
+      "tipoMarca": [
+        "P/ GATOS"
+      ]
+    },
+    {
+      "sigla": "PITTY",
+      "nome": "PITTY",
+      "tipoMarca": [
+        "COMBATE"
+      ]
+    },
+    {
+      "sigla": "PRATIC_CAT",
+      "nome": "PRATIC CAT",
+      "tipoMarca": [
+        "MIX SABORES ( FRANGO CARNE SALMÃO)"
+      ]
+    },
+    {
+      "sigla": "PITUKINHA",
+      "nome": "PITUKINHA",
+      "tipoMarca": [
+        "P/ FILHOTES"
+      ]
+    },
+    {
+      "sigla": "SALOBRA",
+      "nome": "SALOBRA",
+      "tipoMarca": [
+        "AREIA COM GRIT AROMATIZADA NATURAL"
+      ]
+    },
+    {
+      "sigla": "BRAWWAW",
+      "nome": "BRAWWAW",
+      "tipoMarca": [
+        "AREIA SANITÁRIA"
+      ]
+    },
+    {
+      "sigla": "CALOPSITA",
+      "nome": "CALOPSITA",
+      "tipoMarca": [
+        "BASTÃO DE SEMENTES"
+      ]
+    }
+  ]
+}

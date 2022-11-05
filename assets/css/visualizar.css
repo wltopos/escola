@@ -1,0 +1,33 @@
+
+
+.img-responsive {
+    max-width: 230px;
+
+}
+
+#imageLogo {
+    justify-content: center;
+    display: block;
+    margin-left: 23%;
+}
+@media (min-width: 769px) and (max-width: 1023px){
+    #imageLogo {
+        justify-content: center;
+        display: initial;
+        margin-left: 130px;
+    } 
+}
+@media (min-width: 481px) and (max-width: 769px) {
+    #imageLogo {
+        justify-content: center;
+        display: initial;
+        margin-left: 130px;
+    }
+}
+@media  (max-width: 480px) {
+    #imageLogo {
+        justify-content: center;
+        display: initial;
+        margin-left: 70px;
+    }
+}

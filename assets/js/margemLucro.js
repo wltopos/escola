@@ -1,0 +1,76 @@
+function calculaPrecoCompra(precoVenda, margemLucro) {
+    let margem = margemLucro + 100;
+    let precoCompra = ((precoVenda * 100) / margem).toFixed(2); 
+
+    return precoCompra;
+}
+function calculaPrecoVenda(precoCompra, margemLucro) {
+    var precoVenda = (precoCompra * margemLucro / 100 + precoCompra).toFixed(2);
+  
+    return precoVenda;
+}
+function calculaPrecoPorcentual(valor1, valor2) {
+    if(valor1 > valor2){
+        return ((valor1 - valor2) * (100 / valor1)).toFixed(2) ;
+    }
+    if(valor2 > valor1){
+        return ((valor2 - valor1) * (100 / valor1)).toFixed(2) ;
+    }else{
+        return 0;
+    }
+     
+  
+}
+
+
+
+function calcPrecoVenda() {
+    if ($("#precoCompra").val() == null || $("#precoCompra").val() == '' || $("#margemLucro").val() == null || $("#margemLucro").val() == '') {
+        $('#errorAlert').text('Preencher valor da compra primeiro.').css("display", "inline").fadeOut(5000);
+        $('#margemLucro').val('');
+        $('#precoCompra').val('');
+        
+
+    } else if (Number($("#precoCompra").val()) >= 0 && Number($("#margemLucro").val())  >= 0 ) {
+        $('#precoVenda').val(calculaPrecoVenda(Number($("#precoCompra").val()), Number($("#margemLucro").val())));
+    } else {
+        $('#errorAlert').text('Não é permitido número negativo.').css("display", "inline").fadeOut(5000);
+        $('#margemLucro').val('');
+        $('#precoCompra').val('');
+    }
+}
+function calcPrecoCompra() {
+    if ($("#precoVenda").val() == null || $("#precoVenda").val() == '' || $("#margemLucro").val() == null || $("#margemLucro").val() == '') {
+        $('#errorAlert').text('Preencher valor da compra primeiro.').css("display", "inline").fadeOut(5000);
+        $('#margemLucro').val('');
+        $('#precoVenda').val('');
+       
+
+    } else if (Number($("#precoVenda").val()) >= 0 && Number($("#margemLucro").val())  >= 0 ) {
+        $('#precoCompra').val(calculaPrecoCompra(Number($("#precoVenda").val()), Number($("#margemLucro").val())));
+    } else {
+        $('#errorAlert').text('Não é permitido número negativo.').css("display", "inline").fadeOut(5000);
+        $('#margemLucro').val('');
+        $('#precoCompra').val('');
+    }
+}
+function calcPrecoPorcentual() {
+    if ($("#precoVenda").val() == null || $("#precoVenda").val() == '' || $("#precoCompra").val() == null || $("#precoCompra").val() == '') {
+        $('#errorAlert').text('Preencher valor da compra primeiro.').css("display", "inline").fadeOut(5000);
+        $('#precoVenda').val('');
+        $('#precoCompra').val('');
+      
+
+    } else if (Number($("#precoVenda").val()) >= 0 && Number($("#precoCompra").val())  >= 0 ) {
+        $('#margemLucro').val(calculaPrecoPorcentual(Number($("#precoCompra").val()), Number($("#precoVenda").val())));
+    } else {
+        $('#errorAlert').text('Não é permitido número negativo.').css("display", "inline").fadeOut(5000);
+        $('#precoVenda').val('');
+        $('#precoCompra').val('');
+    }
+}
+
+
+
+
+

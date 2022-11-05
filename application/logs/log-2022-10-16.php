@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-10-16 00:27:56 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 00:28:01 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 00:28:06 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 00:50:55 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 00:51:01 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 00:51:05 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 06:52:12 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 06:52:26 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 07:31:17 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 11:01:08 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 14:39:47 --> 404 Page Not Found: Login/wp-includes
+ERROR - 2022-10-16 14:39:47 --> 404 Page Not Found: Login/xmlrpc.php
+ERROR - 2022-10-16 14:39:48 --> 404 Page Not Found: Login/blog
+ERROR - 2022-10-16 14:39:48 --> 404 Page Not Found: Login/web
+ERROR - 2022-10-16 14:39:48 --> 404 Page Not Found: Login/wordpress
+ERROR - 2022-10-16 14:39:49 --> 404 Page Not Found: Login/website
+ERROR - 2022-10-16 14:39:49 --> 404 Page Not Found: Login/wp
+ERROR - 2022-10-16 14:39:49 --> 404 Page Not Found: Login/news
+ERROR - 2022-10-16 14:39:49 --> 404 Page Not Found: Login/2018
+ERROR - 2022-10-16 14:39:50 --> 404 Page Not Found: Login/2019
+ERROR - 2022-10-16 14:39:50 --> 404 Page Not Found: Login/shop
+ERROR - 2022-10-16 14:39:50 --> 404 Page Not Found: Login/wp1
+ERROR - 2022-10-16 14:39:50 --> 404 Page Not Found: Login/test
+ERROR - 2022-10-16 14:39:51 --> 404 Page Not Found: Login/media
+ERROR - 2022-10-16 14:39:51 --> 404 Page Not Found: Login/wp2
+ERROR - 2022-10-16 14:39:51 --> 404 Page Not Found: Login/site
+ERROR - 2022-10-16 14:39:51 --> 404 Page Not Found: Login/cms
+ERROR - 2022-10-16 14:39:52 --> 404 Page Not Found: Login/sito
+ERROR - 2022-10-16 17:36:23 --> 404 Page Not Found: Produtos/getProdutos2
+ERROR - 2022-10-16 21:24:27 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 21:24:31 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 21:24:46 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 22:03:24 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 22:03:32 --> 404 Page Not Found: /index
+ERROR - 2022-10-16 22:03:36 --> 404 Page Not Found: /index
