@@ -1,5 +1,5 @@
 /.env
 .README copy.md
-# application/vendor/codephix/asaas-sdk
-# application/config/database.php
-# application/vendor/
+application/vendor/codephix/asaas-sdk
+application/config/database.php
+application/vendor/
