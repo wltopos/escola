@@ -22,15 +22,12 @@ function calculaPrecoPorcentual(valor1, valor2) {
   
 }
 
-
-
 function calcPrecoVenda() {
+   
     if ($("#precoCompra").val() == null || $("#precoCompra").val() == '' || $("#margemLucro").val() == null || $("#margemLucro").val() == '') {
         $('#errorAlert').text('Preencher valor da compra primeiro.').css("display", "inline").fadeOut(5000);
         $('#margemLucro').val('');
         $('#precoCompra').val('');
-        
-
     } else if (Number($("#precoCompra").val()) >= 0 && Number($("#margemLucro").val())  >= 0 ) {
         $('#precoVenda').val(calculaPrecoVenda(Number($("#precoCompra").val()), Number($("#margemLucro").val())));
     } else {
@@ -39,13 +36,13 @@ function calcPrecoVenda() {
         $('#precoCompra').val('');
     }
 }
+
 function calcPrecoCompra() {
+   
     if ($("#precoVenda").val() == null || $("#precoVenda").val() == '' || $("#margemLucro").val() == null || $("#margemLucro").val() == '') {
         $('#errorAlert').text('Preencher valor da compra primeiro.').css("display", "inline").fadeOut(5000);
         $('#margemLucro').val('');
         $('#precoVenda').val('');
-       
-
     } else if (Number($("#precoVenda").val()) >= 0 && Number($("#margemLucro").val())  >= 0 ) {
         $('#precoCompra').val(calculaPrecoCompra(Number($("#precoVenda").val()), Number($("#margemLucro").val())));
     } else {
@@ -54,13 +51,13 @@ function calcPrecoCompra() {
         $('#precoCompra').val('');
     }
 }
+
 function calcPrecoPorcentual() {
+   
     if ($("#precoVenda").val() == null || $("#precoVenda").val() == '' || $("#precoCompra").val() == null || $("#precoCompra").val() == '') {
         $('#errorAlert').text('Preencher valor da compra primeiro.').css("display", "inline").fadeOut(5000);
         $('#precoVenda').val('');
         $('#precoCompra').val('');
-      
-
     } else if (Number($("#precoVenda").val()) >= 0 && Number($("#precoCompra").val())  >= 0 ) {
         $('#margemLucro').val(calculaPrecoPorcentual(Number($("#precoCompra").val()), Number($("#precoVenda").val())));
     } else {
