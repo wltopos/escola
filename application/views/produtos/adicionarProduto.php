@@ -490,7 +490,6 @@
                             }
                         }
 
-
                         $('#codDeBarra').css("background-color", "#b8fdda");
                         $('#codDeBarra').css("font-weight", 700);
 

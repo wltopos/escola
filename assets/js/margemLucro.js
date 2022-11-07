@@ -67,6 +67,73 @@ function calcPrecoPorcentual() {
     }
 }
 
+//CONTROLE DE ATIVAÇÃO DE CAMPOS PARA CALCULO DE RESULTADOS
+
+$('#precoVenda').click(function() {
+    if ($('#precoCompra').val() == '' && $('#margemLucro').val() != 00) {
+        $("#precoVenda").attr("readonly", false);
+        $("#precoCompra").attr("readonly", true);
+        $("#margemLucro").attr("readonly", false);
+
+        $('#calcular').attr('onClick', 'calcPrecoCompra();');
+    } else if ($('#precoCompra').val() == '' && $('#margemLucro').val() == 00) {
+        $("#precoVenda").attr("readonly", false);
+        $("#precoCompra").attr("readonly", false);
+        $("#margemLucro").attr("readonly", true);
+        $("#margemLucro").val("");
+
+        $('#calcular').attr('onClick', 'calcPrecoPorcentual();');
+    } else if ($('#precoCompra').val() != '' && $('#precoVenda').val() != '') {
+        $("#precoVenda").attr("readonly", false);
+        $("#precoCompra").attr("readonly", false);
+        $("#margemLucro").attr("readonly", true);
+        $("#margemLucro").val("");
+
+        $('#calcular').attr('onClick', 'calcPrecoPorcentual();');
+    }
+});
+
+$('#precoCompra').click(function() {
+    if ($('#precoVenda').val() != '' && $('#margemLucro').val() == 00) {
+        $("#precoVenda").attr("readonly", false);
+        $("#precoCompra").attr("readonly", false);
+        $("#margemLucro").attr("readonly", true);
+
+        $('#calcular').attr('onClick', 'calcPrecoPorcentual();');
+    } else if ($('#precoVenda').val() == '' && $('#margemLucro').val() != 00) {
+        $("#precoVenda").attr("readonly", false);
+        $("#precoCompra").attr("readonly", false);
+        $("#margemLucro").attr("readonly", true);
+        $("#margemLucro").val("");
+
+        $('#calcular').attr('onClick', 'calcPrecoVenda();');
+    } else if ($('#precoCompra').val() != '' && $('#precoVenda').val() != '') {
+        $("#precoVenda").attr("readonly", false);
+        $("#precoCompra").attr("readonly", false);
+        $("#margemLucro").attr("readonly", true);
+        $("#margemLucro").val("");
+
+        $('#calcular').attr('onClick', 'calcPrecoPorcentual();');
+    }
+});
+
+$('#margemLucro').click(function() {
+    if ($('#precoVenda').val() != '') {
+        $("#precoVenda").attr("readonly", false);
+        $("#precoCompra").attr("readonly", true);
+        $("#margemLucro").attr("readonly", false);
+        $("#margemLucro").val("");
+
+        $('#calcular').attr('onClick', 'calcPrecoCompra();');
+    } else if ($('#precoCompra').val() != '') {
+        $("#precoVenda").attr("readonly", true);
+        $("#precoCompra").attr("readonly", false);
+        $("#margemLucro").attr("readonly", false);
+        $("#margemLucro").val("");
+
+        $('#calcular').attr('onClick', 'calcPrecoVenda();');
+    }
+});
 
 
 
