@@ -491,39 +491,6 @@
                         }
 
 
-                        // try {
-                        //     if (json.brand.picture != "" && json.brand.picture != undefined) {
-                        //         var logoLink = json.brand.picture.split('/');
-                        //         image.src = (logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture;
-                        //         imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                        //         $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
-                        //     } else {
-                        //         image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
-                        //         imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                        //         $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
-                        //     }
-
-
-                        // } catch (e) {
-                        //     try {
-
-                        //         if (json.thumbnail != "" && json.thumbnail != undefined && json.thumbnail != null) {
-                        //             image.src = json.thumbnail;
-                        //             imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                        //             $('#imagemProduto').val(json.thumbnail);
-                        //         } else {
-                        //             image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
-                        //             imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                        //             $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
-                        //         }
-
-                        //     } catch (err) {
-                        //         image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
-                        //         imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                        //         $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
-                        //     }
-                        // }
-
                         $('#codDeBarra').css("background-color", "#b8fdda");
                         $('#codDeBarra').css("font-weight", 700);
 
