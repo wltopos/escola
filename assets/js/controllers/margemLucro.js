@@ -76,6 +76,7 @@ $('#precoVenda').click(function() {
         $("#margemLucro").attr("readonly", false);
 
         $('#calcular').attr('onClick', 'calcPrecoCompra();');
+
     } else if ($('#precoCompra').val() == '' && $('#margemLucro').val() == 00) {
         $("#precoVenda").attr("readonly", false);
         $("#precoCompra").attr("readonly", false);
@@ -83,6 +84,7 @@ $('#precoVenda').click(function() {
         $("#margemLucro").val("");
 
         $('#calcular').attr('onClick', 'calcPrecoPorcentual();');
+        
     } else if ($('#precoCompra').val() != '' && $('#precoVenda').val() != '') {
         $("#precoVenda").attr("readonly", false);
         $("#precoCompra").attr("readonly", false);

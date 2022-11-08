@@ -53,7 +53,8 @@
         width: 111px;
         border-radius: 8px;
     }
-    .wh30{
+
+    .wh30 {
         width: 30%;
     }
 </style>
@@ -297,18 +298,18 @@
                         <div class="control-group">
                             <label for="dataVencimento" class="control-label">Data de Vencimento</label>
                             <div class="controls">
-                                
+
                                 <?php
-                                    if($result->dataVencimento != null){
-                                       echo " <input onkeydown='handleEnter(event)' id='dataVencimento' type='date' name='dataVencimento' value='$result->dataVencimento' /> ";
-                                        echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox" checked="checked">';
-                                    }else{
-                                        echo " <input onkeydown='handleEnter(event)' id='dataVencimento' type='date' name='dataVencimento' value='$result->dataVencimento' readonly /> ";
-                                        echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox" >';
-                                    }
-                                
+                                if ($result->dataVencimento != null) {
+                                    echo " <input onkeydown='handleEnter(event)' id='dataVencimento' type='date' name='dataVencimento' value='$result->dataVencimento' /> ";
+                                    echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox" checked="checked">';
+                                } else {
+                                    echo " <input onkeydown='handleEnter(event)' id='dataVencimento' type='date' name='dataVencimento' value='$result->dataVencimento' readonly /> ";
+                                    echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox" >';
+                                }
+
                                 ?>
-                                
+
                             </div>
                         </div>
 
@@ -332,7 +333,7 @@
 
 <script src="<?php echo base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/maskmoney.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/margemLucro.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/controllers/margemLucro.js"></script>
 <script type="text/javascript">
     function handleEnter(event) {
         if (event.key === "Enter") {
@@ -347,8 +348,6 @@
 
         //verificador preenchimento do preço e margem de lucro
 
-
-
         $('#ativaVencimento').click(function() {
             if ($('#ativaVencimento').is(":checked")) {
                 $("#dataVencimento").attr("readonly", false);
@@ -357,13 +356,12 @@
             }
         });
 
-       
-
-
         //Select com buscador
         $('#categorias').select2();
         $('#marcasAgrotec').select2();
         $('#unidade').select2();
+        //validação de campos
+        $(".money").maskMoney();
 
         //auto complete produto
 
@@ -455,11 +453,6 @@
         });
 
 
-
-        //validação de campos
-        $(".money").maskMoney();
-
-
         function buscaProdutos() {
             let v;
             v = barCode.value;
@@ -483,21 +476,21 @@
                         }
 
                         try {
-                            if(!json.thumbnail){
+                            if (!json.thumbnail) {
                                 throw 'erro 1: tumbnail não encontrada'
                             }
-                           
-                                image.src = json.thumbnail;
-                                imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                                $('#imagemProduto').val(json.thumbnail);
-                          
+
+                            image.src = json.thumbnail;
+                            imgLogo.appendChild(image).setAttribute("id", "imgLogo");
+                            $('#imagemProduto').val(json.thumbnail);
+
                         } catch (e) {
-                           
+
                             try {
 
                                 var logoLink = json.brand.picture.split('/');
 
-                                if(!logoLink[0]){
+                                if (!logoLink[0]) {
                                     throw 'erro 2: picture não encontrada'
                                 }
 
@@ -511,7 +504,7 @@
                                 $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
                             }
                         }
-                       
+
 
                         $('#codDeBarra').css("background-color", "#b8fdda");
                         $('#codDeBarra').css("font-weight", 700);
@@ -558,7 +551,6 @@
             }
         }
     });
-
 
     function btAddCampo() {
         let opt = $('#addCampo option:selected').val();

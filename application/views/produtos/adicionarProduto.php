@@ -281,7 +281,7 @@
 
 <script src="<?php echo base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/maskmoney.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/margemLucro.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/controllers/margemLucro.js"></script>
 <script type="text/javascript">
     function handleEnter(event) {
         if (event.key === "Enter") {
@@ -293,8 +293,6 @@
     }
 
     $(document).ready(function() {
-
-
         //verificador preenchimento do preço e margem de lucro
 
         $('#ativaVencimento').click(function() {
@@ -305,12 +303,12 @@
             }
         });
 
-     
-
         //Select com buscador
         $("#locations").select2();
         $('#marcasAgrotec').select2();
         $('#unidade').select2();
+         //validação de campos
+         $(".money").maskMoney();
 
         //auto complete produto
 
@@ -426,12 +424,6 @@
 
             }
         });
-
-
-
-        //validação de campos
-        $(".money").maskMoney();
-
 
         function buscaProdutos() {
             let v;
