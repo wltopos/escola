@@ -1,63 +1,9 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/controllers/adcionarProduto.css" />
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <script src="<?php echo base_url() ?>assets/js/sweetalert2.all.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/auth/login.js"></script>
-<style>
-    /* Hiding the checkbox, but allowing it to be focused */
-    .select2-container--default .select2-selection--single {
-        height: 30px;
-    }
 
-    .badgebox {
-        opacity: 0;
-    }
-
-    .form_error {
-        color: red;
-        margin-left: 2%;
-        font-size: 1.5em;
-    }
-
-    .badgebox+.badge {
-        /* Move the check mark away when unchecked */
-        text-indent: -999999px;
-        /* Makes the badge's width stay the same checked and unchecked */
-        width: 27px;
-    }
-
-    .badgebox:focus+.badge {
-        /* Set something to make the badge looks focused */
-        /* This really depends on the application, in my case it was: */
-
-        /* Adding a light border */
-        box-shadow: inset 0px 0px 5px;
-        /* Taking the difference out of the padding */
-    }
-
-    .badgebox:checked+.badge {
-        /* Move the check mark back when checked */
-        text-indent: 0;
-    }
-
-    input#precoVenda {
-        width: 70px;
-    }
-
-    label.form-check-label {
-        display: inline-block;
-    }
-
-    img#imgLogo {
-        /* margin-bottom: 1%; */
-        margin-left: 15%;
-        width: 111px;
-        border-radius: 8px;
-    }
-
-    .wh30 {
-        width: 30%;
-    }
-</style>
 <div class="row-fluid" style="margin-top:0">
     <div class="span12">
         <div class="widget-box">
