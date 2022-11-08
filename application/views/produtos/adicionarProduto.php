@@ -405,8 +405,8 @@
                             }
 
                             image.src = json.thumbnail;
-                            imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                         //    $('#imagemProduto').val(json.thumbnail);
+                            //imgLogo.appendChild(image).setAttribute("id", "imgLogo");
+                            $('#imagemProduto').val(json.thumbnail);
                             updateThumb(json.thumbnail);
 
                         } catch (e) {
@@ -420,15 +420,15 @@
                                 }
 
                                 image.src = (logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture;
-                                imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                              //   $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
+                               // imgLogo.appendChild(image).setAttribute("id", "imgLogo");
+                                 $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
                                 updateThumb((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
 
 
                             } catch (err) {
                                 image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
-                                imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                              //  $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
+                               // imgLogo.appendChild(image).setAttribute("id", "imgLogo");
+                               $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
                                 updateThumb('https://sistema.wltopos.com/assets/img/sem_logo.png');
                             }
                         }
