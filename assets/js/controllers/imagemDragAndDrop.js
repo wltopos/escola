@@ -65,9 +65,11 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
       
       reader.onload = () => {
         thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+        $('#imagemProduto').val(`url('${reader.result}')`);
       };
     } else {
       thumbnailElement.style.backgroundImage = null;
+      $('#imagemProduto').val('');
     }
   }
   
