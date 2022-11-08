@@ -376,6 +376,7 @@
         });
 
         function buscaProdutos() {
+            console.log("Status 1");
             let v;
             v = barCode.value;
             $('#imgLogo').remove();
@@ -393,7 +394,7 @@
 
                         $("#imagemProduto").val(logo);
                      //   updateThumbnail(logo);
-console.log("Status 1");
+
 
                         if (json.description) {
                             $('#descricao').val(dados.description);
