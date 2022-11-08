@@ -2,11 +2,11 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
     const dropZoneElement = inputElement.closest(".drop-zone");
   
     dropZoneElement.addEventListener("click", (e) => {
-        console.log(e);
       inputElement.click();
     });
   
     inputElement.addEventListener("change", (e) => {
+        console.log(e);
       if (inputElement.files.length) {
         updateThumbnail(dropZoneElement, inputElement.files[0]);
       }
