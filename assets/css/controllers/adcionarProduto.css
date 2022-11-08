@@ -56,7 +56,7 @@
 
     /* Drag And Drop CSS */
     .drop-zone {
-        width: 30%; 
+        width: auto; 
         height: 200px; 
         margin: 10px 29px;
         padding: 25px;
@@ -104,4 +104,20 @@
         text-align: center;
     }
 
+    @media screen and (min-width: 748px) {
+        .drop-zone__thumb {
+            width: 50%;
+            height: 100%;
+        }
+      }
+    @media screen and (min-width: 1250px) {
+        .drop-zone__thumb {
+            width: 50%;
+            height: 110%;
+        }
+        .drop-zone {
+            width: 90%;
+            height: 250px;
+        }
+      }
     /* Drag And Drop CSS */
