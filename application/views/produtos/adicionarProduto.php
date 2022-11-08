@@ -428,7 +428,7 @@
                             } catch (err) {
                                 image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
                                 imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                                $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
+                              //  $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
                                 updateThumb('https://sistema.wltopos.com/assets/img/sem_logo.png');
                             }
                         }
