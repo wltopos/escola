@@ -18,17 +18,16 @@
                 <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
 
                     <div class="span6">
-                        <?php echo $custom_error; ?>
-                        <input onkeydown='handleEnter(event)' type="hidden" id="adNotaFiscal_id" name="adNotaFiscal_id" value="" />
-                        <input onkeydown='handleEnter(event)' type="hidden" id="produto_id" name="codDeBarra" value="" />
-                        <input onkeydown='handleEnter(event)' type="hidden" id="imagemProduto" name="imagemProduto" value="" />
-
                         <div class="control-group">
 
                             <div class="drop-zone">
                                 <span class="drop-zone__prompt">Arraste a foto ou clique para upload</span>
                                 <input type="file" name="myFile" class="drop-zone__input">
                             </div>
+                            <?php echo $custom_error; ?>
+                            <input onkeydown='handleEnter(event)' type="hidden" id="adNotaFiscal_id" name="adNotaFiscal_id" value="" />
+                            <input onkeydown='handleEnter(event)' type="hidden" id="produto_id" name="codDeBarra" value="" />
+                            <input onkeydown='handleEnter(event)' type="hidden" id="imagemProduto" name="imagemProduto" value="" />
 
                             <div class="control-group">
                                 <label for="codDeBarra" class="control-label">Código<span class="required">*</span></label>
