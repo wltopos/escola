@@ -56,11 +56,11 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
     }
   
     thumbnailElement.dataset.label = file.name;
-  console.log(thumbnailElement.dataset.label);
+
     // Show thumbnail for image files
     if (file.type.startsWith("image/")) {
       const reader = new FileReader();
-  
+  console.log(reader);
       reader.readAsDataURL(file);
       reader.onload = () => {
         thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
