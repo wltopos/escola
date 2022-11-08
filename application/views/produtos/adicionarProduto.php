@@ -393,7 +393,7 @@
 
                         $("#imagemProduto").val(logo);
                      //   updateThumbnail(logo);
-
+console.log("Status 1");
 
                         if (json.description) {
                             $('#descricao').val(dados.description);
