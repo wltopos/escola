@@ -6,9 +6,9 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
     });
   
     inputElement.addEventListener("change", (e) => {
-        console.log(e);
       if (inputElement.files.length) {
         updateThumbnail(dropZoneElement, inputElement.files[0]);
+        console.log(inputElement.files[0]);
       }
     });
   
