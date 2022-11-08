@@ -406,7 +406,7 @@
                             image.src = json.thumbnail;
                             imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                             $('#imagemProduto').val(json.thumbnail);
-                        //    updateThumbnail(json.thumbnail);
+                            updateThumbnail(json.thumbnail);
 
                         } catch (e) {
 
@@ -421,7 +421,7 @@
                                 image.src = (logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture;
                                 imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                                 $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
-                            //    updateThumbnail(json.brand.picture);
+                                updateThumbnail(json.brand.picture);
 
 
                             } catch (err) {
@@ -458,10 +458,10 @@
         }
     })
 
-    let file = 'https://cdn-cosmos.bluesoft.com.br/products/7898643250929';
+
     function updateThumbnail(file) {
         $(".drop-zone__prompt").remove();
-        $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="musica para.png" style="background-size: contain; background-repeat: no-repeat; background-image: url(https://cdn-cosmos.bluesoft.com.br/products/7898643250929); background-color: white;"></div>`);
+        $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-size: contain; background-repeat: no-repeat; background-image: url(${file}); background-color: white;"></div>`);
     
     }
 
