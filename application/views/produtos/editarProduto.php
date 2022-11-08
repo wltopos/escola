@@ -212,7 +212,7 @@
                                     <?php if (!$resultLocations) {
                                         echo '<option disabled selected>Sem Localizações</option>';
                                     } else {
-                                        echo '<option disabled selected>locationização</option>';
+                                        echo '<option disabled selected>Locationização</option>';
 
                                         foreach ($resultLocations as $r) { {
                                                 if ($result->estoque_location_id == $r->id_estoque_location) {

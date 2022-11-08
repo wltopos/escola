@@ -200,7 +200,7 @@
                                     <?php if (!$resultLocations) {
                                         echo '<option disabled selected>Sem Localizações</option>';
                                     } else {
-                                        echo '<option value="" disabled selected>localização</option>';
+                                        echo '<option value="" disabled selected>Localização</option>';
                                         foreach ($resultLocations as $r) {
                                             echo "<option value=$r->id_estoque_location >$r->location</option>";
                                         }
