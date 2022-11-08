@@ -405,7 +405,7 @@
 
                             image.src = json.thumbnail;
                             imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                            $('#imagemProduto').val(json.thumbnail);
+                          // $('#imagemProduto').val(json.thumbnail);
                             updateThumbnail(json.thumbnail);
 
                         } catch (e) {
@@ -420,8 +420,8 @@
 
                                 image.src = (logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture;
                                 imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                                $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
-                                updateThumbnail(json.brand.picture);
+                              //  $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
+                                updateThumbnail((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
 
 
                             } catch (err) {
