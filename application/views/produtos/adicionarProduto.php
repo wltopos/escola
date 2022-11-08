@@ -25,6 +25,11 @@
 
                         <div class="control-group">
 
+                            <div class="drop-zone">
+                                <span class="drop-zone__prompt">Arraste a foto ou clique para upload</span>
+                                <input type="file" name="myFile" class="drop-zone__input">
+                            </div>
+
                             <div class="control-group">
                                 <label for="codDeBarra" class="control-label">Código<span class="required">*</span></label>
                                 <div class="controls">
@@ -254,8 +259,8 @@
         $("#locations").select2();
         $('#marcasAgrotec').select2();
         $('#unidade').select2();
-         //validação de campos
-         $(".money").maskMoney();
+        //validação de campos
+        $(".money").maskMoney();
 
         //auto complete produto
 
@@ -396,23 +401,23 @@
                         }
 
                         try {
-                            if(!json.thumbnail){
+                            if (!json.thumbnail) {
                                 throw 'erro 1: tumbnail não encontrada'
                             }
-                           
-                                image.src = json.thumbnail;
-                                imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                                $('#imagemProduto').val(json.thumbnail);
-                          
+
+                            image.src = json.thumbnail;
+                            imgLogo.appendChild(image).setAttribute("id", "imgLogo");
+                            $('#imagemProduto').val(json.thumbnail);
+
 
 
                         } catch (e) {
-                           
+
                             try {
 
                                 var logoLink = json.brand.picture.split('/');
 
-                                if(!logoLink[0]){
+                                if (!logoLink[0]) {
                                     throw 'erro 2: picture não encontrada'
                                 }
 
@@ -420,7 +425,7 @@
                                 imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                                 $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
 
-                                
+
 
                             } catch (err) {
                                 image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
