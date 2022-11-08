@@ -469,7 +469,7 @@
         }else{           
             
              $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
-          
+          console.log("Remove imagem");
         }
 
     }
