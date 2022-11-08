@@ -461,20 +461,20 @@
     })
 
 
-    function updateThumb(file) {
+    // function updateThumb(file) {
         
        
-        if($(".drop-zone__thumb") && typeof file == "string"){
-        $(".drop-zone__thumb").remove();
-        $(".drop-zone__prompt").remove();
-           $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
-        }else{           
+    //     if($(".drop-zone__thumb") && typeof file == "string"){
+    //     $(".drop-zone__thumb").remove();
+    //     $(".drop-zone__prompt").remove();
+    //        $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
+    //     }else{           
             
-        $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
-          console.log("Remove imagem");
-        }
+    //     $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
+    //       console.log("Remove imagem");
+    //     }
 
-    }
+    // }
 
 
     // ===========================================================
