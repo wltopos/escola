@@ -462,7 +462,7 @@
     function updateThumbnail(file) {
 
         $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-image: url(${file})"`);
-       
+    
     }
 
 
