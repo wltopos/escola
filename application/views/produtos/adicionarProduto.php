@@ -391,7 +391,8 @@
                         let json = dados;
                         let logo = '';
 
-                        $("#imagemProduto").val(logo);
+                       // $("#imagemProduto").val(logo);
+                       updateThumbnail(logo);
 
 
                         if (json.description) {
