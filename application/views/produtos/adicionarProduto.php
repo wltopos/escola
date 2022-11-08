@@ -393,7 +393,7 @@
 
                         $("#imagemProduto").val(logo);
                      //   updateThumbnail(logo);
-                     console.log("Status 1");
+                     
 
                         if (json.description) {
                             $('#descricao').val(dados.description);
@@ -429,6 +429,7 @@
                                 image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
                                 imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                                 $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
+                                updateThumb('https://sistema.wltopos.com/assets/img/sem_logo.png');
                             }
                         }
 
