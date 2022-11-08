@@ -77,7 +77,7 @@
         border-style: solid;
     }
 
-    .drop-zone__input {
+    input.drop-zone__input {
         display: none;
     }
 
