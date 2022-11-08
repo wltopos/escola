@@ -65,7 +65,6 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
       reader.readAsDataURL(file);
       reader.onload = () => {
         thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-        console.log(`url('${reader.result}')`);
       };
     } else {
       thumbnailElement.style.backgroundImage = null;
