@@ -406,7 +406,7 @@
                             image.src = json.thumbnail;
                             imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                             $('#imagemProduto').val(json.thumbnail);
-                            thumbnailElement.style.backgroundImage = json.thumbnail;
+
 
                         } catch (e) {
 
@@ -457,6 +457,14 @@
 
         }
     })
+
+    let file = 'https://cdn-cosmos.bluesoft.com.br/products/7898643250929';
+    function updateThumbnail(file) {
+
+        $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-image: url(${file})`);
+       
+    }
+
 
     // ===========================================================
     // SCRIPT BOTÃO ADICIONAR CAMPO
