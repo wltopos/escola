@@ -57,7 +57,7 @@
     /* Drag And Drop CSS */
     .drop-zone {
         /* max-width: 200px; */
-        /* height: 200px; */
+        height: 200px; 
         margin: 10px 29px;
         padding: 25px;
         /* display: flex; */
