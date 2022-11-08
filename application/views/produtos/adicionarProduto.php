@@ -461,7 +461,7 @@
     let file = 'https://cdn-cosmos.bluesoft.com.br/products/7898643250929';
     function updateThumbnail(file) {
 
-        $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-image: url(${file})"`);
+        // $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-image: url(${file})"`);
        
     }
 
