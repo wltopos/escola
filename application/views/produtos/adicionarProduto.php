@@ -404,7 +404,7 @@
                                 throw 'erro 1: tumbnail não encontrada'
                             }
 
-                            image.src = json.thumbnail;
+                            //image.src = json.thumbnail;
                             //imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                             $('#imagemProduto').val(json.thumbnail);
                             updateThumb(json.thumbnail);
@@ -419,14 +419,14 @@
                                     throw 'erro 2: picture não encontrada'
                                 }
 
-                                image.src = (logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture;
+                                //image.src = (logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture;
                                // imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                                  $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
                                 updateThumb((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
 
 
                             } catch (err) {
-                                image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
+                                //image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
                                // imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                                $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
                                 updateThumb('https://sistema.wltopos.com/assets/img/sem_logo.png');
