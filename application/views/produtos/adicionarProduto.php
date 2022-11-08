@@ -228,7 +228,7 @@
 </div>
 </div>
 
-<script src="<?php echo base_url() ?>assets/js/controller/imagemDragAndDrop.js"></script>
+<script src="<?php echo base_url() ?>assets/js/controllers/imagemDragAndDrop.js"></script>
 <script src="<?php echo base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/maskmoney.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/controllers/margemLucro.js"></script>
