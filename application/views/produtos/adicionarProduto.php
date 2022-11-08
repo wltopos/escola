@@ -462,14 +462,13 @@
 
 
     function updateThumb(file) {
-        const reader = new FileReader();
-        let filee = reader.readAsDataURL(file);
+   
         $(".drop-zone__thumb").remove();
         $(".drop-zone__prompt").remove();
        
         if($(".drop-zone__thumb") && typeof filee == "string"){
         
-           $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${filee}" style="background-position: center; background-image: url(${filee}); background-color: white;"></div>`);
+           $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
         }else{           
             
         $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
