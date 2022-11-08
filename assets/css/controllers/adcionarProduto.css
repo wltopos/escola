@@ -56,13 +56,13 @@
 
     /* Drag And Drop CSS */
     .drop-zone {
-         max-width: 23%; 
+        max-width: 23%; 
         height: 200px; 
         margin: 10px 29px;
         padding: 25px;
-        /* display: flex; */
-        /* align-items: center; */
-        /* justify-content: center; */
+        display: flex; 
+        align-items: center;
+        justify-content: center;
         text-align: center;
         font-family: "Quicksand", sans-serif;
         font-weight: 500;
