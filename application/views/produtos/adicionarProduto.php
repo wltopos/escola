@@ -15,11 +15,11 @@
             </div>
             <div id="imageLogo"> </div>
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal">
+                <div class="drop-zone">
+                    <span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>
+                    <input type="file" name="myFile" class="drop-zone__input">
+                </div>
                 <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
-                    <div class="drop-zone">
-                        <span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>
-                        <input type="file" name="myFile" class="drop-zone__input">
-                    </div>
                     <div class="span6">
                         <?php echo $custom_error; ?>
                         <input onkeydown='handleEnter(event)' type="hidden" id="adNotaFiscal_id" name="adNotaFiscal_id" value="" />
