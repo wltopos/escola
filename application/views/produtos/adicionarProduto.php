@@ -421,7 +421,7 @@
                                 image.src = (logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture;
                                 imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                                 $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
-
+                                updateThumbnail(json.brand.picture);
 
 
                             } catch (err) {
