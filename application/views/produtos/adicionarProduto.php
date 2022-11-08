@@ -406,7 +406,7 @@
                             image.src = json.thumbnail;
                             imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                             $('#imagemProduto').val(json.thumbnail);
-
+                            updateThumbnail(json.thumbnail);
 
                         } catch (e) {
 
