@@ -228,7 +228,7 @@
 </div>
 </div>
 
-
+<script src="<?php echo base_url() ?>assets/js/controllers/imagemDragAndDrop.js"></script>
 <script src="<?php echo base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/maskmoney.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/controllers/margemLucro.js"></script>
@@ -391,8 +391,8 @@
                         let json = dados;
                         let logo = '';
 
-                       // $("#imagemProduto").val(logo);
-                       updateThumbnail(logo);
+                        // $("#imagemProduto").val(logo);
+                        updateThumbnail(logo);
 
 
                         if (json.description) {
@@ -406,7 +406,7 @@
 
                             image.src = json.thumbnail;
                             imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                          // $('#imagemProduto').val(json.thumbnail);
+                            // $('#imagemProduto').val(json.thumbnail);
                             updateThumbnail(json.thumbnail);
 
                         } catch (e) {
@@ -421,7 +421,7 @@
 
                                 image.src = (logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture;
                                 imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                              //  $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
+                                //  $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
                                 updateThumbnail((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
 
 
@@ -461,10 +461,16 @@
 
 
     function updateThumbnail(file) {
-        $(".drop-zone__thumb").remove();
-        $(".drop-zone__prompt").remove();
-        $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-size: contain; background-repeat: no-repeat; background-image: url(${file}); background-color: white;"></div>`);
-    
+        try {
+            $(".drop-zone__thumb").remove();
+            $(".drop-zone__prompt").remove();
+            $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-size: contain; background-repeat: no-repeat; background-image: url(${file}); background-color: white;"></div>`);
+        }catch(errFile){
+            if(!$(".drop-zone__prompt")){
+                $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
+            }
+        }
+
     }
 
 
@@ -500,4 +506,3 @@
         $(campo).remove();
     }
 </script>
-<script src="<?php echo base_url() ?>assets/js/controllers/imagemDragAndDrop.js"></script>
