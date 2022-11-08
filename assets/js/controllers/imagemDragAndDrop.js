@@ -8,7 +8,6 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
     inputElement.addEventListener("change", (e) => {
       if (inputElement.files.length) {
         updateThumbnail(dropZoneElement, inputElement.files[0]);
-        console.log(inputElement.files[0]);
       }
     });
   
@@ -57,7 +56,7 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
     }
   
     thumbnailElement.dataset.label = file.name;
-  
+  console.log(thumbnailElement.dataset.label);
     // Show thumbnail for image files
     if (file.type.startsWith("image/")) {
       const reader = new FileReader();
