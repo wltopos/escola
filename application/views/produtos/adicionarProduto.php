@@ -390,7 +390,7 @@
                         let dados = JSON.parse(data);
                         let json = dados;
                         let logo = '';
-                        const reader = new FileReader();
+                        
                         $("#imagemProduto").val(logo);
                      //   updateThumbnail(logo);
                      
@@ -462,6 +462,7 @@
 
 
     function updateThumb(file) {
+        const reader = new FileReader();
         let filee = reader.readAsDataURL(file);
         $(".drop-zone__thumb").remove();
         $(".drop-zone__prompt").remove();
