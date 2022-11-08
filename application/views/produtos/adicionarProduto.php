@@ -461,10 +461,11 @@
 
 
     function updateThumbnail(file) {
+        $(".drop-zone__thumb").remove();
+        $(".drop-zone__prompt").remove();
+       
         if($(".drop-zone__thumb") && typeof file == "string"){
-            $(".drop-zone__thumb").remove();
-            $(".drop-zone__prompt").remove();
-            $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-size: contain; background-repeat: no-repeat; background-image: url(${file}); background-color: white;"></div>`);
+           $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-size: contain; background-repeat: no-repeat; background-image: url(${file}); background-color: white;"></div>`);
         }else{           
             
              $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
