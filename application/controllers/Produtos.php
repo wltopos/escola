@@ -162,7 +162,7 @@ class Produtos extends MY_Controller
 
             $estoque =  $this->produtos_model->converteMedida($this->input->post('estoque'), $this->input->post('unidade'), 'S', $this->input->post('estoqueMinimo'));
 
-            $this->data = [
+            $this->dataInsert = [
                 'codDeBarra'              => strtoupper($this->input->post('codDeBarra')),
                 'produtoDescricao'       => strtoupper($this->input->post('descricao')),
                 'estoque_location_id'     => strtoupper($this->input->post('location')),
@@ -243,7 +243,7 @@ class Produtos extends MY_Controller
            
            $estoque =  $this->produtos_model->converteMedida($this->input->post('estoque'), $this->input->post('unidade'), 'S', $this->input->post('estoqueMinimo'));
 
-            $data = [
+            $this->dataInsert = [
                 'codDeBarra'              => strtoupper($this->input->post('codDeBarra')),
                 'produtoDescricao'        => strtoupper($this->input->post('descricao')),
                 'estoque_location_id'     => strtoupper($this->input->post('location')),
