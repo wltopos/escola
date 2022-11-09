@@ -19,7 +19,7 @@
                     <div class="drop-zone"> 
                          <input type="file" name="myFile" class="drop-zone__input"> 
                          <div class="drop-zone__thumb" data-label="<?= "Imagem do Produto" ?>"> 
-                         <img src="<?= $result->imagemProduto?>">
+                         <img class="logoImagem" src="<?= $result->imagemProduto?>">
                         </div>
                     </div>
                    
@@ -28,7 +28,7 @@
                     <div class="drop-zone"> 
                          <input type="file" name="myFile" class="drop-zone__input">
                           <div class="drop-zone__thumb" data-label="<?= "Imagem da logomarca " ?>">
-                          <img src="<?= $result->urlLogoMarca?>">
+                          <img class="logoImagem" src="<?= $result->urlLogoMarca?>">
                         </div>
                     </div>
                    
@@ -36,7 +36,7 @@
                         <div class="drop-zone"> 
                          <input type="file" name="myFile" class="drop-zone__input">
                           <div class="drop-zone__thumb" data-label="<?= "Sem imagem " ?>">
-                          <img src='https://sistema.wltopos.com/assets/img/sem_logo.png'>
+                          <img class="logoImagem" src='https://sistema.wltopos.com/assets/img/sem_logo.png'>
                         </div>
                     </div>
                  
