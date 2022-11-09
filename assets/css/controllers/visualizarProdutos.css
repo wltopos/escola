@@ -86,13 +86,13 @@
 
     @media screen and (min-width: 748px) {
         .drop-zone__thumb {
-            width: 50%;
+            width: 100%;
             height: 100%;
         }
       }
     @media screen and (min-width: 1250px) {
         .drop-zone__thumb {
-            width: 50%;
+            width: 100%;
             height: 110%;
         }
         .drop-zone {
