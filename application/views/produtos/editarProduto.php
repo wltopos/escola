@@ -17,7 +17,7 @@
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal">
             <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
                     <div class="drop-zone"> 
-                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->imagemProduto?>');">
+                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Imagem Produto" ?>" style="background-image: url('<?= $result->imagemProduto?>');">
                         </div>
                     </div>
                    
@@ -25,14 +25,14 @@
                         
                     <div class="drop-zone"> 
                          <input type="file" name="myFile" class="drop-zone__input">
-                          <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('');">
+                          <div class="drop-zone__thumb" data-label="<?= "Imagem marca " ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
                         </div>
                     </div>
                    
                     <?else:?>
                         <div class="drop-zone"> 
                          <input type="file" name="myFile" class="drop-zone__input">
-                          <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
+                          <div class="drop-zone__thumb" data-label="<?= "Sem imagem " ?>" style="background-image: url('https://sistema.wltopos.com/assets/img/sem_logo.png');">
                         </div>
                     </div>
                  

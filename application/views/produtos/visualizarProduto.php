@@ -16,20 +16,20 @@
                         <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
                             <div class="drop-zone"> 
                                  <input type="file" name="myFile" class="drop-zone__input">
-                                  <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->imagemProduto?>');">
+                                  <div class="drop-zone__thumb" data-label="<?= "Imagem produto"?>" style="background-image: url('<?= $result->imagemProduto?>');">
                                 </div>
                             </div>
                    
                    <?php elseif($result->urlLogoMarca != NULL and $result->urlLogoMarca != ''):?>
                         
                     <div class="drop-zone"> 
-                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
+                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Imagem marca" ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
                         </div>
                     </div>
                    
                     <?else:?>
                         <div class="drop-zone"> 
-                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
+                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Sem imagem" ?>" style="background-image: url('https://sistema.wltopos.com/assets/img/sem_logo.png'');">
                         </div>
                     </div>
                    
