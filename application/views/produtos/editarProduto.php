@@ -16,23 +16,26 @@
             <div id="imageLogo"> <img alt="logomarca" src="<?= $result->imagemProduto != null ? $result->imagemProduto : base_url('assets/img/sem_logo.png'); ?>" id="imgLogo"> </div>
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal">
             <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
-                            <div class="drop-zone">  <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->imagemProduto?>');"></div></div>
-                   
+                    <div class="drop-zone"> 
+                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->imagemProduto?>');">
+                        </div>
                     </div>
+                   
                    <?php elseif($result->urlLogoMarca != NULL and $result->urlLogoMarca != ''):?>
                         
                     <div class="drop-zone"> 
-                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
+                         <input type="file" name="myFile" class="drop-zone__input">
+                          <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
                         </div>
                     </div>
                    
                     <?else:?>
                         <div class="drop-zone"> 
-                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
+                         <input type="file" name="myFile" class="drop-zone__input">
+                          <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
                         </div>
                     </div>
-                   
-                    </div>
+                 
                     <?endif?>    
             <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
                    <div class="span6">
