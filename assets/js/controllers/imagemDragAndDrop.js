@@ -65,7 +65,7 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
       
       reader.onload = () => {
         thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-        $('#imagemProduto').val(`url('${reader.result}')`);
+        $('#imagemProduto').val(file);
       };
     } else {
       thumbnailElement.style.backgroundImage = null;
