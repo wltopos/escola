@@ -70,7 +70,7 @@ img{
         height: 100%;
         border-radius: 10px;
         overflow: hidden;
-        background-color: #f4f4f4;
+        /* background-color: #f4f4f4; */
         background-size: cover;
         position: relative;
         display: flex;
