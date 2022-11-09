@@ -431,7 +431,7 @@ class Produtos extends MY_Controller
     {
 
         $config['upload_path'] = './assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/";
-        $config['allowed_types'] = 'jpg|jpeg|png|JPG|JPEG|PNG|';
+        $config['allowed_types'] = 'jpg|jpeg|png|JPG|JPEG|PNG';
         $config['max_size'] = 0;
         $config['max_width'] = '3000';
         $config['max_height'] = '2000';
@@ -450,9 +450,9 @@ class Produtos extends MY_Controller
             // redirect(site_url('settings/'));
                     
               try{
-                $path = "path";
+                
                 $file = $this->setdb_model->getTabelaQID("estoque_produtos", '*', "id_estoque_produto=" . $setting);
-                unlink($file->$path);
+                unlink($file->pathImagem);
               }catch(Exception $e){
                 echo 'Exceção capturada: ',  $e->getMessage(), "\n";
               }
