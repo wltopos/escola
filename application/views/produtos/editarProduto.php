@@ -13,7 +13,7 @@
                 </span>
                 <h5>Cadastro de Produto</h5>
             </div>
-            <div id="imageLogo"> <img alt="logomarca" src="<?= $result->imagemProduto != null ? $result->imagemProduto : base_url('assets/img/sem_logo.png'); ?>" id="imgLogo"> </div>
+            
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal">
             <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
                     <div class="drop-zone"> 
