@@ -16,7 +16,7 @@
                         <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
                             <div class="drop-zone"> 
                                  <input type="file" name="myFile" class="drop-zone__input">
-                                  <div class="drop-zone__thumb" data-label="<?= "Imagem produto"?>"> 
+                                  <div class="drop-zone__thumb" data-label="<?= "Imagem do produto"?>"> 
                                   <img src="<?= $result->imagemProduto?>" >
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
                         
                     <div class="drop-zone"> 
                          <input type="file" name="myFile" class="drop-zone__input"> 
-                         <div class="drop-zone__thumb" data-label="<?= "Imagem marca" ?>" >
+                         <div class="drop-zone__thumb" data-label="<?= "Imagem da logomarca" ?>" >
                           <img src="<?= $result->urlLogoMarca?>">
                         </div>
                     </div>
