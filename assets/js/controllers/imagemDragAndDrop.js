@@ -43,7 +43,7 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
    */
   function updateThumbnail(dropZoneElement, file) {
     let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-   // dropZoneElement.querySelector(".drop-zone__thumb").remove();
+   dropZoneElement.querySelector(".drop-zone__thumb").remove();
   
     // First time - remove the prompt
     if (dropZoneElement.querySelector(".drop-zone__prompt")) {
@@ -66,11 +66,11 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
       
       reader.onload = () => {
         thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-        $('#imagemProduto').val(file);
+        // $('#imagemProduto').val(file);
       };
     } else {
       thumbnailElement.style.backgroundImage = null;
-      $('#imagemProduto').val('');
+      // $('#imagemProduto').val('');
     }
   }
   
