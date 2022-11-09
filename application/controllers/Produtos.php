@@ -170,7 +170,6 @@ class Produtos extends MY_Controller
                 'estoque_marca_id'        => strtoupper($this->input->post('marca')),
                 'estoque_tipo_produto_id' => strtoupper($this->input->post('complemento')),
                 'financeiro_nota_id'      => $this->input->post('adNotaFiscal_id'),
-                'imagemProduto'           => $this->input->post('imagemProduto'),
                 'precoCompra'             => $this->input->post('precoCompra'),
                 'margemLucro'             => $this->input->post('margemLucro'),
                 'precoVenda'              => $precoVenda,
@@ -182,6 +181,8 @@ class Produtos extends MY_Controller
                 'saida'                   => "1",
                 'entrada'                 => "1",
             ];
+
+            $this->do_upload();
 
             if ($this->setdb_model->add('estoque_produtos', $data) == true) {
                 $this->session->set_flashdata('success', 'Produto adicionado com sucesso!');
@@ -423,6 +424,54 @@ class Produtos extends MY_Controller
     public function returnAddCampos(){
      
         echo json_encode($this->setdb_model->getTabelaQ('estoque_addCampos'));
+    }
+
+    private function do_upload($setting = null)
+    {
+
+        $config['upload_path'] = './assets/uploads/' . $this->session->userdata('dbEmpresa') . "/logoProdutos"."/";
+        $config['allowed_types'] = 'jpg|jpeg|png|JPG|JPEG|PNG';
+        $config['max_size'] = 0;
+        $config['max_width'] = '3000';
+        $config['max_height'] = '2000';
+        $config['encrypt_name'] = true;
+
+        if (!is_dir('./assets/uploads/' . $this->session->userdata('dbEmpresa') .  "/logoProdutos"."/")) {
+            mkdir('./assets/uploads/' . $this->session->userdata('dbEmpresa') .  "/logoProdutos"."/", 0777, true);
+        }
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('userfile')) {
+            // $error = ['error' => $this->upload->display_errors()];
+
+            // $this->session->set_flashdata('error', 'Erro ao fazer upload do arquivo, verifique se a extensão do arquivo é permitida.');
+            // redirect(site_url('settings/'));
+            if($setting != null){
+              
+                $file = $this->setdb_model->getTabelaQID("estoque_produtos", '*', "id_estoque_produto=" . $setting);
+                if ($file->imagemProduto != null) {
+                    unlink($file->imagemProduto);
+                }
+            }
+            
+            return 0;
+        } 
+        
+        if($setting == null){
+            //$data = array('upload_data' => $this->upload->data());
+            $file = $this->upload->data('file_name');
+            $path = $this->upload->data('full_path');
+            $url = base_url('assets/uploads/' . $this->session->userdata('dbEmpresa') .  "/logoProdutos"."/" . $file) ;
+            $tamanho = $this->upload->data('file_size');
+            $tipo = $this->upload->data('file_ext');
+
+            $this->data["imagemProduto"] =  $url;
+            $this->data["pathImagem"]    =  $path;
+            $this->upload->data();
+
+            return  $this->upload->data();
+        }
     }
 
    
