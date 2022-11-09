@@ -14,10 +14,7 @@
                             </a>
                         </div>
                         <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
-                            <div class="drop-zone">
-                                 <span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>
-                                  <input type="file" name="myFile" class="drop-zone__input"> 
-                            </div>
+                            <div class="drop-zone">  <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="jude-infantini-mI-QcAP95Ok-unsplash.jpg" style="background-image: <?= $result->imagemProduto?>;"></div></div>
                         <div class="col" id="imageLogo" >
                             <img alt="logomarca 1" src='<?= $result->imagemProduto?>' id="imgLogo" class="img-responsive">
                         </div>
