@@ -17,7 +17,7 @@
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal">
             <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
                     <div class="drop-zone"> 
-                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('');">
+                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->imagemProduto?>');">
                         </div>
                     </div>
                    
@@ -25,7 +25,7 @@
                         
                     <div class="drop-zone"> 
                          <input type="file" name="myFile" class="drop-zone__input">
-                          <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
+                          <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('');">
                         </div>
                     </div>
                    
