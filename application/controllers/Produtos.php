@@ -162,7 +162,7 @@ class Produtos extends MY_Controller
 
             $estoque =  $this->produtos_model->converteMedida($this->input->post('estoque'), $this->input->post('unidade'), 'S', $this->input->post('estoqueMinimo'));
 
-            $data = [
+            $this->data = [
                 'codDeBarra'              => strtoupper($this->input->post('codDeBarra')),
                 'produtoDescricao'       => strtoupper($this->input->post('descricao')),
                 'estoque_location_id'     => strtoupper($this->input->post('location')),
@@ -184,7 +184,7 @@ class Produtos extends MY_Controller
 
             $this->do_upload();
 
-            if ($this->setdb_model->add('estoque_produtos', $data) == true) {
+            if ($this->setdb_model->add('estoque_produtos', $this->data) == true) {
                 $this->session->set_flashdata('success', 'Produto adicionado com sucesso!');
                 log_info('Adicionou um produto');
                 redirect(site_url('produtos/adicionar/'));
