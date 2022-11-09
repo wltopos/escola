@@ -430,47 +430,52 @@ class Produtos extends MY_Controller
     private function do_upload($setting = null)
     {
 
-        $config['upload_path'] = './assets/uploads/' . $this->session->userdata('dbEmpresa') . "/logoProdutos"."/";
-        $config['allowed_types'] = 'jpg|jpeg|png|JPG|JPEG|PNG';
+        $config['upload_path'] = './assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/";
+        $config['allowed_types'] = 'jpg|jpeg|png|JPG|JPEG|PNG|xml|XML|pdf|PDF';
         $config['max_size'] = 0;
         $config['max_width'] = '3000';
         $config['max_height'] = '2000';
         $config['encrypt_name'] = true;
 
-        if (!is_dir('./assets/uploads/' . $this->session->userdata('dbEmpresa') .  "/logoProdutos"."/")) {
-            mkdir('./assets/uploads/' . $this->session->userdata('dbEmpresa') .  "/logoProdutos"."/", 0777, true);
+        if (!is_dir('./assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/")) {
+            mkdir('./assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/", 0777, true);
         }
 
         $this->load->library('upload', $config);
 
-        if (!$this->upload->do_upload('userfile')) {
-            
-            if($setting != null){
-              
+        if (!$this->upload->do_upload()) {
+             $error = ['error' => $this->upload->display_errors()];
+
+            // $this->session->set_flashdata('error', 'Erro ao fazer upload do arquivo, verifique se a extensão do arquivo é permitida.');
+            // redirect(site_url('settings/'));
+                    
+              try{
+                $path = "path";
                 $file = $this->setdb_model->getTabelaQID("estoque_produtos", '*', "id_estoque_produto=" . $setting);
-                if ($file->imagemProduto != null) {
-                    unlink($file->imagemProduto);
-                }
-            }
-            
+                unlink($file->$path);
+              }catch(Exception $e){
+                echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+              }
+               echo $this->upload->display_errors();            
             return 0;
-        } else{
+        } else {
             //$data = array('upload_data' => $this->upload->data());
             $file = $this->upload->data('file_name');
             $path = $this->upload->data('full_path');
-            $url = base_url('assets/uploads/' . $this->session->userdata('dbEmpresa') .  "/logoProdutos"."/" . $file) ;
+            $url = base_url('assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/" . $file) ;
             $tamanho = $this->upload->data('file_size');
             $tipo = $this->upload->data('file_ext');
 
-            $this->dataInsert["imagemProduto"] =  $url;
-            $this->dataInsert["pathImagem"]    =  $path;
+            $this->dataInsert["url"]      =  $url;
+            $this->dataInsert["path"]     =  $path;
+            $this->dataInsert["file"]     =  $file;
+            $this->dataInsert["tamanho"]  =  $tamanho;
+            $this->dataInsert["tipo"]     =  $tipo;
+
             $this->upload->data();
-            var_dump($this->upload->do_upload('userfile'));
-            print_r($this->upload->data('file_name'));
-            exit;
+            
             return  $this->upload->data();
         }
     }
-
    
 }
