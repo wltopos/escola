@@ -14,7 +14,7 @@
                 <h5>Cadastro de Produto</h5>
             </div>
             <div id="imageLogo"> </div>
-            <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal">
+            <form action="<?php echo current_url(); ?>" id="formProduto" method="post" enctype='multipart/form-data' class="form-horizontal">
                 <div class="drop-zone">
                     <span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>
                     <input type="file" name="userfile" class="drop-zone__input">
