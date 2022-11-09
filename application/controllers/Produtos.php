@@ -183,7 +183,7 @@ class Produtos extends MY_Controller
             ];
 
             $this->do_upload();
-
+            exit;
             if ($this->setdb_model->add('estoque_produtos', $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', 'Produto adicionado com sucesso!');
                 log_info('Adicionou um produto');
@@ -443,7 +443,7 @@ class Produtos extends MY_Controller
 
         $this->load->library('upload', $config);
 var_dump($this->upload->do_upload());
-exit;
+
         if (!$this->upload->do_upload()) {
              $error = ['error' => $this->upload->display_errors()];
 
