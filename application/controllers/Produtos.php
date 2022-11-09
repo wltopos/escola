@@ -457,9 +457,7 @@ class Produtos extends MY_Controller
             }
             
             return 0;
-        } 
-        
-        if($setting == null){
+        } else{
             //$data = array('upload_data' => $this->upload->data());
             $file = $this->upload->data('file_name');
             $path = $this->upload->data('full_path');
