@@ -7,7 +7,7 @@ document.querySelectorAll("input.drop-zone__input").forEach((inputElement) => {
   
     inputElement.addEventListener("change", (e) => {
       if (inputElement.files.length) {
-        updateThumbnail(dropZoneElement, inputElement.files[0]);
+        updateThumbnail(dropZoneElement, "https://lh6.googleusercontent.com/-HrjHr42B6Z4/AAAAAAAAAAI/AAAAAAAAPtQ/5oYsEFSUagI/photo.jpg?sz=130");
         console.log(inputElement.files[0]);
       }
     });
