@@ -184,7 +184,7 @@ class Produtos extends MY_Controller
 
             $this->do_upload();
 
-            if ($this->setdb_model->add('estoque_produtos', $this->data) == true) {
+            if ($this->setdb_model->add('estoque_produtos', $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', 'Produto adicionado com sucesso!');
                 log_info('Adicionou um produto');
                 redirect(site_url('produtos/adicionar/'));
@@ -251,7 +251,6 @@ class Produtos extends MY_Controller
                 'estoque_marca_id'        => strtoupper($this->input->post('marca')),
                 'estoque_tipo_produto_id' => strtoupper($this->input->post('complemento')),
                 'financeiro_nota_id'      => $this->input->post('adNotaFiscal_id'),
-                'imagemProduto'           => $this->input->post('imagemProduto'),
                 'precoCompra'             => $this->input->post('precoCompra'),
                 'margemLucro'             => $this->input->post('margemLucro'),
                 'precoVenda'              => $precoVenda,
@@ -264,7 +263,9 @@ class Produtos extends MY_Controller
                 'entrada'                 => "1"
             ];
 
-            if ($this->setdb_model->edit('estoque_produtos', $data, 'id_estoque_produto', $this->input->post('id_estoque_produto')) == true) {
+            $this->do_upload($this->input->post('id_estoque_produto'));
+
+            if ($this->setdb_model->edit('estoque_produtos', $this->dataInsert, 'id_estoque_produto', $this->input->post('id_estoque_produto')) == true) {
                 $this->session->set_flashdata('success', 'Produto editado com sucesso!');
                 log_info('Alterou um produto. ID: ' . $this->input->post('id_estoque_produto'));
                 redirect(site_url('produtos/editar/') . $this->input->post('id_estoque_produto'));
@@ -466,8 +467,8 @@ class Produtos extends MY_Controller
             $tamanho = $this->upload->data('file_size');
             $tipo = $this->upload->data('file_ext');
 
-            $this->data["imagemProduto"] =  $url;
-            $this->data["pathImagem"]    =  $path;
+            $this->dataInsert["imagemProduto"] =  $url;
+            $this->dataInsert["pathImagem"]    =  $path;
             $this->upload->data();
 
             return  $this->upload->data();
