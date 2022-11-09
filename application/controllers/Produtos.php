@@ -442,11 +442,11 @@ class Produtos extends MY_Controller
         }
 
         $this->load->library('upload', $config);
-var_dump($this->upload->do_upload('userfile'));
-print_r($this->upload->data('file_name'));
-exit;
+
         if (!$this->upload->do_upload('userfile')) {
-           
+            var_dump($this->upload->do_upload('userfile'));
+            print_r($this->upload->data('file_name'));
+            exit;
             if($setting != null){
               
                 $file = $this->setdb_model->getTabelaQID("estoque_produtos", '*', "id_estoque_produto=" . $setting);
