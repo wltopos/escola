@@ -14,10 +14,8 @@
                             </a>
                         </div>
                         <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
-                            <div class="drop-zone">  <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="jude-infantini-mI-QcAP95Ok-unsplash.jpg" style="background-image: <?= $result->imagemProduto?>);"></div></div>
-                        <div class="col" id="imageLogo" >
-                            <img alt="logomarca 1" src='<?= $result->imagemProduto?>' id="imgLogo" class="img-responsive">
-                        </div>
+                            <div class="drop-zone">  <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="jude-infantini-mI-QcAP95Ok-unsplash.jpg" style="background-image: url('<?= $result->imagemProduto?>');"></div></div>
+                   
                     </div>
                    <?php elseif($result->urlLogoMarca != NULL and $result->urlLogoMarca != ''):?>
                         <div class="col" id="imageLogo" >
