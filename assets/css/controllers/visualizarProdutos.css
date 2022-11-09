@@ -5,6 +5,10 @@
 
 }
 
+img{
+    padding: 1%;
+}
+
 #imageLogo {
     justify-content: center;
     display: block;
@@ -69,6 +73,8 @@
         background-color: #cccccc;
         background-size: cover;
         position: relative;
+        display: flex;
+        justify-content: center;
     }
 
     .drop-zone__thumb::after {
