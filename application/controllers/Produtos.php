@@ -466,8 +466,8 @@ class Produtos extends MY_Controller
             $tamanho = $this->upload->data('file_size');
             $tipo = $this->upload->data('file_ext');
 
-            $this->dataInsert["url"]      =  $url;
-            $this->dataInsert["path"]     =  $path;
+            $this->dataInsert["imagemProduto"]  =  $url;
+            $this->dataInsert["pathImagem"]     =  $path;
             $this->dataInsert["file"]     =  $file;
             $this->dataInsert["tamanho"]  =  $tamanho;
             $this->dataInsert["tipo"]     =  $tipo;
