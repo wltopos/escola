@@ -16,10 +16,9 @@
             <div id="imageLogo"> <img alt="logomarca" src="<?= $result->imagemProduto != null ? $result->imagemProduto : base_url('assets/img/sem_logo.png'); ?>" id="imgLogo"> </div>
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal">
                 <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
-                <div class="drop-zone">
-                    <span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>
-                    <input type="file" name="userfile" class="drop-zone__input">
-                </div>
+                <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
+                            <div class="drop-zone">  <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->imagemProduto?>');">
+                        </div></div>
                     <div class="span6">
                         <?php echo $custom_error; ?>
                         <input onkeydown='handleEnter(event)' type="hidden" id="adNotaFiscal_id" name="adNotaFiscal_id" value="<?php echo $result->id_financeiro_nota; ?>" />

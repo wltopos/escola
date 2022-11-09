@@ -18,14 +18,18 @@
                    
                     </div>
                    <?php elseif($result->urlLogoMarca != NULL and $result->urlLogoMarca != ''):?>
-                        <div class="col" id="imageLogo" >
-                            <img alt="logomarca 2" src='<?=$result->urlLogoMarca?>' id="imgLogo" class="img-responsive">
+                        
+                    <div class="drop-zone"> 
+                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
                         </div>
                     </div>
+                   
                     <?else:?>
-                    <div class="col" id="imageLogo" >
-                            <img alt="logomarca 3" src="https://sistema.wltopos.com/assets/img/sem_logo.png" id="imgLogo" class="img-responsive">
+                        <div class="drop-zone"> 
+                         <input type="file" name="myFile" class="drop-zone__input"> <div class="drop-zone__thumb" data-label="<?= "Codigo: ".$result->codDeBarra ?>" style="background-image: url('<?= $result->urlLogoMarca?>');">
                         </div>
+                    </div>
+                   
                     </div>
                     <?endif?>
                     <div class="collapse in accordion-body" id="collapseGOne">
