@@ -442,12 +442,10 @@ class Produtos extends MY_Controller
         }
 
         $this->load->library('upload', $config);
-
+print_r($this->upload->do_upload('userfile'));
+exit;
         if (!$this->upload->do_upload('userfile')) {
-            // $error = ['error' => $this->upload->display_errors()];
-
-            // $this->session->set_flashdata('error', 'Erro ao fazer upload do arquivo, verifique se a extensão do arquivo é permitida.');
-            // redirect(site_url('settings/'));
+           
             if($setting != null){
               
                 $file = $this->setdb_model->getTabelaQID("estoque_produtos", '*', "id_estoque_produto=" . $setting);
