@@ -442,7 +442,7 @@ class Produtos extends MY_Controller
         }
 
         $this->load->library('upload', $config);
-var_dump($this->upload->do_upload());
+var_dump($this->upload->do_upload('userfile'));
 
         if (!$this->upload->do_upload()) {
              $error = ['error' => $this->upload->display_errors()];
