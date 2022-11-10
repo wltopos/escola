@@ -50,7 +50,7 @@ function updateThumbnail(dropZoneElement, file) {
 
   // First time - there is no thumbnail element, so lets create it
   if (!thumbnailElement) {
-    thumbnailElement = document.createElement("div");
+    thumbnailElement = document.createElement("img");
     thumbnailElement.classList.add("drop-zone__thumb");
     dropZoneElement.appendChild(thumbnailElement);
   }
@@ -63,9 +63,9 @@ function updateThumbnail(dropZoneElement, file) {
 
     reader.readAsDataURL(file);
     reader.onload = () => {
-      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+      thumbnailElement.src = `url('${reader.result}')`;
     };
   } else {
-    thumbnailElement.style.backgroundImage = null;
+    thumbnailElement.src = null;
   }
 }
