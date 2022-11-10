@@ -43,7 +43,7 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
 function updateThumbnail(dropZoneElement, file) {
 
   let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-  
+  thumbnailElement.src = null;
   // First time - remove the prompt
   if (dropZoneElement.querySelector(".drop-zone__prompt")) {
     dropZoneElement.querySelector(".drop-zone__prompt").remove();
