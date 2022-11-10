@@ -43,7 +43,7 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
 function updateThumbnail(dropZoneElement, file) {
 
   let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-  thumbnailElement.src = null;
+
   // First time - remove the prompt
   if (dropZoneElement.querySelector(".drop-zone__prompt")) {
     dropZoneElement.querySelector(".drop-zone__prompt").remove();
@@ -51,7 +51,7 @@ function updateThumbnail(dropZoneElement, file) {
 
   // First time - there is no thumbnail element, so lets create it
   if (!thumbnailElement) {
-    thumbnailElement = document.createElement("img");
+    thumbnailElement = document.createElement("div");
     thumbnailElement.classList.add("drop-zone__thumb");
     dropZoneElement.appendChild(thumbnailElement);
   }
@@ -64,7 +64,9 @@ function updateThumbnail(dropZoneElement, file) {
 
     reader.readAsDataURL(file);
     reader.onload = () => {
-      thumbnailElement.src = reader.result;
+      
+      $('<img />', { id: 'Myid', src: reader.result , alt:'MyAlt'}) .appendTo($('.drop-zone__thumb'));
+     // thumbnailElement.src = reader.result;
     };
   } else {
     thumbnailElement.src = null;
