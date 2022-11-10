@@ -7,6 +7,12 @@
         opacity: 0;
     }
 
+    img{
+        padding: 1%;
+        width: auto;
+        height: 90%;
+    }
+
     .form_error {
         color: red;
         margin-left: 2%;
