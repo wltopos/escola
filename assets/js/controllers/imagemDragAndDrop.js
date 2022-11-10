@@ -63,7 +63,7 @@ function updateThumbnail(dropZoneElement, file) {
 
     reader.readAsDataURL(file);
     reader.onload = () => {
-      thumbnailElement.src = `url('${reader.result}')`;
+      thumbnailElement.src = reader.result;
     };
   } else {
     thumbnailElement.src = null;
