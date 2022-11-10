@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/visualizar.css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/controllers/visualizarSettings.css" />
 
 <div class="widget-box">
 

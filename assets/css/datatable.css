@@ -21,6 +21,7 @@ td.sorting_1 {
 
 .img-responsive {
     max-width: 140px;
+    height: 70px;
 }
 
 .dataTables_filter {
