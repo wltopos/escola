@@ -84,7 +84,7 @@
     .drop-zone__thumb {
         background-position: center;
         background-repeat: no-repeat;
-        width: 100%;
+        width: auto;
         height: 100%;
         border-radius: 10px;
         overflow: hidden;
@@ -110,13 +110,13 @@
 
     @media screen and (min-width: 748px) {
         .drop-zone__thumb {
-            width: 100%;
+            width: auto;
             height: 100%;
         }
       }
     @media screen and (min-width: 1250px) {
         .drop-zone__thumb {
-            width: 100%;
+            width: auto;
             height: 110%;
         }
         .drop-zone {
