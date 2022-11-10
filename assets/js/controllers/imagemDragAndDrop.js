@@ -64,11 +64,11 @@ function updateThumbnail(dropZoneElement, file) {
 
     reader.readAsDataURL(file);
     reader.onload = () => {
-      $('<img />', { id: 'Myid', src: '' , alt:'MyAlt'}) .appendTo($('.drop-zone__thumb'));
-      $('<img />', { id: 'Myid', src: reader.result , alt:'MyAlt'}) .appendTo($('.drop-zone__thumb'));
+      $('.logoImg').remove();
+      $('<img />', { class: 'logoImg', src: reader.result , alt:'MyAlt'}) .appendTo($('.drop-zone__thumb'));
      // thumbnailElement.src = reader.result;
     };
   } else {
-    $('<img />', { id: 'Myid', src: '' , alt:'MyAlt'}) .appendTo($('.drop-zone__thumb'));
+    $('<img />', { class: 'logoImg', src: '' , alt:'MyAlt'}) .appendTo($('.drop-zone__thumb'));
   }
 }
