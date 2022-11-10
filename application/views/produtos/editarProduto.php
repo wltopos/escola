@@ -17,7 +17,7 @@
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal">
             <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
                     <div class="drop-zone"> 
-                         <input type="file" name="myFile" class="drop-zone__input"> 
+                         <input type="file" name="userfile" class="drop-zone__input"> 
                          <div class="drop-zone__thumb" data-label="<?= "Imagem do Produto" ?>"> 
                          <img class="logoImagem" src="<?= $result->imagemProduto?>">
                         </div>
@@ -26,7 +26,7 @@
                    <?php elseif($result->urlLogoMarca != NULL and $result->urlLogoMarca != ''):?>
                         
                     <div class="drop-zone"> 
-                         <input type="file" name="myFile" class="drop-zone__input">
+                         <input type="file" name="userfile" class="drop-zone__input">
                           <div class="drop-zone__thumb" data-label="<?= "Imagem da logomarca " ?>">
                           <img class="logoImagem" src="<?= $result->urlLogoMarca?>">
                         </div>
@@ -34,7 +34,7 @@
                    
                     <?else:?>
                         <div class="drop-zone"> 
-                         <input type="file" name="myFile" class="drop-zone__input">
+                         <input type="file" name="userfile" class="drop-zone__input">
                           <div class="drop-zone__thumb" data-label="<?= "Sem imagem " ?>">
                           <img class="logoImagem" src='https://sistema.wltopos.com/assets/img/sem_logo.png'>
                         </div>
