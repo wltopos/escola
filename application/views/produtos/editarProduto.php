@@ -14,7 +14,7 @@
                 <h5>Cadastro de Produto</h5>
             </div>
             
-            <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal">
+            <form action="<?php echo current_url(); ?>" id="formProduto" enctype='multipart/form-data' method="post" class="form-horizontal">
             <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
                     <div class="drop-zone"> 
                          <input type="file" name="userfile" class="drop-zone__input"> 
