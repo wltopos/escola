@@ -461,7 +461,7 @@ class Produtos extends MY_Controller
             return 0;
         } 
         
-        if($this->upload->do_upload('userfile')){
+        if($this->upload->do_upload()){
             //$data = array('upload_data' => $this->upload->data());
             $file = $this->upload->data('file_name');
             $path = $this->upload->data('full_path');
