@@ -444,7 +444,7 @@ class Produtos extends MY_Controller
 
         $this->load->library('upload', $config);
 
-        if (!$this->upload->do_upload('userfile')) {
+        if (!$this->upload->do_upload('imagemL')) {
              $error = ['error' => $this->upload->display_errors()];
 
             // $this->session->set_flashdata('error', 'Erro ao fazer upload do arquivo, verifique se a extensão do arquivo é permitida.');
