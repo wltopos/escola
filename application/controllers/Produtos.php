@@ -457,7 +457,7 @@ class Produtos extends MY_Controller
               }catch(Exception $e){
                 echo 'Exceção capturada: ',  $e->getMessage(), "\n";
               }
-               echo $this->upload->display_errors();            
+           //    echo $this->upload->display_errors();            
             return 0;
         } else {
             //$data = array('upload_data' => $this->upload->data());
