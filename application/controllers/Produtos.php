@@ -443,7 +443,8 @@ class Produtos extends MY_Controller
         }
 
         $this->load->library('upload', $config);
-var_dump($this->upload->do_upload('userfile'));
+$this->upload->do_upload('userfile');
+var_dump($this->upload->data('file_name'));
 exit;
         if (!$this->upload->do_upload('userfile')) {
              $error = ['error' => $this->upload->display_errors()];
