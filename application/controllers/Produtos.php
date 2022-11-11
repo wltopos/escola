@@ -443,8 +443,8 @@ class Produtos extends MY_Controller
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-        $this->upload->do_upload('userfile');
-        if (!$this->upload->do_upload('userfile')) {
+        $this->upload->do_upload();
+        if (!$this->upload->do_upload()) {
              $error = ['error' => $this->upload->display_errors()];
 
             // $this->session->set_flashdata('error', 'Erro ao fazer upload do arquivo, verifique se a extensão do arquivo é permitida.');
