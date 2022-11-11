@@ -17,7 +17,7 @@
             <form action="<?php echo current_url(); ?>" id="formProduto" enctype='multipart/form-data' method="post" class="form-horizontal">
             <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
                     <div class="drop-zone"> 
-                         <input type="file" name="imagemL" class="drop-zone__input"> 
+                         <input type="file" name="userfile" class="drop-zone__input"> 
                          <div class="drop-zone__thumb" data-label="<?= "Imagem do Produto" ?>"> 
                          <img class="logoImagem" src="<?= $result->imagemProduto?>">
                         </div>
