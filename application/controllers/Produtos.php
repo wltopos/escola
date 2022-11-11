@@ -431,7 +431,7 @@ class Produtos extends MY_Controller
     private function do_upload($setting = null)
     {
 
-        $config['upload_path'] = '/assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/";
+        $config['upload_path'] = './assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/";
         $config['allowed_types'] = 'jpg|jpeg|png|JPG|JPEG|PNG';
         $config['max_size'] = 0;
         $config['max_width'] = '3000';
