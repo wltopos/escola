@@ -66,7 +66,7 @@
                         </div>
                     </div>
 </div>
-<div class="span6">
+<div class="span6"> 
                     <div class="control-group" class="control-label">
                         <label for="cep" class="control-label">CEP<span class="required">*</span></label>
                         <div class="controls">
