@@ -29,7 +29,7 @@ class Usuarios_model extends CI_Model
         $this->db_empresa->limit($perpage, $start);
         $this->db_empresa->join('administrativo_permissions', 'administrativo_funcionarios.permissoes_id = administrativo_permissions.id_administrativo_permission', 'left');
    
-        $query = $this->db->get();
+        $query = $this->db_empresa->get();
         
         $result =  !$one  ? $query->result() : $query->row();
         return $result;
