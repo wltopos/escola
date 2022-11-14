@@ -69,11 +69,11 @@ class Usuarios_model extends CI_Model
     
     public function edit($table, $data, $fieldID, $ID)
     {
-        $this->db->where('dbEmpresa', $this->session->userdata('dbEmpresa'));
-        $this->db->where($fieldID, $ID);
-        $this->db->update($table, $data);
+     
+        $this->db_empresa->where($fieldID, $ID);
+        $this->db_empresa->update($table, $data);
 
-        if ($this->db->affected_rows() >= 0) {
+        if ($this->db_empresa->affected_rows() >= 0) {
             return true;
         }
         
