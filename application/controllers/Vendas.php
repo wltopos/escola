@@ -635,7 +635,8 @@ class Vendas extends MY_Controller
                 'tipo' => $this->input->post('tipo'),
                 'administrativo_funcionario_id' => $this->session->userdata('id'),
             ];
-
+print_r($data);
+exit;
             if ($this->vendas_model->add('financeiro_lancamentos', $data) == true) {
                 $venda = $this->input->post('vendas_id');
 
