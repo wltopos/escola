@@ -171,7 +171,7 @@
             <?php if ($cobranca->barcode) : ?>
                 <tr>
                     <td colspan="1">
-                        Código de Barras
+                    Código/Referência/GTIN
                     </td>
                     <td colspan="3">
                         <?= $cobranca->barcode ?>

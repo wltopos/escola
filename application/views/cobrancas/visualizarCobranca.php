@@ -112,7 +112,7 @@
                         </tr>
 
                         <tr>
-                            <td style="text-align: right"><strong>Código de barras</strong></td>
+                            <td style="text-align: right"><strong>Código/Referência/GTIN</strong></td>
                             <td>
                                 <?php //echo $result->barcode; ?>
                             </td>
