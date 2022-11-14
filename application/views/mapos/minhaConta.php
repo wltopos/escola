@@ -11,7 +11,7 @@
                 <section>
                     <div class="profileMC">
                         <div class="profile-img">
-                            <img src="<?= (!$usuario->url_image_user || !is_file(FCPATH . 'assets/uploads/'.$this->session->userdata('dbEmpresa')."/userImage/$usuario->url_image_user")) ?  base_url() . "assets/img/User.png" : base_url(). 'assets/uploads/'.$this->session->userdata('dbEmpresa')."/userImage/$usuario->url_image_user" ?>" alt="">
+                            <img src="<?= (!$usuario->url_image_user || !is_file(FCPATH . 'assets/uploads/' . $this->session->userdata('dbEmpresa') . "/userImage/$usuario->url_image_user")) ?  base_url() . "assets/img/User.png" : base_url() . 'assets/uploads/' . $this->session->userdata('dbEmpresa') . "/userImage/$usuario->url_image_user" ?>" alt="">
                         </div>
                     </div>
                 </section>
@@ -19,7 +19,7 @@
                     <label for="user" class="">
                         <span class="">
                             <a href="#modalImageUser" data-toggle="modal" role="button" class="button btn btn-mini btn-success" style="max-width: 140px">
-                              <span class="button__icon"><i class='bx bx-upload'></i></span> <span class="button__text2">Alterar Foto</span></a>
+                                <span class="button__icon"><i class='bx bx-upload'></i></span> <span class="button__text2">Alterar Foto</span></a>
                         </span>
                     </label>
                 </div>
@@ -28,14 +28,14 @@
             <div class="row-fluid">
                 <div class="span12">
                     <ul class="site-stats">
+                        <li class="bg_lg span12" style="margin-left: 0"><strong>E-mail:
+                                <?= $usuario->email ?></strong></li>
                         <li class="bg_ls span12"><strong>Nome:
                                 <?= $usuario->nome ?></strong></li>
-                        <li class="bg_lb span12" style="margin-left: 0"><strong>Telefone:
-                                <?= $usuario->telefone ?></strong></li>
-                        <li class="bg_lg span12" style="margin-left: 0"><strong>Email:
-                                <?= $usuario->email ?></strong></li>
                         <li class="bg_lo span12" style="margin-left: 0"><strong>Nível:
                                 <?= $usuario->permissao; ?></strong></li>
+                        <li class="bg_lb span12" style="margin-left: 0"><strong>Telefone:
+                                <?= $usuario->telefone ?></strong></li>
                         <li class="bg_lh span12" style="margin-left: 0; border-bottom-left-radius: 9px;border-bottom-right-radius: 9px"><strong>Acesso expira em:
                                 <?= date('d/m/Y', strtotime($usuario->dataExpiracao)); ?></strong></li>
                     </ul>
@@ -71,8 +71,8 @@
                             <label for="">Confirmar Senha</label>
                             <input type="password" name="confirmarSenha" class="span12" />
                         </div>
-                            <button class="button btn btn-primary" style="max-width: 140px;text-align: center">
-                              <span class="button__icon"><i class='bx bx-lock-alt'></i></span><span class="button__text2">Alterar Senha</span></button>
+                        <button class="button btn btn-primary" style="max-width: 140px;text-align: center">
+                            <span class="button__icon"><i class='bx bx-lock-alt'></i></span><span class="button__text2">Alterar Senha</span></button>
                     </form>
                 </div>
 
