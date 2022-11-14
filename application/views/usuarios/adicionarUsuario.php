@@ -16,6 +16,7 @@
                     echo '<div class="alert alert-danger">' . $custom_error . '</div>';
                 } ?>
                 <form action="<?php echo current_url(); ?>" id="formUsuario" method="post" class="form-horizontal">
+                <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
                     <div class="span6">
                         <div class="control-group">
                             <label for="nome" class="control-label">Nome<span class="required">*</span></label>
@@ -140,6 +141,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                     <div class="form-actions">
                         <div class="span12">
                             <div class="span6 offset3" style="display:flex">
