@@ -12,6 +12,10 @@ class Usuarios_model extends CI_Model
     public function __construct()
     {
         parent::__construct();
+        if($this->session->userdata('logado')){
+      
+            $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true) ;
+            }
         
     }
 
@@ -19,11 +23,11 @@ class Usuarios_model extends CI_Model
 
     public function get($perpage = 0, $start = 0, $one = false)
     {
-        $this->db->from('administrativo_funcionarios');
+        $this->db_empresa->from('administrativo_funcionarios');
        // $this->db->select('administrativo_funcionarios.*, permissoes.nome as permissao');
-        $this->db->select('administrativo_funcionarios.*');
-        $this->db->limit($perpage, $start);
-        $this->db->join('administrativo_permissions', 'administrativo_funcionarios.permissoes_id = administrativo_permissions.id_administrativo_permission', 'left');
+        $this->db_empresa->select('administrativo_funcionarios.*');
+        $this->db_empresa->limit($perpage, $start);
+        $this->db_empresa->join('administrativo_permissions', 'administrativo_funcionarios.permissoes_id = administrativo_permissions.id_administrativo_permission', 'left');
    
         $query = $this->db->get();
         
