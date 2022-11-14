@@ -37,28 +37,28 @@ class Clientes extends MY_Controller
         $this->pagination->initialize($this->data['configuration']);
 
         $this->data['custom_error'] = '';
-        $this->data['results'] = $this->setdb_model->getTabelaQ('administrativo_funcionarios');
+        $this->data['results'] = $this->setdb_model->getTabelaQ('comercial_clientes');
 
 
-        foreach ($this->data['results'] as $funcionario) {
+        foreach ($this->data['results'] as $cliente) {
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vCliente')) {
-                $v = '<a href="' . base_url() . 'index.php/clientes/visualizar/' . $cliente->id_administrativo_funcionario . '" style="margin-right: 1%" class="btn-nwe" title="Ver mais detalhes"><i class="bx bx-show bx-xs"></i></a>';
-                $a = '<a href="' . base_url() . 'index.php/mine?e=' . $funcionario->email . '" target="new" style="margin-right: 1%" class="btn-nwe2" title="Área do cliente"><i class="bx bx-key bx-xs"></i></a>';
+                $v = '<a href="' . base_url() . 'index.php/clientes/visualizar/' . $cliente->id_comercial_cliente . '" style="margin-right: 1%" class="btn-nwe" title="Ver mais detalhes"><i class="bx bx-show bx-xs"></i></a>';
+                $a = '<a href="' . base_url() . 'index.php/mine?e=' . $cliente->email . '" target="new" style="margin-right: 1%" class="btn-nwe2" title="Área do cliente"><i class="bx bx-key bx-xs"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eCliente')) {
-                $e = '<a href="' . base_url() . 'index.php/clientes/editar/' . $funcionario->id_administrativo_funcionario . '" style="margin-right: 1%" class="btn-nwe3" title="Editar Cliente"><i class="bx bx-edit bx-xs"></i></a>';
+                $e = '<a href="' . base_url() . 'index.php/clientes/editar/' . $cliente->id_comercial_cliente . '" style="margin-right: 1%" class="btn-nwe3" title="Editar Cliente"><i class="bx bx-edit bx-xs"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dCliente')) {
-                $d = '<a href="#modal-excluir" role="button" data-toggle="modal" cliente="' . $funcionario->id_administrativo_funcionario . '" style="margin-right: 1%" class="btn-nwe4" title="Excluir Cliente"><i class="bx bx-trash-alt bx-xs"></i></a>';
+                $d = '<a href="#modal-excluir" role="button" data-toggle="modal" cliente="' . $cliente->id_comercial_cliente . '" style="margin-right: 1%" class="btn-nwe4" title="Excluir Cliente"><i class="bx bx-trash-alt bx-xs"></i></a>';
             }
 
 
             $result[] = [
-                $funcionario->nomeCliente,
-                $funcionario->id_administrativo_funcionario,
-                $funcionario->documento,
-                $funcionario->telefone,
-                $funcionario->email,
+                $cliente->id_comercial_cliente,
+                $cliente->nomeCliente,
+                $cliente->documento,
+                $cliente->telefone,
+                $cliente->email,
                 "$v $a $e $d",
             ];
         }
@@ -126,7 +126,7 @@ class Clientes extends MY_Controller
                 'estado' => set_value('estado'),
                 'cep' => set_value('cep'),
                 'dataCadastro' => date('Y-m-d'),
-                'pessoa_fisica' => (set_value('pessoa_fisica') == true ? 1 : 0),
+                'fornecedor' => (set_value('fornecedor') == true ? 1 : 0),
             ];
 
             if ($this->setdb_model->add('comercial_clientes', $data) == true) {
@@ -180,7 +180,7 @@ class Clientes extends MY_Controller
                     'cidade' => $this->input->post('cidade'),
                     'estado' => $this->input->post('estado'),
                     'cep' => $this->input->post('cep'),
-                    'pessoa_fisica' => (set_value('pessoa_fisica') == true ? 1 : 0),
+                    'fornecedor' => (set_value('fornecedor') == true ? 1 : 0),
                 ];
             } else {
                 $data = [
@@ -198,7 +198,7 @@ class Clientes extends MY_Controller
                     'cidade' => $this->input->post('cidade'),
                     'estado' => $this->input->post('estado'),
                     'cep' => $this->input->post('cep'),
-                    'pessoa_fisica' => (set_value('pessoa_fisica') == true ? 1 : 0),
+                    'fornecedor' => (set_value('fornecedor') == true ? 1 : 0),
                 ];
             }
 

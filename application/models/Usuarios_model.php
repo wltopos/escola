@@ -19,11 +19,11 @@ class Usuarios_model extends CI_Model
 
     public function get($perpage = 0, $start = 0, $one = false)
     {
-        $this->db->from('usuarios');
-        $this->db->select('usuarios.*, permissoes.nome as permissao');
-        $this->db->where('dbEmpresa', $this->session->userdata('dbEmpresa'));
+        $this->db->from('administrativo_funcionarios');
+       // $this->db->select('administrativo_funcionarios.*, permissoes.nome as permissao');
+        $this->db->select('administrativo_funcionarios.*');
         $this->db->limit($perpage, $start);
-        $this->db->join('permissoes', 'usuarios.permissoes_id = permissoes.idPermissao', 'left');
+        $this->db->join('permissoes', 'administrativo_funcionarios.permissions_id = administrativo_permissions.id_administrativo_permissions', 'left');
   
         $query = $this->db->get();
         
