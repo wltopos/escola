@@ -182,7 +182,7 @@ class Usuarios extends MY_Controller
     public function excluir()
     {
         $id = $this->uri->segment(3);
-        $this->usuarios_model->delete('usuarios', 'idUsuarios', $id);
+        $this->usuarios_model->delete('administrativo_funcionarios', 'id_administrativo_funcionario', $id);
 
         log_info('Removeu um usuário. ID: ' . $id);
 
