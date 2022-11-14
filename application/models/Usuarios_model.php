@@ -44,10 +44,10 @@ class Usuarios_model extends CI_Model
 
     public function getById($id)
     {
-        $this->db->where('dbEmpresa', $this->session->userdata('dbEmpresa'));
-        $this->db->where('idUsuarios', $id);
-        $this->db->limit(1);
-        return $this->db->get('usuarios')->row();
+     
+        $this->db_empresa->where('id_administrativo_funcionario', $id);
+        $this->db_empresa->limit(1);
+        return $this->db_empresa->get('administrativo_funcionarios')->row();
     }
 
     public function getAll()

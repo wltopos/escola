@@ -162,7 +162,7 @@ class Usuarios extends MY_Controller
                 ];
             }
 
-            if ($this->usuarios_model->edit('usuarios', $data, 'idUsuarios', $this->input->post('idUsuarios')) == true) {
+            if ($this->usuarios_model->edit('administrativo_funcionarios', $data, 'id_administrativo_funcionario', $this->input->post('idUsuarios')) == true) {
                 $this->session->set_flashdata('success', 'Usuário editado com sucesso!');
                 log_info('Alterou um usuário. ID: ' . $this->input->post('idUsuarios'));
                 redirect(site_url('usuarios/editar/') . $this->input->post('idUsuarios'));
