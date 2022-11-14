@@ -265,6 +265,7 @@ input:focus {
 
 .links-uteis {
   text-align: center;
+  width: 250px;
 }
 
 @media (min-width: 375px) and (max-width: 800px) {
