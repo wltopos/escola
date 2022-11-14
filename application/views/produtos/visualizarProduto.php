@@ -51,7 +51,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: right"><strong>Produto</strong></td>
+                                        <td style="text-align: right"><strong>Grupo</strong></td>
                                         <td>
                                             <?php echo $result->tipo_produto ?>
                                         </td>

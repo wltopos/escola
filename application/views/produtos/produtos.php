@@ -33,7 +33,7 @@
                 <tr>
                     <th>Obs</th>
                     <th>Cod.</th>
-                    <th>Tipo</th>
+                    <th>Grupo</th>
                     <th>Marca</th>
                     <th>Descrição</th>
                     <th>Estoque</th>

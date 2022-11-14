@@ -399,7 +399,7 @@ class Settings extends MY_Controller
             case 'tipo_produto':
                 $this->data['categorias'] = $this->setdb_model->getTabelaQ("estoque_categorias", '*');
                 $this->data['setores'] = $this->setdb_model->getTabelaQ("estoque_sectors", '*');
-                $this->data['titulo'] = 'produto';
+                $this->data['titulo'] = 'grupo';
                 break;
             default:
                 $this->data['titulo'] = $id;

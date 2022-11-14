@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label for="tipoMarca" class="control-label">Produto<span class="required">*</span></label>
+                                <label for="tipoMarca" class="control-label">Grupo<span class="required">*</span></label>
                                 <div class="controls">
                                     <select required onkeydown='handleEnter(event)' name="complemento" id="tipoMarca">
 
