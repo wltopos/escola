@@ -23,7 +23,7 @@ class Usuarios_model extends CI_Model
        // $this->db->select('administrativo_funcionarios.*, permissoes.nome as permissao');
         $this->db->select('administrativo_funcionarios.*');
         $this->db->limit($perpage, $start);
-        $this->db->join('administrativo_permissions', 'administrativo_funcionarios.permissions_id = administrativo_permissions.id_administrativo_permission', 'left');
+        $this->db->join('administrativo_permissions', 'administrativo_funcionarios.permissoes_id = administrativo_permissions.id_administrativo_permission', 'left');
    
         $query = $this->db->get();
         
