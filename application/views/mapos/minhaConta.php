@@ -28,9 +28,9 @@
             <div class="row-fluid">
                 <div class="span12">
                     <ul class="site-stats">
-                        <li class="bg_lg span12" style="margin-left: 0"><strong>E-mail:
+                        <li class="bg_lg span12" ><strong>E-mail:
                                 <?= $usuario->email ?></strong></li>
-                        <li class="bg_ls span12"><strong>Nome:
+                        <li class="bg_ls span12" style="margin-left: 0"><strong>Nome:
                                 <?= $usuario->nome ?></strong></li>
                         <li class="bg_lo span12" style="margin-left: 0"><strong>Nível:
                                 <?= $usuario->permissao; ?></strong></li>
