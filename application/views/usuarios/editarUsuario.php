@@ -68,6 +68,23 @@
                                 </div>
                             </div>
 
+                            <div class="control-group">
+                                <label class="control-label">Situação*</label>
+                                <div class="controls">
+                                    <select name="situacao" id="situacao">
+                                        <?php if ($result->situacao == 1) {
+                                            $ativo = 'selected';
+                                            $inativo = '';
+                                        } else {
+                                            $ativo = '';
+                                            $inativo = 'selected';
+                                        } ?>
+                                        <option value="1" <?php echo $ativo; ?>>Ativo</option>
+                                        <option value="0" <?php echo $inativo; ?>>Inativo</option>
+                                    </select>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="span6">
                             <div class="control-group" class="control-label">
@@ -117,24 +134,6 @@
                                 <label for="dataExpiracao" class="control-label">Expira em<span class="required">*</span></label>
                                 <div class="controls">
                                     <input id="dataExpiracao" type="date" name="dataExpiracao" value="<?php echo $result->dataExpiracao; ?>" />
-                                </div>
-                            </div>
-
-
-                            <div class="control-group">
-                                <label class="control-label">Situação*</label>
-                                <div class="controls">
-                                    <select name="situacao" id="situacao">
-                                        <?php if ($result->situacao == 1) {
-                                            $ativo = 'selected';
-                                            $inativo = '';
-                                        } else {
-                                            $ativo = '';
-                                            $inativo = 'selected';
-                                        } ?>
-                                        <option value="1" <?php echo $ativo; ?>>Ativo</option>
-                                        <option value="0" <?php echo $inativo; ?>>Inativo</option>
-                                    </select>
                                 </div>
                             </div>
 
