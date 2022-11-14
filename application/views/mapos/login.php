@@ -75,7 +75,10 @@ echo saudacao($login);
               </div>
               <div class="center"><button id="btn-acessar">Acessar</button>
               </div>
-              <div class="links-uteis"><a href="https://github.com/lrochawl"><p><?= date('Y'); ?> &copy; Lucas Rocha</p></a>
+              <div class="links-uteis"><a href="https://github.com/lrochawl">
+                <p><?= date('Y'); ?> &copy; Lucas Rocha</p>
+                <p>Este é um sistema que está em fase de desenvolvimento e pode apresentar diversas falhas durante o uso!</p>
+              </a>
               </div>
               <a href="#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
               <div id="notification" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

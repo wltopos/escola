@@ -4,7 +4,7 @@
 /**
  * App current version
  */
-$config['app_version'] = '1.3.1(Dev)';
+$config['app_version'] = '1.3.1(beta)';
 
 /**
  * Nome do sistema
