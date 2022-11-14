@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
+    exit('Pasta raiz não localizada ou inacessível');
 }
 
 class Servicos extends MY_Controller

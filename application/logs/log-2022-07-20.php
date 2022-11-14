@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-20 00:00:42 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON `produtos`.`idUnidade` = `medidas`.`idMedida`
 JOIN `marcas` ON `produtos`.`ma' at line 3 - Invalid query: SELECT `produtos`.*, `medidas`.*, `marcas`.`marca`, `categorias`.`categoria`, `tipo_produtos`.`tipo_produto`, `tipo_produtos`.`categoriaId`, `tipo_produtos`.`idTipo`, `medidas_sistema`.*

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-05-28 17:01:13 --> Query error: Unknown column 'idMarca' in 'order clause' - Invalid query: SELECT *
 FROM `medidas`

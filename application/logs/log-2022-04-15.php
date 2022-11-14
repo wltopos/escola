@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-04-15 21:59:09 --> 404 Page Not Found: Produtos/autoCompleteClient
 ERROR - 2022-04-15 22:14:07 --> 404 Page Not Found: /index

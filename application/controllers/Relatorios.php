@@ -5,7 +5,7 @@ use PhpOffice\PhpWord\Settings;
 use PhpOffice\PhpWord\TemplateProcessor;
 
 if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
+    exit('Pasta raiz não localizada ou inacessível');
 }
 
 class Relatorios extends MY_Controller

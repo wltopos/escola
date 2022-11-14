@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-25 00:03:37 --> Query error: Unknown column 'produtos.idUnidade' in 'on clause' - Invalid query: SELECT `itens_de_vendas`.*, `produtos`.*, `medidas`.*, `medidas_sistema`.*
 FROM `itens_de_vendas`

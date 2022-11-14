@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-04-24 07:53:39 --> Query error: Unknown table 'os' - Invalid query: SELECT `os`.*, `clientes`.`nomeCliente`, COALESCE((SELECT lancamentos.valor FROM lancamentos WHERE lamcamentos.tipo = "receita"), 0) totalReceitas, COALESCE((SELECT lancamentos.valor FROM lancamentos WHERE lamcamentos.tipo = "despesa"), 0) totalDespesas
 FROM `lancamentos`

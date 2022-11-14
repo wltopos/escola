@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-19 00:01:21 --> Query error: Unknown column 'idCAtegoria' in 'where clause' - Invalid query: SELECT *
 FROM `tipo_produtos`

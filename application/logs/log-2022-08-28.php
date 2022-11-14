@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-08-28 08:48:35 --> 404 Page Not Found: /index
 ERROR - 2022-08-28 09:51:03 --> Query error: Table 'u782442173_db_estoque.permissoes' doesn't exist - Invalid query: SELECT `permissoes`.`idPermissao`, `permissoes`.`nome`

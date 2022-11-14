@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-08-27 12:17:25 --> 404 Page Not Found: /index
 ERROR - 2022-08-27 12:17:38 --> 404 Page Not Found: /index

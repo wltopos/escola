@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('Pasta raiz não localizada ou inacessível');
 
 // load MX core classes
 require_once __DIR__ .'/Lang.php';

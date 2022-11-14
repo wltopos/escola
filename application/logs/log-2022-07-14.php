@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-14 09:01:52 --> 404 Page Not Found: Notasfiscais/tarja_nf_cancelada.png
 ERROR - 2022-07-14 09:01:52 --> 404 Page Not Found: Notasfiscais/tarja_nf_semvalidade.png

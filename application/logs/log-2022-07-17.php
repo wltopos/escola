@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-17 10:26:23 --> 404 Page Not Found: /index
 ERROR - 2022-07-17 12:16:06 --> Query error: Unknown column '3' in 'where clause' - Invalid query: SELECT `medidas`.*, `medidas_sistema`.*

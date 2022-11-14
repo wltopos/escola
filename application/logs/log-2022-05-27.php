@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-05-27 07:39:06 --> Query error: Unknown column 'tipo_produtos.idMarca' in 'on clause' - Invalid query: SELECT *
 FROM `produtos`

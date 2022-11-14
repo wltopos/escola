@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-08-04 12:39:05 --> Query error: Table 'users.ci_sessions' doesn't exist - Invalid query: SELECT 1
 FROM `ci_sessions`

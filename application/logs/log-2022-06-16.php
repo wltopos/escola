@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-06-16 05:03:03 --> 404 Page Not Found: Produtos/produtos
 ERROR - 2022-06-16 05:03:31 --> 404 Page Not Found: Produtos/produtos

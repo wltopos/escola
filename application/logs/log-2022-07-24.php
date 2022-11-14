@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-24 09:47:35 --> Query error: Unknown column 'medidas.idMedida' in 'field list' - Invalid query: SELECT `medidas_sistema`.`idMedidaSistema`, `medidas_sistema`.`medidaSistema`, `medidas_sistema`.`siglaMedidaSistema`, `medidas_sistema`.`multiplicadorSistema`, `medidas_sistema`.`statusMedidaSistema`, `medidas`.`idMedida`, `medidas`.`descricaoMedida`, `medidas`.`sigla`, `medidas`.`multiplicador`, `medidas`.`status`
 FROM `produtos`

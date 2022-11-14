@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-18 10:49:24 --> Query error: Unknown column 'tipo_produtos.idMarca' in 'field list' - Invalid query: SELECT `produtos`.*, `medidas`.*, `marcas`.`marca`, `categorias`.`categoria`, `tipo_produtos`.`tipo_produto`, `tipo_produtos`.`idMarca`, `tipo_produtos`.`idTipo`, `medidas_sistema`.*
 FROM `produtos`

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-22 09:02:39 --> Query error: Cannot add or update a child row: a foreign key constraint fails (`casabela`.`produtos`, CONSTRAINT `notaFiscal_produto` FOREIGN KEY (`notaFiscalId`) REFERENCES `notas_fiscais` (`idNotaFiscal`) ON DELETE SET NULL ON UPDATE CASCADE) - Invalid query: UPDATE `produtos` SET `codDeBarra` = '789114008869', `descricao` = 'ALICATE UNIVERSAL TRAMONTINA', `categoriaId` = '5', `marcaId` = '4', `notaFiscalId` = '', `tipoId` = '2', `caracteristicas` = 'AMARELO ISOLADO 1000V ', `idUnidade` = '3', `precoCompra` = '24.96', `margemLucro` = '60.00', `precoVenda` = '39.94', `estoque` = '10', `observacao` = '', `estoqueMinimo` = '2', `dataCompra` = NULL, `dataVencimento` = '2022-07-17', `dataUpdate` = '2022-07-22 06:02:37 am', `saida` = '', `entrada` = ''
 WHERE `idProdutos` = '2'

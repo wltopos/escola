@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-16 22:29:43 --> 404 Page Not Found: Vendas/autoCompleteProduto
 ERROR - 2022-07-16 22:30:09 --> 404 Page Not Found: Vendas/autoCompleteProduto

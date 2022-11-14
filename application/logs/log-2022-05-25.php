@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-05-25 04:41:09 --> 404 Page Not Found: Produtos/autoCompleteCategoria
 ERROR - 2022-05-25 04:41:18 --> 404 Page Not Found: Produtos/autoCompleteCategoria

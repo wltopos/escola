@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-08-26 10:08:38 --> Query error: Table 'u782442173_db_estoque.os' doesn't exist - Invalid query: SELECT COUNT(*) AS `numrows` FROM `os`
 ERROR - 2022-08-26 10:11:01 --> Query error: Table 'u782442173_db_estoque.os' doesn't exist - Invalid query: SELECT COUNT(*) AS `numrows` FROM `os`

@@ -77,7 +77,7 @@ class FileHandler extends BaseHandler
 
             // Only add protection to php files
             if ($this->fileExtension === 'php') {
-                $msg .= "<?php defined('SYSTEMPATH') || exit('No direct script access allowed'); ?>\n\n";
+                $msg .= "<?php defined('SYSTEMPATH') || exit('Pasta raiz não localizada ou inacessível'); ?>\n\n";
             }
         }
 

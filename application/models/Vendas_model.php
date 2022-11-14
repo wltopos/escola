@@ -3,7 +3,7 @@
 use Piggly\Pix\StaticPayload;
 
 if (! defined('BASEPATH')) {
-    exit('No direct script access allowed');
+    exit('Pasta raiz não localizada ou inacessível');
 }
 
 class Vendas_model extends CI_Model

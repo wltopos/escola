@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-04-16 09:52:40 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') as despesas, SUM(case when tipo = 'receita' then valor - desconto end) as rece' at line 1 - Invalid query: SELECT SUM(case when tipo = 'despesa' then valor - desconto ) as despesas, SUM(case when tipo = 'receita' then valor - desconto end) as receitas
 FROM `lancamentos`

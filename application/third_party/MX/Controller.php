@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('Pasta raiz não localizada ou inacessível');
 
 // load the CI class for Modular Extensions
 require_once __DIR__ .'/Base.php';

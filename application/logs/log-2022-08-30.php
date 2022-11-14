@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-08-30 10:45:06 --> 404 Page Not Found: /index
 ERROR - 2022-08-30 15:16:04 --> Query error: Table 'u782442173_db_estoque.vendas' doesn't exist - Invalid query: SELECT `vendas`.*, `clientes`.*, `clientes`.`email` as `emailCliente`, `lancamentos`.`data_vencimento`, `funcionarios`.`telefone` as `telefone_funcionario`, `funcionarios`.`email` as `email_funcionario`, `funcionarios`.`nome`

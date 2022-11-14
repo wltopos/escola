@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
+    exit('Pasta raiz não localizada ou inacessível');
 }
 
 /**
@@ -289,7 +289,7 @@ class Sqltoci
 
         ### generate the text ##
         $return .= '<?php ';
-        $return .= 'defined(\'BASEPATH\') OR exit(\'No direct script access allowed\');' . "\n\n";
+        $return .= 'defined(\'BASEPATH\') OR exit(\'Pasta raiz não localizada ou inacessível\');' . "\n\n";
         $return .= 'class Migration_create_base extends CI_Migration {' . "\n";
         $return .= "\n\t" . 'public function up() {';
 

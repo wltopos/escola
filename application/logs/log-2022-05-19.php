@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-05-19 01:24:34 --> 404 Page Not Found: Produtos/configurarr
 ERROR - 2022-05-19 01:42:30 --> Query error: Unknown column 'tipo_produto' in 'field list' - Invalid query: INSERT INTO `marcas` (`tipo_produto`, `situacao`) VALUES (NULL, 1)

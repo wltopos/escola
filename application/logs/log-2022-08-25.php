@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-08-25 00:59:30 --> Query error: Table 'u782442173_db_estoque.clientes' doesn't exist - Invalid query: SELECT *
 FROM `clientes`

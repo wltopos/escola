@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-09-01 11:09:24 --> Query error: Table 'u782442173_db_estoque.vendas' doesn't exist - Invalid query: SELECT `vendas`.*, `clientes`.*, `clientes`.`email` as `emailCliente`, `lancamentos`.`data_vencimento`, `funcionarios`.`telefone` as `telefone_funcionario`, `funcionarios`.`email` as `email_funcionario`, `funcionarios`.`nome`, `funcionarios`.`nome`, `cobrancas`.`vendas_id`, `cobrancas`.`idCobranca`, `cobrancas`.`status`
 FROM `vendas`

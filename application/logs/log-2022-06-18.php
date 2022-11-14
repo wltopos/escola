@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-06-18 01:02:31 --> Query error: Cannot add or update a child row: a foreign key constraint fails (`wltoposc_agrotec`.`produtos`, CONSTRAINT `notaFiscal_produto` FOREIGN KEY (`notaFiscalId`) REFERENCES `notas_fiscais` (`notaFiscal`) ON DELETE NO ACTION ON UPDATE NO ACTION) - Invalid query: UPDATE `produtos` SET `codDeBarra` = '7898924075111', `descricao` = '3 GAIOLAS 5CM', `categoriaId` = '4', `marcaId` = '1', `notaFiscalId` = '', `tipoId` = '9', `caracteristicas` = 'SABOR: CARNE COM OSSINHOS', `idUnidade` = '20', `precoCompra` = '100.00', `margemLucro` = '10', `precoVenda` = '110.00', `estoque` = '16.000', `observacao` = '', `estoqueMinimo` = '2.000', `dataCompra` = '2022-04-25', `dataVencimento` = '2022-04-25', `dataUpdate` = '2022-06-18', `saida` = '', `entrada` = ''
 WHERE `idProdutos` = '251'

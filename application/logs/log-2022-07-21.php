@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-07-21 00:04:52 --> 404 Page Not Found: AutoComplete/autoCompleteFornecedor
 ERROR - 2022-07-21 00:05:05 --> 404 Page Not Found: AutoComplete/autoCompleteFornecedor

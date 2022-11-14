@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-09-03 12:01:02 --> 404 Page Not Found: /index
 ERROR - 2022-09-03 18:13:13 --> Query error: Cannot add or update a child row: a foreign key constraint fails (`u782442173_db_estoque`.`estoque_produtos`, CONSTRAINT `notaFiscal_produto` FOREIGN KEY (`financeiro_nota_id`) REFERENCES `financeiro_notas` (`id_financeiro_nota`) ON DELETE NO ACTION ON UPDAT) - Invalid query: INSERT INTO `estoque_produtos` (`codDeBarra`, `produtoDescricao`, `estoque_location_id`, `estoque_medida_id`, `estoque_marca_id`, `estoque_tipo_produto_id`, `financeiro_nota_id`, `imagemProduto`, `precoCompra`, `margemLucro`, `precoVenda`, `estoque`, `observacao`, `estoqueMinimo`, `dataCadastro`, `dataVencimento`, `saida`, `entrada`) VALUES ('LE40F1465/25', 'LE40F1465/25', '2', 'KT4UN', '6', '1', '', '', '130.50', '60.00', '208.80', 80, 'est:USADO |com:LE40F1465 |ref:K400WD A1 |', 16, '2022-09-03 02:58:32', '', '1', '1')

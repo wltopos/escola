@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-08-29 00:07:02 --> Query error: Unknown table 'u782442173_db_estoque.clientes_cobrancas' - Invalid query: SELECT `clientes_cobrancas`.*, `comercial_cobrancas`.*
 FROM `comercial_vendas`

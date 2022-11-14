@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-05-29 05:49:11 --> Severity: Compile Error --> Cannot use empty array elements in arrays /home/wltoposc/public_html/agrotec/application/models/Vendas_model.php 142
 ERROR - 2022-05-29 05:49:16 --> Severity: Compile Error --> Cannot use empty array elements in arrays /home/wltoposc/public_html/agrotec/application/models/Vendas_model.php 142

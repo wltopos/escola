@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-05-24 06:14:27 --> Query error: Unknown column 'tipo_produto' in 'where clause' - Invalid query: SELECT *
 FROM `produtos`

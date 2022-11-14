@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-04-23 18:12:25 --> 404 Page Not Found: Relatorios/pasta
 ERROR - 2022-04-23 18:12:50 --> 404 Page Not Found: Relatorios/pasta

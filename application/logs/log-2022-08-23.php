@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-08-23 01:59:06 --> Query error: Unknown column 'estoque_produtos.siglaMedida' in 'on clause' - Invalid query: SELECT `estoque_produtos`.*, `estoque_medidas`.*, `estoque_marcas`.`marca`, `estoque_categorias`.`categoria`, `estoque_tipo_produtos`.`tipo_produto`, `estoque_tipo_produtos`.`id_estoque_tipo_produto`, `estoque_tipo_produtos`.`estoque_categoria_id`, `estoque_tipo_produtos`.`id_estoque_tipo_produto`, `estoque_sistema_medidas`.*
 FROM `estoque_produtos`

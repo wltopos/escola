@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-05-31 00:00:21 --> Query error: Column 'valor' cannot be null - Invalid query: INSERT INTO `lancamentos` (`vendas_id`, `descricao`, `valor`, `valor_pago`, `valor_ajuste`, `valor_ajuste_tipo`, `clientes_id`, `data_vencimento`, `data_pagamento`, `baixado`, `cliente_fornecedor`, `forma_pgto`, `tipo`, `usuarios_id`) VALUES ('29', 'Fatura de Venda Nº: 29', NULL, '0.00', '0.00', '0.00', '6', '2022-05-31', '', 1, 'LUCAS ALVES ROCHA', 'Dinheiro', 'receita', '1')
 ERROR - 2022-05-31 00:01:15 --> Query error: Column 'valor' cannot be null - Invalid query: INSERT INTO `lancamentos` (`vendas_id`, `descricao`, `valor`, `valor_pago`, `valor_ajuste`, `valor_ajuste_tipo`, `clientes_id`, `data_vencimento`, `data_pagamento`, `baixado`, `cliente_fornecedor`, `forma_pgto`, `tipo`, `usuarios_id`) VALUES ('29', 'Fatura de Venda Nº: 29', NULL, '0.00', '0.00', '0.00', '6', '2022-05-31', '', 1, 'LUCAS ALVES ROCHA', 'Dinheiro', 'receita', '1')

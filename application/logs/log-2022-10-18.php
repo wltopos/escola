@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('Pasta raiz não localizada ou inacessível'); ?>
 
 ERROR - 2022-10-18 00:14:58 --> 404 Page Not Found: /index
 ERROR - 2022-10-18 00:16:18 --> Query error: Unknown column 'ambiente' in 'field list' - Invalid query: UPDATE `estoque_sectors` SET `sector` = 'AUDIO', `siglaSector` = 'AUDIO', `descricaoSector` = 'COMPONENTES DE APARELHOS QUE PERMITE GRAVAR, TRANSMITIR E REPRODUZIR SONS', `cadastroSector` = NULL, `urlLogoSector` = 'HTTPS://SISTEMA.WLTOPOS.COM/ASSETS/UPLOADS/DB_DEV/LOGOMARCAS/69EAF460561F7861B6833C959C805243.JPG', `ambiente` = NULL
