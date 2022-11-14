@@ -3,7 +3,7 @@
 <script src="<?php echo base_url() ?>assets/js/funcoes.js"></script>
 
 <div class="row-fluid" style="margin-top:0">
-    <div class="span12">
+    <div class="span6">
         <div class="widget-box">
             <div class="widget-title" style="margin: -20px 0 0">
                 <span class="icon">
@@ -65,7 +65,8 @@
                             <input id="senha" type="password" name="senha" value="<?php echo set_value('senha'); ?>" />
                         </div>
                     </div>
-
+</div>
+<div class="span6">
                     <div class="control-group" class="control-label">
                         <label for="cep" class="control-label">CEP<span class="required">*</span></label>
                         <div class="controls">
