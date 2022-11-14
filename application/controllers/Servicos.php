@@ -102,7 +102,7 @@ class Servicos extends MY_Controller
                 'preco' => $preco,
             ];
 
-            if ($this->servicos_model->add('servicos', $data) == true) {
+            if ($this->setdb_model->add('comercial_servicos', $data) == true) {
                 $this->session->set_flashdata('success', 'Serviço adicionado com sucesso!');
                 log_info('Adicionou um serviço');
                 redirect(site_url('servicos/adicionar/'));
@@ -134,7 +134,7 @@ class Servicos extends MY_Controller
                 'preco' => $preco,
             ];
 
-            if ($this->servicos_model->edit('servicos', $data, 'idServicos', $this->input->post('idServicos')) == true) {
+            if ($this->setdb_model->add('comercial_servicos', $data, 'id_comercial_servico', $this->input->post('idServicos')) == true) {
                 $this->session->set_flashdata('success', 'Serviço editado com sucesso!');
                 log_info('Alterou um serviço. ID: ' . $this->input->post('idServicos'));
                 redirect(site_url('servicos/editar/') . $this->input->post('idServicos'));
