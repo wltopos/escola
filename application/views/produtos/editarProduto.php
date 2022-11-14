@@ -273,10 +273,10 @@
                                 <?php
                                 if ($result->dataVencimento != null or $result->dataVencimento != '') {
                                     echo " <input onkeydown='handleEnter(event)' id='dataVencimento' type='date' name='dataVencimento' value='$result->dataVencimento'  /> ";
-                                    echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox" >';
+                                    echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox"   checked="checked" >';
                                 } else {
                                     echo " <input onkeydown='handleEnter(event)' id='dataVencimento' type='date' name='dataVencimento' value='$result->dataVencimento' readonly /> ";
-                                    echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox" checked="checked" >';
+                                    echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox" >';
                                 }
 
                                 ?>
