@@ -37,28 +37,28 @@ class Clientes extends MY_Controller
         $this->pagination->initialize($this->data['configuration']);
 
         $this->data['custom_error'] = '';
-        $this->data['results'] = $this->setdb_model->getTabelaQ('comercial_clientes');
+        $this->data['results'] = $this->setdb_model->getTabelaQ('administrativo_funcionarios');
 
 
-        foreach ($this->data['results'] as $cliente) {
+        foreach ($this->data['results'] as $funcionario) {
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vCliente')) {
-                $v = '<a href="' . base_url() . 'index.php/clientes/visualizar/' . $cliente->id_comercial_cliente . '" style="margin-right: 1%" class="btn-nwe" title="Ver mais detalhes"><i class="bx bx-show bx-xs"></i></a>';
-                $a = '<a href="' . base_url() . 'index.php/mine?e=' . $cliente->email . '" target="new" style="margin-right: 1%" class="btn-nwe2" title="Área do cliente"><i class="bx bx-key bx-xs"></i></a>';
+                $v = '<a href="' . base_url() . 'index.php/clientes/visualizar/' . $cliente->id_administrativo_funcionario . '" style="margin-right: 1%" class="btn-nwe" title="Ver mais detalhes"><i class="bx bx-show bx-xs"></i></a>';
+                $a = '<a href="' . base_url() . 'index.php/mine?e=' . $funcionario->email . '" target="new" style="margin-right: 1%" class="btn-nwe2" title="Área do cliente"><i class="bx bx-key bx-xs"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eCliente')) {
-                $e = '<a href="' . base_url() . 'index.php/clientes/editar/' . $cliente->id_comercial_cliente . '" style="margin-right: 1%" class="btn-nwe3" title="Editar Cliente"><i class="bx bx-edit bx-xs"></i></a>';
+                $e = '<a href="' . base_url() . 'index.php/clientes/editar/' . $funcionario->id_administrativo_funcionario . '" style="margin-right: 1%" class="btn-nwe3" title="Editar Cliente"><i class="bx bx-edit bx-xs"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dCliente')) {
-                $d = '<a href="#modal-excluir" role="button" data-toggle="modal" cliente="' . $cliente->id_comercial_cliente . '" style="margin-right: 1%" class="btn-nwe4" title="Excluir Cliente"><i class="bx bx-trash-alt bx-xs"></i></a>';
+                $d = '<a href="#modal-excluir" role="button" data-toggle="modal" cliente="' . $funcionario->id_administrativo_funcionario . '" style="margin-right: 1%" class="btn-nwe4" title="Excluir Cliente"><i class="bx bx-trash-alt bx-xs"></i></a>';
             }
 
 
             $result[] = [
-                $cliente->id_comercial_cliente,
-                $cliente->nomeCliente,
-                $cliente->documento,
-                $cliente->telefone,
-                $cliente->email,
+                $funcionario->nomeCliente,
+                $funcionario->id_administrativo_funcionario,
+                $funcionario->documento,
+                $funcionario->telefone,
+                $funcionario->email,
                 "$v $a $e $d",
             ];
         }
