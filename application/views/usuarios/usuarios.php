@@ -32,14 +32,14 @@
                     }
                     foreach ($results as $r) {
                         echo '<tr>';
-                        echo '<td>' . $r->idUsuarios . '</td>';
+                        echo '<td>' . $r->id_administrativo_funcionario . '</td>';
                         echo '<td>' . $r->nome . '</td>';
                         echo '<td>' . $r->cpf . '</td>';
                         echo '<td>' . $r->telefone . '</td>';
                         echo '<td>' . $r->permissao . '</td>';
                         echo '<td>' . $r->dataExpiracao . '</td>';
                         echo "<td>
-                                <a href=' ".base_url('usuarios/editar/'.$r->idUsuarios)."' class='btn-nwe3' title='Editar OS'><i class='bx bx-edit'></i></a>  </td>";
+                                <a href=' ".base_url('usuarios/editar/'.$r->id_administrativo_funcionario)."' class='btn-nwe3' title='Editar OS'><i class='bx bx-edit'></i></a>  </td>";
                         echo '</tr>'; 
                     } ?>
             </tbody>
