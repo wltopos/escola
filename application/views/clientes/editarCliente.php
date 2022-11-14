@@ -108,7 +108,7 @@
                         <div class="control-group">
                             <label for="apelido" class="control-label">Apelido/Nome Fantasia<span class="required">*</span></label>
                             <div class="controls">
-                                <input onkeydown='handleEnter(event)' id="apelido" type="text" name="apelido" value="<?php echo $result->nomeCliente; ?>" />
+                                <input onkeydown='handleEnter(event)' id="apelido" type="text" name="apelido" value="<?php echo $result->apelido; ?>" />
                             </div>
                         </div>
                         <div class="control-group">

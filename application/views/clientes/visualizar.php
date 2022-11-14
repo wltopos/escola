@@ -44,7 +44,7 @@
                                 <tr>
                                     <td style="text-align: right"><strong>Tipo do Cliente</strong></td>
                                     <td>
-                                        <?php echo $result->fornecedor == true ? 'Fornecedor' : 'Cliente'; ?>
+                                        <?php echo $result->fornecedor == true ? 'pessoa_fisica' : 'Cliente'; ?>
                                     </td>
                                 </tr>
                                 </tbody>

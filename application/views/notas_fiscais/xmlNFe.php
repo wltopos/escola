@@ -5,7 +5,7 @@
 <!-- Topo da NFe - campo de confirmação de recebimento - Assinatura do recebedor -->
 <table>
     <tr>
-        <td colspan="2" class="cap" style="width:161mm; height:7mm; border:1px solid">Recebemos de <?php echo $dadosNFe['dadosFornecedor']['fornecedor'] ?> os produtos contantes da nota fical indicada ao lado</td>
+        <td colspan="2" class="cap" style="width:161mm; height:7mm; border:1px solid">Recebemos de <?php echo $dadosNFe['dadosFornecedor']['pessoa_fisica'] ?> os produtos contantes da nota fical indicada ao lado</td>
 
 
         <td rowspan="2" style="width:1mm; border: none;"> </td>
@@ -30,7 +30,7 @@
         <td rowspan="5" style=" width:60mm;  padding:3mm; border:1px solid; ">
             <img style="width:15mm; padding:2mm; margin-left:3%; margin-right:3%; " src="<?= base_url('assets/img/logo_1.jpg') ?>">
 
-            <ol class="cap bold" style="font-weight: bold;"><?php echo $dadosNFe['dadosFornecedor']['fornecedor'] ?></ol>
+            <ol class="cap bold" style="font-weight: bold;"><?php echo $dadosNFe['dadosFornecedor']['pessoa_fisica'] ?></ol>
             <ol class="cap"><?php echo $dadosNFe['dadosFornecedor']['endereco']['rua'] ?>, <?php echo $dadosNFe['dadosFornecedor']['endereco']['numero'] ?>, <?php echo $dadosNFe['dadosFornecedor']['endereco']['complemento'] ?></ol>
             <ol><?php echo $dadosNFe['dadosFornecedor']['endereco']['bairro'] ?></ol>
             <ol><?php echo $dadosNFe['dadosFornecedor']['endereco']['cep'] ?>, <?php echo $dadosNFe['dadosFornecedor']['endereco']['municipio'] ?>-<?php echo $dadosNFe['dadosFornecedor']['endereco']['uf'] ?></ol>

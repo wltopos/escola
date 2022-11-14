@@ -69,7 +69,7 @@
                     <div class="control-group">
                         <label for="fornecedor" class="control-label">Fornecedor*</label>
                         <div class="controls">
-                            <input id="fornecedor" type="text" name="fornecedor" value="<?php echo set_value('fornecedor') ?>" />
+                            <input id="fornecedor" type="text" name="fornecedor" value="<?php echo set_value('pessoa_fisica') ?>" />
                         </div>
                     </div>
 

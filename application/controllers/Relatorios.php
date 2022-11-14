@@ -117,7 +117,7 @@ class Relatorios extends MY_Controller
                 'CEP' => 'string',
                 'Contato' => 'string',
                 'Complemento' => 'string',
-                'Fornecedor' => 'string',
+                'pessoa_fisica' => 'string',
             ];
 
             $writer = new XLSXWriter();

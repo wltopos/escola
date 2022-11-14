@@ -268,8 +268,8 @@ $config = [
             'rules' => 'required|trim',
         ],
         [
-            'field' => 'fornecedor',
-            'label' => 'Fornecedor',
+            'field' => 'pessoa_fisica',
+            'label' => 'pessoa_fisica',
             'rules' => 'required|trim',
         ],
         [

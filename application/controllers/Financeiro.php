@@ -436,7 +436,7 @@ class Financeiro extends MY_Controller
                 'data_vencimento' => $vencimento,
                 'data_pagamento' => $pagamento != null ? $pagamento : date('Y-m-d'),
                 'baixado' => $this->input->post('pago') ?: 0,
-                'cliente_fornecedor' => set_value('fornecedor'),
+                'cliente_fornecedor' => set_value('pessoa_fisica'),
                 'forma_pgto' => $this->input->post('formaPgto'),
                 'tipo' => set_value('tipo'),
                 'observacoes' => set_value('observacoes'),
@@ -475,7 +475,7 @@ class Financeiro extends MY_Controller
         $urlAtual = $this->input->post('urlAtual');
 
         $this->form_validation->set_rules('descricao', '', 'trim|required');
-        $this->form_validation->set_rules('fornecedor', '', 'trim|required');
+        $this->form_validation->set_rules('pessoa_fisica', '', 'trim|required');
         $this->form_validation->set_rules('valor', '', 'trim|required');
         $this->form_validation->set_rules('vencimento', '', 'trim|required');
         $this->form_validation->set_rules('pagamento', '', 'trim');
@@ -507,7 +507,7 @@ class Financeiro extends MY_Controller
                 'valor_desconto' => $this->input->post('descontos_editar'),
                 'valor_pago' => $valor_com_desconto,
                 'baixado' => $this->input->post('pago') ?: 0,
-                'cliente_fornecedor' => $this->input->post('fornecedor'),
+                'cliente_fornecedor' => $this->input->post('pessoa_fisica'),
                 'forma_pgto' => $this->input->post('formaPgto'),
                 'tipo' => $this->input->post('tipo'),
                 'observacoes' => $this->input->post('observacoes'),
@@ -544,7 +544,7 @@ class Financeiro extends MY_Controller
             'valor' => $this->input->post('valor'),
             'valor_desconto' => $this->input->post('valor_desconto_editar'),
             'baixado' => $this->input->post('pago'),
-            'cliente_fornecedor' => set_value('fornecedor'),
+            'cliente_fornecedor' => set_value('pessoa_fisica'),
             'forma_pgto' => $this->input->post('formaPgto'),
             'tipo' => $this->input->post('tipo'),
             'usuarios_id' => $this->session->userdata('id'),

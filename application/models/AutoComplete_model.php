@@ -73,7 +73,7 @@ class AutoComplete_model extends CI_Model
         $this->db_empresa->select('*');
         $this->db_empresa->limit(5);
         $this->db_empresa->like('nomeCliente', $q);
-        $this->db_empresa->where('fornecedor', '1');
+        $this->db_empresa->where('pessoa_fisica', '1');
         $query = $this->db_empresa->get('comercial_clientes');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {

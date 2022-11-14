@@ -554,7 +554,7 @@ class Mapos extends MY_Controller
                 'extendedProps' => [
                     'id' => $lancamentos->id_financeiro_lancamento,
                     'description' => '<b>Descrição:</b> ' . $lancamentos->descricao,
-                    'fornecedor' => '<b>Fornecedor:</b> ' . $lancamentos->cliente_fornecedor,
+                    'pessoa_fisica' => '<b>Fornecedor:</b> ' . $lancamentos->cliente_fornecedor,
                     'tipo' => '<b>Tipo:</b> ' . $lancamentos->tipo,
                     'status' => '<b>Status:</b> ' . (($lancamentos->baixado == 1)? "Pago":"Pendente"),
                     'observation' => '<b>Observação:</b> ' . $lancamentos->observacoes,

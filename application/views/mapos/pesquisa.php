@@ -94,7 +94,7 @@
                             echo '<td>' . $r->nomeCliente . '</td>';
                             echo '<td>' . $r->documento . '</td>';
                             $cor = ($r->fornecedor ? '#CDB380' : '#CD0000');
-                            echo '<td><span class="badge" style="background-color: ' . $cor . '; border-color: ' . $cor . '">' . ($r->fornecedor ? 'Fornecedor' : 'Cliente') . '</span> </td>';
+                            echo '<td><span class="badge" style="background-color: ' . $cor . '; border-color: ' . $cor . '">' . ($r->fornecedor ? 'pessoa_fisica' : 'Cliente') . '</span> </td>';
                             echo '<td>';
                             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vCliente')) {
                                 echo '<a style="margin-right: 1%" href="' . base_url() . 'index.php/clientes/visualizar/' . $r->id_comercial_cliente . '" class="btn tip-top" title="Ver mais detalhes"><i class="fas fa-eye"></i></a>';

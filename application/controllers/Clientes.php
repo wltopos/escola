@@ -126,7 +126,7 @@ class Clientes extends MY_Controller
                 'estado' => set_value('estado'),
                 'cep' => set_value('cep'),
                 'dataCadastro' => date('Y-m-d'),
-                'fornecedor' => (set_value('fornecedor') == true ? 1 : 0),
+                'pessoa_fisica' => (set_value('pessoa_fisica') == true ? 1 : 0),
             ];
 
             if ($this->setdb_model->add('comercial_clientes', $data) == true) {
@@ -180,7 +180,7 @@ class Clientes extends MY_Controller
                     'cidade' => $this->input->post('cidade'),
                     'estado' => $this->input->post('estado'),
                     'cep' => $this->input->post('cep'),
-                    'fornecedor' => (set_value('fornecedor') == true ? 1 : 0),
+                    'pessoa_fisica' => (set_value('pessoa_fisica') == true ? 1 : 0),
                 ];
             } else {
                 $data = [
@@ -198,7 +198,7 @@ class Clientes extends MY_Controller
                     'cidade' => $this->input->post('cidade'),
                     'estado' => $this->input->post('estado'),
                     'cep' => $this->input->post('cep'),
-                    'fornecedor' => (set_value('fornecedor') == true ? 1 : 0),
+                    'pessoa_fisica' => (set_value('pessoa_fisica') == true ? 1 : 0),
                 ];
             }
 
