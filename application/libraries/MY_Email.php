@@ -57,7 +57,7 @@ class MY_Email extends CI_Email
     public function get($limit = null, $offset = null)
     {
         if ($this->status != false) {
-            $this->CI->db->where('status', $this->status);
+            $this->CI->db->where('situacao', $this->status);
         }
 
         $query = $this->CI->db->get("{$this->table_email_queue}", $limit, $offset);
@@ -89,7 +89,7 @@ class MY_Email extends CI_Email
             'bcc' => $bcc,
             'message' => $this->_body,
             'headers' => serialize($this->_headers),
-            'status' => 'pending',
+            'situacao' => 'pending',
             'date' => $date,
         ];
 
@@ -121,8 +121,8 @@ class MY_Email extends CI_Email
         $this->set_status('pending');
         $emails = $this->get();
 
-        $this->CI->db->where('status', 'pending');
-        $this->CI->db->set('status', 'sending');
+        $this->CI->db->where('situacao', 'pending');
+        $this->CI->db->set('situacao', 'sending');
         $this->CI->db->set('date', date("Y-m-d H:i:s"));
         $this->CI->db->update($this->table_email_queue);
 
@@ -149,7 +149,7 @@ class MY_Email extends CI_Email
 
             $this->CI->db->where('id', $email->id);
 
-            $this->CI->db->set('status', $status);
+            $this->CI->db->set('situacao', $status);
             $this->CI->db->set('date', date("Y-m-d H:i:s"));
             $this->CI->db->update($this->table_email_queue);
         }
@@ -166,7 +166,7 @@ class MY_Email extends CI_Email
         $expire = (time() - $this->expiration);
         $date_expire = date("Y-m-d H:i:s", $expire);
 
-        $this->CI->db->set('status', 'pending');
+        $this->CI->db->set('situacao', 'pending');
         $this->CI->db->where("(date < '{$date_expire}' AND status = 'sending')");
         $this->CI->db->or_where("status = 'failed'");
 

@@ -249,7 +249,7 @@ class MercadoPago extends BasePaymentGateway
             'pdf' => $payment->transaction_details->external_resource_url,
             'expire_at' => $payment->date_of_expiration,
             'charge_id' => $payment->id,
-            'status' => $payment->status,
+            'situacao' => $payment->status,
             'total' => getMoneyAsCents($this->valorTotal($totalProdutos, $totalServicos, $totalDesconto)),
             'comercial_cliente_id' => $entity->id_comercial_cliente,
             'payment_method' => 'PIX',
