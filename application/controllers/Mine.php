@@ -8,6 +8,7 @@ class Mine extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Conecte_model');
+        
     }
 
     public function index()
@@ -783,9 +784,9 @@ exit;
 
     private function check_credentials($email)
     {
-        $this->db->where('email', $email);
-        $this->db->limit(1);
-        return $this->db->get('clientes')->row();
+        $this->db_empresa->where('email', $email);
+        $this->db_empresa->limit(1);
+        return $this->db_empresa->get('comerclientes')->row();
     }
 
     private function check_token($token)
