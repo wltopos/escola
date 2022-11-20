@@ -147,7 +147,7 @@ $parse_cpfcnpj = $this->input->get('c');
 
                     $.ajax({
                         type: "POST",
-                        url: "<?php echo base_url(); ?>index.php/mine/login?ajax=true",
+                        url: "<?php echo base_url(); ?>/mine/login?ajax=true",
                         data: dados,
                         dataType: 'json',
                         success: function(data) {
