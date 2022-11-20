@@ -18,6 +18,7 @@
                 <div class="drop-zone">
                     <span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>
                     <input type="file" name="userfile" class="drop-zone__input">
+                    <div id="drop-zone" ></div>
                 </div>
                 <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
                     <div class="span6">
@@ -467,19 +468,9 @@
 
         if ($(".drop-zone__thumb") && typeof file == "string") {
 
-            let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-
-            if (dropZoneElement.querySelector(".drop-zone__prompt")) {
-                dropZoneElement.querySelector(".drop-zone__prompt").remove();
-            }
-
-            // First time - there is no thumbnail element, so lets create it
-            if (!thumbnailElement) {
-                thumbnailElement = document.createElement("div");
-                thumbnailElement.classList.add("drop-zone__thumb");
-                dropZoneElement.appendChild(thumbnailElement);
-            }
-
+         $("#drop-zone").removeClass("drop-zone__prompt");         
+         $("#drop-zone").addClass("drop-zone__thumb");         
+        
             $('<img />', {
                 class: 'logoImagem',
                 src: file,
@@ -489,17 +480,8 @@
             //    $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
         } else {
 
-            if (dropZoneElement.querySelector(".drop-zone__thumb")) {
-                dropZoneElement.querySelector(".drop-zone__thumb").remove();
-            }
-
-            // First time - there is no thumbnail element, so lets create it
-            if (!thumbnailElement) {
-                thumbnailElement = document.createElement("div");
-                thumbnailElement.classList.add("drop-zone__prompt");
-                dropZoneElement.appendChild(thumbnailElement);
-            }
-
+            $("#drop-zone").removeClass("drop-zone__thumb");   
+            $("#drop-zone").addClass("drop-zone__prompt");          
           
             $('<img />', {
                 class: 'logoImagem',
