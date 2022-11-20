@@ -786,6 +786,8 @@ class Mine extends CI_Controller
 
     private function check_credentials($email)
     {
+        print_r($this->db_empresa);
+        exit;
     //    $this->db_empresa->where('email', $email);
         $this->db_empresa->limit(1);
         return $this->db_empresa->get('comercial_clientes')->row();
