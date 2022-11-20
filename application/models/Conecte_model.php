@@ -42,7 +42,7 @@ class Conecte_model extends CI_Model
 
     public function getLastCompras($cliente)
     {
-        $this->db_empresa->select('comercial_vendas.*, administrativo_funcionarios.*');
+        $this->db_empresa->select('comercial_vendas.*');
         $this->db_empresa->from('comercial_vendas');
         $this->db_empresa->join('administrativo_funcionarios', 'administrativo_funcionarios.id_administrativo_funcionario = comercial_vendas.administrativo_funcionario_id');
         $this->db_empresa->where('comercial_cliente_id', $cliente);
