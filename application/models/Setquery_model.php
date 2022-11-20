@@ -36,7 +36,7 @@ class Setquery_model extends CI_Model
         
         $data['produtosID_os'] = 'estoque_produtos.*, comercial_os_produtos.*, estoque_medidas.*, estoque_marcas.marca, estoque_tipo_produtos.tipo_produto, estoque_tipo_produtos.estoque_categoria_id, estoque_tipo_produtos.id_estoque_tipo_produto, estoque_sistema_medidas.*, financeiro_notas.*, estoque_categorias.categoria, estoque_sectors.sector';
 
-        $data['produtos'] = '*';
+        $data['produtos'] = 'estoque_produtos.*, estoque_medidas.*, estoque_marcas.marca, estoque_categorias.categoria, estoque_tipo_produtos.tipo_produto, estoque_tipo_produtos.id_estoque_tipo_produto , estoque_tipo_produtos.estoque_categoria_id, estoque_tipo_produtos.id_estoque_tipo_produto, estoque_sistema_medidas.*';
 
         $data['vendas_clientes_lancamentos'] = 'comercial_vendas.*, comercial_clientes.*, comercial_clientes.email as emailCliente, financeiro_lancamentos.data_vencimento';
 
