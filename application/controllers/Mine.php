@@ -8,16 +8,16 @@ class Mine extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Conecte_model');
-        if ($this->session->userdata('idEmpresa')) {
-            $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
-        }
+        if($this->session->userdata('idEmpresa')){
+        $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
+        }        
     }
 
     public function login_in($idEmpresa)
     {
         $this->session->set_userdata('idEmpresa', $idEmpresa);
         $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
-
+        
         $this->load->view('conecte/login');
     }
 
@@ -217,7 +217,7 @@ class Mine extends CI_Controller
         header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
         header('Access-Control-Max-Age: 1000');
         header('Access-Control-Allow-Headers: Content-Type');
-
+        
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'E-mail', 'valid_email|required|trim');
         $this->form_validation->set_rules('senha', 'Senha', 'required|trim');
@@ -227,13 +227,13 @@ class Mine extends CI_Controller
             $email = $this->input->post('email');
             $password = $this->input->post('senha');
             $cliente = $this->check_credentials($email);
-
+          
             if ($cliente) {
                 // Verificar credenciais do usuário
                 if (password_verify($password, $cliente->senha)) {
-                    print_r($cliente->senha);
                     $session_data = ['nome' => $cliente->nomeCliente, 'cliente_id' => $cliente->id_comercial_cliente, 'email' => $cliente->email, 'conectado' => true, 'isCliente' => true];
                     $this->session->set_userdata($session_data);
+                    print_r($session_data);
                     log_info($_SERVER['HTTP_CLIENT_IP'] . 'Efetuou login no sistema');
                     echo json_encode(['result' => true]);
                 } else {
