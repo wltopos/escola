@@ -74,7 +74,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Meu Perfil" class="tip-bottom"><i class='bx bx-user-circle iconN'></i><span class="text"> Meu Perfil</span></a>
           <ul class="dropdown-menu">
-            <li class=""><a title="Área do Cliente" href="<?= site_url('mine/'.$this->session->userdata('dbEmpresa')); ?>"> <span class="text">Área do Cliente</span></a></li>
+            <li class=""><a title="Área do Cliente" href="<?= site_url('mine/login_in/'.$this->session->userdata('dbEmpresa')); ?>"> <span class="text">Área do Cliente</span></a></li>
             <li class=""><a title="Meu Perfil" href="<?= site_url('mapos/minhaConta'); ?>"><span class="text">Meu Perfil</span></a></li>
             <li class="divider"></li>
             <li class=""><a title="Sair do Sistema" href="<?= site_url('login/sair'); ?>"><i class='bx bx-log-out-circle'></i> <span class="text">Sair do Sistema</span></a></li>
