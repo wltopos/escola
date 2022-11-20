@@ -18,7 +18,7 @@
                 <div class="drop-zone">
                     <span class="drop-zone__prompt" id="zone__prompt">Arraste o arquivo ou clique para upload</span>
                     <input type="file" name="userfile" class="drop-zone__input">
-                    <div id="drop-zone" ></div>
+                    <div id="drop-zone" class="drop-zone__thumb"></div>
                 </div>
                 <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
                     <div class="span6">
