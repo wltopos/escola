@@ -463,7 +463,7 @@
 
     function updateThumb(file) {
 
-        $(".drop-zone__thumb").remove();
+      //  $(".drop-zone__thumb").remove();
         $(".drop-zone__prompt").remove();
 
         if ($(".drop-zone__thumb") && typeof file == "string") {
