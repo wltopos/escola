@@ -227,7 +227,7 @@ class Mine extends CI_Controller
             $email = $this->input->post('email');
             $password = $this->input->post('senha');
             $cliente = $this->check_credentials($email);
-           print_r($cliente);
+           print_r(password_verify($password, $cliente->senha));
            exit;
             if ($cliente) {
                 // Verificar credenciais do usuário
