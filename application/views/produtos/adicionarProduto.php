@@ -477,7 +477,7 @@
                 src: file,
                 alt: 'MyAlt'
             }).appendTo($('.drop-zone__thumb'));
-            $('.logoImagem').attr('data-label', "Imagem do produto");
+            $('.drop-zone__thumb').attr('data-label', "Imagem do produto");
             //    $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
         } else {
 
