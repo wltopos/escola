@@ -31,21 +31,21 @@ class Conecte_model extends CI_Model
 
     public function getLastOs($cliente)
     {
-        $this->db_empresa->from('os');
-        $this->db_empresa->join('funcionarios', 'os.funcionarios_id = usuarios.idFuncionario', 'left');
-        $this->db_empresa->where('clientes_id', $cliente);
+        $this->db_empresa->from('comercial_os_clientes');
+        $this->db_empresa->join('administrativo_funcionarios', 'comercial_os_clientes.administrativo_funcionario_id = administrativo_funcionario.id_administrativo_funcionario', 'left');
+        $this->db_empresa->where('comercial_cliente_id', $cliente);
         $this->db_empresa->limit(5);
-        $this->db_empresa->order_by('idOs', 'desc');
+        $this->db_empresa->order_by('id_comercial_os_cliente', 'desc');
 
         return $this->db_empresa->get()->result();
     }
 
     public function getLastCompras($cliente)
     {
-        $this->db_empresa->select('vendas.*,usuarios.nome');
-        $this->db_empresa->from('vendas');
-        $this->db_empresa->join('funcionarios', 'usuarios.idFuncionario = vendas.funcionarios_id');
-        $this->db_empresa->where('clientes_id', $cliente);
+        $this->db_empresa->select('comercial_vendas.*, administrativo_funcionarios.*');
+        $this->db_empresa->from('comercial_vendas');
+        $this->db_empresa->join('administrativo_funcionario', 'administrativo_funcionarios.id_administrativo_funcionario = comercial_vendas.administrativo_funcionario_id');
+        $this->db_empresa->where('comercial_cliente_id', $cliente);
         $this->db_empresa->limit(5);
 
         return $this->db_empresa->get()->result();
