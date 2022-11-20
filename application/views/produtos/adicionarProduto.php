@@ -463,12 +463,23 @@
 
     function updateThumb(file) {
 
-      //  $(".drop-zone__thumb").remove();
-        $(".drop-zone__prompt").remove();
+
 
         if ($(".drop-zone__thumb") && typeof file == "string") {
 
-            $('.logoImagem').remove();
+            let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
+            if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+                dropZoneElement.querySelector(".drop-zone__prompt").remove();
+            }
+
+            // First time - there is no thumbnail element, so lets create it
+            if (!thumbnailElement) {
+                thumbnailElement = document.createElement("div");
+                thumbnailElement.classList.add("drop-zone__thumb");
+                dropZoneElement.appendChild(thumbnailElement);
+            }
+
             $('<img />', {
                 class: 'logoImagem',
                 src: file,
@@ -477,8 +488,19 @@
 
             //    $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
         } else {
-           
-            $('.logoImagem').remove();
+
+            if (dropZoneElement.querySelector(".drop-zone__thumb")) {
+                dropZoneElement.querySelector(".drop-zone__thumb").remove();
+            }
+
+            // First time - there is no thumbnail element, so lets create it
+            if (!thumbnailElement) {
+                thumbnailElement = document.createElement("div");
+                thumbnailElement.classList.add("drop-zone__prompt");
+                dropZoneElement.appendChild(thumbnailElement);
+            }
+
+          
             $('<img />', {
                 class: 'logoImagem',
                 src: '',
