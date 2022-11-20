@@ -477,7 +477,7 @@
                 src: file,
                 alt: 'MyAlt'
             }).appendTo($('.drop-zone__thumb'));
-
+            $('.logoImagem').attr('data-label', "Imagem do produto");
             //    $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
         } else {
 
@@ -486,11 +486,6 @@
             $("#zone__prompt").text("Arraste o arquivo ou clique para upload");                     
                                  
           
-            $('<img />', {
-                class: 'logoImagem',
-                src: '',
-                alt: 'MyAlt'
-            }).appendTo($('.drop-zone__thumb'));
             // $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
             // console.log("Remove imagem");
         }
