@@ -8,15 +8,15 @@ class Mine extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Conecte_model');
-                
+        var_dump($this->db_empresa->get('comercial_clientes')->row());
+        exit;        
     }
 
     public function login_in($idEmpresa)
     {
         $this->session->set_userdata('idEmpresa', $idEmpresa);
         $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
-        var_dump($this->db_empresa->get('comercial_clientes')->row());
-        exit;
+        
         $this->load->view('conecte/login');
     }
 
