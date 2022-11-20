@@ -10,8 +10,6 @@ class Mine extends CI_Controller
         $this->load->model('Conecte_model');
         if($this->session->userdata('idEmpresa')){
         $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
-        var_dump($this->db_empresa->get('comercial_clientes')->row());
-        exit;
         }        
     }
 
