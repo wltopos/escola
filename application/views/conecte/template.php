@@ -20,7 +20,7 @@
 </head>
 
 <body>
-<?php print_r($_SESSION); ?>
+
     <!--Header-part-->
     <div id="header">
         <h1><a href="dashboard.html">
