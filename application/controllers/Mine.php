@@ -4,10 +4,11 @@
 
 class Mine extends CI_Controller
 {
-    public function __construct()
+    public function __construct($idEmpresa=null)
     {
         parent::__construct();
         $this->load->model('Conecte_model');
+        $this->session->set_userdata('idEmpresa', $idEmpresa);
         if($this->session->userdata('logado')){
       
             $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true) ;
@@ -15,9 +16,9 @@ class Mine extends CI_Controller
         
     }
 
-    public function index($idEmpresa=null)
+    public function index()
     {
-        $this->session->set_userdata('idEmpresa', $idEmpresa);
+        
         $this->load->view('conecte/login');
     }
 
