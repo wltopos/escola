@@ -16,7 +16,6 @@ class Mine extends CI_Controller
     {
         $this->session->set_userdata('idEmpresa', $idEmpresa);
         $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
-        print_r($this->db_empresa);
         $this->load->view('conecte/login');
     }
 

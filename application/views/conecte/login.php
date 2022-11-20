@@ -35,7 +35,7 @@ $parse_cpfcnpj = $this->input->get('c');
 ?>
 
 <body>
-<?php print_r($_SESSION); ?>
+
     <div class="main-login">
         <div class="left-login">
             <h1 class="h-one">Área do Cliente</h1>
