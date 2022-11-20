@@ -8,16 +8,14 @@ class Mine extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Conecte_model');
-        if($this->session->userdata('logado')){
-      
-            $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true) ;
-            }
+       
         
     }
 
     public function login_in($idEmpresa)
     {
         $this->session->set_userdata('idEmpresa', $idEmpresa);
+        $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
         $this->load->view('conecte/login');
     }
 
