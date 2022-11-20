@@ -213,8 +213,8 @@ class Mine extends CI_Controller
         header('Access-Control-Allow-Headers: Content-Type');
 
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('email', 'E-mail', 'valid_email|required|trim');
-        $this->form_validation->set_rules('senha', 'Senha', 'required|trim');
+        $this->form_validation->set_rules('email', 'email', 'valid_email|required|trim');
+        $this->form_validation->set_rules('senha', 'senha', 'required|trim');
         if ($this->form_validation->run() == false) {
             echo json_encode(['result' => false, 'message' => validation_errors()]);
         } else {
