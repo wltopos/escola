@@ -69,6 +69,7 @@ function updateThumbnail(dropZoneElement, file) {
       // thumbnailElement.src = reader.result;
     };
   } else {
+    $('.logoImagem').remove();
     $('<img />', { class: 'logoImagem', src: '', alt: 'MyAlt' }).appendTo($('.drop-zone__thumb'));
   }
 }
