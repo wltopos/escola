@@ -66,7 +66,7 @@
 </head>
 
 <body>
-  <?php print_r($_SESSION); ?>
+ 
   <!--top-Header-menu-->
   <div class="navebarn">
     <div id="user-nav" class="navbar navbar-inverse">
