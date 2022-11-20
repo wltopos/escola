@@ -216,7 +216,8 @@ class Mine extends CI_Controller
         header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
         header('Access-Control-Max-Age: 1000');
         header('Access-Control-Allow-Headers: Content-Type');
-
+        print_r($this->input->post('email'));
+        exit;
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'E-mail', 'valid_email|required|trim');
         $this->form_validation->set_rules('senha', 'Senha', 'required|trim');
@@ -226,8 +227,7 @@ class Mine extends CI_Controller
             $email = $this->input->post('email');
             $password = $this->input->post('senha');
             $cliente = $this->check_credentials($email);
-print_r($email);
-exit;
+
             if ($cliente) {
                 // Verificar credenciais do usuário
                 if (password_verify($password, $cliente->senha)) {
