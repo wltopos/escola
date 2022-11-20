@@ -8,7 +8,7 @@ class Mine extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Conecte_model');
-        var_dump($this->session->userdata('idEmpresa'));
+        var_dump($this->load->database($this->session->userdata('idEmpresa'), true));
         
         
     }
