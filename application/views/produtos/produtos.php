@@ -327,7 +327,7 @@
                     $("#pesquisa_marca_id").val(ui.item.id);
                     $("#nome_marca").val(ui.item.marca);
                     $("#sigla_marca").val(ui.item.siglaMarca);
-                    $("#seleciona_status_marca").val(ui.item.statusMarca).change();
+                    $("#seleciona_status_marca").val(ui.item.status).change();
                     $('#acao_1').val('update');
                     $('#atualiza-marca').show();
                     $('#bt_save-icon1').attr('class', 'bx bx-sync');

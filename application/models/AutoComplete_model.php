@@ -256,7 +256,7 @@ class AutoComplete_model extends CI_Model
         $query = $this->db_empresa->get('marcas');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = ['label' => $row['marca'], 'marca' => $row['marca'], 'id' => $row['idMarca'], 'siglaMarca' => $row['sigla'], 'statusMarca' => $row['status']];
+                $row_set[] = ['label' => $row['marca'], 'marca' => $row['marca'], 'id' => $row['idMarca'], 'siglaMarca' => $row['sigla'], 'status' => $row['status']];
             }
             echo json_encode($row_set);
         } else {
@@ -292,7 +292,7 @@ class AutoComplete_model extends CI_Model
         $query = $this->db_empresa->get('medidas');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = ['label' => strtoupper($row['descricaoMedida']) . ' | sigla: ' . strtoupper($row['sigla']), 'id' => $row['idMedida'], 'descricaoMedida' => strtoupper($row['descricaoMedida']), 'siglaMedida' => $row['sigla'], 'idMedidaSistema' => $row['idMedidaSistema'], 'multiplicador' => $row['multiplicador'], 'statusMedida' => $row['status'], 'bloqueio' => $row['bloqueio']];
+                $row_set[] = ['label' => strtoupper($row['descricaoMedida']) . ' | sigla: ' . strtoupper($row['sigla']), 'id' => $row['idMedida'], 'descricaoMedida' => strtoupper($row['descricaoMedida']), 'siglaMedida' => $row['sigla'], 'idMedidaSistema' => $row['idMedidaSistema'], 'multiplicador' => $row['multiplicador'], 'status' => $row['status'], 'bloqueio' => $row['bloqueio']];
             }
             echo json_encode($row_set);
         } else {

@@ -44,7 +44,7 @@ class Produtos_model extends CI_Model
         if ($medidaConvert == 'D') { //Medida sistema para medida padrão
             $estoque['valorConvertido'] = $estoqueAtual / $data['multiplicador'];
 
-            if ($data['statusMedida'] == 2) {
+            if ($data['status'] == 2) {
                 $estoque['texto'] =  $estoque['valorConvertido'] . " " . ($estoque['valorConvertido'] > 1 ? $data['medida'] . 'S' : $data['medida']);
                 $estoque['textoRS'] = $estoque['valorConvertido'] . " " . ($estoque['valorConvertido'] > 1 ? $data['medida'] . 'S' : $data['medida']);
 

@@ -128,9 +128,9 @@
                                     } else {
                                         echo '<option value="" disabled selected>Medida</option>';
                                         foreach ($resultMedida as $r) {
-                                            if ($r->statusMedida == 1) {
+                                            if ($r->status == 1) {
                                                 echo "<option value=$r->id_estoque_medida >$r->medida $r->multiplicador $r->siglaMedidaSistema </option>";
-                                            } else if ($r->statusMedida == 2) {
+                                            } else if ($r->status == 2) {
                                                 echo "<option value=$r->id_estoque_medida >$r->medida </option>";
                                             }
                                         }

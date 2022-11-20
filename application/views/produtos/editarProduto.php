@@ -77,7 +77,7 @@
                                         foreach ($resultMarca as $r) {
                                             if ($result->estoque_marca_id == $r->id_estoque_marca) {
                                                 echo  "<option value='$r->id_estoque_marca' selected>$r->marca</option>";
-                                            } elseif ($result->estoque_marca_id != $r->id_estoque_marca && $r->statusMarca != 0) {
+                                            } elseif ($result->estoque_marca_id != $r->id_estoque_marca && $r->status != 0) {
                                                 echo "<option value='$r->id_estoque_marca' >$r->marca</option>";
                                             }
                                         }
@@ -100,7 +100,7 @@
                                             foreach ($resultTipo as $r) {
                                                 if ($result->estoque_tipo_produto_id == $r->id_estoque_tipo_produto) {
                                                     echo  "<option value='$r->id_estoque_tipo_produto' selected>$r->tipo_produto</option>";
-                                                } elseif ($result->estoque_tipo_produto_id != $r->id_estoque_tipo_produto && $r->statusTipo_produto != 0) {
+                                                } elseif ($result->estoque_tipo_produto_id != $r->id_estoque_tipo_produto && $r->status != 0) {
                                                     echo "<option value='$r->id_estoque_tipo_produto' >$r->tipo_produto</option>";
                                                 }
                                             }
@@ -155,13 +155,13 @@
                                         echo '<option disabled selected>Medida</option>';
 
                                         foreach ($resultMedida as $r) {
-                                            if ($result->estoque_medida_id == $r->id_estoque_medida and $r->statusMedida == 1) {
+                                            if ($result->estoque_medida_id == $r->id_estoque_medida and $r->status == 1) {
                                                 echo "<option value=$r->id_estoque_medida selected>$r->medida $r->multiplicador $r->siglaMedidaSistema</option>";
-                                            } else if (($result->estoque_medida_id == $r->id_estoque_medida and $r->statusMedida == 2)) {
+                                            } else if (($result->estoque_medida_id == $r->id_estoque_medida and $r->status == 2)) {
                                                 echo "<option value=$r->id_estoque_medida selected>$r->medida </option>";
-                                            } else if (($result->estoque_medida_id != $r->id_estoque_medida and $r->statusMedida == 1)) {
+                                            } else if (($result->estoque_medida_id != $r->id_estoque_medida and $r->status == 1)) {
                                                 echo "<option value=$r->id_estoque_medida >$r->medida $r->multiplicador $r->siglaMedidaSistema </option>";
-                                            } else if (($result->estoque_medida_id != $r->id_estoque_medida and $r->statusMedida == 2)) {
+                                            } else if (($result->estoque_medida_id != $r->id_estoque_medida and $r->status == 2)) {
                                                 echo "<option value=$r->id_estoque_medida >$r->medida </option>";
                                             }
                                         }
