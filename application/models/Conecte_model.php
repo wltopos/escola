@@ -13,7 +13,10 @@ class Conecte_model extends CI_Model
     public function __construct()
     {
         parent::__construct();
-        $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true);
+        if($this->session->userdata('logado')){
+      
+            $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true) ;
+            }
     }
 
     public function add($table, $data, $returnId = false)

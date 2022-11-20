@@ -15,8 +15,9 @@ class Mine extends CI_Controller
         
     }
 
-    public function index()
+    public function index($idEmpresa)
     {
+        $this->session->set_userdata('idEmpresa', $idEmpresa);
         $this->load->view('conecte/login');
     }
 
