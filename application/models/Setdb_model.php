@@ -55,7 +55,7 @@ class Setdb_model extends CI_Model
 
         $this->db_empresa->select($fields);
         $this->db_empresa->from($table);
-        $this->setJoinOut($join, $parametro);
+     //   $this->setJoinOut($join, $parametro);
         $this->setWhere($where);
 
         $this->db_empresa->limit(1);
