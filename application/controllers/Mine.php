@@ -218,7 +218,7 @@ class Mine extends CI_Controller
         
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'E-mail', 'valid_email|required|trim');
-       // $this->form_validation->set_rules('senha', 'Senha', 'required|trim');
+        $this->form_validation->set_rules('senha', 'Senha', 'required|trim');
         if ($this->form_validation->run() == false) {
             echo json_encode(['result' => false, 'message erro' => validation_errors()]);
         } else {
@@ -786,7 +786,7 @@ class Mine extends CI_Controller
 
     private function check_credentials($email)
     {
-        $this->db_empresa->where('email', $email);
+    //    $this->db_empresa->where('email', $email);
         $this->db_empresa->limit(1);
         return $this->db_empresa->get('comercial_clientes')->row();
     }
