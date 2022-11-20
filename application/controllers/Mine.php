@@ -790,7 +790,7 @@ exit;
     {
         $this->db_empresa->where('email', $email);
         $this->db_empresa->limit(1);
-        return $this->db_empresa->get('comerclientes')->row();
+        return $this->db_empresa->get('comercial_clientes')->row();
     }
 
     private function check_token($token)
