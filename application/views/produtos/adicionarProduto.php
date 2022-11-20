@@ -471,13 +471,14 @@
             $('.logoImagem').remove();
             $('<img />', {
                 class: 'logoImagem',
-                src: reader.result,
+                src: file,
                 alt: 'MyAlt'
             }).appendTo($('.drop-zone__thumb'));
 
             //    $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
         } else {
-
+           
+            $('.logoImagem').remove();
             $('<img />', {
                 class: 'logoImagem',
                 src: '',
