@@ -65,10 +65,10 @@ function updateThumbnail(dropZoneElement, file) {
     reader.readAsDataURL(file);
     reader.onload = () => {
       $('.logoImagem').remove();
-      $('<img />', { class: 'logoImagem', src: reader.result , alt:'MyAlt'}) .appendTo($('.drop-zone__thumb'));
-     // thumbnailElement.src = reader.result;
+      $('<img />', { class: 'logoImagem', src: reader.result, alt: 'MyAlt' }).appendTo($('.drop-zone__thumb'));
+      // thumbnailElement.src = reader.result;
     };
   } else {
-    $('<img />', { class: 'logoImagem', src: '' , alt:'MyAlt'}) .appendTo($('.drop-zone__thumb'));
+    $('<img />', { class: 'logoImagem', src: '', alt: 'MyAlt' }).appendTo($('.drop-zone__thumb'));
   }
 }

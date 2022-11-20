@@ -390,10 +390,10 @@
                         let dados = JSON.parse(data);
                         let json = dados;
                         let logo = '';
-                        
+
                         $("#imagemProduto").val(logo);
-                     //   updateThumbnail(logo);
-                     
+                        //   updateThumbnail(logo);
+
 
                         if (json.description) {
                             $('#descricao').val(dados.description);
@@ -420,15 +420,15 @@
                                 }
 
                                 //image.src = (logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture;
-                               // imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                                 $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
+                                // imgLogo.appendChild(image).setAttribute("id", "imgLogo");
+                                $('#imagemProduto').val((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
                                 updateThumb((logoLink[0] == 'https:') ? json.brand.picture : 'https://api.cosmos.bluesoft.com.br/' + json.brand.picture);
 
 
                             } catch (err) {
                                 //image.src = 'https://sistema.wltopos.com/assets/img/sem_logo.png';
-                               // imgLogo.appendChild(image).setAttribute("id", "imgLogo");
-                               $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
+                                // imgLogo.appendChild(image).setAttribute("id", "imgLogo");
+                                $('#imagemProduto').val('https://sistema.wltopos.com/assets/img/sem_logo.png');
                                 updateThumb('https://sistema.wltopos.com/assets/img/sem_logo.png');
                             }
                         }
@@ -462,17 +462,29 @@
 
 
     function updateThumb(file) {
-   
+
         $(".drop-zone__thumb").remove();
         $(".drop-zone__prompt").remove();
-       
-        if($(".drop-zone__thumb") && typeof file == "string"){
-        
-           $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
-        }else{           
-            
-        $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
-          console.log("Remove imagem");
+
+        if ($(".drop-zone__thumb") && typeof file == "string") {
+
+            $('.logoImagem').remove();
+            $('<img />', {
+                class: 'logoImagem',
+                src: reader.result,
+                alt: 'MyAlt'
+            }).appendTo($('.drop-zone__thumb'));
+
+            //    $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
+        } else {
+
+            $('<img />', {
+                class: 'logoImagem',
+                src: '',
+                alt: 'MyAlt'
+            }).appendTo($('.drop-zone__thumb'));
+            // $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
+            // console.log("Remove imagem");
         }
 
     }
