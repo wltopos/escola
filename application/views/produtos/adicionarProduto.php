@@ -469,7 +469,7 @@
         if ($(".drop-zone__thumb") && typeof file == "string") {
 
          $("#zone__prompt").removeClass("drop-zone__prompt");         
-         $("#drop-zone").addClass("drop-zone__thumb");         
+         $("#drop-zone > img").remove();           
          $("#zone__prompt").text(""); 
 
             $('<img />', {
@@ -481,7 +481,7 @@
             //    $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
         } else {
 
-            $("#drop-zone").removeClass("drop-zone__thumb");   
+            $("#drop-zone > img").remove();   
             $("#zone__prompt").addClass("drop-zone__prompt");  
             $("#zone__prompt").text("Arraste o arquivo ou clique para upload");                     
                                  
