@@ -8,9 +8,7 @@ class Mine extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Conecte_model');
-        var_dump($this->load->database($this->session->userdata('idEmpresa'), true)->get('comercial_clientes')->row());
-        exit;
-        
+                
     }
 
     public function login_in($idEmpresa)
@@ -787,7 +785,7 @@ class Mine extends CI_Controller
 
     private function check_credentials($email)
     {
-        print_r($this->db_empresa);
+        var_dump($this->load->database($this->session->userdata('idEmpresa'), true)->get('comercial_clientes')->row());
         exit;
     //    $this->db_empresa->where('email', $email);
         $this->db_empresa->limit(1);
