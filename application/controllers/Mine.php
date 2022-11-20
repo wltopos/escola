@@ -226,12 +226,11 @@ class Mine extends CI_Controller
             $email = $this->input->post('email');
             $password = $this->input->post('senha');
             $cliente = $this->check_credentials($email);
-print_r($email);
-exit;
+
             if ($cliente) {
                 // Verificar credenciais do usuário
                 if (password_verify($password, $cliente->senha)) {
-                    $session_data = ['nome' => $cliente->nomeCliente, 'cliente_id' => $cliente->idClientes, 'email' => $cliente->email, 'conectado' => true, 'isCliente' => true];
+                    $session_data = ['nome' => $cliente->nomeCliente, 'cliente_id' => $cliente->id_comercial_cliente, 'email' => $cliente->email, 'conectado' => true, 'isCliente' => true];
                     $this->session->set_userdata($session_data);
                     log_info($_SERVER['HTTP_CLIENT_IP'] . 'Efetuou login no sistema');
                     echo json_encode(['result' => true]);
