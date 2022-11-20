@@ -26,7 +26,7 @@ class Setquery_model extends CI_Model
 
     private function setVarFields($consulta)
     {
-        $data['medidas'] = 'estoque_medidas.descricaoMedida, estoque_medidas.siglaMedida, estoque_medidas.multiplicador, estoque_medidas.statusMedida, estoque_medidas.estoque_sistema_medida_id, estoque_sistema_medidas.*';
+        $data['medidas'] = 'estoque_medidas.descricaoMedida, estoque_medidas.siglaMedida, estoque_medidas.multiplicador, estoque_medidas.status, estoque_medidas.estoque_sistema_medida_id, estoque_sistema_medidas.*';
 
         $data['tipo_categoria_setor'] = 'estoque_categorias.categoria, estoque_categorias.id_estoque_categoria, estoque_tipo_produtos.tipo_produto, estoque_sectors.sector, estoque_sectors.id_estoque_sector';
 
