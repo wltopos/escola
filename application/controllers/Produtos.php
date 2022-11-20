@@ -6,7 +6,7 @@ class Produtos extends MY_Controller
 {
 
     /**
-     * author: Ramon Silva
+     * author: Lucas Rocha
      * email: silva018-mg@yahoo.com.br
      *
      */

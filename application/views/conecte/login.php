@@ -82,7 +82,7 @@ $parse_cpfcnpj = $this->input->get('c');
                                             <p style="margin:0px 0 18px">Esqueceu a senha?</p>
                                         </a></div>
                                     <div class="links-uteis"><a href="https://github.com/RamonSilva20/mapos">
-                                            <p><?= date('Y'); ?> &copy; Ramon Silva</p>
+                                            <p><?= date('Y'); ?> &copy; Lucas Rocha</p>
                                         </a></div>
                                 </div>
                             </div>

@@ -5,7 +5,7 @@
 class Os extends MY_Controller
 {
     /**
-     * author: Ramon Silva
+     * author: Lucas Rocha
      * email: silva018-mg@yahoo.com.br
      *
      */
@@ -21,6 +21,60 @@ class Os extends MY_Controller
     public function index()
     {
         $this->gerenciar();
+    }
+
+    public function getProdutos()
+    {
+        
+        $this->load->model('produtos_model');
+
+
+        $this->produtosFields = $this->setquery_model->getFields('produtos');
+        $this->produtosJoin   = $this->setquery_model->getJoin('produtos');
+
+        $this->data['custom_error'] = '';
+        $this->data['results'] = $this->setdb_model->getTabelaQ('estoque_produtos', $this->produtosFields, '', $this->produtosJoin, '');
+
+
+        foreach ($this->data['results'] as $produto) {
+            $estoque =  $this->produtos_model->converteMedida($produto->estoque, $produto->estoque_medida_id, 'D');
+            
+            if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vProduto')) {
+                $v = '<a style="margin-right: 1%" href="' . base_url() . 'index.php/produtos/visualizar/' . $produto->id_estoque_produto . '" class="btn-nwe" title="Visualizar Produto" ><i class="bx bx-show bx-xs" ></i></a>  ';
+            }
+            if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eProduto')) {
+                $e = '<a style="margin-right: 1%" href="' . base_url() . 'index.php/produtos/editar/' . $produto->id_estoque_produto . '" class="btn-nwe3" title="Editar Produto" ><i class="bx bx-edit bx-xs" ></i></a>';
+            }
+            if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dProduto')) {
+                $d = '<a style="margin-right: 1%" href="#modal-excluir" role="button" data-toggle="modal" produto="' . $produto->id_estoque_produto . '" codigo="' . $produto->codDeBarra . '" class="btn-nwe4" title="Excluir Produto"><i class="bx bx-trash-alt bx-xs" ></i></a>';
+            }
+            if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eProduto')) {
+                $a = '<a href="#atualizar-estoque" role="button" data-toggle="modal" produto="' . $produto->id_estoque_produto . '" medida="' . $produto->estoque_medida_id . '" estoqueTxt="' . $estoque['texto'] .'"." estoque="' . $produto->estoque .'" data_result="'.$produto->siglaMedida.'|'.$produto->siglaMedidaSistema.'|'.$produto->siglaFracaoSistema.'" class="btn-nwe5" title="Atualizar Estoque"><i class="bx bx-plus-circle bx-xs" ></i></a>';
+            }
+
+            
+
+            $result[] = [
+                $produto->observacao,
+                $produto->codDeBarra,
+                $produto->tipo_produto,
+                $produto->marca,
+                $produto->produtoDescricao,
+                $estoque['texto'],
+                "$v $e $d $a",
+            ];
+        }
+        
+       if(!isset($result)){
+        $result = 0;
+      
+       };
+       
+        $produtos = [
+            'data' => $result
+        ];
+
+        echo json_encode($produtos);
     }
 
     public function gerenciar()

@@ -10,7 +10,7 @@ class Vendas_model extends CI_Model
 {
 
     /**
-     * author: Ramon Silva
+     * author: Lucas Rocha
      * email: silva018-mg@yahoo.com.br
      *
      */
