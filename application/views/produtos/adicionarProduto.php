@@ -16,7 +16,7 @@
             <div id="imageLogo"> </div>
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" enctype="multipart/form-data" class="form-horizontal">
                 <div class="drop-zone">
-                    <span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>
+                    <span class="drop-zone__prompt" id="zone__prompt">Arraste o arquivo ou clique para upload</span>
                     <input type="file" name="userfile" class="drop-zone__input">
                     <div id="drop-zone" ></div>
                 </div>
@@ -469,7 +469,7 @@
         if ($(".drop-zone__thumb") && typeof file == "string") {
 
          $("#drop-zone").removeClass("drop-zone__prompt");         
-         $("#drop-zone").addClass("drop-zone__thumb");         
+         $("#zone__prompt").addClass("drop-zone__thumb");         
         
             $('<img />', {
                 class: 'logoImagem',
@@ -481,7 +481,8 @@
         } else {
 
             $("#drop-zone").removeClass("drop-zone__thumb");   
-            $("#drop-zone").addClass("drop-zone__prompt");          
+            $("#zone__prompt").addClass("drop-zone__prompt");                      
+            $("#zone__prompt").text("");                      
           
             $('<img />', {
                 class: 'logoImagem',
