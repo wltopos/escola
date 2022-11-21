@@ -95,10 +95,10 @@ class Conecte_model extends CI_Model
     {
         $this->db_empresa->select($fields);
         $this->db_empresa->from($table);
-        $this->db_empresa->join('funcionarios', 'os.funcionarios_id = usuarios.idFuncionario', 'left');
-        $this->db_empresa->where('clientes_id', $cliente);
+        $this->db_empresa->join('administrativo_funcionarios', 'comercial_os_clientes.administrativo_funcionario_id = administrativo_funcionarios.id_administrativo_funcionario', 'left');
+        $this->db_empresa->where('comercial_cliente_id', $cliente);
         $this->db_empresa->limit($perpage, $start);
-        $this->db_empresa->order_by('idOs', 'desc');
+        $this->db_empresa->order_by('id_comercial_os_cliente', 'desc');
         if ($where) {
             $this->db_empresa->where($where);
         }
