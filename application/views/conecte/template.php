@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu">
                         <li class=""><a title="Meu Perfil" href="<?php echo base_url() ?>index.php/mine/conta"><i class="fas fa-user"></i> <span class="text">Meu Perfil</span></a></li>
                         <li class="divider"></li>
-                        <li class=""><a title="Sair" href="<?php echo base_url() ?>index.php/mine/sair"><i class="fas fa-sign-out-alt"></i> <span class="text">Sair</span></a></li>
+                        <li class=""><a title="Sair" href="<?php echo base_url() ?>mine/sair"><i class="fas fa-sign-out-alt"></i> <span class="text">Sair</span></a></li>
                     </ul>
                 </li>
             </ul>
