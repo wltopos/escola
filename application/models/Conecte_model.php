@@ -36,6 +36,8 @@ class Conecte_model extends CI_Model
 
     public function getLastOs($cliente)
     {
+        print_r($this->db_empresa->get('comercial_os_clientes')->result());
+        exit;
         $this->db_empresa->from('comercial_os_clientes.*');
         // $this->db_empresa->join('administrativo_funcionarios', 'comercial_os_clientes.administrativo_funcionario_id = administrativo_funcionario.id_administrativo_funcionario', 'left');
         $this->db_empresa->where('comercial_cliente_id', $cliente);
