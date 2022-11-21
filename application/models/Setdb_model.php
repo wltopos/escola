@@ -18,10 +18,12 @@ class Setdb_model extends CI_Model
     public function __construct()
     {
         parent::__construct();
-        if($this->session->userdata('logado')){
-      
-            $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true) ;
-            }
+        if ($this->session->userdata('logado')) {
+            $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true);
+        }
+        if ($this->session->userdata('idEmpresa')) {
+            $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
+        }
     }
 
     public function getTabelaID($table, $fields, $where = '', $join = '', $paramentro = '')
@@ -99,11 +101,9 @@ class Setdb_model extends CI_Model
 
         if ($this->db_empresa->affected_rows() >= 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
-
-        
     }
 
     public function delete($table, $fieldID, $ID)
@@ -112,11 +112,9 @@ class Setdb_model extends CI_Model
         $this->db_empresa->delete($table);
         if ($this->db_empresa->affected_rows() == '1') {
             return true;
-        }else{
-           return false; 
+        } else {
+            return false;
         }
-
-        
     }
 
     public function count($table, $where = '')
@@ -130,17 +128,16 @@ class Setdb_model extends CI_Model
             return $this->db_empresa->count_all($table);
         }
     }
-    public function search($tabela, $like, $pesquisa=null, $where, $de = null, $ate = null, $fields = null, $join = null)
+    public function search($tabela, $like, $pesquisa = null, $where, $de = null, $ate = null, $fields = null, $join = null)
     {
         if ($pesquisa != null) {
-           $this->setLike($like, $pesquisa);
-         
+            $this->setLike($like, $pesquisa);
         }
 
         if ($de != null) {
             $this->db_empresa->where("$where >=", $de);
         }
-        if($ate != null){
+        if ($ate != null) {
             $this->db_empresa->where("$where <=", $ate);
         }
 
@@ -148,7 +145,7 @@ class Setdb_model extends CI_Model
         $this->db_empresa->from($tabela);
         $this->setJoinOut($join);
         $this->db_empresa->limit(10);
-        
+
         $query = $this->db_empresa->get();
         $result =  $query->result();
         return $result;
@@ -186,7 +183,7 @@ class Setdb_model extends CI_Model
         $this->db->join('usuarios', 'usuarios.administrativo_emitente_id = administrativo_emitentes.id_administrativo_emitente');
         $this->db->where('usuarios.administrativo_emitente_id', $id);
         $this->db->where('dbEmpresa', $this->session->userdata('dbEmpresa'));
- 
+
         return $this->db->get()->row();
     }
 
@@ -194,7 +191,6 @@ class Setdb_model extends CI_Model
     {
         $d = DateTime::createFromFormat($format, $date);
         return $d && $d->format($format) == $date;
-       
     }
 
     public function hData($date)
@@ -209,7 +205,6 @@ class Setdb_model extends CI_Model
             IntlDateFormatter::GREGORIAN
         );
         return $formatter->format($data);
-    
     }
 
     //Funções privadas que configuram as consultas, update, edit e delete
@@ -321,9 +316,9 @@ class Setdb_model extends CI_Model
 
         if ($like != '') {
             $like = explode(',', $like);
-           
+
             for ($i = 0; $i < count($like); $i++) {
-                
+
                 if ($i == 0) {
                     $this->db_empresa->like($like[$i], $term);
                 }
@@ -333,6 +328,4 @@ class Setdb_model extends CI_Model
             }
         }
     }
-
-    
 }
