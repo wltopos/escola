@@ -734,6 +734,7 @@ class Mine extends CI_Controller
     // método para clientes se cadastratem
     public function cadastrar($idEmpresa)
     {
+        $this->session->set_userdata('idEmpresa', $idEmpresa);
         $this->load->model('clientes_model', '', true);
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
