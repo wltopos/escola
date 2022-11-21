@@ -130,7 +130,7 @@ class Conecte_model extends CI_Model
 
     public function getDados()
     {
-        $this->db_empresa->where('idclientes', $this->session->userdata('cliente_id'));
+        $this->db_empresa->where('id_comercial_cliente', $this->session->userdata('cliente_id'));
         $this->db_empresa->limit(1);
         return $this->db_empresa->get('clientes')->row();
     }
