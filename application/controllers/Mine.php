@@ -342,7 +342,7 @@ class Mine extends CI_Controller
         $this->load->library('pagination');
 
         $config['base_url'] = base_url() . 'index.php/mine/compras/';
-        $config['total_rows'] = $this->Conecte_model->count('vendas', $this->session->userdata('cliente_id'));
+        $config['total_rows'] = $this->Conecte_model->count('comercial_vendas', $this->session->userdata('cliente_id'));
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
@@ -365,7 +365,7 @@ class Mine extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $data['results'] = $this->Conecte_model->getCompras('vendas', '*', '', $config['per_page'], $this->uri->segment(3), '', '', $this->session->userdata('cliente_id'));
+        $data['results'] = $this->Conecte_model->getCompras('comercial_vendas', '*', '', $config['per_page'], $this->uri->segment(3), '', '', $this->session->userdata('cliente_id'));
 
         $data['output'] = 'conecte/compras';
         $this->load->view('conecte/template', $data);
