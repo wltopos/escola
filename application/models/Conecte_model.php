@@ -1,4 +1,4 @@
-<?php if (! defined('BASEPATH')) {
+<?php if (!defined('BASEPATH')) {
     exit('Pasta raiz não localizada ou inacessível');
 }
 
@@ -13,10 +13,12 @@ class Conecte_model extends CI_Model
     public function __construct()
     {
         parent::__construct();
-        if($this->session->userdata('logado')){
-      
-            $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true) ;
-            }
+        if ($this->session->userdata('logado')) {
+            $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true);
+        }
+        if ($this->session->userdata('idEmpresa')) {
+            $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
+        }
     }
 
     public function add($table, $data, $returnId = false)
@@ -105,7 +107,7 @@ class Conecte_model extends CI_Model
         $result =  !$one  ? $query->result() : $query->row();
         return $result;
     }
-    
+
     public function getById($id)
     {
         $this->db_empresa->select('os.*, clientes.*, clientes.celular as celular_cliente, garantias.refGarantia, usuarios.telefone as telefone_usuario, usuarios.email as email_usuario, usuarios.nome');
