@@ -38,9 +38,9 @@ class Conecte_model extends CI_Model
     {
       
         $this->db_empresa->from('comercial_os_clientes.*');
-        $this->db_empresa->join('administrativo_funcionarios', 'comercial_os_clientes.administrativo_funcionario_id = administrativo_funcionario.id_administrativo_funcionario', 'left');
-        $this->db_empresa->where('comercial_cliente_id', $cliente);
-        $this->db_empresa->limit(5);
+        // $this->db_empresa->join('administrativo_funcionarios', 'comercial_os_clientes.administrativo_funcionario_id = administrativo_funcionario.id_administrativo_funcionario', 'left');
+        // $this->db_empresa->where('comercial_cliente_id', $cliente);
+        // $this->db_empresa->limit(5);
         $this->db_empresa->order_by('id_comercial_os_cliente', 'desc');
 
         return $this->db_empresa->get()->result();
@@ -50,7 +50,7 @@ class Conecte_model extends CI_Model
     {
         $this->db_empresa->select('comercial_vendas.*');
         $this->db_empresa->from('comercial_vendas');
-        // $this->db_empresa->join('administrativo_funcionarios', 'administrativo_funcionarios.id_administrativo_funcionario = comercial_vendas.administrativo_funcionario_id');
+        $this->db_empresa->join('administrativo_funcionarios', 'administrativo_funcionarios.id_administrativo_funcionario = comercial_vendas.administrativo_funcionario_id');
         $this->db_empresa->where('comercial_cliente_id', $cliente);
         $this->db_empresa->limit(5);
 
