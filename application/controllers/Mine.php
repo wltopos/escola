@@ -732,7 +732,7 @@ class Mine extends CI_Controller
     }
 
     // método para clientes se cadastratem
-    public function cadastrar()
+    public function cadastrar($idEmpresa)
     {
         $this->load->model('clientes_model', '', true);
         $this->load->library('form_validation');
@@ -759,7 +759,7 @@ class Mine extends CI_Controller
                 'dataCadastro' => date('Y-m-d'),
             ];
 
-            $id = $this->clientes_model->add('clientes', $data);
+            $id = $this->clientes_model->add('comercial_clientes', $data);
 
             if ($id > 0) {
                 $this->enviarEmailBoasVindas($id);

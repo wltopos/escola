@@ -78,11 +78,11 @@ $parse_cpfcnpj = $this->input->get('c');
                                     </div>
 
                                     <button style="margin: 0" class="btn btn-info btn-large"> Acessar</button>
-                                    <a href="<?= site_url('mine/cadastrar') ?>" class="btn btn-success btn-large">Cadastrar-me</a>
+                                    <a href="<?= site_url('mine/cadastrar/'.$this->session->userdata('idEmpresa')) ?>" class="btn btn-success btn-large">Cadastrar-me</a>
                                     <div class="links-uteis"><a href="<?= site_url('mine/resetarSenha') ?>">
                                             <p style="margin:0px 0 18px">Esqueceu a senha?</p>
                                         </a></div>
-                                    <div class="links-uteis"><a href="https://github.com/RamonSilva20/mapos">
+                                    <div class="links-uteis"><a href="https://github.com/lrochawl">
                                             <p><?= date('Y'); ?> &copy; Lucas Rocha</p>
                                         </a></div>
                                 </div>
