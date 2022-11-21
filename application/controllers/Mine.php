@@ -233,7 +233,8 @@ class Mine extends CI_Controller
                 if (password_verify($password, $cliente->senha)) {
                     $session_data = ['nome' => $cliente->nomeCliente, 'cliente_id' => $cliente->id_comercial_cliente, 'email' => $cliente->email, 'conectado' => true, 'isCliente' => true];
                     $this->session->set_userdata($session_data);
-                    log_info($_SERVER['HTTP_CLIENT_IP'] . 'Efetuou login no sistema');
+                    echo $_SERVER['HTTP_CLIENT_IP'];
+                    //log_info($_SERVER['HTTP_CLIENT_IP'] . 'Efetuou login no sistema');
                     echo json_encode(['result' => true]);
                 } else {
                     echo json_encode(['result' => false, 'message' => 'Os dados de acesso estão incorretos.']);
