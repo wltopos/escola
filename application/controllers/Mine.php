@@ -466,8 +466,8 @@ class Mine extends CI_Controller
         $data['menuOs'] = 'os';
         $this->load->library('pagination');
 
-        $config['base_url'] = base_url() . 'index.php/mine/os/';
-        $config['total_rows'] = $this->Conecte_model->count('os', $this->session->userdata('cliente_id'));
+        $config['base_url'] = base_url() . 'mine/os/';
+        $config['total_rows'] = $this->Conecte_model->count('comercial_os_cliente', $this->session->userdata('cliente_id'));
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
