@@ -23,8 +23,9 @@ class Mine extends CI_Controller
 
     public function sair()
     {
+        $idEmpresa = $this->session->userdata('idEmpresa');
         $this->session->sess_destroy();
-        redirect('mine');
+        redirect('mine/login_in/'.$idEmpresa);
     }
 
     public function resetarSenha()
