@@ -490,7 +490,7 @@ class Mine extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $data['results'] = $this->Conecte_model->getOs('os', '*', '', $config['per_page'], $this->uri->segment(3), '', '', $this->session->userdata('cliente_id'));
+        $data['results'] = $this->Conecte_model->getOs('comercial_os_clientes', '*', '', $config['per_page'], $this->uri->segment(3), '', '', $this->session->userdata('cliente_id'));
 
         $data['output'] = 'conecte/os';
         $this->load->view('conecte/template', $data);
