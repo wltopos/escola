@@ -124,7 +124,7 @@ class Conecte_model extends CI_Model
 
     public function count($table, $cliente)
     {
-        $this->db_empresa->where('comercial_clientes_id', $cliente);
+        $this->db_empresa->where('comercial_cliente_id', $cliente);
         return $this->db_empresa->count_all_results($table);
     }
 
