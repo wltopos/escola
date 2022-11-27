@@ -16,9 +16,7 @@ class Conecte_model extends CI_Model
         if ($this->session->userdata('logado')) {
             $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true);
         }
-        if ($this->session->userdata('idEmpresa')) {
-            $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
-        }
+      
     }
 
     public function add($table, $data, $returnId = false)

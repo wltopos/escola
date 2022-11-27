@@ -10,9 +10,7 @@ class Audit_model extends CI_Model
         if ($this->session->userdata('logado')) {
             $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true);
         }
-        if ($this->session->userdata('idEmpresa')) {
-            $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
-        }
+       
     }
 
     public function get($table, $fields, $where = '', $perpage = 0, $start = 0, $one = false, $array = 'array')

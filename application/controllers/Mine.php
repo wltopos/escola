@@ -8,15 +8,15 @@ class Mine extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Conecte_model');
-        if($this->session->userdata('idEmpresa')){
-        $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
+        if($this->session->userdata('logado')){
+        $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true);
         }        
     }
 
     public function login_in($idEmpresa)
     {
-        $this->session->set_userdata('idEmpresa', $idEmpresa);
-        $this->db_empresa = $this->load->database($this->session->userdata('idEmpresa'), true);
+        $this->session->set_userdata('dbEmpresa', $idEmpresa);
+        $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true);
         
         $this->load->view('conecte/login');
     }
@@ -232,7 +232,7 @@ class Mine extends CI_Controller
             if ($cliente) {
                 // Verificar credenciais do usuário
                 if (password_verify($password, $cliente->senha)) {
-                    $session_data = ['nome' => $cliente->nomeCliente, 'cliente_id' => $cliente->id_comercial_cliente, 'email' => $cliente->email, 'conectado' => true, 'isCliente' => true];
+                    $session_data = ['nome' => $cliente->nomeCliente, 'cliente_id' => $cliente->id_comercial_cliente, 'email' => $cliente->email, 'logado' => true, 'isCliente' => true];
                     $this->session->set_userdata($session_data);
                     log_info($_SERVER['HTTP_CLIENT_IP'] . 'Efetuou login no sistema');
                     echo json_encode(['result' => true]);
@@ -247,7 +247,7 @@ class Mine extends CI_Controller
 
     public function painel()
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -260,7 +260,7 @@ class Mine extends CI_Controller
 
     public function conta()
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -273,7 +273,7 @@ class Mine extends CI_Controller
 
     public function editarDados()
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -335,7 +335,7 @@ class Mine extends CI_Controller
 
     public function compras()
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -374,7 +374,7 @@ class Mine extends CI_Controller
 
     public function cobrancas()
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -415,7 +415,7 @@ class Mine extends CI_Controller
 
     public function atualizarcobranca($id = null)
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -437,7 +437,7 @@ class Mine extends CI_Controller
 
     public function enviarcobranca()
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -460,7 +460,7 @@ class Mine extends CI_Controller
 
     public function os()
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -499,7 +499,7 @@ class Mine extends CI_Controller
 
     public function visualizarOs($id = null)
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -538,7 +538,7 @@ class Mine extends CI_Controller
 
     public function imprimirOs($id = null)
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -561,7 +561,7 @@ class Mine extends CI_Controller
 
     public function visualizarCompra($id = null)
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
@@ -586,7 +586,7 @@ class Mine extends CI_Controller
 
     public function imprimirCompra($id = null)
     {
-        if (!session_id() || !$this->session->userdata('conectado')) {
+        if (!session_id() || !$this->session->userdata('logado')) {
             redirect('mine');
         }
 
