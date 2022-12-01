@@ -8,7 +8,7 @@ class Mine extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Conecte_model');
-        if($this->session->userdata('logado')){
+        if($this->session->userdata('logado') || $this->session->userdata('dbEmpresa')){
         $this->db_empresa = $this->load->database($this->session->userdata('dbEmpresa'), true);
         }        
     }
