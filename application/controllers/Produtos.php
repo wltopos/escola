@@ -214,7 +214,7 @@ class Produtos extends MY_Controller
 
         $this->data['custom_error']     = '';
         $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos');
-        $this->data['resultLocations']  = $this->setdb_model->getTabelaQ('estoque_locations');
+        $this->data['resultLocations']  = $this->setdb_model->getTabelaQ('estoque_locations','*','','','location, asc');
         $this->data['resultMarca']      = $this->setdb_model->getTabelaQ('estoque_marcas');
         $this->data['resultMedida']     = $this->setdb_model->getTabelaQ('estoque_medidas','' ,'',$this->medidasJoin ,'siglaMedida,desc');
         $this->data['resultTipo']       = $this->setdb_model->getTabelaQ('estoque_tipo_produtos');
