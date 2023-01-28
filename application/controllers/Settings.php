@@ -136,6 +136,7 @@ class Settings extends MY_Controller
         $data = $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
         
 print_r($data);
+exit();
         if ($this->input->post('nome') != "") {
 
             
