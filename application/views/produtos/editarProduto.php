@@ -100,7 +100,7 @@
                                             foreach ($resultTipo as $r) {
                                                 if ($result->estoque_tipo_produto_id == $r->id_estoque_tipo_produto) {
                                                     echo  "<option value='$r->id_estoque_tipo_produto' selected>$r->tipo_produto</option>";
-                                                } elseif ($result->estoque_tipo_produto_id != $r->id_estoque_tipo_produto && $r->statusTipo != 0) {
+                                                } elseif ($result->estoque_tipo_produto_id != $r->id_estoque_tipo_produto && $r->statusTipo_produto != 0) {
                                                     echo "<option value='$r->id_estoque_tipo_produto' >$r->tipo_produto</option>";
                                                 }
                                             }
