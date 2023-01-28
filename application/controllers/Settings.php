@@ -133,21 +133,20 @@ class Settings extends MY_Controller
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
 
+        
+
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
 
         if ($this->input->post('nome') != "") {
-
-            echo $id;      
-            print_r($this->data);
-            exit();   
-            $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
+  
+            $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
         
             if ($this->setdb_model->add("estoque_$id" . "s", $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', strtoupper($id) . " adicionado com sucesso!");
                 log_info('Adicionou um produto');
                 redirect(site_url("settings/adicionar/$id"));
             } else {
-                $this->data['custom_error'] = '<div class="form_error"><p>Verifique o preenchimento de todos os campos.</p></div>';
+                $this->session->set_flashdata('success', strtoupper($id) . " Erro ao adicionar dados!");
             }
         }
 
@@ -387,23 +386,29 @@ class Settings extends MY_Controller
             case 'medida':
                 $this->data['medidasSistema'] = $this->setdb_model->getTabelaQ("estoque_sistema_medidas", '*');
                 $this->data['titulo'] =  'medida';
+                $this->data['id'] =  'medida';
                 break;
             case 'location':
                 $this->data['titulo'] =  'local';
+                $this->data['id'] =  'local';
                 break;
             case 'sector':
                 $this->data['titulo'] =  'setor';
+                $this->data['id'] =  'setor';
                 break;
             case 'addCampo':
                 $this->data['titulo'] =  'campo';
+                $this->data['id'] =  'campo';
                 break;
             case 'grupo':
                 $this->data['categorias'] = $this->setdb_model->getTabelaQ("estoque_categorias", '*');
                 $this->data['setores'] = $this->setdb_model->getTabelaQ("estoque_sectors", '*');
                 $this->data['titulo'] = 'grupo';
+                $this->data['id'] = 'tipo_produto';
                 break;
             default:
                 $this->data['titulo'] = $id;
+                $this->data['id'] = $id;
         }
     }
 
