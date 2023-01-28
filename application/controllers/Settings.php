@@ -133,12 +133,12 @@ class Settings extends MY_Controller
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
 
-        $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
-
+        print_r($this->getLinkReturnData($id)); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
+        
 
         if ($this->input->post('nome') != "") {
 
-            print_r($data);
+            
             $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
         
             if ($this->setdb_model->add("estoque_$id" . "s", $this->dataInsert) == true) {
