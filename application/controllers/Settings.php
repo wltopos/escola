@@ -390,7 +390,7 @@ class Settings extends MY_Controller
                 break;
             case 'location':
                 $this->data['titulo'] =  'local';
-                $this->data['id'] =  'local';
+                $this->data['id'] =  'location';
                 break;
             case 'sector':
                 $this->data['titulo'] =  'setor';
