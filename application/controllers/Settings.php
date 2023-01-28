@@ -134,12 +134,12 @@ class Settings extends MY_Controller
         $this->data['custom_error'] = '';
 
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
-  echo $id;      
-print_r($this->data);
-exit();
+
         if ($this->input->post('nome') != "") {
 
-            
+            echo $id;      
+            print_r($this->data);
+            exit();   
             $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
         
             if ($this->setdb_model->add("estoque_$id" . "s", $this->dataInsert) == true) {
