@@ -418,7 +418,7 @@ class Settings extends MY_Controller
        if($op == "cad"){
         $this->dataInsert = [
             $this->data['id']                      => strtoupper($this->input->post('nome')),
-            "sigla_".ucfirst($this->data['id'])    => strtoupper($this->input->post('nome')),
+            "sigla".ucfirst($this->data['id'])    => strtoupper($this->input->post('nome')),
             "descricao".ucfirst($this->data['id']) => strtoupper($this->input->post('descricao')),
             'cadastro'.ucfirst($this->data['id'])  => date('Y-m-d h:i:s'),
             "urlLogo".ucfirst($this->data['id'])   =>  $this->input->post('urlLogo'),
@@ -429,7 +429,7 @@ class Settings extends MY_Controller
        if($op == "up"){
         $this->dataInsert = [
             $this->data['id']                      => strtoupper($this->input->post('nome')),
-            "sigla_".ucfirst($this->data['id'])    => strtoupper($this->input->post('nome')),
+            "sigla".ucfirst($this->data['id'])    => strtoupper($this->input->post('nome')),
             "descricao".ucfirst($this->data['id']) => strtoupper($this->input->post('descricao')),
             'update'.ucfirst($this->data['id'])    => date('Y-m-d h:i:s'),
             "urlLogo".ucfirst($this->data['id'])   =>  $this->input->post('urlLogo'),
