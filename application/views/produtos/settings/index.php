@@ -313,8 +313,8 @@
 
                                     <div class="flexxn tituloDataTableMargin">
                                             <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aProduto')) { ?>
-                                                <a href="<?php echo base_url(); ?>settings/adicionar/tipoProduto" class="button btn btn-mini btn-success" style="max-width: 160px">
-                                                    <span class="button__icon"><i class='bx bx-plus-circle'></i></span><span class="button__text2">Add. Tipo Produto</span>
+                                                <a href="<?php echo base_url(); ?>settings/adicionar/grupo" class="button btn btn-mini btn-success" style="max-width: 160px">
+                                                    <span class="button__icon"><i class='bx bx-plus-circle'></i></span><span class="button__text2">Add. Grupo</span>
                                                 </a>
 
                                         </div>
@@ -325,7 +325,7 @@
                                             <span class="icon">
                                                 <i class="fas fa-shopping-bag"></i>
                                             </span>
-                                            <h5>Tipos de produtos</h5>
+                                            <h5>Grupos de produtos</h5>
                                         </div>
 
 
