@@ -396,7 +396,7 @@ class Settings extends MY_Controller
             case 'addCampo':
                 $this->data['titulo'] =  'campo';
                 break;
-            case 'tipo_produto':
+            case 'grupo':
                 $this->data['categorias'] = $this->setdb_model->getTabelaQ("estoque_categorias", '*');
                 $this->data['setores'] = $this->setdb_model->getTabelaQ("estoque_sectors", '*');
                 $this->data['titulo'] = 'grupo';
@@ -436,7 +436,7 @@ class Settings extends MY_Controller
         
 
         switch ($id) {
-            case 'tipoProduto':
+            case 'grupo':
                 $this->dataInsert['estoque_categoria_id'] = $this->input->post('categoria');
                 $this->dataInsert['estoque_sector_id']     = $this->input->post('sector');
                 break;
