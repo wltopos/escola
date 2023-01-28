@@ -141,7 +141,7 @@ class Settings extends MY_Controller
   
             $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
         echo "estoque_".$this->data['id'] . "s";
-        exit():
+        exit();
             if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', strtoupper($id) . " adicionado com sucesso!");
                 log_info('Adicionou um produto');
