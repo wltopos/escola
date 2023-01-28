@@ -69,7 +69,7 @@
                                
                             <?php endif ?>
 
-                            <?php echo $id; if ($id == 'tipo_produto') : ?>
+                            <?php if ($id == 'tipo_produto') : ?>
                                 
                                 <li class="bg_ls span12" style="margin-left: 0">
                                     <strong>Categoria</strong>
