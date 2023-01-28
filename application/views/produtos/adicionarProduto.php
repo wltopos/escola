@@ -12,6 +12,7 @@
                     <i class="fas fa-shopping-bag"></i>
                 </span>
                 <h5>Cadastro de Produto</h5>
+                <?php echo $custom_error; ?>
             </div>
             <div id="imageLogo"> </div>
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -22,7 +23,7 @@
                 </div>
                 <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
                     <div class="span6">
-                        <?php echo $custom_error; ?>
+                        
                         <input onkeydown='handleEnter(event)' type="hidden" id="adNotaFiscal_id" name="adNotaFiscal_id" value="" />
                         <input onkeydown='handleEnter(event)' type="hidden" id="produto_id" name="codDeBarra" value="" />
                         <input onkeydown='handleEnter(event)' type="hidden" id="imagemProduto" name="imagemProduto" value="" />
