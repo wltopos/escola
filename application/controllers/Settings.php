@@ -146,7 +146,7 @@ class Settings extends MY_Controller
                 log_info('Adicionou um produto');
                 redirect(site_url("settings/adicionar/$id"));
             } else {
-                $this->session->set_flashdata('erro', "Erro ao adicionar " strtoupper($id));
+                $this->session->set_flashdata('erro', "Erro ao adicionar " .strtoupper($id));
             }
         }
 
