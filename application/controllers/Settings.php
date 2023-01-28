@@ -418,22 +418,22 @@ class Settings extends MY_Controller
        
        if($op == "cad"){
         $this->dataInsert = [
-            $this->data['id']           => strtoupper($this->input->post('nome')),
-            "sigla_" . $this->data['id'] => strtoupper($this->input->post('nome')),
-            "descricao" . ucfirst($id)  => strtoupper($this->input->post('descricao')),
-            'cadastro' . ucfirst($id)   => date('Y-m-d h:i:s'),
-            "urlLogo" . ucfirst($id)    =>  $this->input->post('urlLogo'),
+            $this->data['id']               => strtoupper($this->input->post('nome')),
+            "sigla_" . $this->data['id']    => strtoupper($this->input->post('nome')),
+            "descricao" .$this->data['id']  => strtoupper($this->input->post('descricao')),
+            'cadastro' .$this->data['id']   => date('Y-m-d h:i:s'),
+            "urlLogo" .$this->data['id']    =>  $this->input->post('urlLogo'),
 
 
         ];
        }
        if($op == "up"){
         $this->dataInsert = [
-            $this->data['id']           => strtoupper($this->input->post('nome')),
-            "sigla_" .$this->data['id']  => strtoupper($this->input->post('nome')),
-            "descricao" . ucfirst($id)  => strtoupper($this->input->post('descricao')),
-            'update' . ucfirst($id)     => date('Y-m-d h:i:s'),
-            "urlLogo" . ucfirst($id)    =>  $this->input->post('urlLogo'),
+            $this->data['id']               => strtoupper($this->input->post('nome')),
+            "sigla_" .$this->data['id']     => strtoupper($this->input->post('nome')),
+            "descricao" .$this->data['id']  => strtoupper($this->input->post('descricao')),
+            'update' .$this->data['id']     => date('Y-m-d h:i:s'),
+            "urlLogo" .$this->data['id']    =>  $this->input->post('urlLogo'),
 
 
         ];
