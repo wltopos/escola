@@ -142,11 +142,11 @@ class Settings extends MY_Controller
             $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
        
             if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
-                $this->session->set_flashdata('success', strtoupper($id) . " adicionado com sucesso!");
+                $this->session->set_flashdata('success', strtoupper($this->data['titulo']) . " adicionado com sucesso!");
                 log_info('Adicionou um produto');
                 redirect(site_url("settings/adicionar/$id"));
             } else {
-                $this->session->set_flashdata('error', "Erro ao adicionar " .strtoupper($id));
+                $this->session->set_flashdata('error', "Erro ao adicionar " .strtoupper($this->data['titulo']));
             }
         }
 
