@@ -141,7 +141,7 @@ class Settings extends MY_Controller
   
             $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
         
-            if ($this->setdb_model->add("estoque_$id" . "s", $this->dataInsert) == true) {
+            if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', strtoupper($id) . " adicionado com sucesso!");
                 log_info('Adicionou um produto');
                 redirect(site_url("settings/adicionar/$id"));
@@ -174,7 +174,7 @@ class Settings extends MY_Controller
 
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
 
-        $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_$id" . "s", '*', "id_estoque_$id=" . $this->uri->segment(4));
+        $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_".$this->data['id'] . "s", '*', "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
         $a = "$id";
         $b = "descricao" . ucfirst($id);
         $c = 'urlLogo' . ucfirst($id);
