@@ -133,9 +133,9 @@ class Settings extends MY_Controller
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
 
-        print_r($this->getLinkReturnData($id)); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
+        $data = $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
         
-
+print_r($data);
         if ($this->input->post('nome') != "") {
 
             
