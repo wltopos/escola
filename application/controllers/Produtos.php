@@ -133,11 +133,11 @@ class Produtos extends MY_Controller
 
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
-        $this->data['resultMarca'] = $this->setdb_model->getTabelaQ('estoque_marcas');
+        $this->data['resultMarca'] = $this->setdb_model->getTabelaQ('estoque_marcas','*','','','marca, asc');
         $this->data['resultMedida'] = $this->setdb_model->getTabelaQ('estoque_medidas','' ,'',$this->produtosJoin ,'siglaMedida,desc');
-        $this->data['resultTipo'] = $this->setdb_model->getTabelaQ('estoque_tipo_produtos');
-        $this->data['resultAddCampo'] = $this->setdb_model->getTabelaQ('estoque_addCampos');
-        $this->data['resultLocations'] = $this->setdb_model->getTabelaQ('estoque_locations');
+        $this->data['resultTipo'] = $this->setdb_model->getTabelaQ('estoque_tipo_produtos','*','','','tipo_produto, asc');
+        $this->data['resultAddCampo'] = $this->setdb_model->getTabelaQ('estoque_addCampos','*','','','addCampo, asc');
+        $this->data['resultLocations'] = $this->setdb_model->getTabelaQ('estoque_locations','*','','','location, asc');
 
         if ($this->form_validation->run('produtos') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
@@ -213,11 +213,11 @@ class Produtos extends MY_Controller
         $this->medidasJoin   = $this->setquery_model->getJoin('medidas');
 
         $this->data['custom_error']     = '';
-        $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos');
+        $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos','*','','','addCampo, asc');
         $this->data['resultLocations']  = $this->setdb_model->getTabelaQ('estoque_locations','*','','','location, asc');
-        $this->data['resultMarca']      = $this->setdb_model->getTabelaQ('estoque_marcas');
+        $this->data['resultMarca']      = $this->setdb_model->getTabelaQ('estoque_marcas','*','','','marca, asc');
         $this->data['resultMedida']     = $this->setdb_model->getTabelaQ('estoque_medidas','' ,'',$this->medidasJoin ,'siglaMedida,desc');
-        $this->data['resultTipo']       = $this->setdb_model->getTabelaQ('estoque_tipo_produtos');
+        $this->data['resultTipo']       = $this->setdb_model->getTabelaQ('estoque_tipo_produtos','*','','','tipo_produto, asc');
         $this->data['result']           = $this->setdb_model->getTabelaQID('estoque_produtos', $this->setquery_model->getFields('produtosID'), 'estoque_produtos.id_estoque_produto =' . $this->uri->segment(3), $this->setquery_model->getJoin('produtosID'));
          
         $this->data['estoque'] =  $this->produtos_model->converteMedida($this->data['result']->estoque, $this->data['result']->estoque_medida_id, 'D', $this->data['result']->estoqueMinimo);
