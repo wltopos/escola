@@ -398,7 +398,7 @@ class Settings extends MY_Controller
                 break;
             case 'addCampo':
                 $this->data['titulo'] =  'campo';
-                $this->data['id'] =  'campo';
+                $this->data['id'] =  'addCampo';
                 break;
             case 'grupo':
                 $this->data['categorias'] = $this->setdb_model->getTabelaQ("estoque_categorias", '*');
