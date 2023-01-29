@@ -23,7 +23,7 @@
                 </div>
                 <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
                     <div class="span6">
-                        
+
                         <input onkeydown='handleEnter(event)' type="hidden" id="adNotaFiscal_id" name="adNotaFiscal_id" value="" />
                         <input onkeydown='handleEnter(event)' type="hidden" id="produto_id" name="codDeBarra" value="" />
                         <input onkeydown='handleEnter(event)' type="hidden" id="imagemProduto" name="imagemProduto" value="" />
@@ -169,17 +169,15 @@
 
                                 <select required onkeydown='handleEnter(event)' onchange="btAddCampo()" title="Adicionar campo" name="addCampo" id="addCampo" value="<?php echo set_value('addCampo'); ?>">
 
-                                    <?php if (!$resultAddCampo) {
-                                        echo '<option disabled selected>Sem tipos cadastrados</option>';
-                                    } else {
+                                    <?php if ($resultAddCampo) {
                                         echo  '<option value="0" disabled selected>Tipo de observação</option>';
                                         foreach ($resultAddCampo as $r) {
                                             if (isset($r->addCampo)) {
                                                 echo "<option value=$r->id_estoque_addCampo > $r->addCampo</option>";
-                                            } else {
-                                                echo '<option disabled selected>Sem tipos cadastrados</option>';
                                             }
                                         }
+                                    } else {
+                                        echo '<option disabled selected>Sem tipos cadastrados</option>';
                                     }
 
 
@@ -469,9 +467,9 @@
 
         if ($(".drop-zone__thumb") && typeof file == "string") {
 
-         $("#zone__prompt").removeClass("drop-zone__prompt");         
-         $("#drop-zone > img").remove();           
-         $("#zone__prompt").text(""); 
+            $("#zone__prompt").removeClass("drop-zone__prompt");
+            $("#drop-zone > img").remove();
+            $("#zone__prompt").text("");
 
             $('<img />', {
                 class: 'logoImagem',
@@ -482,11 +480,11 @@
             //    $('.drop-zone').append(`<div class="drop-zone__thumb" data-label="${file}" style="background-position: center; background-image: url(${file}); background-color: white;"></div>`);
         } else {
 
-            $("#drop-zone > img").remove();   
-            $("#zone__prompt").addClass("drop-zone__prompt");  
-            $("#zone__prompt").text("Arraste o arquivo ou clique para upload");                     
-                                 
-          
+            $("#drop-zone > img").remove();
+            $("#zone__prompt").addClass("drop-zone__prompt");
+            $("#zone__prompt").text("Arraste o arquivo ou clique para upload");
+
+
             // $('.drop-zone').append('<span class="drop-zone__prompt">Arraste o arquivo ou clique para upload</span>');
             // console.log("Remove imagem");
         }
