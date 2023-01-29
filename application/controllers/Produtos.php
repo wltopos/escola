@@ -220,10 +220,15 @@ class Produtos extends MY_Controller
         $this->data['resultTipo']       = $this->setdb_model->getTabelaQ('estoque_tipo_produtos','*','','','tipo_produto, asc');
         $this->data['result']           = $this->setdb_model->getTabelaQID('estoque_produtos', $this->setquery_model->getFields('produtosID'), 'estoque_produtos.id_estoque_produto =' . $this->uri->segment(3), $this->setquery_model->getJoin('produtosID'));
          
-        echo ($this->data['result'] == '');
-        exit();
+        if($this->data['result'] == ''){
+            $this->session->set_flashdata('error', 'Produto '.$this->uri->segment(3).' não localizado');
+            redirect('produtos');
+        }else{
+            $this->data['estoque'] =  $this->produtos_model->converteMedida($this->data['result']->estoque, $this->data['result']->estoque_medida_id, 'D', $this->data['result']->estoqueMinimo);
+        };
+      
 
-        $this->data['estoque'] =  $this->produtos_model->converteMedida($this->data['result']->estoque, $this->data['result']->estoque_medida_id, 'D', $this->data['result']->estoqueMinimo);
+        
 
         if ($this->form_validation->run('produtos') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
