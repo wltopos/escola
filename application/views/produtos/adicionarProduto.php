@@ -254,7 +254,7 @@
         });
 
         //Select com buscador
-        $("#locations").select2();
+        $("#locations").locations();
         $('#marcasAgrotec').select2();
         $('#unidade').select2();
         //validação de campos
