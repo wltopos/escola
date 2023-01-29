@@ -54,7 +54,7 @@
                             <div class="control-group">
                                 <label for="codDeBarra" class="control-label">Código/Referência/GTIN<span class="required">*</span></label>
                                 <div class="controls">
-                                    <input onkeydown='handleEnter(event)' autocomplete="false" id="codDeBarra" type="text" required value="<?php echo $result->codDeBarra; ?>" readonly />
+                                    <input onkeydown='handleEnter(event)' autocomplete="false" id="codDeBarra" type="text" required value="<?php echo $result->codDeBarra; ?>"  />
                                 </div>
                             </div>
 
