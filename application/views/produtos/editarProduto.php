@@ -331,7 +331,7 @@
         //Select com buscador
         $('#categorias').select2();
         $('#marcasAgrotec').select2();
-        $('select').select2();
+        $('select').select2(({width: 'resolve' }));
         //validação de campos
         $(".money").maskMoney();
 
