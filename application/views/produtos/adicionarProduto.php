@@ -122,7 +122,7 @@
                             <label for="estoque" class="control-label">Estoque<span class="required">*</span></label>
                             <div class="controls">
                                 <input required onkeydown='handleEnter(event)' style="width: 5em;" id="estoque" type="number" name="estoque" value="<?php echo set_value('estoque'); ?>" />
-                                <select required onkeydown='handleEnter(event)' class="wh30" id="unidade" name="unidade">
+                                <select required onkeydown='handleEnter(event)' class="wh30" id="unidade" title="unidade" name="unidade" value="<?php echo set_value('unidade'); ?>">
 
                                     <?php if (!$resultMedida) {
                                         echo '<option disabled selected>Sem madidas cadastradas</option>';
