@@ -311,8 +311,8 @@
                     $("#adNotaFiscal").val(ui.item.notaFiscal);
                     $("#adNotaFiscal_id").val(ui.item.id_financeiro_nota);
                     $("#produto_id").val(ui.item.codDeBarra);
-                    $("#selectMarca").val(ui.item.marca_id);
-                    $("#tipoMarca").val(ui.item.idTipo);
+                    $("#selectMarca").val(ui.item.marca_id).change();
+                    $("#tipoMarca").val(ui.item.idTipo).change();
                     $("#descricao").val(ui.item.descricao);
                     $("#estoque").val(parseInt(ui.item.estoque / ui.item.multiplicador));
                     $("#estoqueMinimo").val(parseInt(ui.item.estoqueMinimo / ui.item.multiplicador));
