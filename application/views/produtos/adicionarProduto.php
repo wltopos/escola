@@ -256,7 +256,7 @@
         //Select com buscador
              
         $('select').select2();
-        $('.wh30').select2(({width: '45%' }));
+        $('.wh30').select2(({width: '42%' }));
         //validação de campos
         $(".money").maskMoney();
 
