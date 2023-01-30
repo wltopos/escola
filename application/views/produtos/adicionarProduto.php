@@ -254,9 +254,9 @@
         });
 
         //Select com buscador
-       
-        $('.wh30').select2(({width: '60%' }));
+             
         $('select').select2();
+        $('.wh30').select2(({width: '60%' }));
         //validação de campos
         $(".money").maskMoney();
 
