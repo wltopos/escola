@@ -57,14 +57,14 @@
                             <tr>
                                 <td style="text-align: right"><strong>Multiplicador</strong></td>
                                 <td>
-                                    <?php echo $result->multiplicador ?>
+                                    <?php echo $nome ?>
                                 </td>
                             </tr>
                             
                             <tr>
                                 <td style="text-align: right"><strong>Medida padrão</strong></td>
                                 <td>
-                                    <?php echo $medidasSistema->medidaSistema ?>
+                                    <?php echo $descricao ?>
                                 </td>
                             </tr>
                         <?php endif ?>
@@ -72,14 +72,14 @@
                             <tr>
                                 <td style="text-align: right"><strong>Categoria</strong></td>
                                 <td>
-                                    <?php echo $tipo_produto->categoria ?>
+                                    <?php echo $nome ?>
                                 </td>
                             </tr>
                             
                             <tr>
                                 <td style="text-align: right"><strong>Setor</strong></td>
                                 <td>
-                                    <?php echo $tipo_produto->sector ?>
+                                    <?php echo $descricap ?>
                                 </td>
                             </tr>
                         <?php endif ?>
