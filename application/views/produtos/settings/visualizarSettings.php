@@ -79,7 +79,22 @@
                             <tr>
                                 <td style="text-align: right"><strong>Setor</strong></td>
                                 <td>
-                                    <?php echo $descricap ?>
+                                    <?php echo $descricao ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                        <?php if ($config == 'COMPATIBILIDADE') : ?>
+                            <tr>
+                                <td style="text-align: right"><strong>Categoria</strong></td>
+                                <td>
+                                    <?php echo $nome ?>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="text-align: right"><strong>Setor</strong></td>
+                                <td>
+                                    <?php echo $descricao ?>
                                 </td>
                             </tr>
                         <?php endif ?>
