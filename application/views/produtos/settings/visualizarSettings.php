@@ -38,6 +38,20 @@
                             </td>
                         </tr>
                         <?php endif ?>
+                    <?php if ($config == 'setor') : ?>
+                        <tr>
+                            <td style="text-align: right; width: 30%"><strong>Marca</strong></td>
+                            <td>
+                                <?php echo $nome ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><strong>Descrição</strong></td>
+                            <td>
+                                <?php echo $descricao ?>
+                            </td>
+                        </tr>
+                        <?php endif ?>
                         <?= $config ?>
                     <?php if ($config == 'local') : ?>
                         <tr>
