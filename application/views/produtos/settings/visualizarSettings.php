@@ -83,7 +83,7 @@
                                 </td>
                             </tr>
                         <?php endif ?>
-                        <?php if ($config == 'COMPATIBILIDADE') : ?>
+                        <?php if ($config == 'campo') : ?>
                             <tr>
                                 <td style="text-align: right"><strong>Categoria</strong></td>
                                 <td>
