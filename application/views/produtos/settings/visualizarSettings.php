@@ -38,7 +38,7 @@
                             </td>
                         </tr>
                         <?php endif ?>
-                    <?php if ($config == 'location') : ?>
+                    <?php if ($config == 'grupo') : ?>
                         <tr>
                             <td style="text-align: right; width: 30%"><strong>Localização</strong></td>
                             <td>
