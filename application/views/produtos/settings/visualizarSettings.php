@@ -93,6 +93,7 @@
                                 <td style="text-align: right"><strong>Descrição</strong></td>
                                 <td>
                                     <?php echo $descricao ?>
+                                    <?php echo $medidaSistema->medidaSistema ?>
                                 </td>
                             </tr>
                         <?php endif ?>
