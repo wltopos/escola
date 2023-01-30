@@ -24,6 +24,7 @@
             <div class="widget-content">
                 <table class="table table-bordered" style="border: 1px solid #ddd">
                     <tbody>
+                    <?php if ($config == 'marca') : ?>
                         <tr>
                             <td style="text-align: right; width: 30%"><strong>Marca</strong></td>
                             <td>
@@ -36,6 +37,21 @@
                                 <?php echo $descricao ?>
                             </td>
                         </tr>
+                        <?php endif ?>
+                    <?php if ($config == 'location') : ?>
+                        <tr>
+                            <td style="text-align: right; width: 30%"><strong>Localização</strong></td>
+                            <td>
+                                <?php echo $nome ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><strong>Ambiente</strong></td>
+                            <td>
+                                <?php echo $descricao ?>
+                            </td>
+                        </tr>
+                        <?php endif ?>
                         <?php if ($config == 'medida') : ?>
                             <tr>
                                 <td style="text-align: right"><strong>Multiplicador</strong></td>
