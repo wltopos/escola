@@ -40,7 +40,21 @@
                         <?php endif ?>
                     <?php if ($config == 'setor') : ?>
                         <tr>
-                            <td style="text-align: right; width: 30%"><strong>Marca</strong></td>
+                            <td style="text-align: right; width: 30%"><strong>Setor</strong></td>
+                            <td>
+                                <?php echo $nome ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><strong>Descrição</strong></td>
+                            <td>
+                                <?php echo $descricao ?>
+                            </td>
+                        </tr>
+                        <?php endif ?>
+                    <?php if ($config == 'categoria') : ?>
+                        <tr>
+                            <td style="text-align: right; width: 30%"><strong>Categoria</strong></td>
                             <td>
                                 <?php echo $nome ?>
                             </td>
