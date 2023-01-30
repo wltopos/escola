@@ -66,7 +66,7 @@
                             </td>
                         </tr>
                         <?php endif ?>
-                        <?= $config ?>
+                        <?= $config, $medidaSistema->medidaSistema  ?>
                     <?php if ($config == 'local') : ?>
                         <tr>
                             <td style="text-align: right; width: 30%"><strong>Localização</strong></td>
