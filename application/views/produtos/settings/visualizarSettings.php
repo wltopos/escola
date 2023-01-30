@@ -83,14 +83,14 @@
                         <?php endif ?>
                         <?php if ($config == 'medida') : ?>
                             <tr>
-                                <td style="text-align: right"><strong>Multiplicador</strong></td>
+                                <td style="text-align: right"><strong>Medida</strong></td>
                                 <td>
                                     <?php echo $nome ?>
                                 </td>
                             </tr>
                             
                             <tr>
-                                <td style="text-align: right"><strong>Medida padrão</strong></td>
+                                <td style="text-align: right"><strong>Descrição</strong></td>
                                 <td>
                                     <?php echo $descricao ?>
                                 </td>
