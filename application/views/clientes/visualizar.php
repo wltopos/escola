@@ -42,7 +42,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: right"><strong>Tipo do Cliente</strong></td>
+                                    <td style="text-align: right"><strong>Tipo do Cliente2</strong></td>
                                     <td>
                                         <?php echo $result->fornecedor == true ? 'Fornecedor' : 'Cliente'; ?>
                                     </td>
