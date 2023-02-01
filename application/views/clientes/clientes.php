@@ -23,6 +23,7 @@
                     <tr>
                         <th>Cod.</th>
                         <th>Nome</th>
+                        <th>Apelido/Nome Fantasia</th>
                         <th>CPF/CNPJ</th>
                         <th>Telefone</th>
                         <th>Email</th>

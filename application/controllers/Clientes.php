@@ -56,6 +56,7 @@ class Clientes extends MY_Controller
             $result[] = [
                 $cliente->id_comercial_cliente,
                 $cliente->nomeCliente,
+                $cliente->apelido,
                 $cliente->documento,
                 $cliente->telefone,
                 $cliente->email,
