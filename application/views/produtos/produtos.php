@@ -4,7 +4,7 @@
 <script src="<?php echo base_url() ?>assets/js/sweetalert2.all.min.js"></script>
 <style>
     .bx-show:before{
-        content: normal;
+        content: none;
     }
 </style>
 
