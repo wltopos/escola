@@ -225,7 +225,7 @@
                 },
                 {
                     target: 7,
-                    visible: false,
+                    width: '114px',
                 },
             ],
             "language": {
