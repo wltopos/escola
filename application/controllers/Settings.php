@@ -176,11 +176,8 @@ class Settings extends MY_Controller
         $this->data['view'] = 'produtos/settings/editar';
         
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
-
-        $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_".$this->data['id']."s", '*', "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
-        
         exit("estoque_".$this->data['id']."s". '*'. "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
-
+        $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_".$this->data['id']."s", '*', "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
         $a = "$id";
         $b = "descricao" . ucfirst($id);
         $c = 'urlLogo' . ucfirst($id);
