@@ -58,9 +58,7 @@ class Produtos extends MY_Controller
                 $a = '<a href="#atualizar-estoque" role="button" data-toggle="modal" produto="' . $produto->id_estoque_produto . '" medida="' . $produto->estoque_medida_id . '" estoqueTxt="' . $estoque['texto'] .'"." estoque="' . $produto->estoque .'" data_result="'.$produto->siglaMedida.'|'.$produto->siglaMedidaSistema.'|'.$produto->siglaFracaoSistema.'" class="btn-nwe5" title="Atualizar Estoque"><i class="bx bx-plus-circle bx-xs" ></i></a>';
             }
 
-            print_r($produto);
-            exit();
-
+           
             $result[] = [
                 $produto->observacao,
                 $produto->codDeBarra,
