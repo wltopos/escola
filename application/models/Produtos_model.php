@@ -61,8 +61,8 @@ class Produtos_model extends CI_Model
                 $estoque['textoEstoqueMinimoRS'] = $estoque['valorConvertidoEstoqueMinimo'] . " " . ($estoque['valorConvertido'] > 1 ? $data['medida'] . 'S' : $data['medida']);
             }
 
-            $estoque['sigla'] = $data['siglaMedida'];kali
-            
+            $estoque['sigla'] = $data['siglaMedida'];
+
             return $estoque;
         }
 
