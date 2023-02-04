@@ -171,10 +171,12 @@ class Settings extends MY_Controller
         }
         $this->load->library('form_validation');
         $this->load->model('produtos_model');
-
+        $this->data['config'] = $this->data['titulo'];
+        $this->data['id'] = $id;
+        $this->data['view'] = 'produtos/settings/editar';
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
 
-        $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_".$this->data['id'] . "s", '*', "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
+        $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_".$this->data['id']."s", '*', "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
         $a = "$id";
         $b = "descricao" . ucfirst($id);
         $c = 'urlLogo' . ucfirst($id);
@@ -183,9 +185,7 @@ class Settings extends MY_Controller
         $this->data['nome'] = $this->data['result']->$a;
         $this->data['descricao'] = $this->data['result']->$b;
         $this->data['urlLogo'] = $this->data['result']->$c;
-        $this->data['config'] = $this->data['titulo'];
-        $this->data['id'] = $id;
-        $this->data['view'] = 'produtos/settings/editar';
+        
 
         if ($this->input->post('nome') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
