@@ -64,6 +64,7 @@ class Produtos extends MY_Controller
                 $produto->codDeBarra,
                 $produto->tipo_produto,
                 $produto->marca,
+                $produto->location,
                 $produto->produtoDescricao,
                 $estoque['texto'],
                 "$v $e $d $a",

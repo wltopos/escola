@@ -35,6 +35,7 @@
                     <th>Cod.</th>
                     <th>Grupo</th>
                     <th>Marca</th>
+                    <th>Local</th>
                     <th>Descrição</th>
                     <th>Estoque</th>
                     <th>Ação</th>
