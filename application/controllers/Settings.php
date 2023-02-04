@@ -183,7 +183,9 @@ class Settings extends MY_Controller
         $this->data['nome'] = $this->data['result']->$a;
         $this->data['descricao'] = $this->data['result']->$b;
         $this->data['urlLogo'] = $this->data['result']->$c;
-
+        $this->data['config'] = $this->data['titulo'];
+        $this->data['id'] = $id;
+        $this->data['view'] = 'produtos/settings/editar';
 
         if ($this->input->post('nome') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
@@ -201,9 +203,7 @@ class Settings extends MY_Controller
             }
         }
 
-        $this->data['config'] = $this->data['titulo'];
-        $this->data['id'] = $id;
-        $this->data['view'] = 'produtos/settings/editar';
+        
         return $this->layout();
     }
 
