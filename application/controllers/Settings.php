@@ -201,7 +201,8 @@ class Settings extends MY_Controller
                 $this->session->set_flashdata('error', "Não foi possível cadastrar $this->data['titulo']!");
             }
         }
-
+        
+        $this->data['config'] = $this->data['titulo'];
         $this->data['view'] = 'produtos/settings/editar';
         return $this->layout();
     }
