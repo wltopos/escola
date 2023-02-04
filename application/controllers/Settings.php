@@ -171,9 +171,7 @@ class Settings extends MY_Controller
         }
         $this->load->library('form_validation');
         $this->load->model('produtos_model');
-        $this->data['config'] = $this->data['titulo'];
-        $this->data['id'] = $id;
-        $this->data['view'] = 'produtos/settings/editar';
+        
         
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
         exit("estoque_".$this->data['id']."s". '*'. "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
@@ -204,7 +202,7 @@ class Settings extends MY_Controller
             }
         }
 
-        
+        $this->data['view'] = 'produtos/settings/editar';
         return $this->layout();
     }
 
@@ -395,7 +393,7 @@ class Settings extends MY_Controller
                 break;
             case 'sector':
                 $this->data['titulo'] =  'setor';
-                $this->data['id'] =  'setor';
+                $this->data['id'] =  'sector';
                 break;
             case 'addCampo':
                 $this->data['titulo'] =  'campo';
