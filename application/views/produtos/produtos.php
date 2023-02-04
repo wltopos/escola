@@ -3,7 +3,7 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <script src="<?php echo base_url() ?>assets/js/sweetalert2.all.min.js"></script>
 <style>
-    .bx-show:before{
+    i.bx.bx-show:before{
         content: none;
     }
 </style>
