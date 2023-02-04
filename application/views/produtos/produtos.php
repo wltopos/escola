@@ -2,11 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/datatable.css" />
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <script src="<?php echo base_url() ?>assets/js/sweetalert2.all.min.js"></script>
-<style>
-    i.bx.bx-show:before{
-        content: none;
-    }
-</style>
+
 
 <div class="new122" style="margin-top: 0; min-height: 100vh">
     <div class="flexxn">
