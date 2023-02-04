@@ -3,12 +3,6 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <script src="<?php echo base_url() ?>assets/js/sweetalert2.all.min.js"></script>
 
-<style>
-  a.btn-nwe5 {
-    position: absolute;
-    padding-top: 1px;
-}  
-</style>
 
 <div class="new122" style="margin-top: 0; min-height: 100vh">
     <div class="flexxn">
