@@ -38,7 +38,7 @@
                                     <th width="130" >Marca</th>
                                     <th width="130" >Preço Compra</th>
                                     <th width="120" >Estoque</th>
-                                    <th width="130" >Valor Estoque</th>
+                                    <th width="130" >Local</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,7 +54,7 @@
                                         echo '<td align="center">' . $p->marca . '</td>';
                                         echo '<td align="center">R$: ' . $p->precoCompra . '</td>';
                                         echo '<td align="center">' . $estoque['textoRS'] . '</td>';
-                                        echo '<td align="center">R$: ' . number_format($p->valorEstoque, 2, ',', '.') . '</td>';
+                                        echo '<td align="center">R$: ' . number_format($p->location, 2, ',', '.') . '</td>';
                                         echo '</tr>';
 
                                     }
