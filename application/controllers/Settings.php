@@ -403,7 +403,7 @@ class Settings extends MY_Controller
                 $this->data['categorias'] = $this->setdb_model->getTabelaQ("estoque_categorias", '*');
                 $this->data['setores'] = $this->setdb_model->getTabelaQ("estoque_sectors", '*');
                 $this->data['titulo'] = 'grupo';
-                $this->data['id'] = 'tipo_produto';
+                $this->data['id'] = 'tipoProduto';
                 break;
             default:
                 $this->data['titulo'] = $id;
