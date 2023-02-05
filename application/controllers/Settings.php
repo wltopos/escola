@@ -140,7 +140,7 @@ class Settings extends MY_Controller
         if ($this->input->post('nome') != "") {
   
             $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
-       
+       exit("estoque_".$this->data['id'] . "s". $this->dataInsert);
             if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', strtoupper($this->data['titulo']) . " adicionado com sucesso!");
                 log_info('Adicionou um produto');
@@ -404,7 +404,7 @@ class Settings extends MY_Controller
                 $this->data['categorias'] = $this->setdb_model->getTabelaQ("estoque_categorias", '*');
                 $this->data['setores'] = $this->setdb_model->getTabelaQ("estoque_sectors", '*');
                 $this->data['titulo'] = 'grupo';
-                $this->data['id'] = 'tipoProduto';
+                $this->data['id'] = 'tipo_produto';
                 break;
             default:
                 $this->data['titulo'] = $id;
