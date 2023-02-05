@@ -142,11 +142,11 @@ class Settings extends MY_Controller
             $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
             
             if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
-                $this->session->set_flashdata('success', strtoupper($this->data['titulo']) . " adicionado com sucesso!");
+                $this->session->set_flashdata('success', mb_strtoupper($this->data['titulo']) . " adicionado com sucesso!");
                 log_info('Adicionou um produto');
                 redirect(site_url("settings/adicionar/$id"));
             } else {
-                $this->session->set_flashdata('error', "Erro ao adicionar " .strtoupper($this->data['titulo']));
+                $this->session->set_flashdata('error', "Erro ao adicionar " .mb_strtoupper($this->data['titulo']));
             }
         }
 
@@ -238,7 +238,7 @@ class Settings extends MY_Controller
 
 
         if ($this->data['result'] == null) {
-            $this->session->set_flashdata('error', strtoupper($id) . "  não encontrado.");
+            $this->session->set_flashdata('error', mb_strtoupper($id) . "  não encontrado.");
             redirect(site_url('settings/editar/') . $this->input->post('idProdutos'));
         }
 
@@ -417,9 +417,9 @@ class Settings extends MY_Controller
        
        if($op == "cad"){
         $this->dataInsert = [
-            $this->data['id']                      => strtoupper($this->input->post('nome')),
-            "sigla".ucfirst($this->data['id'])    => strtoupper($this->input->post('nome')),
-            "descricao".ucfirst($this->data['id']) => strtoupper($this->input->post('descricao')),
+            $this->data['id']                      => mb_strtoupper($this->input->post('nome')),
+            "sigla".ucfirst($this->data['id'])    => mb_strtoupper($this->input->post('nome')),
+            "descricao".ucfirst($this->data['id']) => mb_strtoupper($this->input->post('descricao')),
             'cadastro'.ucfirst($this->data['id'])  => date('Y-m-d h:i:s'),
             "urlLogo".ucfirst($this->data['id'])   =>  $this->input->post('urlLogo'),
 
@@ -428,9 +428,9 @@ class Settings extends MY_Controller
        }
        if($op == "up"){
         $this->dataInsert = [
-            $this->data['id']                      => strtoupper($this->input->post('nome')),
-            "sigla".ucfirst($this->data['id'])    => strtoupper($this->input->post('nome')),
-            "descricao".ucfirst($this->data['id']) => strtoupper($this->input->post('descricao')),
+            $this->data['id']                      => mb_strtoupper($this->input->post('nome')),
+            "sigla".ucfirst($this->data['id'])    => mb_strtoupper($this->input->post('nome')),
+            "descricao".ucfirst($this->data['id']) => mb_strtoupper($this->input->post('descricao')),
             'update'.ucfirst($this->data['id'])    => date('Y-m-d h:i:s'),
             "urlLogo".ucfirst($this->data['id'])   =>  $this->input->post('urlLogo'),
 
@@ -451,7 +451,7 @@ class Settings extends MY_Controller
                 $this->dataInsert['multiplicador'] = $this->input->post('multiplicador');
                 break;
             case  'location':
-                $this->dataInsert['ambiente'] = strtoupper($this->input->post('ambiente'));
+                $this->dataInsert['ambiente'] = mb_strtoupper($this->input->post('ambiente'));
                 break;
         }
 

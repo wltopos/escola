@@ -152,7 +152,7 @@ class Produtos extends MY_Controller
             if (is_array($campos)) {
                 
                 foreach ($campos as $campo => $valor) {
-                    $valor = strtoupper($valor);
+                    $valor = mb_strtoupper($valor);
                     $campo = explode("_", $campo);
                     $camposDB .= "$campo[0]::$valor||";
                 }
@@ -163,12 +163,12 @@ class Produtos extends MY_Controller
             $estoque =  $this->produtos_model->converteMedida($this->input->post('estoque'), $this->input->post('unidade'), 'S', $this->input->post('estoqueMinimo'));
 
             $this->dataInsert = [
-                'codDeBarra'              => strtoupper($this->input->post('codDeBarra')),
-                'produtoDescricao'       => strtoupper($this->input->post('descricao')),
-                'estoque_location_id'     => strtoupper($this->input->post('location')),
-                'estoque_medida_id'       => strtoupper($this->input->post('unidade')),
-                'estoque_marca_id'        => strtoupper($this->input->post('marca')),
-                'estoque_tipo_produto_id' => strtoupper($this->input->post('complemento')),
+                'codDeBarra'              => mb_strtoupper($this->input->post('codDeBarra')),
+                'produtoDescricao'       => mb_strtoupper($this->input->post('descricao')),
+                'estoque_location_id'     => mb_strtoupper($this->input->post('location')),
+                'estoque_medida_id'       => mb_strtoupper($this->input->post('unidade')),
+                'estoque_marca_id'        => mb_strtoupper($this->input->post('marca')),
+                'estoque_tipo_produto_id' => mb_strtoupper($this->input->post('complemento')),
                 'financeiro_nota_id'      => $this->input->post('adNotaFiscal_id'),
                 'precoCompra'             => $this->input->post('precoCompra'),
                 'margemLucro'             => $this->input->post('margemLucro'),
@@ -252,18 +252,18 @@ class Produtos extends MY_Controller
            $estoque =  $this->produtos_model->converteMedida($this->input->post('estoque'), $this->input->post('unidade'), 'S', $this->input->post('estoqueMinimo'));
 
             $this->dataInsert = [
-                'codDeBarra'              => strtoupper($this->input->post('codDeBarra')),
-                'produtoDescricao'        => strtoupper($this->input->post('descricao')),
-                'estoque_location_id'     => strtoupper($this->input->post('location')),
-                'estoque_medida_id'       => strtoupper($this->input->post('unidade')),
-                'estoque_marca_id'        => strtoupper($this->input->post('marca')),
-                'estoque_tipo_produto_id' => strtoupper($this->input->post('complemento')),
+                'codDeBarra'              => mb_strtoupper($this->input->post('codDeBarra')),
+                'produtoDescricao'        => mb_strtoupper($this->input->post('descricao')),
+                'estoque_location_id'     => mb_strtoupper($this->input->post('location')),
+                'estoque_medida_id'       => mb_strtoupper($this->input->post('unidade')),
+                'estoque_marca_id'        => mb_strtoupper($this->input->post('marca')),
+                'estoque_tipo_produto_id' => mb_strtoupper($this->input->post('complemento')),
                 'financeiro_nota_id'      => $this->input->post('adNotaFiscal_id'),
                 'precoCompra'             => $this->input->post('precoCompra'),
                 'margemLucro'             => $this->input->post('margemLucro'),
                 'precoVenda'              => $precoVenda,
                 'estoque'                 => $estoque['valorConvertido'],
-                'observacao'              => strtoupper($camposDB),
+                'observacao'              => mb_strtoupper($camposDB),
                 'estoqueMinimo'           => $estoque['valorConvertidoEstoqueMinimo'],
                 'dateUpdate'              => date('Y-m-d h:i:s'),
                 'dataVencimento'          => $this->input->post('dataVencimento'),

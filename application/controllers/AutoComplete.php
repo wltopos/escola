@@ -62,7 +62,7 @@ class AutoComplete extends MY_Controller
     public function autoCompleteProduto()
     {
         if (isset($_GET['term'])) {
-            $term = strtoupper($_GET['term']);
+            $term = mb_strtoupper($_GET['term']);
  
             $row_set['label']                    = '';
             $row_set['id_estoque_produto']       = 'id';
