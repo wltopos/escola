@@ -199,7 +199,7 @@ class Settings extends MY_Controller
             if ($this->setdb_model->edit("estoque_".$this->data['id']."s", $this->dataInsert, "id_estoque_".$this->data['id'], $this->uri->segment(4)) == true) {
                 $this->session->set_flashdata('success', 'Item '.$this->data['titulo'].' editado com sucesso!');
                 log_info("Alterou um ".$this->data['titulo']." ID: " . $this->uri->segment(4));
-                redirect("settings/editar/grupo/".$this->uri->segment(4));
+                redirect("settings/editar/".$this->data['titulo']."/".$this->uri->segment(4));
             } else {
                 log_info("Houve um erro ao editar ". $this->data['titulo']. " com ID: ".$this->uri->segment(4));
                 $this->session->set_flashdata('error', "Não foi possível cadastrar". $this->data['titulo']."!");
