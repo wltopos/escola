@@ -242,7 +242,7 @@ class Settings extends MY_Controller
 
 
         if ($this->data['result'] == null) {
-            $this->session->set_flashdata('error', mb_strtoupper($id) . "  não encontrado.");
+            $this->session->set_flashdata('error', $id . "  não encontrado.");
             log_info("Encontrou um erro ao tentar vizualizar produto de ID: ".$this->uri->segment(4));
             redirect(site_url('settings/editar/') . $this->input->post('idProdutos'));
         }
