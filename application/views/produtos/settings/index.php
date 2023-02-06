@@ -428,7 +428,8 @@
                                         <span class="icon">
                                             <i class="fas fa-shopping-bag"></i>
                                         </span>
-                                        <h5>Fluxo de cadastro de produtos em estoque </h5>
+                                        <h5>Fluxograma de cadastro </h5>
+                                        <p>produtos em estoque </p>
                                     </div>
 
 
