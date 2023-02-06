@@ -303,9 +303,9 @@ class Produtos extends MY_Controller
 
         $this->produtosFields = $this->setquery_model->getFields('produtosID');
         $this->produtosJoin   = $this->setquery_model->getJoin('produtosID');
+        $this->data['result'] = $this->setdb_model->getTabelaQID('estoque_produtos', $this->produtosFields, 'estoque_produtos.id_estoque_produto =' . $this->uri->segment(3), $this->produtosJoin, 'LEFT');
 
-
-       if( $this->data['result'] = $this->setdb_model->getTabelaQID('estoque_produtos', $this->produtosFields, 'estoque_produtos.id_estoque_produto =' . $this->uri->segment(3), $this->produtosJoin, 'LEFT') ==''){
+       if($this->data['result'] ==''){
         $this->session->set_flashdata('error', 'Produto não localizado');
         redirect('produtos');
        };
