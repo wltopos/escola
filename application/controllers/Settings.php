@@ -203,6 +203,7 @@ class Settings extends MY_Controller
             } else {
                 log_info("Houve um erro ao editar ". $this->data['titulo']. " com ID: ".$this->uri->segment(4));
                 $this->session->set_flashdata('error', "Não foi possível cadastrar". $this->data['titulo']."!");
+                redirect("produtos");
             }
         }
         
