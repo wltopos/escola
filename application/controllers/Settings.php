@@ -38,7 +38,8 @@ class Settings extends MY_Controller
     {
 
         $this->getLinkInsertData($id, "up", $this->uri->segment(4)); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
-        exit($this->data['id']);
+        print_r($this->data['id']);
+        exit();
         $this->data['custom_error'] = '';
         $this->data['results'] = $this->setdb_model->getTabelaQ("estoque_".$this->data['id'] ."s", '*', '', '', '');
         
