@@ -428,7 +428,7 @@
                                         <span class="icon">
                                             <i class="fas fa-shopping-bag"></i>
                                         </span>
-                                        <h5>Campos Adicionais</h5>
+                                        <h5>Fluxo de cadastro de produtos em estoque</h5>
                                     </div>
 
 
