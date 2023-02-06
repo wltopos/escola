@@ -590,7 +590,7 @@
         });
 
         $('#tabelaItens').DataTable({
-            ajax: '<?= site_url('/settings/getSettings/tipo_produto') ?>',
+            ajax: '<?= site_url('/settings/getSettings/grupo') ?>',
             "oLanguage": DATATABLE_PTBR,
             "processing": true,
             "lengthChange": true,
