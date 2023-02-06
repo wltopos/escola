@@ -17,7 +17,7 @@ class Audit_model extends CI_Model
     {
         $this->db_empresa->select($fields);
         $this->db_empresa->from($table);
-        $this->db_empresa->order_by('idLogs', 'desc');
+        $this->db_empresa->order_by('id_log', 'desc');
         $this->db_empresa->limit($perpage, $start);
         if ($where) {
             $this->db_empresa->where($where);
