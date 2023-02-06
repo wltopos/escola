@@ -146,7 +146,7 @@ class Settings extends MY_Controller
             if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', mb_strtoupper($this->data['titulo']) . " adicionado com sucesso!");
                 log_info('Adicionou um produto');
-                redirect(site_url("settings/adicionar/$id"));
+                redirect(site_url("settings/adicionar/".$this->data['id']));
             } else {
                 $this->session->set_flashdata('error', "Erro ao adicionar " .mb_strtoupper($this->data['titulo']));
             }
@@ -196,12 +196,12 @@ class Settings extends MY_Controller
            $this->getLinkInsertData($this->data['id'], "up", $this->uri->segment(4)); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
            print_r($this->dataInsert);
            exit();
-            if ($this->setdb_model->edit("estoque_$id"."s", $this->dataInsert, "id_estoque_$id", $this->uri->segment(4)) == true) {
+            if ($this->setdb_model->edit("estoque_".$this->data['id']."s", $this->dataInsert, "id_estoque_".$this->data['id'], $this->uri->segment(4)) == true) {
                 $this->session->set_flashdata('success', 'Item '.$this->data['titulo'].' editado com sucesso!');
                 log_info("Alterou um $id. ID: " . $this->uri->segment(4));
                 redirect(site_url("produtos/settings#tab".ucfirst($id)));
             } else {
-                $this->session->set_flashdata('error', "Não foi possível cadastrar $this->data['titulo']!");
+                $this->session->set_flashdata('error', "Não foi possível cadastrar". $this->data['titulo']."!");
             }
         }
         
