@@ -305,8 +305,11 @@ class Produtos extends MY_Controller
         $this->produtosJoin   = $this->setquery_model->getJoin('produtosID');
 
 
-        $this->data['result'] = $this->setdb_model->getTabelaQID('estoque_produtos', $this->produtosFields, 'estoque_produtos.id_estoque_produto =' . $this->uri->segment(3), $this->produtosJoin, 'LEFT');
-exit($this->data['result']);
+       if( $this->data['result'] = $this->setdb_model->getTabelaQID('estoque_produtos', $this->produtosFields, 'estoque_produtos.id_estoque_produto =' . $this->uri->segment(3), $this->produtosJoin, 'LEFT') ==''){
+        $this->session->set_flashdata('error', 'Produto não localizado');
+        redirect('produtos');
+       };
+
         $this->data['dateCadastro'] = ($this->setdb_model->validaDate($this->data['result']->dataCadastro) == true)?$this->setdb_model->hData($this->data['result']->dataCadastro).' às '.(new DateTime($this->data['result']->dataCadastro))->format('H:i:s'):'Não informado';
         $this->data['dateUpdate'] = ($this->setdb_model->validaDate($this->data['result']->dateUpdate) == true)?$this->setdb_model->hData($this->data['result']->dateUpdate).' às '.(new DateTime($this->data['result']->dateUpdate))->format('H:i:s'):'Não informado';
         $this->data['dateVencimento'] = ($this->setdb_model->validaDate($this->data['result']->dataVencimento, 'Y-m-d') == true)?$this->setdb_model->hData($this->data['result']->dataVencimento):'Não informado';
