@@ -37,11 +37,12 @@ class Settings extends MY_Controller
     public function getSettings($id)
     {
 
+        $this->getLinkInsertData($id, "up", $this->uri->segment(4)); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
         $this->data['custom_error'] = '';
-        $this->data['results'] = $this->setdb_model->getTabelaQ("estoque_$id" . "s", '*', '', '', '');
+        $this->data['results'] = $this->setdb_model->getTabelaQ("estoque_".$this->data['id'] . "s", '*', '', '', '');
 
         foreach ($this->data['results'] as $settings) {
-            $idUrl = 'urlLogo' . ucfirst($id);
+            $idUrl = 'urlLogo' . ucfirst($this->data['id']);
 
             if (!empty($settings->$idUrl) or $settings->$idUrl != null) {
                 $urlImg = $settings->$idUrl;
@@ -51,23 +52,23 @@ class Settings extends MY_Controller
             }
 
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vProduto')) {
-                $v = '<a style="margin-right: 1%" href="' . site_url() . "settings/visualizar/$id/" . $settings->{"id_estoque_$id"} . '" class="btn-nwe" title="Visualizar Setting"><i class="bx bx-show bx-xs"></i></a>  ';
+                $v = '<a style="margin-right: 1%" href="' . site_url() . "settings/visualizar/".$this->data['id'] ."/" . $settings->{"id_estoque_".$this->data['id'] } . '" class="btn-nwe" title="Visualizar Setting"><i class="bx bx-show bx-xs"></i></a>  ';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eProduto')) {
-                $e = '<a style="margin-right: 1%" href="' . site_url() . "settings/editar/$id/" . $settings->{"id_estoque_$id"} . '" class="btn-nwe3" title="Editar Setting"><i class="bx bx-edit bx-xs"></i></a>';
+                $e = '<a style="margin-right: 1%" href="' . site_url() . "settings/editar/".$this->data['id'] ."/" . $settings->{"id_estoque_".$this->data['id']} . '" class="btn-nwe3" title="Editar Setting"><i class="bx bx-edit bx-xs"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dProduto')) {
-                $d = '<a style="margin-right: 1%" href="#modal-excluir" role="button" data-toggle="modal" setting="' . $id . '" idSetting="' . $settings->{"id_estoque_$id"} . '" class="btn-nwe4" title="Excluir Setting"><i class="bx bx-trash-alt bx-xs"></i></a>';
+                $d = '<a style="margin-right: 1%" href="#modal-excluir" role="button" data-toggle="modal" setting="' .$this->data['id']. '" idSetting="' . $settings->{"id_estoque_".$this->data['id']} . '" class="btn-nwe4" title="Excluir Setting"><i class="bx bx-trash-alt bx-xs"></i></a>';
             }
 
 
 
             $result[] = [
                 $logo,
-                $settings->{"id_estoque_$id"},
-                $settings->{$id},
-                "<span class='textoDescricao'>" . $settings->{"descricao" . ucfirst($id)} . "</span>",
-                $this->setdb_model->hData($settings->{"cadastro" . ucfirst($id)}),
+                $settings->{"id_estoque_".$this->data['id']},
+                $settings->{$this->data['id']},
+                "<span class='textoDescricao'>" . $settings->{"descricao" . ucfirst($this->data['id'])} . "</span>",
+                $this->setdb_model->hData($settings->{"cadastro" . ucfirst($this->data['id'])}),
                 "$v $e $d",
             ];
         }
