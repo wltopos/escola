@@ -190,6 +190,7 @@ class Produtos extends MY_Controller
                 redirect(site_url('produtos/adicionar/'));
             } else {
                 $this->data['custom_error'] = '<div class="form_error"><p>Verifique o preenchimento de todos os campos.</p></div>';
+                log_info('Não preencheu o formulario de cadastro de produto corretamente');
             }
         }
         $this->data['view'] = 'produtos/adicionarProduto';
@@ -279,6 +280,7 @@ class Produtos extends MY_Controller
                 redirect(site_url('produtos/editar/') . $this->input->post('id_estoque_produto'));
             } else {
                 $this->session->set_flashdata('error', 'Não foi possível cadastrar o produto!');
+                log_info('Encontrou um erro ao cadastrar produto');
             }
         }
 
@@ -327,9 +329,10 @@ class Produtos extends MY_Controller
 
         if ($this->data['result'] == null) {
             $this->session->set_flashdata('error', 'Produto não encontrado.');
+            log_info('Encontrou erro ao tentar vizualizar produto ID: ' . $this->uri->segment(3));
             redirect(site_url('produtos/editar/') . $this->input->post('idProdutos'));
         }
-
+        log_info('Vizualizou produto. ID: ' . $this->uri->segment(3));
         $this->data['view'] = 'produtos/visualizarProduto';
         return $this->layout();
     }
@@ -376,6 +379,7 @@ class Produtos extends MY_Controller
             redirect(site_url('produtos/visualizar/') . $idProduto);
         } else {
             $this->data['custom_error'] = '<div class="alert">Ocorreu um erro.</div>';
+            log_info('Encontrou um erro ao atulizar estoque');
         }
     }
 
@@ -389,6 +393,7 @@ class Produtos extends MY_Controller
         $id = $this->input->post('id');
         if ($id == null) {
             $this->session->set_flashdata('error', 'Erro ao tentar excluir produto.');
+            log_info('Encontrou erro ao excluir produto');
             redirect(base_url() . 'index.php/produtos/gerenciar/');
         }
 
