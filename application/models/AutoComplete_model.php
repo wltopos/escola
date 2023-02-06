@@ -96,7 +96,7 @@ class AutoComplete_model extends CI_Model
         $query = $this->db_empresa->get('financeiro_notas');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = ['label' => 'Nº ' . $row['notaFiscal'] . ' | fornecedor ' . $row['nomeCliente'], 'id' => $row['id_financeiro_nota'], 'notaFiscal' => $row['notaFiscal']];
+                $row_set[] = ['label' => 'Nº ' . $row['notaFiscal'] . ' | FORNECEDOR: ' . $row['nomeCliente'], 'id' => $row['id_financeiro_nota'], 'notaFiscal' => $row['notaFiscal']];
             }
             echo json_encode($row_set);
         }
