@@ -441,9 +441,7 @@ class Settings extends MY_Controller
 
 
        }
-       print_r($id);
-       exit();
-
+       
         switch ($id) {
             case 'grupo':
                 $this->dataInsert['estoque_categoria_id'] = $this->input->post('categoria');
