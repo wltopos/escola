@@ -38,8 +38,6 @@ class Settings extends MY_Controller
     {
         $this->getLinkReturnData($id);    //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
 
-        print_r($this->data);
-        exit();
         $this->data['custom_error'] = '';
         $this->data['results'] = $this->setdb_model->getTabelaQ("estoque_".$this->data['id'] ."s", '*', '', '', '');
         
