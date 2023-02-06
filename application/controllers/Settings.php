@@ -247,7 +247,7 @@ class Settings extends MY_Controller
             log_info("Encontrou um erro ao tentar vizualizar produto de ID: ".$this->uri->segment(4));
             redirect(site_url('settings/editar/') . $this->input->post('idProdutos'));
         }else{
-            log_info("Vizualizou produto com ID: ".$this->uri->segment(4));
+            log_info("Alterou um ".$this->data['titulo']." ID: " . $this->uri->segment(4));
         }
 
         
