@@ -148,6 +148,7 @@ class Settings extends MY_Controller
                 log_info('Adicionou um produto');
                 redirect(site_url("settings/adicionar/".$this->data['id']));
             } else {
+                log_info("Houve um erro ao cadastrar ". $this->data['titulo']. " produto ");
                 $this->session->set_flashdata('error', "Erro ao adicionar " .mb_strtoupper($this->data['titulo']));
             }
         }
@@ -200,6 +201,7 @@ class Settings extends MY_Controller
                 log_info("Alterou um ".$this->data['titulo']." ID: " . $this->uri->segment(4));
                 redirect("settings/editar/grupo/".$this->uri->segment(4));
             } else {
+                log_info("Houve um erro ao editar ". $this->data['titulo']. " com ID: ".$this->uri->segment(4));
                 $this->session->set_flashdata('error', "Não foi possível cadastrar". $this->data['titulo']."!");
             }
         }
@@ -241,10 +243,11 @@ class Settings extends MY_Controller
 
         if ($this->data['result'] == null) {
             $this->session->set_flashdata('error', mb_strtoupper($id) . "  não encontrado.");
+            log_info("Encontrou um erro ao tentar vizualizar produto de ID: ".$this->uri->segment(4));
             redirect(site_url('settings/editar/') . $this->input->post('idProdutos'));
         }
 
-
+        log_info("Vizualizou produto com ID: ".$this->uri->segment(4));
         $this->data['config'] = $this->data['titulo'];
         $this->data['view'] = 'produtos/settings/visualizarSettings';
         return $this->layout();
