@@ -77,7 +77,7 @@ class AutoComplete_model extends CI_Model
         $query = $this->db_empresa->get('comercial_clientes');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = ['label' => 'Fornecedor: ' . $row['nomeCliente'] . ' | Telefone: ' . $row['telefone'], 'id' => $row['id_comercial_cliente']];
+                $row_set[] = ['label' => 'FORNECEDOR: ' . $row['nomeCliente'] . ' | Telefone: ' . $row['telefone'], 'id' => $row['id_comercial_cliente']];
             }
             echo json_encode($row_set);
         } else {
