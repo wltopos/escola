@@ -141,7 +141,7 @@ class Settings extends MY_Controller
 
         if ($this->input->post('nome') != "") {
   
-            $this->getLinkInsertData($id); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
+            $this->getLinkInsertData($this->data['id']); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
             
             if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', mb_strtoupper($this->data['titulo']) . " adicionado com sucesso!");
@@ -193,7 +193,7 @@ class Settings extends MY_Controller
         } else {
 
 
-           $this->getLinkInsertData($id, "up", $this->uri->segment(4)); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
+           $this->getLinkInsertData($this->data['id'], "up", $this->uri->segment(4)); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
            
             if ($this->setdb_model->edit("estoque_$id"."s", $this->dataInsert, "id_estoque_$id", $this->uri->segment(4)) == true) {
                 $this->session->set_flashdata('success', 'Item '.$this->data['titulo'].' editado com sucesso!');
