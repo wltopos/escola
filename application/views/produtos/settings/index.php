@@ -35,7 +35,7 @@
                         <li class="active" id="tDetalhes"><a href="#tabMarca" data-toggle="tab">Marcas</a></li>
                         <li id="tSetores"><a href="#tabSector" data-toggle="tab">Setores</a></li>
                         <li id="tCategorias"><a href="#tabCategoria" data-toggle="tab">Categorioas</a></li>
-                        <li id="tIetns"><a href="#tabTipoProduto" data-toggle="tab">Grupos</a></li>
+                        <li id="tGrupo"><a href="#tabGrupo" data-toggle="tab">Grupos</a></li>
                         <li id="tMedidas"><a href="#tabMedida" data-toggle="tab">Medidas</a></li>
                         <li id="tLocais"><a href="#tabLocation" data-toggle="tab">Locais</a></li>
                         <li id="tCampos"><a href="#tabAddCampo" data-toggle="tab">Campos adicionais</a></li>
@@ -307,7 +307,7 @@
                             </div>
 
                         </div>
-                        <div class="tab-pane" id="tabTipoProduto">
+                        <div class="tab-pane" id="tabGrupo">
                             <div class="span12 well" id="divEditarTipoProduto">
 
                                 <div class="widget-box">
