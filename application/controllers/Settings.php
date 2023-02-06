@@ -36,8 +36,8 @@ class Settings extends MY_Controller
     }
     public function getSettings($id)
     {
+        $this->getLinkReturnData($id);    //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
 
-        $this->getLinkInsertData($id, "up", $this->uri->segment(4)); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
         print_r($this->dataInsert);
         exit();
         $this->data['custom_error'] = '';
@@ -421,22 +421,22 @@ class Settings extends MY_Controller
        
        if($op == "cad"){
         $this->dataInsert = [
-            $this->data['id']                      => mb_strtoupper($this->input->post('nome')),
-            "sigla".ucfirst($this->data['id'])    => mb_strtoupper($this->input->post('nome')),
-            "descricao".ucfirst($this->data['id']) => mb_strtoupper($this->input->post('descricao')),
-            'cadastro'.ucfirst($this->data['id'])  => date('Y-m-d h:i:s'),
-            "urlLogo".ucfirst($this->data['id'])   =>  $this->input->post('urlLogo'),
+            $this->data['id']        => mb_strtoupper($this->input->post('nome')),
+            "sigla".ucfirst($id)     => mb_strtoupper($this->input->post('nome')),
+            "descricao".ucfirst($id) => mb_strtoupper($this->input->post('descricao')),
+            'cadastro'.ucfirst($id)  => date('Y-m-d h:i:s'),
+            "urlLogo".ucfirst($id)   =>  $this->input->post('urlLogo'),
 
 
         ];
        }
        if($op == "up"){
         $this->dataInsert = [
-            $this->data['id']                      => mb_strtoupper($this->input->post('nome')),
-            "sigla".ucfirst($this->data['id'])    => mb_strtoupper($this->input->post('nome')),
-            "descricao".ucfirst($this->data['id']) => mb_strtoupper($this->input->post('descricao')),
-            'update'.ucfirst($this->data['id'])    => date('Y-m-d h:i:s'),
-            "urlLogo".ucfirst($this->data['id'])   =>  $this->input->post('urlLogo'),
+            $this->data['id']        => mb_strtoupper($this->input->post('nome')),
+            "sigla".ucfirst($id)     => mb_strtoupper($this->input->post('nome')),
+            "descricao".ucfirst($id) => mb_strtoupper($this->input->post('descricao')),
+            'update'.ucfirst($id)    => date('Y-m-d h:i:s'),
+            "urlLogo".ucfirst($id)   =>  $this->input->post('urlLogo'),
 
 
         ];
