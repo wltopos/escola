@@ -228,6 +228,7 @@ class Settings extends MY_Controller
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
 
         $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_$id" . "s", '*', "id_estoque_$id=" . $this->uri->segment(4));
+        log_info('Produto vizualizado');
 
         $a = "$id";
         $b = "descricao" . ucfirst($id);
@@ -246,8 +247,6 @@ class Settings extends MY_Controller
             $this->session->set_flashdata('error', $id . "  não encontrado.");
             log_info("Encontrou um erro ao tentar vizualizar produto de ID: ".$this->uri->segment(4));
             redirect(site_url('settings/editar/') . $this->input->post('idProdutos'));
-        }else{
-            log_info("Alterou um ".$this->data['titulo']." ID: " . $this->uri->segment(4));
         }
 
         
