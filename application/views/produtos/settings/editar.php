@@ -7,7 +7,7 @@
             <span class="icon">
                 <i class="fas fa-user"></i>
             </span>
-            <h5>Adicionar <?= ucfirst($config) ?></h5>
+            <h5>Editar <?= ucfirst($config) ?></h5>
         </div>
         <form action="<?php echo current_url(); ?>" id="formSettings" enctype="multipart/form-data" method="post" class="form-horizontal">
             <input type="hidden" name="abreviatura" value="">
