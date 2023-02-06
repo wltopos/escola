@@ -245,9 +245,11 @@ class Settings extends MY_Controller
             $this->session->set_flashdata('error', $id . "  não encontrado.");
             log_info("Encontrou um erro ao tentar vizualizar produto de ID: ".$this->uri->segment(4));
             redirect(site_url('settings/editar/') . $this->input->post('idProdutos'));
+        }else{
+            log_info("Vizualizou produto com ID: ".$this->uri->segment(4));
         }
 
-        log_info("Vizualizou produto com ID: ".$this->uri->segment(4));
+        
         $this->data['config'] = $this->data['titulo'];
         $this->data['view'] = 'produtos/settings/visualizarSettings';
         return $this->layout();
