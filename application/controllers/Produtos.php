@@ -309,7 +309,8 @@ class Produtos extends MY_Controller
         $this->session->set_flashdata('error', 'Produto não localizado');
         redirect('produtos');
        };
-
+print_r($this->data['result']);
+exit();
         $this->data['dateCadastro'] = ($this->setdb_model->validaDate($this->data['result']->dataCadastro) == true)?$this->setdb_model->hData($this->data['result']->dataCadastro).' às '.(new DateTime($this->data['result']->dataCadastro))->format('H:i:s'):'Não informado';
         $this->data['dateUpdate'] = ($this->setdb_model->validaDate($this->data['result']->dateUpdate) == true)?$this->setdb_model->hData($this->data['result']->dateUpdate).' às '.(new DateTime($this->data['result']->dateUpdate))->format('H:i:s'):'Não informado';
         $this->data['dateVencimento'] = ($this->setdb_model->validaDate($this->data['result']->dataVencimento, 'Y-m-d') == true)?$this->setdb_model->hData($this->data['result']->dataVencimento):'Não informado';
