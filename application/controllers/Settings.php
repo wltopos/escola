@@ -228,7 +228,7 @@ class Settings extends MY_Controller
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
 
         $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_$id" . "s", '*', "id_estoque_$id=" . $this->uri->segment(4));
-        log_info('Produto vizualizado');
+      exit(  log_info('Produto vizualizado'));
 
         $a = "$id";
         $b = "descricao" . ucfirst($id);
