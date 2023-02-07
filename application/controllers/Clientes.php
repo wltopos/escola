@@ -37,20 +37,9 @@ class Clientes extends MY_Controller
         $this->pagination->initialize($this->data['configuration']);
 
         $this->data['custom_error'] = '';
-
-
-        if(!$this->setdb_model->getTabelaQ('comercial_clientess')){
-            log_info('Visualizou lista de cliente/fornecedor.'); 
-            exit('erro');
-        } else{
-            //do whatever you want when there is an mysql error
-            log_info('Encontrou erro ao visualizar lista de cliente/fornecedor.'); 
-            redirect('clientes');
-            exit('ok');
-        }
-        
-        
-
+        $this->data['results'] = $this->setdb_model->getTabelaQ('comercial_clientes');
+        log_info('Visualizou lista de cliente/fornecedor.');
+exit($this->data['results']);
 
         foreach ($this->data['results'] as $cliente) {
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vCliente')) {

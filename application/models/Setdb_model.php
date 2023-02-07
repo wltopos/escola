@@ -77,7 +77,9 @@ class Setdb_model extends CI_Model
 
         $query = $this->db_empresa->get();
 
-        $result =  !$one  ? $query->result() : $query->row();
+        if(!$result=!$one?$query->result():$query->row()){
+            $this->db_empresa->error();
+        };
         return $result;
     }
 
