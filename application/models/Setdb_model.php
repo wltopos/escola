@@ -77,7 +77,9 @@ class Setdb_model extends CI_Model
 
         $query = $this->db_empresa->get();
         try {
-            $result = !$one ? $query->result() : $query->row();
+           if($result = !$one ? $query->result() : $query->row()){
+            throw new \Exception('Erro ao lozalizar tabela', 306);
+           }
         } catch (\Exception $error) {
             $result = $error;
         }
