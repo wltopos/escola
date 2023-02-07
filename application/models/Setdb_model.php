@@ -66,7 +66,7 @@ class Setdb_model extends CI_Model
     public function getTabelaQ($table, $fields = '*', $where = '', $join = '', $order = '', $parametro = '', $perpage = 0, $start = 0, $one = false)
     {
 
-
+try {
         $this->db_empresa->select($fields);
         $this->db_empresa->from($table);
         $this->setJoinOut($join, $parametro);
@@ -76,11 +76,10 @@ class Setdb_model extends CI_Model
 
 
         $query = $this->db_empresa->get();
-        try {
-           if(!$result = !$one ? $query->result() : $query->row()){
-            throw new \Exception('Erro ao lozalizar tabela', 306);
-           }
-        } catch (\Exception $error) {
+        
+        $result = !$one ? $query->result() : $query->row();
+           
+        } catch (Exception $error) {
             $result = $error;
         }
 
