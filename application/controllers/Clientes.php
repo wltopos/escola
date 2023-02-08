@@ -207,10 +207,12 @@ class Clientes extends MY_Controller
 
             if ($this->setdb_model->edit('comercial_clientes', $data, 'id_comercial_cliente', $this->input->post('id_comercial_cliente')) == true) {
                 $this->session->set_flashdata('success', 'Cliente editado com sucesso!');
-                log_info('Alterou um cliente. ID' . $this->input->post('id_comercial_cliente'));
+                log_info('Alterou um cliente/fornecedor - ID' . $this->input->post('id_comercial_cliente'));
                 redirect(site_url('clientes/editar/') . $this->input->post('id_comercial_cliente'));
             } else {
                 $this->data['custom_error'] = '<div class="form_error"><p>Ocorreu um erro ao tentar realizar cadastro</p></div>';
+                log_info('Encontrou um erro ao alterar cliente/fornecedor.');
+
             }
         }
 
@@ -275,6 +277,7 @@ class Clientes extends MY_Controller
             redirect(site_url('clientes/gerenciar/'));
         } else {
             $this->session->set_flashdata('error', 'Erro ao tentar excluir cliente.');
+            log_info('Encontrou erro ao tentar excluir cliente/fornecedor.');
             redirect(site_url('clientes/gerenciar/'));
         }
     }
