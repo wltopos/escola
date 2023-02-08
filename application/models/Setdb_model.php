@@ -66,7 +66,7 @@ class Setdb_model extends CI_Model
     public function getTabelaQ($table, $fields = '*', $where = '', $join = '', $order = '', $parametro = '', $perpage = 0, $start = 0, $one = false)
     {
 
-try {
+
         $this->db_empresa->select($fields);
         $this->db_empresa->from($table);
         $this->setJoinOut($join, $parametro);
@@ -76,14 +76,15 @@ try {
 
 
         $query = $this->db_empresa->get();
-        
-        $result = !$one ? $query->result() : $query->row();
-           
-        } catch (Exception $error) {
-            $result = $error;
-        }
 
-        return $result;
+        $result =  !$one  ? $query->result() : $query->row();
+
+        if (!empty($result))
+            return true;
+        else {
+            return false;
+        }
+        //return $result;
     }
 
     public function add($table, $data, $returnId = false)
