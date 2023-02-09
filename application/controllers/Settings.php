@@ -142,7 +142,7 @@ class Settings extends MY_Controller
         if ($this->input->post('nome') != "") {
   
             $this->getLinkInsertData($this->data['id']); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
-            print_r($this->dataInsert);
+            print_r($this->input->post('parametros'));
             exit();
             if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', mb_strtoupper($this->data['titulo']) . " adicionado com sucesso!");
@@ -442,7 +442,9 @@ class Settings extends MY_Controller
             'update'.ucfirst($id)    => date('Y-m-d h:i:s'),
             "urlLogo".ucfirst($id)   =>  $this->input->post('urlLogo'),
 
+            if(isset($this->input->post('parametros'))){
 
+            }
         ];
 
 
