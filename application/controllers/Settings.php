@@ -287,10 +287,11 @@ class Settings extends MY_Controller
         }
 
         $setting = $this->input->post('idSetting');
-
+print_r($setting);
+exit();
         if ($setting == null || !is_numeric($setting)) {
             $this->session->set_flashdata('error', 'Erro! O arquivo não pode ser localizado.');
-            redirect(site_url("produtos/settings/$id"));
+            redirect("produtos/settings/$id");
         }
 
         $file = $this->setdb_model->getTabelaQID("estoque_$id" . "s", '*', "id_estoque_$id=" . $setting);
@@ -305,7 +306,7 @@ class Settings extends MY_Controller
         } else {
             $this->session->set_flashdata('error', "Ocorreu um erro ao tentar excluir setting $id.");
         }
-        redirect(site_url("produtos/settings/$id"));
+        redirect("produtos/settings/$id");
     }
 
     public function consultaProduto($urlID)
