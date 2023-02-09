@@ -146,14 +146,16 @@
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
 <script>
-$(document).ready(function(){
+
     function parametroID(id){
         
         if(id.value == 'range'){
             console.log(id.value);
+            $(document).ready(function(){
             $('tipoCampo').append('<li class="bg_ls span12" style="margin-left: 0"><strong>Parametros</strong><input type="text" name="parametros" value="" ></li>');
+        });
         }
     }
-});
+
     
 </script>
