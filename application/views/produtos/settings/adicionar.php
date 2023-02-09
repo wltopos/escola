@@ -103,13 +103,13 @@
                             <?php if ($id == 'addCampo') : ?>
                                 <li id='tipoCampo' class="bg_ls span12" style="margin-left: 0">
                                     <strong>Tipo</strong>
-                                    <select id='tipoCampo' name="tipoCampo">
+                                    <select onchange="parametroID(this);" id='tipoCampo' name="tipoCampo">
                                     <option disabled selected>Selecione o tipo de campo</option>
-                                    <option id='text' value='text'  >Texto curto</option>
-                                    <option id='text2' value='text2' >Texto longo</option>
-                                    <option id='number' value='number'>Numero</option>
-                                    <option id='color' value='color' >Cor</option>
-                                    <option id='range' value='range' >Variação</option>
+                                    <option  value='text'  >Texto curto</option>
+                                    <option  value='text2' >Texto longo</option>
+                                    <option  value='number'>Numero</option>
+                                    <option  value='color' >Cor</option>
+                                    <option  value='range' >Variação</option>
                                   
                                     </select>
                                 </li>
@@ -146,9 +146,9 @@
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
 <script>
-    $(document).ready(function(){
-        $('#range').click(function(){
+    function parametroID(id){
+        if(id == 'range'){
             $('tipoCampo').append('<li class="bg_ls span12" style="margin-left: 0"><strong>Parametros</strong><input type="text" name="parametros" value="" ></li>');
-        });
-    });
+        }
+    }
 </script>
