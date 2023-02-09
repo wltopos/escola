@@ -442,9 +442,7 @@ class Settings extends MY_Controller
             'update'.ucfirst($id)    => date('Y-m-d h:i:s'),
             "urlLogo".ucfirst($id)   =>  $this->input->post('urlLogo'),
 
-            if(isset($this->input->post('parametros'))){
-
-            }
+           
         ];
 
 
