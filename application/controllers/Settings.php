@@ -432,7 +432,7 @@ class Settings extends MY_Controller
             
         ];
         if($this->input->post('parametros') != ''){
-            $this->dataInsert = array_push($this->input->post('parametros'));   
+            $this->dataInsert += ['parametrosAddCampo' => $this->input->post('parametros')]; 
         }
        }
        if($op == "up"){
