@@ -624,7 +624,7 @@
             let setting = $(this).attr('setting');
 
             $('.idSetting').val(idSetting);
-            $('#excluir-setting').attr('action', `settings/excluir/${setting}`);
+            $('#excluir-setting').attr('action', `/settings/excluir/${setting}`);
 
         });
 
