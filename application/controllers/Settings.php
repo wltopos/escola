@@ -289,10 +289,10 @@ class Settings extends MY_Controller
         $setting = $this->input->post('idSetting');
 print_r($setting);
 exit();
-        if ($setting == null || !is_numeric($setting)) {
-            $this->session->set_flashdata('error', 'Erro! O arquivo não pode ser localizado.');
-            redirect("produtos/settings/$id");
-        }
+        // if ($setting == null || !is_numeric($setting)) {
+        //     $this->session->set_flashdata('error', 'Erro! O arquivo não pode ser localizado.');
+        //     redirect("produtos/settings/$id");
+        // }
 
         // $file = $this->setdb_model->getTabelaQID("estoque_$id" . "s", '*', "id_estoque_$id=" . $setting);
         // $path = "path".ucfirst($id);
