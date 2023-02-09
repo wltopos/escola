@@ -187,7 +187,7 @@ class Settings extends MY_Controller
         $this->data['urlLogo'] = $this->data['result']->$c;
         $this->data['parametros'] = $this->data['result']->$d;
         
-        print_r($this->data['nome']);
+        print_r($this->data['result']);
         exit();
         if ($this->input->post('nome') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
