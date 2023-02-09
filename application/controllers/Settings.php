@@ -135,9 +135,6 @@ class Settings extends MY_Controller
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
 
-         print_r($this->input->post('parametros') == '');
-         exit();
-
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
 
         if ($this->input->post('nome') != "") {
@@ -430,9 +427,12 @@ class Settings extends MY_Controller
             "descricao".ucfirst($id) => mb_strtoupper($this->input->post('descricao')),
             'cadastro'.ucfirst($id)  => date('Y-m-d h:i:s'),
             "urlLogo".ucfirst($id)   =>  $this->input->post('urlLogo'),
-
-
+            
+            
         ];
+        if($this->input->post('parametros') != ''){
+            $this->dataInsert = $this->input->post('parametros');     
+        }
        }
        if($op == "up"){
         $this->dataInsert = [
@@ -445,7 +445,9 @@ class Settings extends MY_Controller
            
         ];
 
-
+        if($this->input->post('parametros') != ''){
+            $this->dataInsert = $this->input->post('parametros');     
+        }
        }
        
         switch ($id) {
