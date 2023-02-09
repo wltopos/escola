@@ -156,7 +156,6 @@ class Settings extends MY_Controller
 
 
         $this->data['config'] = $this->data['titulo'];
-        $this->data['id'] = $id;
         $this->data['view'] = 'produtos/settings/adicionar';
         return $this->layout();
     }
