@@ -83,6 +83,14 @@ class Produtos extends MY_Controller
         echo json_encode($produtos);
     }
 
+    public function getAddCampos()
+    {
+        
+        $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos','*','','','addCampo, asc');
+
+        echo json_encode($this->data['resultAddCampo']);
+    }
+
     public function gerenciar()
     {
         if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'vProduto')) {

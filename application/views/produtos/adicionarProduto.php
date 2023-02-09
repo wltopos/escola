@@ -495,7 +495,24 @@
 
     }
 
-
+    $.ajax({
+                        type: "POST",
+                        url: "<?php echo base_url(); ?>index.php/os/faturar",
+                        data: dados,
+                        dataType: 'json',
+                        success: function(data) {
+                            if (data.result == true) {
+                                window.location.reload(true);
+                            } else {
+                                Swal.fire({
+                                    type: "error",
+                                    title: "Atenção",
+                                    text: "Ocorreu um erro ao tentar faturar OS."
+                                });
+                                $('#progress-fatura').hide();
+                            }
+                        }
+                    });
     // ===========================================================
     // SCRIPT BOTÃO ADICIONAR CAMPO
     // ===========================================================
