@@ -431,7 +431,7 @@ class Settings extends MY_Controller
             
         ];
         if($this->input->post('parametros') != ''){
-            $this->dataInsert = $this->input->post('parametros');     
+            $this->dataInsert = array_push($this->input->post('parametros'));   
         }
        }
        if($op == "up"){
@@ -446,7 +446,7 @@ class Settings extends MY_Controller
         ];
 
         if($this->input->post('parametros') != ''){
-            $this->dataInsert = $this->input->post('parametros');     
+            $this->dataInsert = array_push($this->input->post('parametros'));
         }
        }
        
