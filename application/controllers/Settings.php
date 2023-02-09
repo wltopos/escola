@@ -294,19 +294,19 @@ exit();
             redirect("produtos/settings/$id");
         }
 
-        $file = $this->setdb_model->getTabelaQID("estoque_$id" . "s", '*', "id_estoque_$id=" . $setting);
-        $path = "path".ucfirst($id);
-        if ($this->setdb_model->delete("estoque_$id" . "s", "id_estoque_$id", $setting)) {
-            if ($file->$path != null) {
-                unlink($file->$path);
-            }
+        // $file = $this->setdb_model->getTabelaQID("estoque_$id" . "s", '*', "id_estoque_$id=" . $setting);
+        // $path = "path".ucfirst($id);
+        // if ($this->setdb_model->delete("estoque_$id" . "s", "id_estoque_$id", $setting)) {
+        //     if ($file->$path != null) {
+        //         unlink($file->$path);
+        //     }
 
-            $this->session->set_flashdata('success', $id . ' excluido com sucesso!');
-            log_info("Removeu setting $id. ID: " . $setting);
-        } else {
-            $this->session->set_flashdata('error', "Ocorreu um erro ao tentar excluir setting $id.");
-        }
-        redirect("produtos/settings/$id");
+        //     $this->session->set_flashdata('success', $id . ' excluido com sucesso!');
+        //     log_info("Removeu setting $id. ID: " . $setting);
+        // } else {
+        //     $this->session->set_flashdata('error', "Ocorreu um erro ao tentar excluir setting $id.");
+        // }
+        // redirect("produtos/settings/$id");
     }
 
     public function consultaProduto($urlID)
