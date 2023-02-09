@@ -148,7 +148,7 @@
 <script>
     function parametroID(id){
         console.log(id.value);
-        if(id == 'range'){
+        if(id.value == 'range'){
             $('tipoCampo').append('<li class="bg_ls span12" style="margin-left: 0"><strong>Parametros</strong><input type="text" name="parametros" value="" ></li>');
         }
     }
