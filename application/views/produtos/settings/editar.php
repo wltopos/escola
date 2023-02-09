@@ -102,6 +102,20 @@
                                     </select>
                                 </li>
                             <?php endif ?>
+                            <?php if ($id == 'addCampo') : ?>
+                                <li id='tipoCampo' class="bg_ls span12" style="margin-left: 0">
+                                    <strong>Tipo</strong>
+                                    <select onchange="parametroID(this);" id='tipoCampo' name="tipoCampo">
+                                    <option disabled selected>Selecione o tipo de campo</option>
+                                    <option  value='text'  >Texto curto</option>
+                                    <option  value='text2' >Texto longo</option>
+                                    <option  value='number'>Numero</option>
+                                    <option  value='color' >Cor</option>
+                                    <option  value='range' >Variação</option>
+                                  
+                                    </select>
+                                </li>
+                            <?php endif ?>
                             <!-- <li class="bg_lg span12" style="margin-left: 0">
                                 <strong>URL Logo</strong>
                                 <input type="text" alt="URL Logo" name="urlLogo" id="urlLogo" value="<?= $urlLogo ?>" placeholder="http://urldaimagem" value="">

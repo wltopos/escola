@@ -180,11 +180,12 @@ class Settings extends MY_Controller
         $a = "$id";
         $b = "descricao" . ucfirst($id);
         $c = 'urlLogo' . ucfirst($id);
-
+        $d = 'parametros' . ucfirst($id);
 
         $this->data['nome'] = $this->data['result']->$a;
         $this->data['descricao'] = $this->data['result']->$b;
         $this->data['urlLogo'] = $this->data['result']->$c;
+        $this->data['parametros'] = $this->data['result']->$d;
         
 
         if ($this->input->post('nome') == false) {
@@ -193,7 +194,8 @@ class Settings extends MY_Controller
 
 
            $this->getLinkInsertData($this->data['id'], "up", $this->uri->segment(4)); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
-      
+      print_r($this->dataInsert);
+      exit();
             if ($this->setdb_model->edit("estoque_".$this->data['id']."s", $this->dataInsert, "id_estoque_".$this->data['id'], $this->uri->segment(4)) == true) {
                 $this->session->set_flashdata('success', 'Item '.$this->data['titulo'].' editado com sucesso!');
                 log_info("Alterou um ".$this->data['titulo']." ID: " . $this->uri->segment(4));
