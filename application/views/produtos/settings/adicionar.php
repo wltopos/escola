@@ -34,7 +34,7 @@
                     <div class="span12">
                         <ul class="site-stats">
                             <li class="bg_ls span12">
-                                <strong><?= ucfirst($config) ?>:</strong>
+                                <strong><?= ucfirst($config) ?></strong>
                                 <input type="text" alt="nome" name="nome" value="" required>
                             </li>
 
@@ -103,13 +103,13 @@
                             <?php if ($id == 'addCampo') : ?>
                                 <li class="bg_ls span12" style="margin-left: 0">
                                     <strong>Tipo</strong>
-                                    <select name="tipoCampo">
+                                    <select id='tipoCampo' name="tipoCampo">
                                     <option disabled selected>Selecione o tipo de campo</option>
-                                    <option value='text'  >Texto curto</option>
-                                    <option value='text2' >Texto longo</option>
-                                    <option value='number'>Numero</option>
-                                    <option value='color' >Cor</option>
-                                    <option value='range' >Variação</option>
+                                    <option id='text' value='text'  >Texto curto</option>
+                                    <option id='text2' value='text2' >Texto longo</option>
+                                    <option id='number' value='number'>Numero</option>
+                                    <option id='color' value='color' >Cor</option>
+                                    <option id='range' value='range' >Variação</option>
                                   
                                     </select>
                                 </li>
@@ -120,7 +120,7 @@
                                 <input type="text" alt="URL Logo" name="urlLogo" placeholder="http://urldaimagem" value="">
                             </li> -->
                             <li class="bg_lo span12" style="margin-left: 0">
-                                <strong>Descrição: </strong>
+                                <strong>Descrição </strong>
                                 <textarea class="editor" rows="5" cols="60" name="descricao" placeholder="Breve descrição"></textarea>
                             </li>
                             
@@ -145,3 +145,10 @@
 
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#range').click(function(){
+            $('tipoCampo').append('<strong>Parametros</strong><input type="text" name="parametros" value="" >');
+        });
+    });
+</script>
