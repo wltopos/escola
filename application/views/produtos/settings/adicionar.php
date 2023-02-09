@@ -100,7 +100,7 @@
                                     </select>
                                 </li>
                             <?php endif ?>
-                            <?php if ($id == 'campo') : ?>
+                            <?php if ($id == 'addCampo') : ?>
                                 <li class="bg_ls span12" style="margin-left: 0">
                                     <strong>Tipo</strong>
                                     <select name="tipoCampo">
