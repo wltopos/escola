@@ -501,8 +501,10 @@
                         dataType: 'json',
                         success: function(data) {
                             if (data.result == true) {
-
-                                console.log(data);
+                                $(data.resultAddCampo).function(key, campo){
+                                    console.log(campo);
+                                }
+                                
                             } else {
                                 Swal.fire({
                                     type: "error",
