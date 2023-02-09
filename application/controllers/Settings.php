@@ -187,15 +187,15 @@ class Settings extends MY_Controller
         $this->data['urlLogo'] = $this->data['result']->$c;
         $this->data['parametros'] = $this->data['result']->$d;
         
-
+        print_r($this->data['parametros']);
+        exit();
         if ($this->input->post('nome') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
 
 
            $this->getLinkInsertData($this->data['id'], "up", $this->uri->segment(4)); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DA DADOS A PARTIR DO ID DO MODAL
-      print_r($this->dataInsert);
-      exit();
+     
             if ($this->setdb_model->edit("estoque_".$this->data['id']."s", $this->dataInsert, "id_estoque_".$this->data['id'], $this->uri->segment(4)) == true) {
                 $this->session->set_flashdata('success', 'Item '.$this->data['titulo'].' editado com sucesso!');
                 log_info("Alterou um ".$this->data['titulo']." ID: " . $this->uri->segment(4));
