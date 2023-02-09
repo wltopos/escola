@@ -403,7 +403,7 @@ class Settings extends MY_Controller
                 $this->data['titulo'] =  'setor';
                 $this->data['id'] =  'sector';
                 break;
-            case 'addCampo':
+            case 'campo':
                 $this->data['titulo'] =  'campo';
                 $this->data['id'] =  'addCampo';
                 break;
