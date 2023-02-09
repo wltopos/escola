@@ -107,13 +107,14 @@
                                 <li id='tipoCampo' class="bg_ls span12" style="margin-left: 0">
                                     <strong>Tipo</strong>
                                     <select onchange="parametroID(this);" id='tipoCampo' name="tipoCampo">
+                                    <?php if($result->parametrosAddCampo):?>
                                     <option disabled selected>Selecione o tipo de campo</option>
                                     <option  value='text'  >Texto curto</option>
                                     <option  value='text2' >Texto longo</option>
                                     <option  value='number'>Numero</option>
                                     <option  value='color' >Cor</option>
                                     <option  value='range' >Variação</option>
-                                  
+                                  <?php endif ?>
                                     </select>
                                 </li>
                             <?php endif ?>
