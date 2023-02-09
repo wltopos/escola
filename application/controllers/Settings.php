@@ -178,9 +178,7 @@ class Settings extends MY_Controller
        
         $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_".$this->data['id']."s", '*', "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
 
-        
-        print_r($this->data['result']);
-        exit();
+  
         if ($this->input->post('nome') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
