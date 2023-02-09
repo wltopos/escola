@@ -135,15 +135,15 @@ class Settings extends MY_Controller
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
 
-        
+         print_r($this->input->post('parametros'));
+            exit();
 
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
 
         if ($this->input->post('nome') != "") {
   
             $this->getLinkInsertData($this->data['id']); //RETORNA COLUNAS A SEREM ALTERADAS NO BANCO DE DADOS A PARTIR DO ID DO MODAL
-            print_r($this->input->post('parametros'));
-            exit();
+           
             if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', mb_strtoupper($this->data['titulo']) . " adicionado com sucesso!");
                 log_info('Adicionou um produto');
