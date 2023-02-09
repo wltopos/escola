@@ -136,7 +136,7 @@ class Settings extends MY_Controller
         $this->data['custom_error'] = '';
 
          print_r($this->input->post('parametros'));
-            exit();
+         exit();
 
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
 
