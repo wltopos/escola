@@ -237,7 +237,7 @@
                                 foreach ($resultAddCampo as $r) {
 
                                     if ($idCampo != '' && $r->id_estoque_addCampo == $idCampo) {
-                                        print_r($r->parametrosAddCampo); 
+                                        print_r($r->tipoAddCampo); 
                             ?>
 
                                         <script>
