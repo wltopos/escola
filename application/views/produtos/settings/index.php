@@ -260,7 +260,7 @@
 
                                     <div class="flexxn tituloDataTableMargin">
                                         <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aProduto')) { ?>
-                                            <a href="<?php echo base_url(); ?>settings/adicionar/location" class="button btn btn-mini btn-success" style="max-width: 160px">
+                                            <a href="<?php echo base_url(); ?>settings/adicionar/local" class="button btn btn-mini btn-success" style="max-width: 160px">
                                                 <span class="button__icon"><i class='bx bx-plus-circle'></i></span><span class="button__text2">Add. Local</span>
                                             </a>
 
