@@ -498,7 +498,6 @@
     $.ajax({
                         type: "POST",
                         url: "<?php echo base_url(); ?>produtos/getAddCampos",
-                        data: data,
                         dataType: 'json',
                         success: function(data) {
                             if (data.result == true) {
