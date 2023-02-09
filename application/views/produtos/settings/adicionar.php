@@ -101,7 +101,7 @@
                                 </li>
                             <?php endif ?>
                             <?php if ($id == 'addCampo') : ?>
-                                <li class="bg_ls span12" style="margin-left: 0">
+                                <li id='tipoCampo' class="bg_ls span12" style="margin-left: 0">
                                     <strong>Tipo</strong>
                                     <select id='tipoCampo' name="tipoCampo">
                                     <option disabled selected>Selecione o tipo de campo</option>
@@ -148,7 +148,7 @@
 <script>
     $(document).ready(function(){
         $('#range').click(function(){
-            $('tipoCampo').append('<strong>Parametros</strong><input type="text" name="parametros" value="" >');
+            $('tipoCampo').append('<li class="bg_ls span12" style="margin-left: 0"><strong>Parametros</strong><input type="text" name="parametros" value="" ></li>');
         });
     });
 </script>
