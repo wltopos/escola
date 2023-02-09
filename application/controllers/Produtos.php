@@ -87,7 +87,7 @@ class Produtos extends MY_Controller
     {
         
         $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos','*','','','addCampo, asc');
-
+        $this->data['result'] = true;
         echo json_encode($this->data['resultAddCampo']);
     }
 
