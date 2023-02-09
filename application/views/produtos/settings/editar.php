@@ -103,7 +103,7 @@
                                 </li>
                             <?php endif ?>
                             <?php if ($id == 'addCampo') : ?>
-                                <?php print($result->parametros); exit();?>
+                                <?php print($result->parametrosAddCampo); exit();?>
                                 <li id='tipoCampo' class="bg_ls span12" style="margin-left: 0">
                                     <strong>Tipo</strong>
                                     <select onchange="parametroID(this);" id='tipoCampo' name="tipoCampo">
