@@ -503,7 +503,7 @@
                             if (data.result == true) {
                                 $.each(data.resultAddCampo, function(key, campo){
                                     console.log(campo);
-                                }
+                                });
                                 
                             } else {
                                 Swal.fire({
