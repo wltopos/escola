@@ -535,4 +535,25 @@
     function removeCampo(campo) {
         $(campo).remove();
     }
+
+    $.ajax({
+        type: "POST",
+        url: "<?php echo base_url(); ?>produtos/getAddCampos",
+        dataType: 'json',
+        success: function(data) {
+            if (data.result == true) {
+                $.each(data.resultAddCampo, function(key, campo) {
+                    console.log(campo);
+                });
+
+            } else {
+                Swal.fire({
+                    type: "error",
+                    title: "Atenção",
+                    text: "Ocorreu um erro ao tentar faturar OS."
+                });
+                $('#progress-fatura').hide();
+            }
+        }
+    });
 </script>

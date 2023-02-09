@@ -254,9 +254,11 @@
         });
 
         //Select com buscador
-             
+
         $('select').select2();
-        $('.wh30').select2(({width: '40%' }));
+        $('.wh30').select2(({
+            width: '40%'
+        }));
         //validação de campos
         $(".money").maskMoney();
 
@@ -353,13 +355,13 @@
                             dadosCampos.forEach((dadosCampo) => {
                                 dadosCampo = dadosCampo.split('::');
                                 i++;
-                                
+
                                 camposDB.forEach((campo) => {
-                                    
+
                                     if (campo.id_estoque_addCampo == dadosCampo[0]) {
-                                console.log(dadosCampo);
-                                console.log(campo.addCampo);
-                                        $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group addCampo'><label for='${campo.siglaAddCampo}_${i}' class='control-label'>${campo.addCampo}<span class='required'>*</span></label><div class='controls'><input required  onkeydown='handleEnter(event)' type='text'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.id_estoque_addCampo}_${i}]' value='${dadosCampo[1]} ' />   <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
+                                        console.log(dadosCampo);
+                                        console.log(campo.addCampo);
+                                        $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group addCampo'><label for='${campo.siglaAddCampo}_${i}' class='control-label'>${campo.addCampo}<span class='required'>*</span></label><div class='controls'><input required  onkeydown='handleEnter(event)' type='${campo.tipoAddCampo}'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.id_estoque_addCampo}_${i}]' value='${dadosCampo[1]} ' />   <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
                                     }
                                 });
 
@@ -495,26 +497,7 @@
 
     }
 
-    $.ajax({
-                        type: "POST",
-                        url: "<?php echo base_url(); ?>produtos/getAddCampos",
-                        dataType: 'json',
-                        success: function(data) {
-                            if (data.result == true) {
-                                $.each(data.resultAddCampo, function(key, campo){
-                                    console.log(campo);
-                                });
-                                
-                            } else {
-                                Swal.fire({
-                                    type: "error",
-                                    title: "Atenção",
-                                    text: "Ocorreu um erro ao tentar faturar OS."
-                                });
-                                $('#progress-fatura').hide();
-                            }
-                        }
-                    });
+  
     // ===========================================================
     // SCRIPT BOTÃO ADICIONAR CAMPO
     // ===========================================================
