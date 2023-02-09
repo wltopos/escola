@@ -501,7 +501,7 @@
                         dataType: 'json',
                         success: function(data) {
                             if (data.result == true) {
-                                $(data.resultAddCampo).function(key, campo){
+                                $.each(data.resultAddCampo, function(key, campo){
                                     console.log(campo);
                                 }
                                 
