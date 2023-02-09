@@ -605,7 +605,7 @@
         });
 
         $('#tabelaCampos').DataTable({
-            ajax: '<?= site_url('/settings/getSettings/addCampo') ?>',
+            ajax: '<?= site_url('/settings/getSettings/campo') ?>',
             "oLanguage": DATATABLE_PTBR,
             "processing": true,
             "lengthChange": true,
