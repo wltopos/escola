@@ -147,8 +147,9 @@
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
 <script>
     function parametroID(id){
-        console.log(id.value);
+        
         if(id.value == 'range'){
+            console.log(id.value);
             $('tipoCampo').append('<li class="bg_ls span12" style="margin-left: 0"><strong>Parametros</strong><input type="text" name="parametros" value="" ></li>');
         }
     }
