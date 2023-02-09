@@ -105,11 +105,11 @@
                                     <strong>Tipo</strong>
                                     <select name="tipoCampo">
                                     <option disabled selected>Selecione o tipo de campo</option>
-                                    <option value='text' selected>Texto curto</option>
-                                    <option value='text2' selected>Texto longo</option>
-                                    <option value='number' selected>Numero</option>
-                                    <option value='color' selected>Cor</option>
-                                    <option value='range' selected>Variação</option>
+                                    <option value='text'  >Texto curto</option>
+                                    <option value='text2' >Texto longo</option>
+                                    <option value='number'>Numero</option>
+                                    <option value='color' >Cor</option>
+                                    <option value='range' >Variação</option>
                                   
                                     </select>
                                 </li>
