@@ -135,7 +135,7 @@ class Settings extends MY_Controller
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
 
-         print_r($this->input->post('parametros'));
+         print_r($this->input->post('parametros') == '');
          exit();
 
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
