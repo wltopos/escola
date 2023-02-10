@@ -540,7 +540,7 @@
              
                 $('#divAddCampo').append(`
                                         
-                                            <textarea  onkeydown='handleEnter(event)' id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' >
+                                            <textarea  onkeydown='handleEnter(event)' id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' ></textarea>
                                            
                                         `);
             }
