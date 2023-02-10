@@ -156,8 +156,6 @@
                                             echo "<option value=$r->id_estoque_location >$r->location</option>";
                                         }
                                     }
-
-
                                     ?>
                                 </select>
                             </div>
@@ -166,9 +164,7 @@
                         <div class="control-group" id="divAddCampo">
                             <label for="addCampo" class="control-label">Adicionar campo<span class="required">*</span></label>
                             <div class="controls">
-
                                 <select required onkeydown='handleEnter(event)' onchange="btAddCampo()" title="Adicionar campo" name="addCampo" id="addCampo" value="<?php echo set_value('addCampo'); ?>">
-
                                     <?php if ($resultAddCampo) {
                                         echo  '<option value="0" disabled selected>Tipo de observação</option>';
                                         foreach ($resultAddCampo as $r) {
@@ -179,8 +175,6 @@
                                     } else {
                                         echo '<option disabled selected>Sem tipos cadastrados</option>';
                                     }
-
-
                                     ?>
                                 </select>
                                 <button title="adicionar campo" class="btn btn-light" type="button" id="add-campo" style="margin-left: 5px;"><i class="fa fa-plus"></i></button>

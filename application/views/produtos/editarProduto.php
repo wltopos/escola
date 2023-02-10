@@ -212,7 +212,7 @@
                                     } else {
                                         echo '<option value="0" disabled selected>Tipo de observação</option>';
                                         foreach ($resultAddCampo as $r) {
-                                            echo "<option value='$r->id_estoque_addCampo'>$r->addCampo</option>";
+                                            echo "<option value='$r->id_estoque_addCampo,$r->tipoCampo' >$r->addCampo</option>";
                                         }
                                     }
 
@@ -220,7 +220,6 @@
                                     ?>
                                 </select>
                                 <button title="adcionar campo" class="btn btn-light" type="button" id="add-campo" style="margin-left: 5px;"><i class="fa fa-plus"></i></button>
-
                             </div>
 
                             <?php
