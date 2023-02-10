@@ -518,7 +518,7 @@
             let campo = $('#addCampo option:selected').text();
             let idCampo = $('#addCampo option:selected').val();
             idCampo = idCampo.split(',');
-            console.log(idCampo[0]);
+            console.log(idCampo[1]);
 
             if (idCampo[0] != "0" && i < 5 && idCampo[0] != 'textarea') {
 
