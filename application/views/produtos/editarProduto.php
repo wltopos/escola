@@ -13,36 +13,36 @@
                 </span>
                 <h5>Cadastro de Produto</h5>
             </div>
-            
+
             <form action="<?php echo current_url(); ?>" id="formProduto" method="post" enctype="multipart/form-data" class="form-horizontal">
-            <?php if($result->imagemProduto != NULL and $result->imagemProduto != ''):?>
-                    <div class="drop-zone"> 
-                         <input type="file" name="userfile" class="drop-zone__input"> 
-                         <div class="drop-zone__thumb" data-label="<?= "Imagem do Produto" ?>"> 
-                         <img class="logoImagem" src="<?= $result->imagemProduto?>">
+                <?php if ($result->imagemProduto != NULL and $result->imagemProduto != '') : ?>
+                    <div class="drop-zone">
+                        <input type="file" name="userfile" class="drop-zone__input">
+                        <div class="drop-zone__thumb" data-label="<?= "Imagem do Produto" ?>">
+                            <img class="logoImagem" src="<?= $result->imagemProduto ?>">
                         </div>
                     </div>
-                   
-                   <?php elseif($result->urlLogoMarca != NULL and $result->urlLogoMarca != ''):?>
-                        
-                    <div class="drop-zone"> 
-                         <input type="file" name="userfile" class="drop-zone__input">
-                          <div class="drop-zone__thumb" data-label="<?= "Imagem da logomarca " ?>">
-                          <img class="logoImagem" src="<?= $result->urlLogoMarca?>">
+
+                <?php elseif ($result->urlLogoMarca != NULL and $result->urlLogoMarca != '') : ?>
+
+                    <div class="drop-zone">
+                        <input type="file" name="userfile" class="drop-zone__input">
+                        <div class="drop-zone__thumb" data-label="<?= "Imagem da logomarca " ?>">
+                            <img class="logoImagem" src="<?= $result->urlLogoMarca ?>">
                         </div>
                     </div>
-                   
-                    <?else:?>
-                        <div class="drop-zone"> 
-                         <input type="file" name="userfile" class="drop-zone__input">
-                          <div class="drop-zone__thumb" data-label="<?= "Sem imagem " ?>">
-                          <img class="logoImagem" src='https://sistema.wltopos.com/assets/img/sem_logo.png'>
+
+                <? else : ?>
+                    <div class="drop-zone">
+                        <input type="file" name="userfile" class="drop-zone__input">
+                        <div class="drop-zone__thumb" data-label="<?= "Sem imagem " ?>">
+                            <img class="logoImagem" src='https://sistema.wltopos.com/assets/img/sem_logo.png'>
                         </div>
                     </div>
-                 
-                    <?endif?>    
-            <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
-                   <div class="span6">
+
+                <? endif ?>
+                <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
+                    <div class="span6">
                         <?php echo $custom_error; ?>
                         <input onkeydown='handleEnter(event)' type="hidden" id="adNotaFiscal_id" name="adNotaFiscal_id" value="<?php echo $result->id_financeiro_nota; ?>" />
                         <input onkeydown='handleEnter(event)' type="hidden" id="produto_id" name="codDeBarra" value="<?php echo $result->codDeBarra; ?>" />
@@ -54,7 +54,7 @@
                             <div class="control-group">
                                 <label for="codDeBarra" class="control-label">Código/Referência/GTIN<span class="required">*</span></label>
                                 <div class="controls">
-                                    <input onkeydown='handleEnter(event)' autocomplete="false" id="codDeBarra" type="text" required value="<?php echo $result->codDeBarra; ?>"  />
+                                    <input onkeydown='handleEnter(event)' autocomplete="false" id="codDeBarra" type="text" required value="<?php echo $result->codDeBarra; ?>" />
                                 </div>
                             </div>
 
@@ -236,7 +236,7 @@
                                 foreach ($resultAddCampo as $r) {
 
                                     if ($idCampo != '' && $r->id_estoque_addCampo == $idCampo) {
-                                       
+
                             ?>
 
                                         <script>
@@ -250,7 +250,7 @@
 
                             ?>
                         </div>
-<!-- 
+                        <!-- 
                         <div class="control-group" id="divAddCampo">
                             <label for="addCampo" class="control-label">Adicionar campo<span class="required">*</span></label>
                             <div class="controls">
@@ -287,7 +287,7 @@
                                 foreach ($resultAddCampo as $r) {
 
                                     if ($idCampo != '' && $r->id_estoque_addCampo == $idCampo) {
-                                       
+
                             ?>
 
                                         <script>
@@ -321,7 +321,7 @@
                             <div class="controls">
 
                                 <?php
-                                
+
                                 if ($result->dataVencimento != null and $result->dataVencimento != '0000-00-00') {
                                     echo " <input onkeydown='handleEnter(event)' id='dataVencimento' type='date' name='dataVencimento' value='$result->dataVencimento'  /> ";
                                     echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox" checked="checked" >';
@@ -381,7 +381,9 @@
         //Select com buscador
         $('#categorias').select2();
         $('#marcasAgrotec').select2();
-        $('select').select2(({width: 'resolve' }));
+        $('select').select2(({
+            width: 'resolve'
+        }));
         //validação de campos
         $(".money").maskMoney();
 
@@ -568,9 +570,36 @@
             idCampo = idCampo.split(',');
             console.log(idCampo[0]);
 
-            if (idCampo != "0" && i < 5) {
+            if (idCampo != "0" && i < 5 && idCampo[0] != 'textarea') {
 
-                $('#divAddCampo').append(`<div id="rm_${idCampo[0]}_${i}" class='control-group'><label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label><div class='controls'><input onkeydown='handleEnter(event)' type='${idCampo[1]}'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]' value='' />   <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${idCampo[0]}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
+                $('#divAddCampo').html(`
+                                        <div id="rm_${idCampo[0]}_${i}" class='control-group'>
+                                            <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
+                                            <div class='controls'>
+                                            <input onkeydown='handleEnter(event)' type='${idCampo[1]}'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]' value='' />
+                                            <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${idCampo[0]}_${i}')" style="margin-left: 5px;">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            </div>
+                                        </div>
+                                        `);
+
+
+            }
+            if (idCampo != "0" && i < 5 && idCampo[0] == 'textarea') {
+             
+                $('#divAddCampo').html(`
+                                        <div id="rm_${idCampo[0]}_${i}" class='control-group'>
+                                            <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
+                                            <div class='controls'>
+                                            <textarea onkeydown='handleEnter(event)' type='${idCampo[1]}'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]' rows="4" cols="50"></textarea>
+                                            <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${idCampo[0]}_${i}')" style="margin-left: 5px;">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            </div>
+                                        </div>
+                                        `);
+
 
             }
         }
@@ -588,7 +617,7 @@
         $(campo).remove();
     }
 
-   
+
     $.ajax({
         url: "produtos/getAddCampos.php",
         type: "GET",
@@ -604,27 +633,26 @@
             console.error("Erro ao carregar campos adicionais: " + error);
         }
     });
-    
+
     $("#add-field-button").click(function() {
         var selectedField = $("#addCampo").val();
         if (selectedField == "") {
             alert("Selecione um campo adicional");
             return;
         }
-        
+
         var label = $("#field-label-input").val();
         if (label == "") {
             alert("Insira o rótulo do campo");
             return;
         }
-        
+
         var html = "<div>";
         html += "<label>" + label + ":</label>";
         html += "<input type='" + selectedField + "'>";
         html += "</div>";
         $("#additional-fields-container").append(html);
-        
+
         $("#field-label-input").val("");
     });
-
 </script>
