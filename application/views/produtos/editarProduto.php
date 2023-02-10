@@ -627,7 +627,7 @@
             $("#addCampo").append(html);
         },
         error: function(xhr, status, error) {
-            console.error("Erro ao carregar campos adicionais: " + error);
+            console.log("Erro ao carregar campos adicionais: " + error);
         }
     });
 
