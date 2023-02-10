@@ -212,7 +212,7 @@
                                     } else {
                                         echo '<option value="0" disabled selected>Tipo de observação</option>';
                                         foreach ($resultAddCampo as $r) {
-                                            echo "<option value='$r->id_estoque_addCampo,$r->tipoCampo' >$r->addCampo</option>";
+                                            echo "<option value='$r->id_estoque_addCampo,$r->tipoAddCampo' >$r->addCampo</option>";
                                         }
                                     }
 
