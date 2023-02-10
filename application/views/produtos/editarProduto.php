@@ -520,22 +520,6 @@
         idCampo = idCampo.split(',');
         console.log(idCampo[1]);
 
-        if (idCampo[0] != "0" && i < 5 && idCampo[1] != 'textarea') {
-
-            $('#divAddCampo').append(`
-                                        <div id="rm_${idCampo[0]}_${i}" class='control-group'>
-                                            <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
-                                            <div class='controls'>
-                                            <input onkeydown='handleEnter(event)' type='${idCampo[1]}'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]' value='' ${idCampo[1]=='color'?'style=" height: 33px;"':''}/>
-                                            <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${idCampo[0]}_${i}')" style="margin-left: 5px;">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            </div>
-                                        </div>
-                                        `);
-
-
-        }
         if (idCampo[0] != "0" && i < 5 && idCampo[1] == 'textarea') {
 
             var textarea = $("<textarea id='new-textarea' rows='5' cols='33'></textarea>");
