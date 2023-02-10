@@ -359,7 +359,7 @@
 <script type="text/javascript">
     function handleEnter(event) {
         if (event.key === "Enter") {
-            const form = document.getElementById('formProduto')
+            const form = document.getElementById('formProduto');
             const index = [...form].indexOf(event.target);
             form.elements[index + 1].focus();
             // event.preventDefault();
