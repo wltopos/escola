@@ -250,57 +250,7 @@
 
                             ?>
                         </div>
-                        <!-- 
-                        <div class="control-group" id="divAddCampo">
-                            <label for="addCampo" class="control-label">Adicionar campo<span class="required">*</span></label>
-                            <div class="controls">
-
-                                <select required onkeydown='handleEnter(event)' onchange="btAddCampo()" title="Adicionar campo" id="addCampo" value="<?php echo set_value('addCampo'); ?>">
-
-                                    <?php if (!$resultAddCampo) {
-                                        echo '<option disabled selected>Sem tipos cadastrados</option>';
-                                    } else {
-                                        echo '<option value="0" disabled selected>Tipo de observação</option>';
-                                        foreach ($resultAddCampo as $r) {
-                                            echo "<option value='$r->id_estoque_addCampo'>$r->addCampo</option>";
-                                        }
-                                    }
-
-
-                                    ?>
-                                </select>
-                                <button title="adcionar campo" class="btn btn-light" type="button" id="add-campo" style="margin-left: 5px;"><i class="fa fa-plus"></i></button>
-
-                            </div>
-
-                            <?php
-
-                            $resultCampos = explode("||", $result->observacao);
-
-                            $i = 0;
-                            foreach ($resultCampos as $rCampo) {
-                                $i++;
-
-                                $var3 = explode('::', $rCampo);
-                                $idCampo = trim($var3[0]);
-
-                                foreach ($resultAddCampo as $r) {
-
-                                    if ($idCampo != '' && $r->id_estoque_addCampo == $idCampo) {
-
-                            ?>
-
-                                        <script>
-                                            $('#divAddCampo').append(`<div id='<?= "rm_" . $r->siglaAddCampo . "_" . $i ?>' class='control-group'><label for='<?= $r->siglaAddCampo . "_" . $i ?>' class='control-label'><?= $r->addCampo ?><span class='required'>*</span></label><div class='controls'><input onkeydown='handleEnter(event)' type='<?= $r->tipoAddCampo ?>'  id='<?= $r->siglaAddCampo . "_" . $i ?>' name='addCampoInput[<?= $r->id_estoque_addCampo . "_" . $i ?>]' value='<?= "$var3[1]" ?>' />   <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#<?= "rm_" . $r->siglaAddCampo . "_" . $i ?>')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
-                                        </script>
-
-                            <?php
-                                    }
-                                }
-                            }
-
-                            ?>
-                        </div> -->
+                      
 
                         <!--  <div class="control-group">
                         <label class="control-label">Tipo de Movimento</label>
@@ -615,4 +565,25 @@
     }
 
  
+    $("#add-field-button").click(function() {
+        var selectedField = $("#addCampo").val();
+        if (selectedField == "") {
+            alert("Selecione um campo adicional");
+            return;
+        }
+
+        var label = $("#field-label-input").val();
+        if (label == "") {
+            alert("Insira o rótulo do campo");
+            return;
+        }
+
+        var html = "<div>";
+        html += "<label>" + label + ":</label>";
+        html += "<input type='" + selectedField + "'>";
+        html += "</div>";
+        $("#additional-fields-container").append(html);
+
+        $("#field-label-input").val("");
+    });
 </script>
