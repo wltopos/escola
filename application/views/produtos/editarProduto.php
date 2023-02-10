@@ -205,7 +205,7 @@
                             <label for="addCampo" class="control-label">Adicionar campo<span class="required">*</span></label>
                             <div class="controls">
 
-                                <select required onkeydown='handleEnter(event)' onchange="btAddCampo()" title="Adicionar campo" id="addCampo" value="<?php echo set_value('addCampo'); ?>">
+                                <select required onkeydown='handleEnter(event)' onchange='btAddCampo()' title="Adicionar campo" id="addCampo" value="<?php echo set_value('addCampo'); ?>">
 
                                     <?php if (!$resultAddCampo) {
                                         echo '<option disabled selected>Sem tipos cadastrados</option>';
@@ -542,7 +542,7 @@
                                         <div id="rm_${idCampo[0]}_${i}" class='control-group'>
                                             <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
                                             <div class='controls'>
-                                            <textarea  onkeydown='handleEnter(event)'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' ></textarea>
+                                            <textarea  onkeydown='handleEnter(event)'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'   ></textarea>
                                             <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${idCampo[0]}_${i}')" style="margin-left: 5px; height: 33px;">
                                                 <i class="fa fa-minus"></i>
                                             </button>
