@@ -554,8 +554,9 @@
 
     function btAddCampo() {
         let opt = $('#addCampo option:selected').val();
+        opt = opt.split(',');
 
-        if (opt != "0") {
+        if (opt[0] != "0") {
             $('#add-campo').attr('class', 'btn btn-primary');
         }
     }
