@@ -564,9 +564,9 @@
         {
             i++;
             let campo = $('#addCampo option:selected').text();
-
-            let idCampo = $('#addCampo option:selected').split(',');
-            console.log(idCampo);
+            let idCampo = $('#addCampo option:selected').val();
+            let idCampoType = idCampo.split(',');
+            console.log(idCampoType);
 
             if (idCampo != "0" && i < 5) {
 
