@@ -577,7 +577,7 @@
                                             <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
                                             <div class='controls'>
                                             <input onkeydown='handleEnter(event)' type='${idCampo[1]}'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]' value='' />
-                                            <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${idCampo[0]}_${i}')" style="margin-left: 5px;">
+                                            <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${idCampo[0]}_${i}')" style="margin-left: 5px; height: 33px;">
                                                 <i class="fa fa-minus"></i>
                                             </button>
                                             </div>
