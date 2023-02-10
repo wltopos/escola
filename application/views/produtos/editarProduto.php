@@ -522,7 +522,7 @@
 
             if (idCampo[0] != "0" && i < 5 && idCampo[0] != 'textarea') {
 
-                $('#divAddCampo').html(`
+                $('#divAddCampo').append(`
                                         <div id="rm_${idCampo[0]}_${i}" class='control-group'>
                                             <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
                                             <div class='controls'>
@@ -538,7 +538,7 @@
             }
             if (idCampo[0] != "0" && i < 5 && idCampo[0] == 'textarea') {
              
-                $('#divAddCampo').html(`
+                $('#divAddCampo').append(`
                                         <div id="rm_${idCampo[0]}_${i}" class='control-group'>
                                             <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
                                             <div class='controls'>
