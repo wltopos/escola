@@ -614,42 +614,5 @@
         $(campo).remove();
     }
 
-
-    $.ajax({
-        url: "produtos/getAddCampos.php",
-        type: "GET",
-        dataType: "json",
-        success: function(data) {
-            var html = "";
-            for (var i = 0; i < data.length; i++) {
-                html += "<option value='" + data[i].type + "'>" + data[i].name + "</option>";
-            }
-            $("#addCampo").append(html);
-        },
-        error: function(xhr, status, error) {
-            console.log("Erro ao carregar campos adicionais: " + error);
-        }
-    });
-
-    $("#add-field-button").click(function() {
-        var selectedField = $("#addCampo").val();
-        if (selectedField == "") {
-            alert("Selecione um campo adicional");
-            return;
-        }
-
-        var label = $("#field-label-input").val();
-        if (label == "") {
-            alert("Insira o rótulo do campo");
-            return;
-        }
-
-        var html = "<div>";
-        html += "<label>" + label + ":</label>";
-        html += "<input type='" + selectedField + "'>";
-        html += "</div>";
-        $("#additional-fields-container").append(html);
-
-        $("#field-label-input").val("");
-    });
+ 
 </script>
