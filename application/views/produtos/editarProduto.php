@@ -520,7 +520,7 @@
             idCampo = idCampo.split(',');
             console.log(idCampo[1]);
 
-            if (idCampo[0] != "0" && i < 5 && idCampo[0] != 'textarea') {
+            if (idCampo[0] != "0" && i < 5 && idCampo[1] != 'textarea') {
 
                 $('#divAddCampo').append(`
                                         <div id="rm_${idCampo[0]}_${i}" class='control-group'>
@@ -536,7 +536,7 @@
 
 
             }
-            if (idCampo[0] != "0" && i < 5 && idCampo[0] == 'textarea') {
+            if (idCampo[0] != "0" && i < 5 && idCampo[1] == 'textarea') {
              
                 $('#divAddCampo').append(`
                                         <div id="rm_${idCampo[0]}_${i}" class='control-group'>
