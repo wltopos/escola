@@ -262,7 +262,7 @@
                 $('#codDeBarra').css("font-weight", 700);
                 $('#imgLogo').remove();
                 $('.addCampo').remove();
-                removeTodosCampos();
+               
                 if (ui.item.id != null) {
                     $("#editarProduto").show();
                     $('#adcionarProduto').text('Duplicar');
@@ -299,6 +299,7 @@
                         url: "<?= site_url('produtos/returnAddCampos'); ?>",
                         dataType: 'json',
                         success: function(data) {
+                            removeTodosCampos();
                             let camposDB = data;
                             let dadosCampos = ui.item.observacao.split('||');
                             let i = 0;
