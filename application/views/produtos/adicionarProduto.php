@@ -352,11 +352,19 @@
 
                                 camposDB.forEach((campo) => {
 
-                                    if (campo.id_estoque_addCampo == dadosCampo[0]) {
-                                        console.log(dadosCampo);
-                                        console.log(campo.addCampo);
+                                    if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo != "textarea") {
+                                     
                                         $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group addCampo'><label for='${campo.siglaAddCampo}_${i}' class='control-label'>${campo.addCampo}<span class='required'>*</span></label><div class='controls'><input required  onkeydown='handleEnter(event)' type='${campo.tipoAddCampo}'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.id_estoque_addCampo}_${i}]' value='${dadosCampo[1]} ' />   <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
                                     }
+
+                                    if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo == "textarea") {
+                                     
+                                        $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group addCampo'>
+                                        <label for='${campo.siglaAddCampo}_${i}' class='control-label'>${campo.addCampo}<span class='required'>*</span></label>
+                                        <div class='controls'><${campo.tipoAddCampo} required  onkeydown='handleEnter(event)'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.id_estoque_addCampo}_${i}]' >${dadosCampo[1]} </${campo.tipoAddCampo}>  
+                                        <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
+                                    }
+
                                 });
 
                             });
