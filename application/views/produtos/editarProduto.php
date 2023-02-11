@@ -427,7 +427,7 @@
                         dadosCampo = dadosCampo.split('::');
                         i++;
                         camposDB.forEach((campo) => {
-
+console.log(campo);
                             if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoCampo != "textarea") {
                                 $('#divAddCampo').append(`<div id='rm_${campo.siglaCampo}_${i}' class='control-group'>
                                                             <label for='${campo.siglaCampo}_${i}' class='control-label'><?= isset($r->addCampo) ? $r->addCampo : ''; ?>
