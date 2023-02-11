@@ -550,7 +550,7 @@
         let campo = $('#addCampo option:selected').text();
         let idCampo = $('#addCampo option:selected').val();
         idCampo = idCampo.split(',');
-        console.log(idCampo[0]);
+        console.log(i);
         if (idCampo[0] != "0" && i < 5 && idCampo[1] != 'textarea') {
 
             $('#divAddCampo').append(`<div id="rm_${idCampo[0]}_${i}" class='control-group'>
