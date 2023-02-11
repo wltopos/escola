@@ -162,7 +162,7 @@
                                                 ?>
 
                                                     <script>
-                                                        $('#divAddCampo').append(`<tr> <td style="text-align: right"><strong><?php echo $r->addCampo; ?></strong></td> <td> <input type="color" value="<?php echo $var3[1]; ?>" style=" height: 33px;" readonly> </td>  </tr>`);
+                                                        $('#divAddCampo').append(`<tr> <td style="text-align: right; vertical-align: inherit; "><strong><?php echo $r->addCampo; ?></strong></td> <td> <input type="color" value="<?php echo $var3[1]; ?>" style=" height: 33px; margin:auto;" readonly> </td>  </tr>`);
                                                     </script>
                                         <?php
                                                 }
