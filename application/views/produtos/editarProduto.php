@@ -335,7 +335,7 @@
         $('#categorias').select2();
         $('#marcasAgrotec').select2();
         $('.wh3').select2(({
-            width: '9rem'
+            width: '8rem'
         }));
         //validação de campos
         $(".money").maskMoney();
