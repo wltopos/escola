@@ -98,7 +98,13 @@
                             <label for="estoque" class="control-label">Estoque<span class="required">*</span></label>
                             <div class="controls">
                                 <input required onkeydown='handleEnter(event)' style="width: 5em;" id="estoque" type="number" name="estoque" value="<?php echo set_value('estoque'); ?>" />
-                                <select required onkeydown='handleEnter(event)' class="wh30" id="unidade" title="unidade" name="unidade" value="<?php echo set_value('unidade'); ?>">
+                                
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
+                            <div class="controls">
+                            <select required onkeydown='handleEnter(event)' class="wh30" id="unidade" title="unidade" name="unidade" value="<?php echo set_value('unidade'); ?>">
                                     <?php if (!$resultMedida) {
                                         echo '<option disabled selected>Sem madidas cadastradas</option>';
                                     } else {
@@ -113,12 +119,6 @@
                                     }
                                     ?>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
-                            <div class="controls">
-                                <input required onkeydown='handleEnter(event)' style="width: 5em;" id="estoqueMinimo" type="number" name="estoqueMinimo" value="<?php echo set_value('estoqueMinimo'); ?>" />
                                 <select required onkeydown='handleEnter(event)'  title="locations" name="location" id="locations" value="<?php echo set_value('location'); ?>">
 
                                     <?php if (!$resultLocations) {
