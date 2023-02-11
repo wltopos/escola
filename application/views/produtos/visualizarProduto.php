@@ -158,7 +158,7 @@
 
                                                 <?php
 
-                                                } else {
+                                                } elseif($idCampo != '' && $r->id_estoque_addCampo == $idCampo && $r->tipoaddCampo == "color") {
                                                 ?>
 
                                                     <script>
