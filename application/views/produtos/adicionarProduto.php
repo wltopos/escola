@@ -349,12 +349,13 @@
                             dadosCampos.forEach((dadosCampo) => {
                                 dadosCampo = dadosCampo.split('::');
                                 i++;
-
+console.log(dadosCampo);
                                 camposDB.forEach((campo) => {
-                                    console.log(campo.tipoAddCampo);
+                                    
                                     if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo != "textarea") {
+                                        console.log(campo.id_estoque_addCampo);
                                 $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group'>
-                                                            <label for='${campo.siglaAddCampo}_${i}' class='control-label'><?= isset($r->addCampo) ? $r->addCampo : ''; ?>
+                                                            <label for='${campo.siglaAddCampo}_${i}' class='control-label'><?= isset($r->addCampo ) ? $r->addCampo : ''; ?>
                                                             <span class='required'>*</span></label>
                                                             <div class='controls'><input required  onkeydown='handleEnter(event)' type='${campo.tipoAddCampo}'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.siglaAddCampo}_${i}]' value='${dadosCampo[1]} ' />
                                                             <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
@@ -512,14 +513,16 @@
         let campo = $('#addCampo option:selected').text();
         let idCampo = $('#addCampo option:selected').val();
         idCampo = idCampo.split(',');
-        console.log(idCampo);
-        
+    
+        console.log(idCampo,' ',campo);
+      
+
         if (idCampo[0] != "0" && i < 5 && idCampo[1] != 'textarea') {
 
             $('#divAddCampo').append(`<div id="rm_${idCampo[0]}_${i}" class='control-group'>
                                       <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
                                       <div class='controls'>
-                                      <input onkeydown='handleEnter(event)' type='${idCampo[1]}'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]' value='' ${idCampo[1]=='color'?'style=" height: 33px;"':''}/>
+                                      <input onkeydown='handleEnter(event)' type='${idCampo[1]}'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]' value='' ${(idCampo[1]=='color')?'style=" height: 33px;':''} />
                                       <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${idCampo[0]}_${i}')" style="margin-left: 5px;">
                                       <i class="fa fa-minus"></i></button></div></div>`);
 
