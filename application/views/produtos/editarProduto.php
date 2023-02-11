@@ -550,7 +550,7 @@
         let campo = $('#addCampo option:selected').text();
         let idCampo = $('#addCampo option:selected').val();
         idCampo = idCampo.split(',');
-        console.log(idCampo[1]);
+        
         if (idCampo[0] != "0" && i < 5 && idCampo[1] != 'textarea') {
 
             $('#divAddCampo').append(`<div id="rm_${idCampo[0]}_${i}" class='control-group'>
@@ -563,7 +563,7 @@
 
         }
         if (idCampo[0] != "0" && i < 1 && idCampo[1] == 'textarea') {
-
+            console.log(idCampo[1]);
             let textarea = `<${idCampo[1]}  onkeydown='handleEnter(event)' id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' ></${idCampo[1]}>`;
            
             $('#divAddCampo').append(`<div id='rm_${idCampo[0]}_${i}' class='control-group'>
