@@ -402,7 +402,7 @@
 
                     //calculaMargemVenda();
                     $("#estoqueMinimo").val(ui.item.estoqueMinimo / ui.item.multiplicador);
-                    removeTodosCampos();
+                    $('.campoAdd').remove();
                     let dadosCampos = ui.item.observacao.split('||');
                     let i;
                     dadosCampos.forEach((dadosCampo) => {
@@ -570,7 +570,5 @@
         $(campo).remove();
     }
 
-    function removeTodosCampos(){
-        $('.campoAdd').remove();
-    }
+   
 </script>

@@ -299,7 +299,7 @@
                         url: "<?= site_url('produtos/returnAddCampos'); ?>",
                         dataType: 'json',
                         success: function(data) {
-                            removeTodosCampos();
+                            $('.campoAdd').remove();
                             let camposDB = data;
                             let dadosCampos = ui.item.observacao.split('||');
                             let i = 0;
