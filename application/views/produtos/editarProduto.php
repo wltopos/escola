@@ -531,7 +531,7 @@
         }
         if (idCampo[0] != "0" && i < 5 && idCampo[1] == 'textarea') {
 
-            let textarea = $(`<textarea>oi</textarea>`);
+            let textarea = $(`<textarea2>oi</textarea2>`);
 
             $('#divAddCampo').append(`<div id='rm_${idCampo[0]}_${i}' class='control-group'>
                                         <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
