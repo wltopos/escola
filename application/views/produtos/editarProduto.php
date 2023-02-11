@@ -303,7 +303,7 @@
 </div>
 </div>
 <script src="<?php echo base_url() ?>assets/js/controllers/imagemDragAndDrop.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery.validate.js"></script>
+<!-- <script src="<?php echo base_url() ?>assets/js/jquery.validate.js"></script> -->
 <script src="<?php echo base_url(); ?>assets/js/maskmoney.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/controllers/margemLucro.js"></script>
 <script type="text/javascript">
@@ -312,7 +312,7 @@
             const form = document.getElementById('formProduto');
             const index = [...form].indexOf(event.target);
             form.elements[index + 1].focus();
-            // event.preventDefault()
+            // event.preventDefault();
         }
     }
 
@@ -531,9 +531,13 @@
         }
         if (idCampo[0] != "0" && i < 5 && idCampo[1] == 'textarea') {
 
-       
+            let textarea = $(`<textarea  onkeydown='handleEnter(event)' id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' >oi</textarea>`);
 
-       
+            $('#divAddCampo').append(`<div id='rm_${idCampo[0]}_${i}' class='control-group'>
+                                        <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
+                                        <div class='controls'>
+                                        <button title='remove campo' class='btn btn-danger' type='button' onclick='removeCampo("#rm_${idCampo[0]}_${i}")' style='margin-left: 5px; height: 33px;'>
+                                        <i class='fa fa-minus'></i></button></div></div>`);
         }
     });
 
@@ -549,5 +553,4 @@
     function removeCampo(campo) {
         $(campo).remove();
     }
-
 </script>
