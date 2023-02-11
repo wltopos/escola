@@ -349,7 +349,7 @@
                             dadosCampos.forEach((dadosCampo) => {
                                 dadosCampo = dadosCampo.split('::');
                                 i++;
-
+console.log(campo.tipoAddCampo);
                                 camposDB.forEach((campo) => {
 
                                     if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo != "textarea") {
