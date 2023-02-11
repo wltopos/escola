@@ -194,8 +194,6 @@
                                             }
                                         }
                                     }
-
-
                                     ?>
                                 </select>
                             </div>
@@ -216,7 +214,6 @@
                                         }
                                     }
 
-
                                     ?>
                                 </select>
                                 <button title="adcionar campo" class="btn btn-light" type="button" id="add-campo" style="margin-left: 5px;"><i class="fa fa-plus"></i></button>
@@ -225,43 +222,33 @@
                             <?php
 
                             $resultCampos = explode("||", $result->observacao);
-
                             $i = 0;
                             foreach ($resultCampos as $rCampo) {
                                 $i++;
-
                                 $var3 = explode('::', $rCampo);
                                 $idCampo = trim($var3[0]);
-
                                 foreach ($resultAddCampo as $r) {
-
                                     if ($idCampo != '' && $r->id_estoque_addCampo == $idCampo) {
-
-                                        if ($r->tipoAddCampo != "textarea") {
-
-                            ?>
+                                        if ($r->tipoAddCampo != "textarea") {     ?>
 
                                             <script>
                                                 $('#divAddCampo').append(`<div id='<?= "rm_" . $r->siglaAddCampo . "_" . $i ?>' class='control-group'>
-                                                                        <label for='<?= $r->siglaAddCampo . "_" . $i ?>' class='control-label'>
-                                                                        <?= $r->addCampo ?><span class='required'>*</span></label>
-                                                                        <div class='controls'>
-                                                                        <input onkeydown='handleEnter(event)' type='<?= $r->tipoAddCampo ?>'  id='<?= $r->siglaAddCampo . "_" . $i ?>' name='addCampoInput[<?= $r->id_estoque_addCampo . "_" . $i ?>]' value='<?= "$var3[1]" ?>' <?= ($r->tipoAddCampo == 'color'?'style=" height: 33px; width: 16em;"':''); ?> />   
-                                                                        <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#<?= "rm_" . $r->siglaAddCampo . "_" . $i ?>')" style="margin-left: 5px;">
-                                                                        <i class="fa fa-minus"></i></button> </div> </div>`);
+                                                <label for='<?= $r->siglaAddCampo . "_" . $i ?>' class='control-label'>
+                                                <?= $r->addCampo ?><span class='required'>*</span></label>
+                                                <div class='controls'>
+                                                <input onkeydown='handleEnter(event)' type='<?= $r->tipoAddCampo ?>'  id='<?= $r->siglaAddCampo . "_" . $i ?>' name='addCampoInput[<?= $r->id_estoque_addCampo . "_" . $i ?>]' value='<?= "$var3[1]" ?>' <?= ($r->tipoAddCampo == 'color' ? 'style=" height: 33px; width: 16em;"' : ''); ?> />   
+                                                <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#<?= "rm_" . $r->siglaAddCampo . "_" . $i ?>')" style="margin-left: 5px;">
+                                                <i class="fa fa-minus"></i></button> </div> </div>`);
                                             </script>
-
-                                        <?php
-                                        } else {
-                                        ?>
+                                        <?php  } else { ?>
                                             <script>
                                                 $('#divAddCampo').append(`<div id='<?= "rm_" . $r->siglaAddCampo . "_" . $i ?>' class='control-group'>
-                                                                        <label for='<?= $r->siglaAddCampo . "_" . $i ?>' class='control-label'>
-                                                                        <?= $r->addCampo ?><span class='required'>*</span></label>
-                                                                        <div class='controls'>
-                                                                        <<?= $r->tipoAddCampo ?> onkeydown='handleEnter(event)'  id='<?= $r->siglaAddCampo . "_" . $i ?>' name='addCampoInput[<?= $r->id_estoque_addCampo . "_" . $i ?>]' > <?= "$var3[1]" ?> </<?= $r->tipoAddCampo ?>>  
-                                                                        <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#<?= "rm_" . $r->siglaAddCampo . "_" . $i ?>')" style="margin-left: 5px;">
-                                                                        <i class="fa fa-minus"></i></button> </div> </div>`);
+                                                <label for='<?= $r->siglaAddCampo . "_" . $i ?>' class='control-label'>
+                                                <?= $r->addCampo ?><span class='required'>*</span></label>
+                                                <div class='controls'>
+                                                <<?= $r->tipoAddCampo ?> onkeydown='handleEnter(event)'  id='<?= $r->siglaAddCampo . "_" . $i ?>' name='addCampoInput[<?= $r->id_estoque_addCampo . "_" . $i ?>]' > <?= "$var3[1]" ?> </<?= $r->tipoAddCampo ?>>  
+                                                <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#<?= "rm_" . $r->siglaAddCampo . "_" . $i ?>')" style="margin-left: 5px;">
+                                                <i class="fa fa-minus"></i></button> </div> </div>`);
                                             </script>
                             <?php
 
@@ -272,8 +259,6 @@
 
                             ?>
                         </div>
-
-
                         <!--  <div class="control-group">
                         <label class="control-label">Tipo de Movimento</label>
                         <div class="controls">
@@ -291,9 +276,7 @@
                         <div class="control-group">
                             <label for="dataVencimento" class="control-label">Data de Vencimento</label>
                             <div class="controls">
-
                                 <?php
-
                                 if ($result->dataVencimento != null and $result->dataVencimento != '0000-00-00') {
                                     echo " <input onkeydown='handleEnter(event)' id='dataVencimento' type='date' name='dataVencimento' value='$result->dataVencimento'  /> ";
                                     echo '<input onkeydown="handleEnter(event)" class="form-check-input" id="ativaVencimento" type="checkbox" checked="checked" >';
@@ -303,10 +286,8 @@
                                 }
 
                                 ?>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="form-actions">
@@ -430,17 +411,18 @@
 
                             if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo != "textarea") {
                                 $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group'>
-                                                            <label for='${campo.siglaAddCampo}_${i}' class='control-label'><?= isset($r->addCampo) ? $r->addCampo : ''; ?>
-                                                            <span class='required'>*</span></label>
-                                                            <div class='controls'><input required  onkeydown='handleEnter(event)' type='${campo.tipoAddCampo}'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.siglaAddCampo}_${i}]' value='${dadosCampo[1]} ' />
-                                                            <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
+                                <label for='${campo.siglaAddCampo}_${i}' class='control-label'>${campo.addCampo}
+                                <span class='required'>*</span></label>
+                                <div class='controls'><input required  onkeydown='handleEnter(event)' type='${campo.tipoAddCampo}'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.siglaAddCampo}_${i}]' value='${dadosCampo[1]} ' ${campo.tipoAddCampo =='color'?'style=" height: 33px;  width: 16em;"':''} />
+                                <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
+
                             }
                             if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo == "textarea") {
                                 $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group'>
-                                                            <label for='${campo.siglaAddCampo}_${i}' class='control-label'><?= isset($r->addCampo) ? $r->addCampo : ''; ?>
-                                                            <span class='required'>*</span></label><div class='controls'>
-                                                            <${campo.tipoAddCampo} required  onkeydown='handleEnter(event)'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.siglaAddCampo}_${i}]' rows='5' cols='33' >  ${dadosCampo[1]} </${campo.tipoAddCampo}>
-                                                            <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
+                                <label for='${campo.siglaAddCampo}_${i}' class='control-label'><?= isset($r->addCampo) ? $r->addCampo : ''; ?>
+                                <span class='required'>*</span></label><div class='controls'>
+                                <${campo.tipoAddCampo} required  onkeydown='handleEnter(event)'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.siglaAddCampo}_${i}]' rows='5' cols='33' >  ${dadosCampo[1]} </${campo.tipoAddCampo}>
+                                <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
                             }
                         });
 
@@ -545,7 +527,7 @@
     //=====================================
     let i = 0;
     $('#add-campo').click(function() {
-       
+
         i++;
         let campo = $('#addCampo option:selected').text();
         let idCampo = $('#addCampo option:selected').val();
@@ -563,9 +545,9 @@
 
         }
         if (idCampo[0] != "0" && i < 2 && idCampo[1] == 'textarea') {
-            
+
             let textarea = `<${idCampo[1]}  onkeydown='handleEnter(event)' id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' ></${idCampo[1]}>`;
-           
+
             $('#divAddCampo').append(`<div id='rm_${idCampo[0]}_${i}' class='control-group'>
                                         <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
                                         <div class='controls'>${textarea}

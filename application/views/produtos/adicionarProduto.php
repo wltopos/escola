@@ -3,7 +3,6 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <script src="<?php echo base_url() ?>assets/js/sweetalert2.all.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/auth/login.js"></script>
-
 <div class="row-fluid" style="margin-top:0">
     <div class="span12">
         <div class="widget-box">
@@ -23,32 +22,26 @@
                 </div>
                 <div class="widget-content nopadding tab-content" style="margin-bottom: 2%;">
                     <div class="span6">
-
                         <input onkeydown='handleEnter(event)' type="hidden" id="adNotaFiscal_id" name="adNotaFiscal_id" value="" />
                         <input onkeydown='handleEnter(event)' type="hidden" id="produto_id" name="codDeBarra" value="" />
                         <input onkeydown='handleEnter(event)' type="hidden" id="imagemProduto" name="imagemProduto" value="" />
-
                         <div class="control-group">
-
                             <div class="control-group">
                                 <label for="codDeBarra" class="control-label">Código/Referência/GTIN<span class="required">*</span></label>
                                 <div class="controls">
                                     <input required onkeydown='handleEnter(event)' autocomplete="off" name="codigo" id="codDeBarra" type="text" value="<?php echo set_value('codDeBarra'); ?>" />
                                 </div>
                             </div>
-
                             <div class="control-group">
                                 <label for="adNotaFiscal" class="control-label">Nota Fiscal<span class="required">*</span></label>
                                 <div class="controls">
                                     <input required onkeydown='handleEnter(event)' type="text" autocomplete="off" id="adNotaFiscal" name="adNotaFiscal" value="<?php echo set_value('adNotaFiscal'); ?>" />
                                 </div>
                             </div>
-
                             <div class="control-group">
                                 <label for="selectMarca" class="control-label">Marca<span class="required">*</span></label>
                                 <div class="controls">
                                     <select required onkeydown='handleEnter(event)' id="selectMarca" name="marca" value="<?php echo set_value('marca'); ?>">
-
                                         <?php if (!$resultMarca) {
                                             echo '<option disabled selected>Sem marcas cadastradas</option>';
                                         } else {
@@ -57,37 +50,26 @@
                                                 echo "<option value=$rmc->id_estoque_marca >$rmc->marca</option>";
                                             }
                                         }
-
-
                                         ?>
                                     </select>
-
-
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label for="tipoMarca" class="control-label">Grupo<span class="required">*</span></label>
                                 <div class="controls">
                                     <select required onkeydown='handleEnter(event)' name="complemento" id="tipoMarca" value="<?php echo set_value('complemento'); ?>">
-
                                         <?php if (!$resultTipo) {
                                             echo '<option disabled selected>Sem itens cadastrados</option>';
                                         } else {
                                             echo '<option value="" disabled selected>Selecione um item</option>';
-
                                             foreach ($resultTipo as $rt) {
                                                 echo "<option value=$rt->id_estoque_tipo_produto >$rt->tipo_produto</option>";
                                             }
                                         }
-
-
                                         ?>
                                     </select>
-
-
                                 </div>
                             </div>
-
                         </div>
                         <div class="control-group">
                             <label for="descricao" class="control-label">Descrição<span class="required">*</span></label>
@@ -95,7 +77,6 @@
                                 <input required onkeydown='handleEnter(event)' id="descricao" type="text" name="descricao" value="<?php echo set_value('descricao'); ?>" />
                             </div>
                         </div>
-
                         <div class="control-group">
                             <label for="precoCompra" class="control-label">Preço de Compra(R$)<span class="required">*</span></label>
                             <div class="controls">
@@ -111,19 +92,13 @@
                                 <a class="btn btn-primary" onclick="calcPrecoVenda()" id="calcular" role="button">Calcular</a>
                             </div>
                         </div>
-
                     </div>
-
                     <div class="span6">
-
-
-
                         <div class="control-group">
                             <label for="estoque" class="control-label">Estoque<span class="required">*</span></label>
                             <div class="controls">
                                 <input required onkeydown='handleEnter(event)' style="width: 5em;" id="estoque" type="number" name="estoque" value="<?php echo set_value('estoque'); ?>" />
                                 <select required onkeydown='handleEnter(event)' class="wh30" id="unidade" title="unidade" name="unidade" value="<?php echo set_value('unidade'); ?>">
-
                                     <?php if (!$resultMedida) {
                                         echo '<option disabled selected>Sem madidas cadastradas</option>';
                                     } else {
@@ -136,8 +111,6 @@
                                             }
                                         }
                                     }
-
-
                                     ?>
                                 </select>
                             </div>
@@ -160,7 +133,6 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="control-group" id="divAddCampo">
                             <label for="addCampo" class="control-label">Adicionar campo<span class="required">*</span></label>
                             <div class="controls">
@@ -178,11 +150,8 @@
                                     ?>
                                 </select>
                                 <button title="adicionar campo" class="btn btn-light" type="button" id="add-campo" style="margin-left: 5px;"><i class="fa fa-plus"></i></button>
-
                             </div>
-
                         </div>
-
                         <!--  <div class="control-group">
                         <label class="control-label">Tipo de Movimento</label>
                         <div class="controls">
@@ -235,10 +204,8 @@
             // event.preventDefault();
         }
     }
-
     $(document).ready(function() {
         //verificador preenchimento do preço e margem de lucro
-
         $('#ativaVencimento').click(function() {
             if ($('#ativaVencimento').is(":checked")) {
                 $("#dataVencimento").attr("readonly", false);
@@ -246,18 +213,14 @@
                 $("#dataVencimento").attr("readonly", true);
             }
         });
-
         //Select com buscador
-
         $('select').select2();
         $('.wh30').select2(({
             width: '40%'
         }));
         //validação de campos
         $(".money").maskMoney();
-
         //auto complete produto
-
         $("#adNotaFiscal").autocomplete({
             source: "<?php echo base_url(); ?>index.php/AutoComplete/autoCompleteNotaFiscal",
             async: true,
@@ -273,7 +236,6 @@
                 }
             }
         });
-
         const barCode = document.getElementById("codDeBarra");
         const myInput = document.querySelector("#descricao");
         const imgLogo = document.querySelector("#imageLogo");
@@ -281,7 +243,6 @@
         const marcas = document.getElementById('marcasAgrotec');
         const image = document.createElement("img");
         //  const camposDB = <?= json_encode($resultAddCampo) ?>;
-
         $("#codDeBarra").autocomplete({
             source: "<?php echo base_url(); ?>AutoComplete/autoCompleteProduto",
             minLength: 1,
@@ -295,7 +256,6 @@
                 if (ui.content.length === 0) {
                     buscaProdutos();
                 }
-
             },
             select: function(event, ui) {
                 $('#codDeBarra').css("background-color", "#9dc2d5");
@@ -322,14 +282,11 @@
                         $("#ativaVencimento").prop("checked", true);
                         $("#dataVencimento").val(ui.item.dataVencimento);
                     }
-
                     if (ui.item.imagemProduto != null) {
-
                         image.src = ui.item.imagemProduto;
                         imgLogo.appendChild(image).setAttribute("id", "imgLogo");
                         $('#imagemProduto').val(ui.item.imagemProduto);
                     }
-
                     if ($('#dataVencimento').val() != '') {
                         $("#dataVencimento").attr("readonly", false);
                         $('#ativaVencimento')[0].checked = true;
@@ -337,39 +294,32 @@
                         $("#dataVencimento").attr("readonly", true);
                         $('#ativaVencimento')[0].checked = false;
                     }
-
                     $.ajax({
                         url: "<?= site_url('produtos/returnAddCampos'); ?>",
                         dataType: 'json',
                         success: function(data) {
-
                             let camposDB = data;
                             let dadosCampos = ui.item.observacao.split('||');
                             let i = 0;
                             dadosCampos.forEach((dadosCampo) => {
-                                dadosCampo = dadosCampo.split('::');
                                 i++;
-console.log(dadosCampo[0]);
+                                dadosCampo = dadosCampo.split('::');
                                 camposDB.forEach((campo) => {
-                                    
                                     if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo != "textarea") {
-                                        console.log(campo.addCampo);
-                                $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group'>
+                                        $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group'>
                                                             <label for='${campo.siglaAddCampo}_${i}' class='control-label'>${campo.addCampo}
                                                             <span class='required'>*</span></label>
-                                                            <div class='controls'><input required  onkeydown='handleEnter(event)' type='${campo.tipoAddCampo}'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.siglaAddCampo}_${i}]' value='${dadosCampo[1]} ' ${campo.tipoAddCampo =='color'?'style=" height: 33px;"':''} />
+                                                            <div class='controls'><input required  onkeydown='handleEnter(event)' type='${campo.tipoAddCampo}'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.siglaAddCampo}_${i}]' value='${dadosCampo[1]} ' ${campo.tipoAddCampo =='color'?'style=" height: 33px;  width: 16em;"':''} />
                                                             <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
-                            }
-                            if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo == "textarea") {
-                                $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group'>
+                                    }
+                                    if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo == "textarea") {
+                                        $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group'>
                                                             <label for='${campo.siglaAddCampo}_${i}' class='control-label'><?= isset($r->addCampo) ? $r->addCampo : ''; ?>
                                                             <span class='required'>*</span></label><div class='controls'>
                                                             <${campo.tipoAddCampo} required  onkeydown='handleEnter(event)'  id='${campo.siglaAddCampo}_${i}' name='addCampoInput[${campo.siglaAddCampo}_${i}]' rows='5' cols='33' >  ${dadosCampo[1]} </${campo.tipoAddCampo}>
                                                             <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${campo.siglaAddCampo}_${i}')" style="margin-left: 5px;"><i class="fa fa-minus"></i></button> </div> </div>`);
-                            }
-
+                                    }
                                 });
-
                             });
                         }
                     });
@@ -382,10 +332,8 @@ console.log(dadosCampo[0]);
                     $("#tipoMarca").val(ui.item.idTipo);
                     $("#editarProduto").hide();
                 }
-
             }
         });
-
         function buscaProdutos() {
             let v;
             v = barCode.value;
@@ -470,18 +418,11 @@ console.log(dadosCampo[0]);
 
         }
     })
-
-
     function updateThumb(file) {
-
-
-
         if ($(".drop-zone__thumb") && typeof file == "string") {
-
             $("#zone__prompt").removeClass("drop-zone__prompt");
             $("#drop-zone > img").remove();
             $("#zone__prompt").text("");
-
             $('<img />', {
                 class: 'logoImagem',
                 src: file,
@@ -502,36 +443,31 @@ console.log(dadosCampo[0]);
 
     }
 
-  
+
     // ===========================================================
     // SCRIPT BOTÃO ADICIONAR CAMPO
     // ===========================================================
     let i = 0;
     $('#add-campo').click(function() {
-
         i++;
         let campo = $('#addCampo option:selected').text();
         let idCampo = $('#addCampo option:selected').val();
         idCampo = idCampo.split(',');
-    
-        console.log(idCampo,' ',campo);
-      
-
         if (idCampo[0] != "0" && i < 5 && idCampo[1] != 'textarea') {
 
             $('#divAddCampo').append(`<div id="rm_${idCampo[0]}_${i}" class='control-group'>
                                       <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
                                       <div class='controls'>
-                                      <input onkeydown='handleEnter(event)' type='${idCampo[1]}'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]' value='' ${(idCampo[1]=='color')?'style=" height: 33px;':''} />
+                                      <input onkeydown='handleEnter(event)' type='${idCampo[1]}'  id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]' value='' ${(idCampo[1]=='color')?'style=" height: 33px;  width: 16em;':''} />
                                       <button title="remove campo" class="btn btn-danger" type="button"  onclick="removeCampo('#rm_${idCampo[0]}_${i}')" style="margin-left: 5px;">
                                       <i class="fa fa-minus"></i></button></div></div>`);
 
 
         }
         if (idCampo[0] != "0" && i < 2 && idCampo[1] == 'textarea') {
-            
+
             let textarea = `<${idCampo[1]}  onkeydown='handleEnter(event)' id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' ></${idCampo[1]}>`;
-           
+
             $('#divAddCampo').append(`<div id='rm_${idCampo[0]}_${i}' class='control-group'>
                                         <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
                                         <div class='controls'>${textarea}
@@ -539,8 +475,6 @@ console.log(dadosCampo[0]);
                                         <i class='fa fa-minus'></i></button></div></div>`);
         }
     });
-
-
     function btAddCampo() {
         let opt = $('#addCampo option:selected').val();
 
