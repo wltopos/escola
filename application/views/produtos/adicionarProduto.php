@@ -353,7 +353,7 @@
                                 camposDB.forEach((campo) => {
                                     
                                     if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo != "textarea") {
-                                        console.log(dadosCampo[0]);
+                                        console.log(id_estoque_addCampo);
                                 $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group'>
                                                             <label for='${campo.siglaAddCampo}_${i}' class='control-label'><?= isset($r->addCampo) ? $r->addCampo : ''; ?>
                                                             <span class='required'>*</span></label>
