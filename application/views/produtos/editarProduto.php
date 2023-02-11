@@ -562,7 +562,7 @@
 
 
         }
-        if (idCampo[0] != "0" && i < 1 && idCampo[1] == 'textarea') {
+        if (idCampo[0] != "0" && i < 2 && idCampo[1] == 'textarea') {
             
             let textarea = `<${idCampo[1]}  onkeydown='handleEnter(event)' id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' ></${idCampo[1]}>`;
            
