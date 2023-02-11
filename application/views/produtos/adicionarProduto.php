@@ -349,11 +349,11 @@
                             dadosCampos.forEach((dadosCampo) => {
                                 dadosCampo = dadosCampo.split('::');
                                 i++;
-console.log(dadosCampo);
+console.log(dadosCampo[0]);
                                 camposDB.forEach((campo) => {
                                     
                                     if (campo.id_estoque_addCampo == dadosCampo[0] && campo.tipoAddCampo != "textarea") {
-                                        console.log(campo.id_estoque_addCampo);
+                                        console.log(campo.addCampo);
                                 $('#divAddCampo').append(`<div id='rm_${campo.siglaAddCampo}_${i}' class='control-group'>
                                                             <label for='${campo.siglaAddCampo}_${i}' class='control-label'><?= isset($r->addCampo ) ? $r->addCampo : ''; ?>
                                                             <span class='required'>*</span></label>
