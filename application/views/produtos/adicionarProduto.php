@@ -513,7 +513,7 @@
         let idCampo = $('#addCampo option:selected').val();
         idCampo = idCampo.split(',');
     
-        console.log(idCampo);
+        console.log(idCampo,' ',campo);
       
 
         if (idCampo[0] != "0" && i < 5 && idCampo[1] != 'textarea') {
