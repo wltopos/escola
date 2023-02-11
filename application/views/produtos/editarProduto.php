@@ -531,7 +531,7 @@
         }
         if (idCampo[0] != "0" && i < 5 && idCampo[1] == 'textarea') {
 
-            let textarea = $(`<textarea>oi</textarea>`);
+        let textarea = "<textarea>oi</textarea>";
 
             $('#divAddCampo').append(textarea);
         }
