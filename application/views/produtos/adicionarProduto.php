@@ -98,7 +98,7 @@
                             <label for="estoque" class="control-label">Estoque<span class="required">*</span></label>
                             <div class="controls">
                                 <input required onkeydown='handleEnter(event)' style="width: 4em;" id="estoque" type="number" name="estoque" value="<?php echo set_value('estoque'); ?>" />
-                                <select required onkeydown='handleEnter(event)' class="wh30" id="unidade" title="unidade" name="unidade" value="<?php echo set_value('unidade'); ?>">
+                                <select required onkeydown='handleEnter(event)' class="wh3" id="unidade" title="unidade" name="unidade" value="<?php echo set_value('unidade'); ?>">
                                     <?php if (!$resultMedida) {
                                         echo '<option disabled selected>Sem madidas cadastradas</option>';
                                     } else {
@@ -119,7 +119,7 @@
                             <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
                             <div class="controls">
                                 <input required onkeydown='handleEnter(event)' style="width: 4em;" id="estoqueMinimo" type="number" name="estoqueMinimo" value="<?php echo set_value('estoqueMinimo'); ?>" />
-                                <select required onkeydown='handleEnter(event)' class="wh30" title="locations" name="location" id="locations" value="<?php echo set_value('location'); ?>">
+                                <select required onkeydown='handleEnter(event)' class="wh3" title="locations" name="location" id="locations" value="<?php echo set_value('location'); ?>">
 
                                     <?php if (!$resultLocations) {
                                         echo '<option disabled selected>Sem Localizações</option>';
@@ -215,7 +215,7 @@
         });
         //Select com buscador
         $('select').select2();
-        $('.wh30').select2(({
+        $('.wh3').select2(({
             width: '9em'
         }));
         //validação de campos
