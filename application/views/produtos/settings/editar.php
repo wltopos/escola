@@ -110,7 +110,7 @@
                                     <?php if($result->tipoAddCampo == ''): ?>
                                     <option disabled selected>Selecione o tipo de campo</option>
                                     <?php else: ?>
-                                    <option  value='text2' <?= ($result->tipoAddCampo == 'textarea')?'selected':''?>>Texto longo</option>
+                                    <option  value='textarea' <?= ($result->tipoAddCampo == 'textarea')?'selected':''?>>Texto longo</option>
                                     <option  value='text'  <?= ($result->tipoAddCampo == 'text')?'selected':''?>>Texto curto</option>
                                     <option  value='number'<?= ($result->tipoAddCampo == 'number')?'selected':''?>>Numero</option>
                                     <option  value='color' <?= ($result->tipoAddCampo == 'color')?'selected':''?>>Cor</option>

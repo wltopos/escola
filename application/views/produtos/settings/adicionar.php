@@ -105,8 +105,8 @@
                                     <strong>Tipo</strong>
                                     <select onchange="parametroID(this);" id='tipoCampo' name="tipoCampo">
                                     <option disabled selected>Selecione o tipo de campo</option>
+                                    <option  value='textarea' >Texto longo</option>
                                     <option  value='text'  >Texto curto</option>
-                                    <option  value='text2' >Texto longo</option>
                                     <option  value='number'>Numero</option>
                                     <option  value='color' >Cor</option>
                                     <option  value='range' >Variação</option>
