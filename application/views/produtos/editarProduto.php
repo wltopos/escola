@@ -147,7 +147,7 @@
                             <label for="estoque" class="control-label">Estoque<span class="required">*</span></label>
                             <div class="controls">
                                 <input onkeydown='handleEnter(event)' style="width: 5em;" id="estoque" type="number" name="estoque" value="<?php echo $estoque['valorConvertido']; ?>" />
-                                <select required onkeydown='handleEnter(event)' class="wh30" id="unidade" name="unidade">
+                                <select required onkeydown='handleEnter(event)' class="wh3" id="unidade" name="unidade">
 
                                     <?php if (!$resultMedida) {
                                         echo '<option disabled selected>Sem madidas cadastradas</option>';
@@ -178,7 +178,7 @@
                             <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
                             <div class="controls">
                                 <input onkeydown='handleEnter(event)' style="width: 5em;" id="estoqueMinimo" type="number" name="estoqueMinimo" value="<?php echo $estoque['valorConvertidoEstoqueMinimo']; ?>" />
-                                <select required onkeydown='handleEnter(event)' title="locations" name="location" id="locations" value="<?php echo set_value('location'); ?>" class="wh30">
+                                <select required onkeydown='handleEnter(event)' title="locations" class="wh3" name="location" id="locations" value="<?php echo set_value('location'); ?>" >
 
                                     <?php if (!$resultLocations) {
                                         echo '<option disabled selected>Sem Localizações</option>';
@@ -334,8 +334,8 @@
         //Select com buscador
         $('#categorias').select2();
         $('#marcasAgrotec').select2();
-        $('select').select2(({
-            width: 'resolve'
+        $('.wh3').select2(({
+            width: '9rem'
         }));
         //validação de campos
         $(".money").maskMoney();
