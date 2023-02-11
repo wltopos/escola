@@ -533,7 +533,7 @@
 
         let textarea = "<textarea>oi</textarea>";
 
-            $('#divAddCampo').append(textarea);
+       
         }
     });
 
