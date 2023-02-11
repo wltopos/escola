@@ -422,8 +422,8 @@ class Settings extends MY_Controller
             
             
         ];
-        if($this->input->post('parametros') != ''){
-            $this->dataInsert += ['parametrosAddCampo' => $this->input->post('parametros')]; 
+        if($this->input->post('tipoCampo') != ''){
+            $this->dataInsert += ['tipoAddCampo' => $this->input->post('parametros')]; 
         }
        }
        if($op == "up"){
@@ -437,8 +437,8 @@ class Settings extends MY_Controller
            
         ];
 
-        if($this->input->post('parametros') != ''){
-            $this->dataInsert += ['parametrosAddCampo' => $this->input->post('parametros')];
+        if($this->input->post('tipoCampo') != ''){
+            $this->dataInsert += ['tipoAddCampo' => $this->input->post('parametros')];
         }
        }
        
