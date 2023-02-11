@@ -550,5 +550,4 @@
         $(campo).remove();
     }
 
-    var textarea = '<textarea';
 </script>
