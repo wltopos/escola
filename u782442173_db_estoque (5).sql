@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `u782442173_db_estoque`
+-- Banco de dados: `u782442173_db_wltopos`
 --
 
 -- --------------------------------------------------------
@@ -461,7 +461,8 @@ CREATE TABLE `estoque_addCampos` (
   `addCampo` varchar(50) NOT NULL,
   `descricaoAddCampo` varchar(100) DEFAULT NULL,
   `siglaAddCampo` varchar(3) NOT NULL,
-  `tipoAddCampo` varchar(10) NOT NULL,
+  `tipoAddCampo` varchar(10) NOT NULL DEFAULT 'text',
+  `parametrosAddCampo` varchar(100) DEFAULT NULL,
   `pathAddCampo` varchar(200) DEFAULT NULL,
   `urlLogoAddCampo` varchar(200) DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 1,
@@ -565,7 +566,7 @@ CREATE TABLE `estoque_produtos` (
   `precoCompra` decimal(10,2) DEFAULT NULL,
   `margemLucro` double(10,2) DEFAULT NULL,
   `precoVenda` decimal(10,2) DEFAULT NULL,
-  `observacao` varchar(250) DEFAULT NULL,
+  `observacao` text DEFAULT NULL,
   `estoque_location_id` int(11) DEFAULT NULL,
   `estoque_medida_id` int(11) NOT NULL,
   `estoque_marca_id` int(11) DEFAULT NULL,
@@ -630,7 +631,7 @@ CREATE TABLE `estoque_tipo_produtos` (
   `siglaTipo_produto` varchar(10) NOT NULL,
   `pathTipo_produto` varchar(200) DEFAULT NULL,
   `urlLogoTipo_produto` varchar(200) DEFAULT NULL,
-  `statusTipo_produto` tinyint(4) DEFAULT NULL,
+  `statusTipo_produto` tinyint(4) DEFAULT 1,
   `estoque_categoria_id` int(11) DEFAULT NULL,
   `estoque_sector_id` int(11) NOT NULL,
   `updateTipo_produto` datetime DEFAULT NULL,
