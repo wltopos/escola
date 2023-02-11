@@ -119,7 +119,7 @@
                             <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
                             <div class="controls">
                                 <input required onkeydown='handleEnter(event)' style="width: 5em;" id="estoqueMinimo" type="number" name="estoqueMinimo" value="<?php echo set_value('estoqueMinimo'); ?>" />
-                                <select required onkeydown='handleEnter(event)'  title="locations" name="location" id="locations" value="<?php echo set_value('location'); ?>">
+                                <select required onkeydown='handleEnter(event)' class="wh30" title="locations" name="location" id="locations" value="<?php echo set_value('location'); ?>">
 
                                     <?php if (!$resultLocations) {
                                         echo '<option disabled selected>Sem Localizações</option>';
@@ -136,7 +136,7 @@
                         <div class="control-group" id="divAddCampo">
                             <label for="addCampo" class="control-label">Adicionar campo<span class="required">*</span></label>
                             <div class="controls">
-                                <select required onkeydown='handleEnter(event)' onchange="btAddCampo()" title="Adicionar campo" name="addCampo" id="addCampo" value="<?php echo set_value('addCampo'); ?>">
+                                <select required onkeydown='handleEnter(event)' onchange="btAddCampo()"  title="Adicionar campo" name="addCampo" id="addCampo" value="<?php echo set_value('addCampo'); ?>">
                                     <?php if ($resultAddCampo) {
                                         echo  '<option value="0" disabled selected>Tipo de observação</option>';
                                         foreach ($resultAddCampo as $r) {
@@ -216,7 +216,7 @@
         //Select com buscador
         $('select').select2();
         $('.wh30').select2(({
-            width: '7em'
+            width: '8em'
         }));
         //validação de campos
         $(".money").maskMoney();
