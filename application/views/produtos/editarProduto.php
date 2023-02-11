@@ -531,7 +531,7 @@
         }
         if (idCampo[0] != "0" && i < 5 && idCampo[1] == 'textarea') {
 
-        let textarea = "<textarea>oi</textarea>";
+       
 
        
         }
@@ -549,4 +549,6 @@
     function removeCampo(campo) {
         $(campo).remove();
     }
+
+    let textarea = "<textarea>oi</textarea>";
 </script>
