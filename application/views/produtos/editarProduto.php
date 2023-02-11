@@ -550,5 +550,5 @@
         $(campo).remove();
     }
 
-    let textarea = "<textarea>oi</textarea>";
+    let textarea = "<textarea>";
 </script>
