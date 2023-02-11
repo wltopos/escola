@@ -148,7 +148,7 @@
 
                                             foreach ($resultAddCampo as $r) {
 
-                                                if ($idCampo != '' && $r->id_estoque_addCampo == $idCampo && $r->tipoaddCampo != "color") {
+                                                if ($idCampo != '' && $r->id_estoque_addCampo == $idCampo && $r->tipoAddCampo != "color") {
 
                                         ?>
 
@@ -158,7 +158,7 @@
 
                                                 <?php
 
-                                                } else if($idCampo != '' && $r->id_estoque_addCampo == $idCampo && $r->tipoaddCampo == "color") {
+                                                } else if($idCampo != '' && $r->id_estoque_addCampo == $idCampo && $r->tipoAddCampo == "color") {
                                                 ?>
 
                                                     <script>
