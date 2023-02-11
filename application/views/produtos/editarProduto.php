@@ -419,7 +419,7 @@
                         $("#dataVencimento").val(ui.item.dataVencimento);
                     }
 
-                    calculaMargemVenda();
+                    //calculaMargemVenda();
                     $("#estoqueMinimo").val(ui.item.estoqueMinimo / ui.item.multiplicador);
                     let dadosCampos = ui.item.observacao.split('||');
                     let i;
