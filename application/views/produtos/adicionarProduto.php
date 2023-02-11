@@ -489,6 +489,6 @@
     }
 
     function removeTodosCampos(){
-        $('#divAddCampos').remove();
+        $('.campoAdd').remove();
     }
 </script>
