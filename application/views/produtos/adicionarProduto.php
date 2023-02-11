@@ -118,7 +118,7 @@
                         <div class="control-group">
                             <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
                             <div class="controls">
-                                
+                                <input required onkeydown='handleEnter(event)' style="width: 5em;" id="estoqueMinimo" type="number" name="estoqueMinimo" value="<?php echo set_value('estoqueMinimo'); ?>" />
                                 <select required onkeydown='handleEnter(event)'  title="locations" name="location" id="locations" value="<?php echo set_value('location'); ?>">
 
                                     <?php if (!$resultLocations) {
@@ -131,7 +131,6 @@
                                     }
                                     ?>
                                 </select>
-                                <input required onkeydown='handleEnter(event)' style="width: 5em;" id="estoqueMinimo" type="number" name="estoqueMinimo" value="<?php echo set_value('estoqueMinimo'); ?>" />
                             </div>
                         </div>
                         <div class="control-group" id="divAddCampo">
