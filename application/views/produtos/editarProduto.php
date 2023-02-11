@@ -531,7 +531,7 @@
         }
         if (idCampo[0] != "0" && i < 5 && idCampo[1] == 'textarea') {
 
-            let textarea = $(`<${idCampo[1]}  onkeydown='handleEnter(event)' id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' >oi</${idCampo[1]}>`);
+            let textarea = $(`<${idCampo[1]}  onkeydown='handleEnter(event)' id='${idCampo[0]}' name='addCampoInput[${idCampo[0]}_${i}]'  rows='5' cols='33' ></${idCampo[1]}>`);
 
             $('#divAddCampo').append(`<div id='rm_${idCampo[0]}_${i}' class='control-group'>
                                         <label for='${idCampo[0]}' class='control-label'>${campo}<span class='required'>*</span></label>
