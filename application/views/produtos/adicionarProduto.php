@@ -211,6 +211,7 @@
                 $("#dataVencimento").attr("readonly", false);
             } else if ($('#ativaVencimento').is(":not(:checked)")) {
                 $("#dataVencimento").attr("readonly", true);
+                $("#dataVencimento").val("");
             }
         });
         //Select com buscador
