@@ -148,21 +148,28 @@
 
                                             foreach ($resultAddCampo as $r) {
 
-                                                if ($idCampo != '' && $r->id_estoque_addCampo == $idCampo && $r->tipoAddCampo != "color") {
+                                                if ($idCampo != '' && $r->id_estoque_addCampo == $idCampo) {
 
+                                                   switch($r->tipoAddCampo){
+                                                   case "color":
                                         ?>
 
                                                     <script>
-                                                        $('#divAddCampo').append(`<tr> <td style="text-align: right"><strong><?php echo $r->addCampo; ?></strong></td> <td> <?php echo $var3[1]; ?> </td>  </tr>`);
-                                                    </script>
-
-                                                <?php
-
-                                                } else if($idCampo != '' && $r->id_estoque_addCampo == $idCampo && $r->tipoAddCampo == "color") {
-                                                ?>
-
-                                                    <script>
                                                         $('#divAddCampo').append(`<tr> <td style="text-align: right; vertical-align: inherit; "><strong><?php echo $r->addCampo; ?></strong></td> <td> <input type="color" value="<?php echo $var3[1]; ?>" style=" height: 33px; margin:auto;" disabled> </td>  </tr>`);
+                                                    </script>
+                                        <?php
+                                                break;
+                                                case "range";
+                                                ?>
+                                                    <script>
+                                                        $('#divAddCampo').append(`<tr> <td style="text-align: right; vertical-align: inherit; "><strong><?php echo $r->addCampo; ?></strong></td> <td> <input type="range" value="<?php echo $var3[1]; ?>" style=" height: 33px; margin:auto;" disabled> </td>  </tr>`);
+                                                    </script>
+                                        <?php
+                                                break;
+                                                default:
+                                                ?>
+                                                    <script>
+                                                        $('#divAddCampo').append(`<tr> <td style="text-align: right"><strong><?php echo $r->addCampo; ?></strong></td> <td> <?php echo $var3[1]; ?> </td>  </tr>`);
                                                     </script>
                                         <?php
                                                 }
