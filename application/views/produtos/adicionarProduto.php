@@ -262,6 +262,7 @@
                 $('#codDeBarra').css("font-weight", 700);
                 $('#imgLogo').remove();
                 $('.addCampo').remove();
+                removeTodosCampos();
                 if (ui.item.id != null) {
                     $("#editarProduto").show();
                     $('#adcionarProduto').text('Duplicar');
@@ -485,5 +486,9 @@
 
     function removeCampo(campo) {
         $(campo).remove();
+    }
+
+    function removeTodosCampos(){
+        $('#divAddCampos').remove();
     }
 </script>
