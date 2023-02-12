@@ -135,7 +135,7 @@
                             <label for="precoVenda" class="control-label">Preço de Venda<span class="required">*</span></label>
                             <div class="controls">
                                 <input onkeydown='handleEnter(event)' id="precoVenda" class="money" data-affixes-stay="true" data-thousands="" data-decimal="." type="text" required name="precoVenda" value="<?php echo $result->precoVenda; ?>" readonly />
-                                <a class="btn btn-primary" onclick="calcPrecoVenda()" id="calcular" role="button">Calcular</a>
+                                <a class="btn btn-primary  btn-calcular" onclick="calcPrecoVenda()" id="calcular" role="button">Calcular</a>
                             </div>
                         </div>
 

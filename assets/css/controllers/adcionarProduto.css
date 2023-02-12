@@ -41,7 +41,11 @@
     }
 
     input#precoVenda {
-        width: 70px;
+        width: 6em;
+    }
+
+    .btn-calcular {
+        width: 6em;
     }
 
     label.form-check-label {
