@@ -80,7 +80,7 @@
                         <div class="control-group">
                             <label for="precoCompra" class="control-label">Preço de Compra(R$)<span class="required">*</span></label>
                             <div class="controls">
-                                <input required onkeydown='handleEnter(event)' id="precoCompra input-numberProduto" class="money" data-affixes-stay="true" data-thousands="" data-decimal="." type="text" name="precoCompra" value="<?php echo set_value('precoCompra'); ?>" />
+                                <input required onkeydown='handleEnter(event)' id="precoCompra" class="money input-numberProduto" data-affixes-stay="true" data-thousands="" data-decimal="." type="text" name="precoCompra" value="<?php echo set_value('precoCompra'); ?>" />
                                 Margem (%) <input required onkeydown='handleEnter(event)' style="width: 3em;" id="margemLucro" name="margemLucro" value="<?php echo set_value('margemLucro'); ?>" type="text" placeholder="%" maxlength="3" size="2" />
                                 <strong><span style="color: red" id="errorAlert"></span></strong>
                             </div>
