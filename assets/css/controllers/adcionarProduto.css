@@ -40,6 +40,10 @@
         text-indent: 0;
     }
 
+    .input-numberProduto{
+        width: 4em;
+    }
+
     input#precoVenda {
         width: 6em;
     }

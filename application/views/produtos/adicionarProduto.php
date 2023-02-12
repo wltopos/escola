@@ -80,7 +80,7 @@
                         <div class="control-group">
                             <label for="precoCompra" class="control-label">Preço de Compra(R$)<span class="required">*</span></label>
                             <div class="controls">
-                                <input required onkeydown='handleEnter(event)' style="width: 5em;" id="precoCompra" class="money" data-affixes-stay="true" data-thousands="" data-decimal="." type="text" name="precoCompra" value="<?php echo set_value('precoCompra'); ?>" />
+                                <input required onkeydown='handleEnter(event)' id="precoCompra input-numberProduto" class="money" data-affixes-stay="true" data-thousands="" data-decimal="." type="text" name="precoCompra" value="<?php echo set_value('precoCompra'); ?>" />
                                 Margem (%) <input required onkeydown='handleEnter(event)' style="width: 3em;" id="margemLucro" name="margemLucro" value="<?php echo set_value('margemLucro'); ?>" type="text" placeholder="%" maxlength="3" size="2" />
                                 <strong><span style="color: red" id="errorAlert"></span></strong>
                             </div>
@@ -97,7 +97,7 @@
                         <div class="control-group">
                             <label for="estoque" class="control-label">Estoque<span class="required">*</span></label>
                             <div class="controls">
-                                <input required onkeydown='handleEnter(event)' style="width: 4em;" id="estoque" type="number" name="estoque" value="<?php echo set_value('estoque'); ?>" />
+                                <input required onkeydown='handleEnter(event)' class="input-numberProduto" id="estoque" type="number" name="estoque" value="<?php echo set_value('estoque'); ?>" />
                                 <select required onkeydown='handleEnter(event)' class="wh3" id="unidade" title="unidade" name="unidade" value="<?php echo set_value('unidade'); ?>">
                                     <?php if (!$resultMedida) {
                                         echo '<option disabled selected>Sem madidas cadastradas</option>';
@@ -118,7 +118,7 @@
                         <div class="control-group">
                             <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
                             <div class="controls">
-                                <input required onkeydown='handleEnter(event)' style="width: 4em;" id="estoqueMinimo" type="number" name="estoqueMinimo" value="<?php echo set_value('estoqueMinimo'); ?>" />
+                                <input required onkeydown='handleEnter(event)' class="input-numberProduto" id="estoqueMinimo" type="number" name="estoqueMinimo" value="<?php echo set_value('estoqueMinimo'); ?>" />
                                 <select required onkeydown='handleEnter(event)' class="wh3" title="locations" name="location" id="locations" value="<?php echo set_value('location'); ?>">
 
                                     <?php if (!$resultLocations) {
