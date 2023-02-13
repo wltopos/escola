@@ -115,10 +115,7 @@ $(document).ready(function () {
   var $cameraSelect = $("#camera-select");
   var $preview = $("#preview");
 
-  let scanner = new Instascan.Scanner({
-        video: document.getElementById('preview')
-
-    });
+ 
     scanner.addListener('scan', function(content) {
        
         $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
@@ -142,7 +139,7 @@ $(document).ready(function () {
           return camera.id === selectedCameraId;
         });
         var scanner = new Instascan.Scanner({
-          
+          video: $preview,
           mirror: false,
           backgroundScan: false,
           captureImage: false,
