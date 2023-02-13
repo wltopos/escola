@@ -31,42 +31,8 @@
             </div>
             <div class="widget-content nopadding tab-content">
                 <?= $custom_error ?>
-
-                <form action="<?= current_url() ?>" id="formNotaFiscal" enctype="multipart/form-data" method="post" class="form-horizontal">
-                    <input type="hidden" value="" id="fornecedor_id" name="fornecedor_id">
-                    <video id="preview"></video>
-
-                    <div class="control-group">
-                        <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
-                        <div class="controls">
-                            <div class="button_outer">
-                                <div class="btn_upload">
-                                    <input type="file" id="upload_file" name="userfile">
-                                    Selecione o arquivo
-                                </div>
-                                <div class="processing_bar"></div>
-                                <div class="success_box"></div>
-                            </div>
-                            <div class="error_msg"></div>
-                            <div class="uploaded_file_view" id="uploaded_view">
-                                <span class="file_remove">X</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-
-
-                    <div class="form-actions">
-                        <div class="span12">
-                            <div class="span6 offset3" style="display:flex;justify-content: center">
-                                <button type="submit" class="button btn btn-mini btn-success" style="max-width: 160px">
-                                    <span class="button__icon"><i class='bx bx-plus-circle'></i></span><span class="button__text2">Adicionar</span></a></button>
-                                <a href="<?= base_url() ?>index.php/NotasFiscais" class="button btn btn-mini btn-warning" style="max-width: 160px">
-                                    <span class="button__icon"><i class="bx bx-undo"></i></span><span class="button__text2">Voltar</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <video id="preview"></video>
+               
             </div>
         </div>
     </div>
