@@ -171,8 +171,7 @@
             }).then(stream => {
                 const track = stream.getVideoTracks()[0];
 
-                //Create image capture object and get camera capabilities
-                const imageCapture = new ImageCapture(track)
+              
             
                     track.applyConstraints({
                             advanced: [{
