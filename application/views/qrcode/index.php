@@ -61,7 +61,7 @@
                             <label for="userfile" class="control-label"><span class="required">Scan de url do sistema</span></label>
                             <div class="divSelectCamera">
                                 <select id='camera-select'>
-                                    <option disabled>Selecione a camera</option>
+                                    <option disabled selected>Selecione a camera</option>
                                 </select>
                                 <a id="switch1" class="btn btn-primary"><i class="fas fa-lightbulb"></i></a>
                             </div>
@@ -105,7 +105,6 @@
                 $cameraSelect.on("change", function() {
                     var selectedCameraId = this.value;
                     var selectedCamera = cameras.find(function(camera) {
-
                         return camera.id === selectedCameraId;
                     });
                     var scanner = new Instascan.Scanner({
@@ -191,17 +190,6 @@
                         flashEnabled = true;
                     }
                 });
-
-
-
-
-                // btn2.addEventListener('click', function() {
-                //     track.applyConstraints({
-                //         advanced: [{
-                //             torch: false
-                //         }]
-                //     });
-                // });
 
             });
         });
