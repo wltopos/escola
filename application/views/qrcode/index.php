@@ -46,12 +46,14 @@
             </div>
             <div class="widget-content nopadding tab-content">
                 <?= $custom_error ?>
+                <form  class="form-horizontal">
+                    <input type="hidden" value="" id="fornecedor_id" name="fornecedor_id">
                 <video id="preview"></video>
                 <select id='selectCam' onchange="selectCamera(this.value)">
                     <option>Selecione a camera</option>
                 </select>
                 <p id="resposta">Aguardando Scan</p>
-
+                </form>
             </div>
         </div>
     </div>
