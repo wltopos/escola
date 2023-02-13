@@ -62,7 +62,7 @@
                             <i class="fas fa-lightbulb"></i>
                             </a>
 
-                            </a>
+                            
                             <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
 
