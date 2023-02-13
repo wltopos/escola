@@ -111,49 +111,40 @@
     });
 </script> -->
 <script type="text/javascript">
-    var $cameraSelect = $("#camera-select");
-    var $preview = $("#preview");
+$(document).ready(function () {
+  var $cameraSelect = $("#camera-select");
+  var $preview = $("#preview");
 
-    Instascan.Camera.getCameras().then(function(cameras) {
-        if (cameras.length > 0) {
-            console.log(cameras);
-            // Continuar com o processo...
-        } else {
-            console.error("Nenhuma câmera encontrada.");
-        }
-    });
-
-    Instascan.Camera.getCameras().then(function(cameras) {
-        if (cameras.length > 0) {
-            cameras.forEach(function(camera, index) {
-                var option = $("<option>", {
-                    value: camera.id,
-                    text: camera.name || "Camera " + (index + 1)
-                });
-                $cameraSelect.append(option);
-            });
-        } else {
-            console.error("Nenhuma câmera encontrada.");
-        }
-    });
-
-    $cameraSelect.on("change", function() {
-        var selectedCameraId = this.value;
-        Instascan.Camera.getCameras().then(function(cameras) {
-            var selectedCamera = cameras.find(function(camera) {
-                return camera.id === selectedCameraId;
-            });
-            var scanner = new Instascan.Scanner({
-                video: $preview[0],
-                mirror: false,
-                backgroundScan: false,
-                captureImage: false,
-                refractoryPeriod: 5000,
-                scanPeriod: 1,
-                camera: selectedCamera
-            });
-            console.log('debug');
-            scanner.start();
+  Instascan.Camera.getCameras().then(function (cameras) {
+    if (cameras.length > 0) {
+      cameras.forEach(function (camera, index) {
+        var option = $("<option>", {
+          value: camera.id,
+          text: camera.name || "Camera " + (index + 1)
         });
-    });
+        $cameraSelect.append(option);
+      });
+
+      $cameraSelect.on("change", function () {
+        var selectedCameraId = this.value;
+        var selectedCamera = cameras.find(function (camera) {
+          return camera.id === selectedCameraId;
+        });
+        var scanner = new Instascan.Scanner({
+          video: $preview[0],
+          mirror: false,
+          backgroundScan: false,
+          captureImage: false,
+          refractoryPeriod: 5000,
+          scanPeriod: 1,
+          camera: selectedCamera
+        });
+        scanner.start();
+      });
+    } else {
+      console.error("Nenhuma câmera encontrada.");
+    }
+  });
+});
+
 </script>
