@@ -156,7 +156,18 @@
             }
             const camera = cameras[cameras.length - 1];
 
-           
+            // Create stream and get video track
+            navigator.mediaDevices.getUserMedia({
+                video: {
+                    deviceId: camera.deviceId,
+                    facingMode: ['user', 'environment'],
+                    height: {
+                        ideal: 1080
+                    },
+                    width: {
+                        ideal: 1920
+                    }
+                }
             }).then(stream => {
                 const track = stream.getVideoTracks()[0];
 
