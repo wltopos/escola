@@ -95,12 +95,13 @@
                         text: camera.name || "Camera " + (index + 1)
                     });
                     $cameraSelect.append(option);
-                    $cameraSelect.val(cameras[0].id).change();
+                    
                 });
 
                 $cameraSelect.on("change", function() {
                     var selectedCameraId = this.value;
                     var selectedCamera = cameras.find(function(camera) {
+                        console.log(selectedCamera);
                         return camera.id === selectedCameraId;
                     });
                     var scanner = new Instascan.Scanner({
