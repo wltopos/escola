@@ -150,7 +150,7 @@ $(document).ready(function () {
           scanPeriod: 1,
          
         });
-        scanner.start(camera[1]);
+        scanner.start(cameras[1]);
       });
     } else {
       console.error("Nenhuma câmera encontrada.");
