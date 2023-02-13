@@ -180,7 +180,7 @@
                 //todo: check if camera has a torch
 
                 //let there be light!
-                const btn1 = document.querySelector('.switch1');
+                const btn1 = document.querySelector('#switch1');
                 const btn2 = document.querySelector('.switch2');
 
                 btn1.addEventListener('click', function() {
