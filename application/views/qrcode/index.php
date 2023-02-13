@@ -112,13 +112,13 @@
 </script> -->
 <script type="text/javascript">
     $(document).ready(function() {
-        var $cameraSelect = $("#camera-select");
-        var $preview = $("#preview");
+    var $cameraSelect = $("#camera-select");
+    var $preview = $("#preview");
 
 
 
 
-        Instascan.Camera.getCameras().then(function(cameras) {
+    Instascan.Camera.getCameras().then(function(cameras) {
             if (cameras.length > 0) {
 
                 cameras.forEach(function(camera, index) {
@@ -141,18 +141,21 @@
                         captureImage: false,
                         refractoryPeriod: 5000,
                         scanPeriod: 1,
-
+                        camera: selectedCamera
                     });
-                    scanner.start(cameras[1]);
-                    scanner.addListener('scan', function(content) {
+                    scanner.start();
+               
+                scanner.start(cameras[1]);
+                scanner.addListener('scan', function(content) {
 
-                        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
-                        window.open(content, "_blank");
-                    });
+                    $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
+                    window.open(content, "_blank");
                 });
-            } else {
-                console.error("Nenhuma câmera encontrada.");
-            }
-        });
+            });
+    }
+    else {
+        console.error("Nenhuma câmera encontrada.");
+    }
+    });
     });
 </script>
