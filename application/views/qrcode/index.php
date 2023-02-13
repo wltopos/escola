@@ -23,7 +23,7 @@
     video {
         margin-left: 51px;
         margin-bottom: 26px;
-        width: 40em;
+        width: 85%;
     }
     #selectCam{
         margin-left: 3em;
