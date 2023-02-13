@@ -141,9 +141,9 @@
                         captureImage: false,
                         refractoryPeriod: 5000,
                         scanPeriod: 1,
-                        camera: cameras[1],
+                        
                     });
-                    scanner.start();
+                    scanner.start(selectedCamera);
                     console.log(cameras[1]);
                
                 scanner.start();
