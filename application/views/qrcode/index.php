@@ -130,7 +130,7 @@ $(document).ready(function () {
         
       cameras.forEach(function (camera, index) {
         var option = $("<option>", {
-          value: index,
+          value: camera.id,
           text: camera.name || "Camera " + (index + 1)
         });
         $cameraSelect.append(option);
@@ -148,7 +148,9 @@ $(document).ready(function () {
           captureImage: false,
           refractoryPeriod: 5000,
           scanPeriod: 1,
-          camera: selectedCamera
+          camera: {
+      facingMode: "environment"
+    }
         });
         scanner.start();
       });
