@@ -59,6 +59,7 @@
                                 <option>Selecione a camera</option>
                             </select>
                             <button id="flashButton">Ativar flash</button>
+                            <button id="flashButton2">Ativar flash2</button>
                             </a>
                             <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
@@ -200,7 +201,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
   // Pega acesso somente ao flash da câmera
   navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment", deviceId: "flash" } }).then(function (stream) {
     // Botão para acender/apagar o flash
-    var $btn = $("<button>").html("Acender/Apagar flash").appendTo("body");
+    var $btn = $("#flashButton2");
     
     // Adiciona um evento de clique ao botão
     $btn.click(function () {
