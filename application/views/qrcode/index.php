@@ -65,7 +65,8 @@
         console.log(idCamera)
     }
     let scanner = new Instascan.Scanner({
-        video: document.getElementById('preview');
+        video: document.getElementById('preview')
+
     });
     scanner.addListener('scan', function(content) {
         console.log(content);
