@@ -150,7 +150,7 @@
   
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(document).ready(function() {
         var selectedCameraId;
         Instascan.Camera.getCameras().then(function(cameras) {
@@ -207,4 +207,4 @@
             }
         });
     });
-</script>
+</script> -->
