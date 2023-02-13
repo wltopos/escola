@@ -56,7 +56,9 @@
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
 <script type="text/javascript">
     
-    
+    function selectCamera(idCamera = 0){
+        console.log(idCamera)
+    }
     let scanner = new Instascan.Scanner({
         video: document.getElementById('preview')
     });
@@ -64,8 +66,6 @@
         alert('Escaneou o conteudo: ' + content);
         window.open(content, "_blank");
     });
-    function selectCamera(idCamera = 0){
-        console.log(idCamera);
     Instascan.Camera.getCameras().then(cameras => {
         console.log(cameras);
 
@@ -75,15 +75,11 @@
             // Will stop running after "three"
 
         });
-       
         if (cameras.length > 0) {
             
-            scanner.start(cameras[idCamera]);
+            scanner.start(cameras[1]);
         } else {
             console.error("Não existe câmera no dispositivo!");
-        
-    }
-        
+        }
     });
-}
 </script>
