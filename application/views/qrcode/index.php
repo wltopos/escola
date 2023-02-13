@@ -139,7 +139,7 @@ $(document).ready(function () {
           return camera.id === selectedCameraId;
         });
         var scanner = new Instascan.Scanner({
-          video: $preview,
+          video: $preview[0],
           mirror: false,
           backgroundScan: false,
           captureImage: false,
