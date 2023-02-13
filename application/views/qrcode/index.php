@@ -145,7 +145,7 @@
                     });
                     scanner.start();
                
-                scanner.start(cameras[1]);
+                scanner.start();
                 scanner.addListener('scan', function(content) {
 
                     $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
