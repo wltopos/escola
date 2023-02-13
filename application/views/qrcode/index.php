@@ -130,7 +130,7 @@ $(document).ready(function () {
         
       cameras.forEach(function (camera, index) {
         var option = $("<option>", {
-          value: camera.id,
+          value: index,
           text: camera.name || "Camera " + (index + 1)
         });
         $cameraSelect.append(option);
