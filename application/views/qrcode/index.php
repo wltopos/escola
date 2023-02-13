@@ -22,6 +22,7 @@
 
     video {
         margin-left: 51px;
+        margin-bottom: 26px;
         width: 40em;
     }
 </style>
@@ -38,6 +39,10 @@
             <div class="widget-content nopadding tab-content">
                 <?= $custom_error ?>
                 <video id="preview"></video>
+                <select id='selectCam'>
+                    <option>Selecione a camera</option>
+                </select>
+                <p>Aguardando Scan</p>
 
             </div>
         </div>
@@ -56,8 +61,10 @@
     });
     Instascan.Camera.getCameras().then(cameras => {
         console.log(cameras);
+
         $.each(cameras, function(index, camera) {
             console.log(camera.name);
+            $('selectCam').append(`<option value="${index}">${camera.name}</option>`);
             // Will stop running after "three"
 
         });
