@@ -82,129 +82,116 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-    var $cameraSelect = $("#camera-select");
-    var $preview = $("#preview");
-    var $flash = $("#flash");
-
-    Instascan.Camera.getCameras().then(function(cameras) {
-        if (cameras.length > 0) {
-            selectedCameraId = cameras[0].id;
-            cameras.forEach(function(camera, index) {
-                var option = $("<option>", {
-                    value: camera.id,
-                    text: camera.name || "Camera " + (index + 1)
-                });
-                $cameraSelect.append(option);
-            });
-        } else {
-            console.error("Nenhuma câmera encontrada.");
-        }
-    }).catch(function(e) {
-        console.error(e);
-    });
-    $cameraSelect.on("change", function() {
-        var selectedCameraId = this.value;
-        var selectedCamera = cameras.find(function(camera) {
-            return camera.id === selectedCameraId;
-        });
-        var scanner = new Instascan.Scanner({
-            video: $preview[0],
-            mirror: false,
-            backgroundScan: false,
-            captureImage: false,
-            refractoryPeriod: 5000,
-            scanPeriod: 1,
-
-        });
-        scanner.start(selectedCamera);
-        $('#flashButton').click(function() {
-            if (scanner.torch) {
-                scanner.stop();
-                scanner.start(selectedCameraId);
-            } else {
-                scanner.stop();
-                scanner.start(selectedCameraId, {
-                    torch: true
-                });
-            }
-        });
-        scanner.addListener('scan', function(content) {
-            $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
-            window.open(content, "_blank");
-        });
+        var $cameraSelect = $("#camera-select");
+        var $preview = $("#preview");
+        var $flash = $("#flash");
 
         Instascan.Camera.getCameras().then(function(cameras) {
             if (cameras.length > 0) {
-                scanner.start(cameras[0]);
+
+                cameras.forEach(function(camera, index) {
+                    var option = $("<option>", {
+                        value: camera.id,
+                        text: camera.name || "Camera " + (index + 1)
+                    });
+                    $cameraSelect.append(option);
+                    $cameraSelect.change(camera.id);
+                });
+
+                $cameraSelect.on("change", function() {
+                    var selectedCameraId = this.value;
+                    var selectedCamera = cameras.find(function(camera) {
+                        return camera.id === selectedCameraId;
+                    });
+                    var scanner = new Instascan.Scanner({
+                        video: $preview[0],
+                        mirror: false,
+                        backgroundScan: false,
+                        captureImage: false,
+                        refractoryPeriod: 5000,
+                        scanPeriod: 1,
+
+                    });
+                    scanner.start(selectedCamera);
+                    $('#flashButton').click(function() {
+                        if (scanner.torch) {
+                            scanner.stop();
+                            scanner.start(selectedCameraId);
+                        } else {
+                            scanner.stop();
+                            scanner.start(selectedCameraId, {
+                                torch: true
+                            });
+                        }
+                    });
+                    scanner.addListener('scan', function(content) {
+                        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
+                        window.open(content, "_blank");
+                    });
+                });
+
             } else {
-                console.error('No cameras found.');
+                console.error("Nenhuma câmera encontrada.");
             }
-        }).catch(function(e) {
-            console.error(e);
         });
 
+
     });
- });
-
-
-  
 </script>
 
 <!-- <script type="text/javascript">
-    $(document).ready(function() {
-        var selectedCameraId;
-        Instascan.Camera.getCameras().then(function(cameras) {
-            if (cameras.length > 0) {
-                selectedCameraId = cameras[0].id;
-                for (var i = 0; i < cameras.length; i++) {
-                    $('#cameraSelect').append($('<option>', {
-                        value: cameras[i].id,
-                        text: cameras[i].name
-                    }));
-                }
-            } else {
-                console.error('No cameras found.');
+$(document).ready(function() {
+    var selectedCameraId;
+    Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+            selectedCameraId = cameras[0].id;
+            for (var i = 0; i < cameras.length; i++) {
+                $('#cameraSelect').append($('<option>', {
+                    value: cameras[i].id,
+                    text: cameras[i].name
+                }));
             }
-        }).catch(function(e) {
-            console.error(e);
-        });
-        $('#cameraSelect').on('change', function() {
-            selectedCameraId = this.value;
-            console.log(selectedCameraId);
-            scanner.start(selectedCameraId);
-        });
-        var scanner = new Instascan.Scanner({
-            video: document.getElementById('preview'),
-            mirror: false,
-            backgroundScan: true,
-            captureImage: false,
-            refractoryPeriod: 5000,
-            scanPeriod: 1,
-            videoSource: selectedCameraId
-        });
-        scanner.addListener('scan', function(content) {
-            $('#resposta').append(content + '<br>');
-        });
-        Instascan.Camera.getCameras().then(function(cameras) {
-            if (cameras.length > 0) {
-                scanner.start(cameras[0]);
-            } else {
-                console.error('No cameras found.');
-            }
-        }).catch(function(e) {
-            console.error(e);
-        });
-
-        $('#flashButton').click(function() {
-            if (scanner.torch) {
-                scanner.stop();
-                scanner.start(selectedCameraId);
-            } else {
-                scanner.stop();
-                scanner.start(selectedCameraId, {
-                    torch: true
-                });
-            }
-        });
+        } else {
+            console.error('No cameras found.');
+        }
+    }).catch(function (e) {
+        console.error(e);
     });
+    $('#cameraSelect').on('change', function() {
+        selectedCameraId = this.value;
+        console.log(selectedCameraId);
+        scanner.start(selectedCameraId);
+    });
+    var scanner = new Instascan.Scanner({
+        video: document.getElementById('preview'),
+        mirror: false,
+        backgroundScan: true,
+        captureImage: false,
+        refractoryPeriod: 5000,
+        scanPeriod: 1,
+        videoSource: selectedCameraId
+    });
+    scanner.addListener('scan', function (content) {
+        $('#resposta').append(content + '<br>');
+    });
+    Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+            scanner.start(cameras[0]);
+        } else {
+            console.error('No cameras found.');
+        }
+    }).catch(function (e) {
+        console.error(e);
+    });
+    
+    $('#flashButton').click(function () {
+        if (scanner.torch) {
+            scanner.stop();
+            scanner.start(selectedCameraId);
+        } else {
+            scanner.stop();
+            scanner.start(selectedCameraId, { torch: true });
+        }
+    });
+});
 </script> -->
