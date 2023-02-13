@@ -118,15 +118,17 @@
                         window.open(content, "_blank");
                     });
                 });
-                if (scanner.getActiveCamera().getCapabilities().torch) {
+                
+            } else {
+                console.error("Nenhuma câmera encontrada.");
+            }
+        });
+
+        if (scanner.getActiveCamera().getCapabilities().torch) {
                         $flash.show();
                         $flash.click(function() {
                             scanner.getActiveCamera().toggleTorch();
                         });
                     }
-            } else {
-                console.error("Nenhuma câmera encontrada.");
-            }
-        });
     });
 </script>
