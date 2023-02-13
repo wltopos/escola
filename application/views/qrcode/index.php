@@ -176,5 +176,15 @@ $(document).ready(function() {
     }).catch(function (e) {
         console.error(e);
     });
+    
+    $('#flashButton').click(function () {
+        if (scanner.torch) {
+            scanner.stop();
+            scanner.start(selectedCameraId);
+        } else {
+            scanner.stop();
+            scanner.start(selectedCameraId, { torch: true });
+        }
+    });
 });
 </script>
