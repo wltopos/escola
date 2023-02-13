@@ -55,7 +55,7 @@
                         <div class="controls">
                             <label for="userfile" class="control-label"><span class="required">Scan de url do sistema</span></label>
 
-                            <select id='cameraSelect'>
+                            <select id='camera-select'>
                                 <option>Selecione a camera</option>
                             </select>
                             <button id="flashButton">Ativar flash</button>
@@ -79,7 +79,7 @@
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function() {
         var $cameraSelect = $("#camera-select");
         var $preview = $("#preview");
@@ -111,12 +111,17 @@
 
                     });
                     scanner.start(selectedCamera);
-                    if (scanner.getActiveCamera().getCapabilities().torch) {
-                        $flash.show();
-                        $flash.click(function() {
-                            scanner.getActiveCamera().toggleTorch();
-                        });
-                    }
+                    $('#flashButton').click(function() {
+                        if (scanner.torch) {
+                            scanner.stop();
+                            scanner.start(selectedCameraId);
+                        } else {
+                            scanner.stop();
+                            scanner.start(selectedCameraId, {
+                                torch: true
+                            });
+                        }
+                    });
                     scanner.addListener('scan', function(content) {
                         $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
                         window.open(content, "_blank");
@@ -130,9 +135,9 @@
 
 
     });
-</script> -->
+</script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(document).ready(function() {
     var selectedCameraId;
     Instascan.Camera.getCameras().then(function (cameras) {
@@ -187,5 +192,4 @@ $(document).ready(function() {
         }
     });
 });
-</script>
-
+</script> -->
