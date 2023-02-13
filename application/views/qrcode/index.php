@@ -58,9 +58,9 @@
                             <select id='camera-select'>
                                 <option>Selecione a camera</option>
                             </select>
-                            <button id="flash" class="btn btn-warning" >
+                            <a id="flash" class="btn btn-warning" >
                                 <i class="fas fa-lightbulb"></i>
-                            </button>
+                            </a>
                             <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
 
@@ -112,23 +112,23 @@
 
                     });
                     scanner.start(selectedCamera);
-                    
-                    scanner.addListener('scan', function(content) {
-                        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
-                        window.open(content, "_blank");
-                    });
-                });
-                
-            } else {
-                console.error("Nenhuma câmera encontrada.");
-            }
-        });
-
-        if (scanner.getActiveCamera().getCapabilities().torch) {
+                    if (scanner.getActiveCamera().getCapabilities().torch) {
                         $flash.show();
                         $flash.click(function() {
                             scanner.getActiveCamera().toggleTorch();
                         });
                     }
+                    scanner.addListener('scan', function(content) {
+                        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
+                        window.open(content, "_blank");
+                    });
+                });
+
+            } else {
+                console.error("Nenhuma câmera encontrada.");
+            }
+        });
+
+
     });
 </script>
