@@ -143,7 +143,7 @@
                         scanPeriod: 1,
                         camera: '39909ff3d01e94a405fd7f74e41c52c3824e1d12aaca47ef3bea413d55863ba8'
                     });
-                    scanner.start(camera[1]);
+                    scanner.start(cameras[1]);
                     console.log(cameras[1]);
                
                 scanner.start();
