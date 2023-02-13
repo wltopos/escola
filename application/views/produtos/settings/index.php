@@ -466,7 +466,7 @@
                                                 <td>Menor ou igual a 5V</td>
                                                 <td>Menor que 1A</td>
                                                 <td>FON_ACDC_5V_LT1A</td>
-                                                <td><i class="fas fa-square" style="color: #FF0000;"></i>Vermelho</td>
+                                                <td><i class="fas fa-square" style="color: #FF0000;"></i> Vermelho</td>
                                                 <td>#FF0000</td>
                                             </tr>
                                             <tr>
@@ -474,7 +474,7 @@
                                                 <td>Entre 5V e 7v</td>
                                                 <td>Maior que 1A</td>
                                                 <td>FON_ACDC_BT5V7V_BT1A</td>
-                                                <td><i class="fas fa-square" style="color: #006400;"></i>Verde escuro</td>
+                                                <td><i class="fas fa-square" style="color: #006400;"></i> Verde escuro</td>
                                                 <td>#006400</td>
                                             </tr>
                                             <tr>
@@ -482,7 +482,7 @@
                                                 <td>12V</td>
                                                 <td>Menor que 1A</td>
                                                 <td>FON_ACDC_12V_LT1A</td>
-                                                <td><i class="fas fa-square" style="color: #FF0000;"></i>Vermelho</td>
+                                                <td><i class="fas fa-square" style="color: #FF0000;"></i> Vermelho</td>
                                                 <td>#FF0000</td>
                                             </tr>
                                             <tr>
@@ -490,33 +490,25 @@
                                                 <td>12V</td>
                                                 <td>Entre 1A e 3A</td>
                                                 <td>FON_ACDC_12V_BT1A3A</td>
-                                                <td><i class="fas fa-square" style="color: #00FFFF;"></i>Azul</td>
-                                                <td>#00FFFF</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>12V</td>
-                                                <td>Maior que 3A</td>
-                                                <td>FON_ACDC_12V_AB3A</td>
-                                                <td><i class="fas fa-square" style="color: #CC3333;"></i></td>
+                                                <td><i class="fas fa-square" style="color: #00FFFF;"></i> Azul</td>
                                                 <td>#00FFFF</td>
                                             </tr>
                                             <tr>
                                                 <td>6</td>
-                                                <td>8.4V</td>
+                                                <td>Entre 8V e 8.9V</td>
                                                 <td>Menor que 1A</td>
                                                 <td>FON_ACDC_8V_LT1A</td>
-                                                <td><i class="fas fa-square" style="color: #FF0000;"></i> Vermelho</td>
-                                                <td>#FF0000</td>
+                                                <td><i class="fas fa-square" style="color: #800080;"></i> Roxo</td>
+                                                <td>#800080</td>
                                                 
                                             </tr>
                                             <tr>
                                                 <td>7</td>
-                                                <td>8.4</td>
+                                                <td>Entre 8V e 8.9V</td>
                                                 <td>>= 1</td>
-                                                <td>FON_ACDC_8V_LT1A</td>
-                                                <td><i class="fas fa-square" style="color: #FF0000;"></i> Vermelho</td>
-                                                <td>#FF0000</td>
+                                                <td>FON_ACDC_8V_IB1A2A</td>
+                                                <td><i class="fas fa-square" style="color: #FFFF00;"></i> Amarelo</td>
+                                                <td>#FFFF00</td>
                                                 
                                             </tr>
                                             <tr>
@@ -535,7 +527,14 @@
                                                 <td>FON_ACDC_9V_LT1A</td>
                                                 <td><i class="fas fa-square" style="color: #FF00FF;"></i> Magenta</td>
                                                 <td>#FF00FF</td>
-                                                
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>12V</td>
+                                                <td>Maior que 3A</td>
+                                                <td>FON_ACDC_12V_AB3A</td>
+                                                <td><i class="fas fa-square" style="color: #CC3333;"></i></td>
+                                                <td>#00FFFF</td>
                                             </tr>
                                         </tbody>
                                     </table>
