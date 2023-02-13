@@ -59,7 +59,7 @@
                                 <option>Selecione a camera</option>
                             </select>
                             <button id="flashButton">Ativar flash</button>
-                            <button id="flash-toggle">Acender/Apagar flash</button>
+                            
                             </a>
                             <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
