@@ -172,11 +172,7 @@
             }).then(stream => {
                 const track = stream.getVideoTracks()[0];
 
-                track.applyConstraints({
-                    advanced: [{
-                        torch: true
-                    }]
-                });
+             
                 //todo: check if camera has a torch
 
                 //let there be light!
