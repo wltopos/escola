@@ -193,3 +193,26 @@ $(document).ready(function() {
     });
 });
 </script> -->
+
+<script>
+    // Verifica se o navegador suporta a API de câmera
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  // Pega acesso somente ao flash da câmera
+  navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment", deviceId: "flash" } }).then(function (stream) {
+    // Botão para acender/apagar o flash
+    var $btn = $("<button>").html("Acender/Apagar flash").appendTo("body");
+    
+    // Adiciona um evento de clique ao botão
+    $btn.click(function () {
+      // Obtém o track de vídeo da câmera
+      var track = stream.getVideoTracks()[0];
+      
+      // Alterna entre ativado e desativado
+      track.applyConstraints({
+        advanced: [{ torch: !track.getSettings().torch }]
+      });
+    });
+  });
+}
+
+</script>
