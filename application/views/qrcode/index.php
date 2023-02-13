@@ -95,7 +95,7 @@
                         text: camera.name || "Camera " + (index + 1)
                     });
                     $cameraSelect.append(option);
-                  // $cameraSelect.change(camera.id);
+                   $cameraSelect.val(camera.id).change();
                 });
 
                 $cameraSelect.on("change", function() {
