@@ -141,7 +141,7 @@
                         captureImage: false,
                         refractoryPeriod: 5000,
                         scanPeriod: 1,
-                        camera: 'Iriun Webcam'
+                        camera: cameras[1],
                     });
                     scanner.start();
                     console.log(cameras[1]);
