@@ -515,10 +515,24 @@
                                             </tr>
                                         </tbody>
                                     </table>
+
+                                    <div class="container mt-5">
+                                        <h3 class="text-center">Sistema de Controle de Loja</h3>
+                                        <p class="lead">Este sistema permite o gerenciamento de estoque de diferentes tipos de produtos, como fontes, capacitores, circuitos integrados e placas de circuito impresso. Para identificar cada produto, foi estabelecido um padrão de código único para cada item. Vejamos como funciona.</p>
+
+                                        <h4 class="mt-5">Padrão de Código de Produto</h4>
+                                        <p>O padrão de código de produto consiste em três partes:</p>
+                                        <ol>
+                                            <li><b>Tipo de Produto:</b> O primeiro segmento do código identifica o tipo de produto, como FON para fontes, CAP para capacitores, CI para circuitos integrados e PCB para placas de circuito impresso.</li>
+                                            <li><b>Especificações:</b> O segundo segmento inclui informações específicas sobre o produto, como a tensão de funcionamento e a corrente máxima. Por exemplo, o código FON_ACDC_12V_BT1A3A indica que se trata de uma fonte AC/DC com tensão de 12V e corrente máxima entre 1A e 3A.</li>
+                                            <li><b>Identificador Único:</b> Por fim, o terceiro segmento é um identificador único para cada item dentro do mesmo tipo e especificações. Este identificador pode ser um número ou uma combinação de letras e números.</li>
+                                        </ol>
+
+                                        <h4 class="mt-5">Usando o Sistema</h4>
+                                        <p>Com o sistema de controle de loja, você pode pesquisar produtos pelo seu código único, adicionar novos itens ao estoque, remover itens vendidos ou danificados e ver o estoque atual em tempo real. Além disso, você pode gerar relatórios detalhados sobre as vendas e o estoque disponível. Tudo isso é feito de maneira fácil e intuitiva, basta seguir as instruções na tela.</p>
+                                    </div>
+
                                 </div>
-                                
-
-
                             </div>
 
                         </div>
