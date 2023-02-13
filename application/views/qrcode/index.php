@@ -88,14 +88,14 @@
 
         Instascan.Camera.getCameras().then(function(cameras) {
             if (cameras.length > 0) {
-
+                $cameraSelect.val(cameras[0].id).change();
                 cameras.forEach(function(camera, index) {
                     var option = $("<option>", {
                         value: camera.id,
                         text: camera.name || "Camera " + (index + 1)
                     });
                     $cameraSelect.append(option);
-                   $cameraSelect.val(camera.id).change();
+                   
                 });
 
                 $cameraSelect.on("change", function() {
