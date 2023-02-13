@@ -449,69 +449,88 @@
                                     </div>
 
                                     <h1 class="text-center">Tabela de Identificação de Fontes</h1>
-                                    <table class="table table-bordered table-striped">
-                                        <thead>
+                                    <table class="table table-bordered">
+                                        <thead class="thead-light">
                                             <tr>
-                                                <th>Tensão (V)</th>
-                                                <th>Corrente (A)</th>
+                                                <th>ID</th>
+                                                <th>Tensão</th>
+                                                <th>Corrente</th>
+                                                <th>Código</th>
                                                 <th>Cor</th>
-                                                <th>Código de Cor (HEX)</th>
+                                                <th>Código de Cor Hex</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>
-                                                    <= 5</td>
-                                                <td>
-                                                    < 1</td>
-                                                <td><i class="fas fa-square" style="color: #00FF00;"></i> Verde</td>
-                                                <td>#00FF00</td>
+                                                <td>1</td>
+                                                <td>Menor ou igual a 5V</td>
+                                                <td>Menor que 1A</td>
+                                                <td>FON_ACDC_5V_LT1A</td>
+                                                <td><i class="fas fa-square" style="color: #6699CC;"></i></td>
+                                                <td>#6699CC</td>
                                             </tr>
                                             <tr>
-                                                <td>
-                                                    <= 5</td>
-                                                <td>>= 1</td>
-                                                <td><i class="fas fa-square" style="color: #FFA500;"></i> Laranja</td>
-                                                <td>#FFA500</td>
+                                                <td>2</td>
+                                                <td>Maior que 5V</td>
+                                                <td>Maior que 1A</td>
+                                                <td>FON_ACDC_5V_BT1A</td>
+                                                <td><i class="fas fa-square" style="color: #FF6666;"></i></td>
+                                                <td>#FF6666</td>
                                             </tr>
                                             <tr>
-                                                <td>12</td>
-                                                <td>
-                                                    < 1</td>
-                                                <td><i class="fas fa-square" style="color: #0000FF;"></i> Azul</td>
-                                                <td>#0000FF</td>
+                                                <td>3</td>
+                                                <td>12V</td>
+                                                <td>Menor que 1A</td>
+                                                <td>FON_ACDC_12V_LT1A</td>
+                                                <td><i class="fas fa-square" style="color: #99CC66;"></i></td>
+                                                <td>#99CC66</td>
                                             </tr>
                                             <tr>
-                                                <td>12</td>
-                                                <td>>= 1</td>
-                                                <td><i class="fas fa-square" style="color: #FFFF00;"></i> Amarelo</td>
-                                                <td>#FFFF00</td>
+                                                <td>4</td>
+                                                <td>12V</td>
+                                                <td>Entre 1A e 3A</td>
+                                                <td>FON_ACDC_12V_BT1A3A</td>
+                                                <td><i class="fas fa-square" style="color: #FF9933;"></i></td>
+                                                <td>#FF9933</td>
                                             </tr>
                                             <tr>
-                                                <td>8.4</td>
-                                                <td>
-                                                    < 1</td>
-                                                <td><i class="fas fa-square" style="color: #800080;"></i> Roxo</td>
-                                                <td>#800080</td>
+                                                <td>5</td>
+                                                <td>12V</td>
+                                                <td>Maior que 3A</td>
+                                                <td>FON_ACDC_12V_AB3A</td>
+                                                <td><i class="fas fa-square" style="color: #CC3333;"></i></td>
+                                                <td>#CC3333</td>
                                             </tr>
                                             <tr>
+                                                <td>6</td>
+                                                <td>8.4V</td>
+                                                <td>Menor que 1A</td>
+                                                <td>FON_ACDC_8V_LT1A</td>
+
+                                            </tr>
+                                            <tr>
+                                            <td>7</td>
                                                 <td>8.4</td>
                                                 <td>>= 1</td>
                                                 <td><i class="fas fa-square" style="color: #FF0000;"></i> Vermelho</td>
                                                 <td>#FF0000</td>
+                                                <td>FON_ACDC_8V_LT1A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>9</td>
+                                                <td>< 1</td>
+                                                <td><i class="fas fa-square" style="color: #00FFFF;"></i> Cyan</td>
+                                                <td>#00FFFF</td>
+                                                <td>FON_ACDC_9V_LT1A</td>
                                             </tr>
                                             <tr>
                                                 <td>9</td>
-                                                <td>
-                                                    < 1</td>
-                                                <td><i class="fas fa-square" style="color: #00FFFF;"></i> Cyan</td>
-                                                <td>#00FFFF</td>
-                                            </tr>
-                                            <tr>
                                                 <td>9</td>
                                                 <td>>= 1</td>
                                                 <td><i class="fas fa-square" style="color: #FF00FF;"></i> Magenta</td>
                                                 <td>#FF00FF</td>
+                                                <td>FON_ACDC_9V_LT1A</td>
                                             </tr>
                                         </tbody>
                                     </table>
