@@ -508,31 +508,34 @@
                                                 <td>FON_ACDC_8V_LT1A</td>
                                                 <td><i class="fas fa-square" style="color: #FF0000;"></i> Vermelho</td>
                                                 <td>#FF0000</td>
-                                                <td>FON_ACDC_8V_LT1A</td>
+                                                
                                             </tr>
                                             <tr>
-                                            <td>7</td>
+                                                <td>7</td>
                                                 <td>8.4</td>
                                                 <td>>= 1</td>
+                                                <td>FON_ACDC_8V_LT1A</td>
                                                 <td><i class="fas fa-square" style="color: #FF0000;"></i> Vermelho</td>
                                                 <td>#FF0000</td>
-                                                <td>FON_ACDC_8V_LT1A</td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td>8</td>
                                                 <td>9</td>
                                                 <td>Menor que 1A</td>
+                                                <td>FON_ACDC_9V_LT1A</td>
                                                 <td><i class="fas fa-square" style="color: #00FFFF;"></i> Cyan</td>
                                                 <td>#00FFFF</td>
-                                                <td>FON_ACDC_9V_LT1A</td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td>9</td>
                                                 <td>9</td>
                                                 <td>>= 1</td>
+                                                <td>FON_ACDC_9V_LT1A</td>
                                                 <td><i class="fas fa-square" style="color: #FF00FF;"></i> Magenta</td>
                                                 <td>#FF00FF</td>
-                                                <td>FON_ACDC_9V_LT1A</td>
+                                                
                                             </tr>
                                         </tbody>
                                     </table>
