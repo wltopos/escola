@@ -101,7 +101,7 @@
                 $cameraSelect.on("change", function() {
                     var selectedCameraId = this.value;
                     var selectedCamera = cameras.find(function(camera) {
-                        console.log(camera.id === selectedCameraId);
+                        console.log(selectedCameraId);
                         return camera.id === selectedCameraId;
                     });
                     var scanner = new Instascan.Scanner({
