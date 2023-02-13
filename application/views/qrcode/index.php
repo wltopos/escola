@@ -54,7 +54,7 @@
 
                         <div class="controls">
                             <label for="userfile" class="control-label"><span class="required">Scan de url do sistema</span></label>
-                            <div>
+                            <div class="divSelectCamera">
                               <select id='camera-select'><option disabled>Selecione a camera</option></select>
                               <a id="switch1" class="btn btn-primary"><i class="fas fa-lightbulb"></i></a>  
                             </div>
