@@ -21,7 +21,7 @@
     }
 
     video {
-        margin-left: 51px;
+        margin-left: 9%;
         margin-bottom: 26px;
         width: 85%;
     }
