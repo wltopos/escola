@@ -58,8 +58,9 @@
                             <select id='camera-select'>
                                 <option>Selecione a camera</option>
                             </select>
-                            <button id="flashButton">Ativar flash</button>
-                            
+                            <button class="switch1">On </button>
+                            <button class="switch2"> Off</button>
+
                             </a>
                             <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
@@ -88,20 +89,20 @@
 
         Instascan.Camera.getCameras().then(function(cameras) {
             if (cameras.length > 0) {
-                
+
                 cameras.forEach(function(camera, index) {
                     var option = $("<option>", {
                         value: camera.id,
                         text: camera.name || "Camera " + (index + 1)
                     });
                     $cameraSelect.append(option);
-                    
+
                 });
-               
+
                 $cameraSelect.on("change", function() {
                     var selectedCameraId = this.value;
                     var selectedCamera = cameras.find(function(camera) {
-                        
+
                         return camera.id === selectedCameraId;
                     });
                     var scanner = new Instascan.Scanner({
@@ -136,63 +137,66 @@
             }
         });
 
-        
+
     });
 </script>
 
-<!-- <script type="text/javascript">
-$(document).ready(function() {
-    var selectedCameraId;
-    Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
-            selectedCameraId = cameras[0].id;
-            for (var i = 0; i < cameras.length; i++) {
-                $('#cameraSelect').append($('<option>', {
-                    value: cameras[i].id,
-                    text: cameras[i].name
-                }));
+<script type="text/javascript">
+    //Test browser support
+    const SUPPORTS_MEDIA_DEVICES = 'mediaDevices' in navigator;
+
+    if (SUPPORTS_MEDIA_DEVICES) {
+        //Get the environment camera (usually the second one)
+        navigator.mediaDevices.enumerateDevices().then(devices => {
+
+            const cameras = devices.filter((device) => device.kind === 'videoinput');
+
+            if (cameras.length === 0) {
+                throw 'No camera found on this device.';
             }
-        } else {
-            console.error('No cameras found.');
-        }
-    }).catch(function (e) {
-        console.error(e);
-    });
-    $('#cameraSelect').on('change', function() {
-        selectedCameraId = this.value;
-        console.log(selectedCameraId);
-        scanner.start(selectedCameraId);
-    });
-    var scanner = new Instascan.Scanner({
-        video: document.getElementById('preview'),
-        mirror: false,
-        backgroundScan: true,
-        captureImage: false,
-        refractoryPeriod: 5000,
-        scanPeriod: 1,
-        videoSource: selectedCameraId
-    });
-    scanner.addListener('scan', function (content) {
-        $('#resposta').append(content + '<br>');
-    });
-    Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
-            scanner.start(cameras[0]);
-        } else {
-            console.error('No cameras found.');
-        }
-    }).catch(function (e) {
-        console.error(e);
-    });
-    
-    $('#flashButton').click(function () {
-        if (scanner.torch) {
-            scanner.stop();
-            scanner.start(selectedCameraId);
-        } else {
-            scanner.stop();
-            scanner.start(selectedCameraId, { torch: true });
-        }
-    });
-});
-</script> -->
+            const camera = cameras[cameras.length - 1];
+
+            // Create stream and get video track
+            navigator.mediaDevices.getUserMedia({
+                video: {
+                    deviceId: camera.deviceId,
+                    facingMode: ['user', 'environment'],
+                    height: {
+                        ideal: 1080
+                    },
+                    width: {
+                        ideal: 1920
+                    }
+                }
+            }).then(stream => {
+                const track = stream.getVideoTracks()[0];
+
+                //Create image capture object and get camera capabilities
+                const imageCapture = new ImageCapture(track)
+                const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
+
+                    //todo: check if camera has a torch
+
+                    //let there be light!
+                    const btn1 = document.querySelector('.switch1');
+                    const btn2 = document.querySelector('.switch2');
+
+                    btn1.addEventListener('click', function() {
+                        track.applyConstraints({
+                            advanced: [{
+                                torch: true
+                            }]
+                        });
+                    });
+                    btn2.addEventListener('click', function() {
+                        track.applyConstraints({
+                            advanced: [{
+                                torch: false
+                            }]
+                        });
+                    });
+                });
+            });
+        });
+    }
+</script>
