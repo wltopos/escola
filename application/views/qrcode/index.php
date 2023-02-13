@@ -55,7 +55,7 @@
                         <div class="controls">
                             <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
                             <video id="preview"></video>
-                            <select id='camera-select' onchange="selectCamera(this.value)">
+                            <select id='selectCam' onchange="selectCamera(this.value)">
                                 <option>Selecione a camera</option>
                             </select>
                             <p id="resposta">Aguardando Scan</p>
@@ -75,12 +75,48 @@
 
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
+<!-- <script type="text/javascript">
+    function selectCamera(idCamera = 0) {
+        console.log(idCamera)
+    }
+    let scanner = new Instascan.Scanner({
+        video: document.getElementById('preview')
+
+    });
+    scanner.addListener('scan', function(content) {
+        console.log(content);
+        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
+        window.open(content, "_blank");
+    });
+    Instascan.Camera.getCameras().then(cameras => {
+        console.log(cameras);
+
+        $.each(cameras, function(index, camera) {
+
+            var option = $("<option>", {
+                value: camera.id,
+                text: camera.name || "Camera " + (index + 1)
+            });
+
+            $('#selectCam').append(option);
+            // Will stop running after "three"
+
+        });
+        if (cameras.length > 0) {
+
+            scanner.start(cameras[1]);
+        } else {
+            console.error("Não existe câmera no dispositivo!");
+        }
+    });
+</script> -->
 <script type="text/javascript">
     var $cameraSelect = $("#camera-select");
     var $preview = $("#preview");
 
     Instascan.Camera.getCameras().then(function(cameras) {
         if (cameras.length > 0) {
+            console.log(cameras);
             // Continuar com o processo...
         } else {
             console.error("Nenhuma câmera encontrada.");
