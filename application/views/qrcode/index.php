@@ -25,10 +25,12 @@
         margin-bottom: 26px;
         width: 85%;
     }
-    #selectCam{
+
+    #selectCam {
         margin-left: 3em;
     }
-    #resposta{
+
+    #resposta {
         text-align: center;
         margin: 0 auto;
         font-size: 12px;
@@ -46,13 +48,30 @@
             </div>
             <div class="widget-content nopadding tab-content">
                 <?= $custom_error ?>
-                <form  class="form-horizontal">
+                <form class="form-horizontal">
                     <input type="hidden" value="" id="fornecedor_id" name="fornecedor_id">
-                <video id="preview"></video>
-                <select id='selectCam' onchange="selectCamera(this.value)">
-                    <option>Selecione a camera</option>
-                </select>
-                <p id="resposta">Aguardando Scan</p>
+                    <div class="control-group">
+                        <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
+                        <div class="controls">
+                            <div class="button_outer">
+                                <div class="btn_upload">
+                                    <video id="preview"></video>
+                                    <select id='selectCam' onchange="selectCamera(this.value)">
+                                        <option>Selecione a camera</option>
+                                    </select>
+                                    <p id="resposta">Aguardando Scan</p>
+                                </div>
+                                <div class="processing_bar"></div>
+                                <div class="success_box"></div>
+                            </div>
+                            <div class="error_msg"></div>
+                            <div class="uploaded_file_view" id="uploaded_view">
+                                <span class="file_remove">X</span>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </form>
             </div>
         </div>
@@ -62,8 +81,7 @@
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
 <script type="text/javascript">
-    
-    function selectCamera(idCamera = 0){
+    function selectCamera(idCamera = 0) {
         console.log(idCamera)
     }
     let scanner = new Instascan.Scanner({
@@ -79,13 +97,13 @@
         console.log(cameras);
 
         $.each(cameras, function(index, camera) {
-           
+
             $('#selectCam').append(`<option value="${index}">${camera.name}</option>`);
             // Will stop running after "three"
 
         });
         if (cameras.length > 0) {
-            
+
             scanner.start(cameras[1]);
         } else {
             console.error("Não existe câmera no dispositivo!");
