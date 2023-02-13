@@ -429,16 +429,88 @@
                                             <i class="fas fa-shopping-bag"></i>
                                         </span>
                                         <h5>Fluxograma de cadastro </h5>
-                                        
+
                                     </div>
 
 
                                     <div class="widget-content nopadding tab-content">
 
                                         <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2023-02-06T18:36:15.264Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.78\&quot; etag=\&quot;3UeyyPfv9vf1afquiGla\&quot; version=\&quot;20.8.17\&quot;&gt;&lt;diagram name=\&quot;Página-1\&quot; id=\&quot;JD815-ggscJK0oiwEquh\&quot;&gt;7VpRd6I4FP41PrYHEgL6qFa73WOnc9qzZzrzFiFqdsEwIVbdX78BEiGAHadF7TrjQyVfkktyv3u/S6gdOIw2txzHi3sWkLADrGDTgTcdID/Ik18pss0RBOwcmHMa5FAJeKL/EgVaCl3RgCTGQMFYKGhsgj5bLokvDAxzztbmsBkLzbvGeE5qwJOPwzr6hQZikaNd4BX4H4TOF/rOttvLeyKsB6udJAscsHUJgqMOHHLGRH4VbYYkTJ2n/ZLPG+/p3S2Mk6U4ZEKCvsbB9y+J33v+MwoevOG3yeQKqrWJrd4wCeT+VZOEU7YeFcCAs9UyIKlBS7YYFws2Z0scThiLJWhL8G8ixFbxiFeCSWgholD1kg0Vz6Xrr6mpa6RaNxtlOWtsVSNfYrquvTtXUMJW3CevbFdHEOZzIl4ZB3b8yMAmLCKCb+U8TkIs6Iu5DqwibL4bV5AgLxQPP8GJk9t9weFK3akD3FAudzBjcsNlttzvK6Y7rpLM6X05AMB4kzlO98uref490Lbk0nJzuqchDiZ4KtPZIBCHdL6U1770PeESeCFcUJkvfdUR0SDIY4XIBeFpZi+lMWZ0KTJfoUEH3ezumRogm6ZkVpOLFCpTvj+c67wp61fWtWOB3JSSIxX/BxOrbH9O91IY1mJlGtXz2WyWyGirhsVufW+PFLsWKXfyj/VpdD96vBs+SG5xJPNysJwmcRPHRTqn1K4XVJCnGGcZtJZybjI/o2E4ZCHj2VzoOp7b9SSeCM7+IaUeaDsQOSoqS/gs+7zGey2l91PpAdPnSDXXhUjbesiiJNCudaSsdRuy9qTSmnpbdcoIbFU2wYGyid4pm9nUPud4WxqgdGNv8l1BxwyFrlUhM7fYauZ5DWyfRUObWW9TU90faarlQMcgQMfLW1W1Yub4OgpqbD7d3U7SSnr7+Nfnh+Po5j513K+nbegmsj6YbqKa7x9H49Hj6NPwrl9z/MlKlMlwG47XsvRhHG/Xnx7OXLEqZIzHN8Aet1vJem1UqHoJciC47rrAcrs9FyHbqzxkWlIkS5+K/bysKpPti1uvgWbjOOHvXF4cF2QmBMCe1U8Q95j7+NAzxM/pZDUazGTOXddSMjo9aDBke2fPxqZT36Vno33og6W952B3mgO57Z2YCulIvn1W87NG6T1J2ixelGQt/abkQ1P43sPB+yhsUsHf6aUHds/KTf3x+5avYlYvJwsWTVfJG0qJ6etdKamUGAL9bobXnhcHVg+1VnyQZRYfaDUUH6eh+OzA9imANQqeiJC7b7ei7wn5Y1Z6WDnv7B7Dz1fp6yeeIRZkzjjFl+dv59DgPpq/wa94zskV/ZD/dFjNfJ5I+rs1bu5JQIMLSITqEQNZ6MzCA+oif/mJoD3840QA50wEvcwSNxPm4/Dy8sC1z12AddgbBTiKWSKxfkB9KmOaJv9/zyPkXCPD916D74EDW/G9bBa/ZcjfXRW/CIGj/wA=&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
-                                        
+
                                         <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
                                     </div>
+
+                                    <div class="widget-title">
+                                        <span class="icon">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </span>
+                                        <h5>Sugestão de padrão de cores para tenções </h5>
+
+                                    </div>
+
+                                    <table>
+                                        <tr>
+                                            <th>Tensão</th>
+                                            <th>Corrente</th>
+                                            <th>Código de Cor</th>
+                                            <th>Código de Identificação</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Menor ou igual a 5V</td>
+                                            <td>Menor que 1A</td>
+                                            <td bgcolor="#00FF00">Verde</td>
+                                            <td>FON_ACDC_5V_LT1A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maior que 5V</td>
+                                            <td>Maior que 1A</td>
+                                            <td bgcolor="#FFA500">Laranja</td>
+                                            <td>FON_ACDC_GT5V_GT1A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12V</td>
+                                            <td>Menor que 1A</td>
+                                            <td bgcolor="#0000FF">Azul</td>
+                                            <td>FON_ACDC_12V_LT1A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12V</td>
+                                            <td>Maior ou igual a 1A e menor que 3A</td>
+                                            <td bgcolor="#FFFF00">Amarelo</td>
+                                            <td>FON_ACDC_12V_BT1A3A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12V</td>
+                                            <td>Maior ou igual a 3A</td>
+                                            <td bgcolor="#FF0000">Vermelho</td>
+                                            <td>FON_ACDC_12V_GT3A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8.4V</td>
+                                            <td>Menor que 1A</td>
+                                            <td bgcolor="#FF00FF">Rosa</td>
+                                            <td>FON_ACDC_8.4V_LT1A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8.4V</td>
+                                            <td>Maior ou igual a 1A</td>
+                                            <td bgcolor="#00FFFF">Ciano</td>
+                                            <td>FON_ACDC_8.4V_GT1A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9V</td>
+                                            <td>Menor que 1A</td>
+                                            <td bgcolor="#FFFFFF">Branco</td>
+                                            <td>FON_ACDC_9V_LT1A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9V</td>
+                                            <td>Maior ou igual a 1A</td>
+                                            <td bgcolor="#000000">Preto</td>
+                                            <td>FON_ACDC_9V_GT1A</td>
+                                        </tr>
+
+
                                 </div>
 
                             </div>
