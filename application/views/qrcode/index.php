@@ -59,7 +59,8 @@
                                 <option>Selecione a camera</option>
                             </select>
                             <button id="flashButton">Ativar flash</button>
-                            <button id="flashButton2">Ativar flash2</button>
+                            <button class="switch1">On </button>
+                            <button class="switch2"> Off</button>
                             </a>
                             <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
@@ -196,24 +197,38 @@ $(document).ready(function() {
 </script> -->
 
 <script>
-    // Verifica se o navegador suporta a API de câmera
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  // Pega acesso somente ao flash da câmera
-  navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment", deviceId: "flash" } }).then(function (stream) {
-    // Botão para acender/apagar o flash
-    var $btn = $("#flashButton2");
-    
-    // Adiciona um evento de clique ao botão
-    $btn.click(function () {
-      // Obtém o track de vídeo da câmera
-      var track = stream.getVideoTracks()[0];
-      
-      // Alterna entre ativado e desativado
-      track.applyConstraints({
-        advanced: [{ torch: !track.getSettings().torch }]
-      });
-    });
-  });
-}
+    navigator.mediaDevices.getUserMedia({
+            video: {
+                facingMode: 'environment',
+            }
+        })
+        .then((stream) => {
+            const video = document.querySelector('video');
+            video.srcObject = stream;
 
+            // get the active track of the stream
+            const track = stream.getVideoTracks()[0];
+
+            const btn1 = document.querySelector('.switch1');
+            const btn2 = document.querySelector('.switch2');
+            btn1.addEventListener('click', function() {
+                track.applyConstraints({
+                    advanced: [{
+                        torch: true
+                    }]
+                });
+            });
+            btn2.addEventListener('click', function() {
+                track.applyConstraints({
+                    advanced: [{
+                        torch: false
+                    }]
+                });
+            });
+
+
+
+
+        })
+        .catch(err => console.error('getUserMedia() failed: ', err));
 </script>
