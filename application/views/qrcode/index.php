@@ -77,7 +77,7 @@
         console.log(idCamera);
         if (cameras.length > 0) {
             
-            scanner.start(cameras[1]);
+            scanner.start(cameras[idCamera]);
         } else {
             console.error("Não existe câmera no dispositivo!");
         }
