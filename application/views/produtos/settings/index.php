@@ -466,16 +466,16 @@
                                                 <td>Menor ou igual a 5V</td>
                                                 <td>Menor que 1A</td>
                                                 <td>FON_ACDC_5V_LT1A</td>
-                                                <td><i class="fas fa-square" style="color: #6699CC;"></i></td>
-                                                <td>#6699CC</td>
+                                                <td><i class="fas fa-square" style="color: #FF0000;"></i></td>
+                                                <td>#FF0000</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>Maior que 5V</td>
+                                                <td>Entre 5V e 7v</td>
                                                 <td>Maior que 1A</td>
-                                                <td>FON_ACDC_5V_BT1A</td>
-                                                <td><i class="fas fa-square" style="color: #FF6666;"></i></td>
-                                                <td>#FF6666</td>
+                                                <td>FON_ACDC_BT5V7V_BT1A</td>
+                                                <td><i class="fas fa-square" style="color: #006400;"></i></td>
+                                                <td>#006400</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
