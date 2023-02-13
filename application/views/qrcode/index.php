@@ -28,6 +28,10 @@
     #selectCam{
         margin-left: 3em;
     }
+    #resposta{
+        margin: 8px 27px 10px;
+        font-size: 12px;
+    }
 </style>
 
 <div class="row-fluid" style="margin-top:0">
@@ -63,7 +67,7 @@
         video: document.getElementById('preview')
     });
     scanner.addListener('scan', function(content) {
-        $('#resposta').html(`Escaneou o conteudo:<a href="${content}">${content}</a>`);
+        $('#resposta').html(`Escaneou o conteudo: <a href="${content}">${content}</a>`);
         window.open(content, "_blank");
     });
     Instascan.Camera.getCameras().then(cameras => {
