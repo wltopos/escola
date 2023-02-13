@@ -116,7 +116,7 @@
 
                     });
                     scanner.start(selectedCamera);
-                    
+
                     scanner.addListener('scan', function(content) {
                         $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
                         window.open(content, "_blank");
@@ -162,7 +162,7 @@
             }).then(stream => {
                 const track = stream.getVideoTracks()[0];
 
-             
+
                 //todo: check if camera has a torch
 
                 //let there be light!
@@ -170,22 +170,37 @@
                 const btn2 = document.querySelector('.switch2');
 
                 btn1.addEventListener('click', function() {
-                    track.applyConstraints({
-                        advanced: [{
-                            torch: true
-                        }]
-                    });
+                    event.preventDefault();
+
+                    if (flashEnabled) {
+                        track.applyConstraints({
+                            advanced: [{
+                                torch: false
+                            }]
+                        });
+                        flashEnabled = false;
+                    } else {
+                        track.applyConstraints({
+                            advanced: [{
+                                torch: true
+                            }]
+                        });
+                        flashEnabled = true;
+                    }
                 });
-
-                // btn2.addEventListener('click', function() {
-                //     track.applyConstraints({
-                //         advanced: [{
-                //             torch: false
-                //         }]
-                //     });
-                // });
-
             });
-        });
+
+           
+
+        // btn2.addEventListener('click', function() {
+        //     track.applyConstraints({
+        //         advanced: [{
+        //             torch: false
+        //         }]
+        //     });
+        // });
+
+    });
+    });
     }
 </script>
