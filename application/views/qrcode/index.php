@@ -55,7 +55,7 @@
                         <div class="controls">
                             <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
                             <video id="preview"></video>
-                            <select id='camera-select' onchange="selectCamera(this.value)">
+                            <select id='camera-select' >
                                 <option>Selecione a camera</option>
                             </select>
                             <p id="resposta">Aguardando Scan</p>
@@ -127,7 +127,7 @@ $(document).ready(function () {
 
   Instascan.Camera.getCameras().then(function (cameras) {
     if (cameras.length > 0) {
-        console.log(cameras);
+        
       cameras.forEach(function (camera, index) {
         var option = $("<option>", {
           value: camera.id,
