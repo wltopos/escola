@@ -112,17 +112,18 @@
 
                     });
                     scanner.start(selectedCamera);
-                    if (scanner.getActiveCamera().getCapabilities().torch) {
-                        $flash.show();
-                        $flash.click(function() {
-                            scanner.getActiveCamera().toggleTorch();
-                        });
-                    }
+                    
                     scanner.addListener('scan', function(content) {
                         $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
                         window.open(content, "_blank");
                     });
                 });
+                if (scanner.getActiveCamera().getCapabilities().torch) {
+                        $flash.show();
+                        $flash.click(function() {
+                            scanner.getActiveCamera().toggleTorch();
+                        });
+                    }
             } else {
                 console.error("Nenhuma câmera encontrada.");
             }
