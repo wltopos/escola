@@ -516,7 +516,7 @@
                                         </tbody>
                                     </table>
 
-                                    <div class="container mt-5">
+                                    <div>
                                         <h3 class="text-center">Sistema de Controle de Loja</h3>
                                         <p class="lead">Este sistema permite o gerenciamento de estoque de diferentes tipos de produtos, como fontes, capacitores, circuitos integrados e placas de circuito impresso. Para identificar cada produto, foi estabelecido um padrão de código único para cada item. Vejamos como funciona.</p>
 
