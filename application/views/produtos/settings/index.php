@@ -482,16 +482,16 @@
                                                 <td>12V</td>
                                                 <td>Menor que 1A</td>
                                                 <td>FON_ACDC_12V_LT1A</td>
-                                                <td><i class="fas fa-square" style="color: #FFA500;"></i>Laranja</td>
-                                                <td>#FFA500</td>
+                                                <td><i class="fas fa-square" style="color: #FF0000;"></i>Vermelho</td>
+                                                <td>#FF0000</td>
                                             </tr>
                                             <tr>
                                                 <td>4</td>
                                                 <td>12V</td>
                                                 <td>Entre 1A e 3A</td>
                                                 <td>FON_ACDC_12V_BT1A3A</td>
-                                                <td><i class="fas fa-square" style="color: #FFFF00;"></i>Amarelo</td>
-                                                <td>#FFFF00</td>
+                                                <td><i class="fas fa-square" style="color: #00FFFF;"></i>Azul</td>
+                                                <td>#00FFFF</td>
                                             </tr>
                                             <tr>
                                                 <td>5</td>
@@ -499,7 +499,7 @@
                                                 <td>Maior que 3A</td>
                                                 <td>FON_ACDC_12V_AB3A</td>
                                                 <td><i class="fas fa-square" style="color: #CC3333;"></i></td>
-                                                <td>#CC3333</td>
+                                                <td>#00FFFF</td>
                                             </tr>
                                             <tr>
                                                 <td>6</td>
