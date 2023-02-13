@@ -136,7 +136,7 @@
             }
         });
 
-        $cameraSelect.value(cameras[0].id).change();
+        
     });
 </script>
 
