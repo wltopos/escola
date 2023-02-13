@@ -384,7 +384,7 @@ class Settings extends MY_Controller
                 $this->data['titulo'] =  'medida';
                 $this->data['id'] =  'medida';
                 break;
-            case 'local':
+            case 'location':
                 $this->data['titulo'] =  'local';
                 $this->data['id'] =  'location';
                 break;
