@@ -60,9 +60,9 @@
                             </select>
                             <p id="resposta">Aguardando Scan</p>
 
-                            
 
-                            
+
+
                         </div>
                     </div>
 
@@ -93,7 +93,12 @@
 
         $.each(cameras, function(index, camera) {
 
-            $('#selectCam').append(`<option value="${index}">${camera.name}</option>`);
+            var option = $("<option>", {
+                value: camera.id,
+                text: camera.name || "Camera " + (index + 1)
+            });
+
+            $('#selectCam').append(option);
             // Will stop running after "three"
 
         });
