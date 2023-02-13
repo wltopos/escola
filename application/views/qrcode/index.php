@@ -53,17 +53,17 @@
                     <div class="control-group">
                         <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
                         <div class="controls">
-                            <div class="button_outer">
-                                <div class="btn_upload">
+                           
+                                
                                     <video id="preview"></video>
                                     <select id='selectCam' onchange="selectCamera(this.value)">
                                         <option>Selecione a camera</option>
                                     </select>
                                     <p id="resposta">Aguardando Scan</p>
-                                </div>
+                                
                                 <div class="processing_bar"></div>
                                 <div class="success_box"></div>
-                            </div>
+                       
                             <div class="error_msg"></div>
                             <div class="uploaded_file_view" id="uploaded_view">
                                 <span class="file_remove">X</span>
