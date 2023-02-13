@@ -60,33 +60,6 @@
                         </div>
                     </div> -->
 
-                    <div class="control-group">
-                        <label for="notaFiscal" class="control-label">Numero da Nota*</label>
-                        <div class="controls">
-                            <input id="notaFiscal" type="number" name="notaFiscal" value="<?php echo set_value('notaFiscal'); ?>" />
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="fornecedor" class="control-label">Fornecedor*</label>
-                        <div class="controls">
-                            <input id="fornecedor" type="text" name="fornecedor" value="<?php echo set_value('pessoa_fisica') ?>" />
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label for="descricao" class="control-label">Descrição</label>
-                        <div class="controls">
-                            <textarea rows="3" cols="30" name="descricao" id="descricao" value="<?php echo set_value('descricao') ?>"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label for="dataEmissao" class="control-label">Datade emissão</label>
-                        <div class="controls">
-                            <input id="data" type="hidden" name="data" value="<?php echo set_value('data') ?>">
-                            <input id="dataEmissao" type="date" class="" name="dataEmissao" value="<?php echo set_value('dataEmissao') ?>" />
-                        </div>
-                    </div>
 
                     <div class="form-actions">
                         <div class="span12">

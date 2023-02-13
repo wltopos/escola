@@ -15,7 +15,7 @@ class QrCode extends MY_Controller
     {
         parent::__construct();
 
-        $this->load->model('notasfiscais_model');
+     
         $this->load->model('setdb_model');
         $this->load->model('setquery_model');
         $this->data['menuQrCode'] = 'QrCode';
