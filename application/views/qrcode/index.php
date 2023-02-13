@@ -64,6 +64,8 @@
         alert('Escaneou o conteudo: ' + content);
         window.open(content, "_blank");
     });
+    function selectCamera(idCamera = 0){
+        console.log(idCamera);
     Instascan.Camera.getCameras().then(cameras => {
         console.log(cameras);
 
@@ -73,15 +75,15 @@
             // Will stop running after "three"
 
         });
-        function selectCamera(idCamera = 0){
-        console.log(idCamera);
+       
         if (cameras.length > 0) {
             
             scanner.start(cameras[idCamera]);
         } else {
             console.error("Não existe câmera no dispositivo!");
-        }
+        
     }
         
     });
+}
 </script>
