@@ -152,6 +152,7 @@ $(document).ready(function() {
     });
     $('#cameraSelect').on('change', function() {
         selectedCameraId = this.value;
+        console.log(selectedCameraId);
         scanner.start(selectedCameraId);
     });
     var scanner = new Instascan.Scanner({
