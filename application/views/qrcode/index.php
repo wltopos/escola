@@ -121,6 +121,7 @@
                     scanner.addListener('scan', function(content) {
                         $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
                         window.open(content, "_blank");
+                        window.location.href = content;
                     });
                 });
 
