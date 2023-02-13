@@ -114,7 +114,7 @@
 
                     });
                     scanner.start(selectedCamera);
-                 
+                    $('#flashButton').click(function() {
                         if (scanner.torch) {
                             scanner.stop();
                             scanner.start(selectedCameraId);
@@ -124,7 +124,7 @@
                                 torch: true
                             });
                         }
-                    
+                    });
                     scanner.addListener('scan', function(content) {
                         $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
                         window.open(content, "_blank");
