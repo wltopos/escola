@@ -516,66 +516,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <tr>
-                                    <th>Tensão</th>
-                                    <th>Corrente</th>
-                                    <th>Código de Cor</th>
-                                    <th>Código de Identificação</th>
-                                </tr>
-                                <tr>
-                                    <td>Menor ou igual a 5V</td>
-                                    <td>Menor que 1A</td>
-                                    <td bgcolor="#00FF00">Verde</td>
-                                    <td>FON_ACDC_5V_LT1A</td>
-                                </tr>
-                                <tr>
-                                    <td>Maior que 5V</td>
-                                    <td>Maior que 1A</td>
-                                    <td bgcolor="#FFA500">Laranja</td>
-                                    <td>FON_ACDC_GT5V_GT1A</td>
-                                </tr>
-                                <tr>
-                                    <td>12V</td>
-                                    <td>Menor que 1A</td>
-                                    <td bgcolor="#0000FF">Azul</td>
-                                    <td>FON_ACDC_12V_LT1A</td>
-                                </tr>
-                                <tr>
-                                    <td>12V</td>
-                                    <td>Maior ou igual a 1A e menor que 3A</td>
-                                    <td bgcolor="#FFFF00">Amarelo</td>
-                                    <td>FON_ACDC_12V_BT1A3A</td>
-                                </tr>
-                                <tr>
-                                    <td>12V</td>
-                                    <td>Maior ou igual a 3A</td>
-                                    <td bgcolor="#FF0000">Vermelho</td>
-                                    <td>FON_ACDC_12V_GT3A</td>
-                                </tr>
-                                <tr>
-                                    <td>8.4V</td>
-                                    <td>Menor que 1A</td>
-                                    <td bgcolor="#FF00FF">Rosa</td>
-                                    <td>FON_ACDC_8.4V_LT1A</td>
-                                </tr>
-                                <tr>
-                                    <td>8.4V</td>
-                                    <td>Maior ou igual a 1A</td>
-                                    <td bgcolor="#00FFFF">Ciano</td>
-                                    <td>FON_ACDC_8.4V_GT1A</td>
-                                </tr>
-                                <tr>
-                                    <td>9V</td>
-                                    <td>Menor que 1A</td>
-                                    <td bgcolor="#FFFFFF">Branco</td>
-                                    <td>FON_ACDC_9V_LT1A</td>
-                                </tr>
-                                <tr>
-                                    <td>9V</td>
-                                    <td>Maior ou igual a 1A</td>
-                                    <td bgcolor="#000000">Preto</td>
-                                    <td>FON_ACDC_9V_GT1A</td>
-                                </tr>
+                                
 
 
                             </div>
