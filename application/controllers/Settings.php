@@ -174,8 +174,8 @@ class Settings extends MY_Controller
         $this->load->model('produtos_model');
         
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
-       print_r("estoque_".$this->data['id']."s". '*'. "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));exit();
-        $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_".mb_strtoupper($this->data['id'])."s", '*', "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
+       
+        $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_".$this->data['id']."s", '*', "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
 
   
         if ($this->input->post('nome') == false) {
