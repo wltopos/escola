@@ -25,6 +25,9 @@
         margin-bottom: 26px;
         width: 40em;
     }
+    #selectCam{
+        margin-left: 3em;
+    }
 </style>
 
 <div class="row-fluid" style="margin-top:0">
@@ -39,10 +42,10 @@
             <div class="widget-content nopadding tab-content">
                 <?= $custom_error ?>
                 <video id="preview"></video>
-                <select id='selectCam'>
+                <select id='selectCam' onchange="selectCamera(this.value)">
                     <option>Selecione a camera</option>
                 </select>
-                <p>Aguardando Scan</p>
+                <p id="resposta">Aguardando Scan</p>
 
             </div>
         </div>
@@ -52,6 +55,10 @@
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
 <script type="text/javascript">
+    
+    function selectCamera(idCamera = 0){
+        console.log(idCamera);
+    }
     let scanner = new Instascan.Scanner({
         video: document.getElementById('preview')
     });
@@ -69,6 +76,7 @@
 
         });
         if (cameras.length > 0) {
+            
             scanner.start(cameras[1]);
         } else {
             console.error("Não existe câmera no dispositivo!");
