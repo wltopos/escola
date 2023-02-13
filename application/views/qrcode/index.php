@@ -58,7 +58,7 @@
                             <select id='camera-select'>
                                 <option>Selecione a camera</option>
                             </select>
-                            <a id="flash-button" class="btn btn-primary btn-sm">
+                            <a id="switch1" class="btn btn-primary btn-sm">
                                 <i class="fa fa-lightbulb-o"></i>
                             </a>
 
@@ -191,13 +191,13 @@
                     });
                 });
 
-                btn2.addEventListener('click', function() {
-                    track.applyConstraints({
-                        advanced: [{
-                            torch: false
-                        }]
-                    });
-                });
+                // btn2.addEventListener('click', function() {
+                //     track.applyConstraints({
+                //         advanced: [{
+                //             torch: false
+                //         }]
+                //     });
+                // });
 
             });
         });
