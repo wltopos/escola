@@ -64,7 +64,7 @@
 
         $.each(cameras, function(index, camera) {
             console.log(camera.name);
-            $('selectCam').append(`<option value="${index}">${camera.name}</option>`);
+            $('#selectCam').append(`<option value="${index}">${camera.name}</option>`);
             // Will stop running after "three"
 
         });
