@@ -156,30 +156,17 @@
             }
             const camera = cameras[cameras.length - 1];
 
-            // Create stream and get video track
-            navigator.mediaDevices.getUserMedia({
-                video: {
-                    deviceId: camera.deviceId,
-                    facingMode: ['user', 'environment'],
-                    height: {
-                        ideal: 1080
-                    },
-                    width: {
-                        ideal: 1920
-                    }
-                }
+           
             }).then(stream => {
                 const track = stream.getVideoTracks()[0];
 
-              
-            
-                    track.applyConstraints({
+                track.applyConstraints({
                             advanced: [{
                                 torch: true
                             }]
                         });
-                    //todo: check if camera has a torch
-
+            
+                   
                     //let there be light!
                     const btn1 = document.querySelector('.switch1');
                     const btn2 = document.querySelector('.switch2');
@@ -199,7 +186,7 @@
                         });
                     });
                 
-            });
+                });
         });
     }
 </script>
