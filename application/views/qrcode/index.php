@@ -29,7 +29,8 @@
         margin-left: 3em;
     }
     #resposta{
-        margin: 8px 27px 10px;
+        text-align: center;
+        margin: 0 auto;
         font-size: 12px;
     }
 </style>
@@ -64,17 +65,18 @@
         console.log(idCamera)
     }
     let scanner = new Instascan.Scanner({
-        video: document.getElementById('preview')
+        video: document.getElementById('preview');
     });
     scanner.addListener('scan', function(content) {
-        $('#resposta').html(`Escaneou o conteudo: <a href="${content}">${content}</a>`);
+        console.log(content);
+        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
         window.open(content, "_blank");
     });
     Instascan.Camera.getCameras().then(cameras => {
         console.log(cameras);
 
         $.each(cameras, function(index, camera) {
-            console.log(camera.name);
+           
             $('#selectCam').append(`<option value="${index}">${camera.name}</option>`);
             // Will stop running after "three"
 
