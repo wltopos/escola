@@ -152,7 +152,7 @@ $(document).ready(function () {
       facingMode: "environment"
     }
         });
-        scanner.start();
+        scanner.start(camera[1]);
       });
     } else {
       console.error("Nenhuma câmera encontrada.");
