@@ -116,6 +116,7 @@
                 scanPeriod: 1,
                 camera: selectedCamera
             });
+            console.log('debug');
             scanner.start();
         });
     });
