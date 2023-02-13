@@ -97,7 +97,7 @@
                     $cameraSelect.append(option);
                     
                 });
-                $("#camera-select").value(cameras[0].id).change();
+               
                 $cameraSelect.on("change", function() {
                     var selectedCameraId = this.value;
                     var selectedCamera = cameras.find(function(camera) {
@@ -136,7 +136,7 @@
             }
         });
 
-
+        $cameraSelect.value(cameras[0].id).change();
     });
 </script>
 
