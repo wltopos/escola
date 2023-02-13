@@ -58,8 +58,9 @@
                             <select id='camera-select'>
                                 <option>Selecione a camera</option>
                             </select>
-                            <button class="switch1">On </button>
-                            <button class="switch2"> Off</button>
+                            <a id="flash-button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-lightbulb-o"></i>
+                            </a>
 
                             </a>
                             <video id="preview"></video>
@@ -152,44 +153,52 @@
             const cameras = devices.filter((device) => device.kind === 'videoinput');
 
             if (cameras.length === 0) {
-                throw 'No camera found on this device.';
+                throw 'Cameras não encontradas (flash).';
             }
             const camera = cameras[cameras.length - 1];
 
             // Create stream and get video track
             navigator.mediaDevices.getUserMedia({
-              
+                video: {
+                    deviceId: camera.deviceId,
+                    facingMode: ['user', 'environment'],
+                    height: {
+                        ideal: 1080
+                    },
+                    width: {
+                        ideal: 1920
+                    }
+                }
             }).then(stream => {
                 const track = stream.getVideoTracks()[0];
 
-              
-            
+                track.applyConstraints({
+                    advanced: [{
+                        torch: true
+                    }]
+                });
+                //todo: check if camera has a torch
+
+                //let there be light!
+                const btn1 = document.querySelector('.switch1');
+                const btn2 = document.querySelector('.switch2');
+
+                btn1.addEventListener('click', function() {
                     track.applyConstraints({
-                            advanced: [{
-                                torch: true
-                            }]
-                        });
-                    //todo: check if camera has a torch
-
-                    //let there be light!
-                    const btn1 = document.querySelector('.switch1');
-                    const btn2 = document.querySelector('.switch2');
-
-                    btn1.addEventListener('click', function() {
-                        track.applyConstraints({
-                            advanced: [{
-                                torch: true
-                            }]
-                        });
+                        advanced: [{
+                            torch: true
+                        }]
                     });
-                    btn2.addEventListener('click', function() {
-                        track.applyConstraints({
-                            advanced: [{
-                                torch: false
-                            }]
-                        });
+                });
+
+                btn2.addEventListener('click', function() {
+                    track.applyConstraints({
+                        advanced: [{
+                            torch: false
+                        }]
                     });
-                
+                });
+
             });
         });
     }
