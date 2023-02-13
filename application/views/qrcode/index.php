@@ -55,7 +55,7 @@
                         <div class="controls">
                             <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
                             <video id="preview"></video>
-                            <select id='camera-select' >
+                            <select id='camera-select'>
                                 <option>Selecione a camera</option>
                             </select>
                             <p id="resposta">Aguardando Scan</p>
@@ -111,48 +111,48 @@
     });
 </script> -->
 <script type="text/javascript">
-$(document).ready(function () {
-  var $cameraSelect = $("#camera-select");
-  var $preview = $("#preview");
+    $(document).ready(function() {
+        var $cameraSelect = $("#camera-select");
+        var $preview = $("#preview");
 
- 
-    scanner.addListener('scan', function(content) {
-       
-        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
-        window.open(content, "_blank");
+
+
+
+        Instascan.Camera.getCameras().then(function(cameras) {
+            if (cameras.length > 0) {
+
+                cameras.forEach(function(camera, index) {
+                    var option = $("<option>", {
+                        value: camera.id,
+                        text: camera.name || "Camera " + (index + 1)
+                    });
+                    $cameraSelect.append(option);
+                });
+
+                $cameraSelect.on("change", function() {
+                    var selectedCameraId = this.value;
+                    var selectedCamera = cameras.find(function(camera) {
+                        return camera.id === selectedCameraId;
+                    });
+                    var scanner = new Instascan.Scanner({
+                        video: $preview[0],
+                        mirror: false,
+                        backgroundScan: false,
+                        captureImage: false,
+                        refractoryPeriod: 5000,
+                        scanPeriod: 1,
+
+                    });
+                    scanner.start(cameras[1]);
+                    scanner.addListener('scan', function(content) {
+
+                        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
+                        window.open(content, "_blank");
+                    });
+                });
+            } else {
+                console.error("Nenhuma câmera encontrada.");
+            }
+        });
     });
-
-  Instascan.Camera.getCameras().then(function (cameras) {
-    if (cameras.length > 0) {
-        
-      cameras.forEach(function (camera, index) {
-        var option = $("<option>", {
-          value: camera.id,
-          text: camera.name || "Camera " + (index + 1)
-        });
-        $cameraSelect.append(option);
-      });
-
-      $cameraSelect.on("change", function () {
-        var selectedCameraId = this.value;
-        var selectedCamera = cameras.find(function (camera) {
-          return camera.id === selectedCameraId;
-        });
-        var scanner = new Instascan.Scanner({
-          video: $preview[0],
-          mirror: false,
-          backgroundScan: false,
-          captureImage: false,
-          refractoryPeriod: 5000,
-          scanPeriod: 1,
-         
-        });
-        scanner.start(cameras[1]);
-      });
-    } else {
-      console.error("Nenhuma câmera encontrada.");
-    }
-  });
-});
-
 </script>
