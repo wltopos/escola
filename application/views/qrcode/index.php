@@ -51,22 +51,18 @@
                 <form class="form-horizontal">
                     <input type="hidden" value="" id="fornecedor_id" name="fornecedor_id">
                     <div class="control-group">
-                        
+
                         <div class="controls">
-<label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
+                            <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
                             <video id="preview"></video>
                             <select id='selectCam' onchange="selectCamera(this.value)">
                                 <option>Selecione a camera</option>
                             </select>
                             <p id="resposta">Aguardando Scan</p>
 
-                            <div class="processing_bar"></div>
-                            <div class="success_box"></div>
+                            
 
-                            <div class="error_msg"></div>
-                            <div class="uploaded_file_view" id="uploaded_view">
-                                <span class="file_remove">X</span>
-                            </div>
+                            
                         </div>
                     </div>
 
