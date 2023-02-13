@@ -117,6 +117,7 @@ $(document).ready(function () {
 
   Instascan.Camera.getCameras().then(function (cameras) {
     if (cameras.length > 0) {
+        console.log(cameras);
       cameras.forEach(function (camera, index) {
         var option = $("<option>", {
           value: camera.id,
