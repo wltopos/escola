@@ -53,11 +53,15 @@
                     <div class="control-group">
 
                         <div class="controls">
-                            <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
-                            <video id="preview"></video>
+                            <label for="userfile" class="control-label"><span class="required">Scan de url do sistema</span></label>
+
                             <select id='camera-select'>
                                 <option>Selecione a camera</option>
                             </select>
+                            <button id="flash" class="btn btn-warning" style="display:none;">
+                                <i class="fas fa-lightbulb"></i>
+                            </button>
+                            <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
 
 
@@ -75,50 +79,14 @@
 
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
-<!-- <script type="text/javascript">
-    function selectCamera(idCamera = 0) {
-        console.log(idCamera)
-    }
-    let scanner = new Instascan.Scanner({
-        video: document.getElementById('preview')
 
-    });
-    scanner.addListener('scan', function(content) {
-        console.log(content);
-        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
-        window.open(content, "_blank");
-    });
-    Instascan.Camera.getCameras().then(cameras => {
-        console.log(cameras);
-
-        $.each(cameras, function(index, camera) {
-
-            var option = $("<option>", {
-                value: camera.id,
-                text: camera.name || "Camera " + (index + 1)
-            });
-
-            $('#selectCam').append(option);
-            // Will stop running after "three"
-
-        });
-        if (cameras.length > 0) {
-
-            scanner.start(cameras[1]);
-        } else {
-            console.error("Não existe câmera no dispositivo!");
-        }
-    });
-</script> -->
 <script type="text/javascript">
     $(document).ready(function() {
-    var $cameraSelect = $("#camera-select");
-    var $preview = $("#preview");
+        var $cameraSelect = $("#camera-select");
+        var $preview = $("#preview");
+        var $flash = $("#flash");
 
-
-
-
-    Instascan.Camera.getCameras().then(function(cameras) {
+        Instascan.Camera.getCameras().then(function(cameras) {
             if (cameras.length > 0) {
 
                 cameras.forEach(function(camera, index) {
@@ -141,22 +109,23 @@
                         captureImage: false,
                         refractoryPeriod: 5000,
                         scanPeriod: 1,
-                        
+
                     });
                     scanner.start(selectedCamera);
-                    console.log(cameras[1]);
-               
-                scanner.start();
-                scanner.addListener('scan', function(content) {
-
-                    $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
-                    window.open(content, "_blank");
+                    if (scanner.getActiveCamera().getCapabilities().torch) {
+                        $flash.show();
+                        $flash.click(function() {
+                            scanner.getActiveCamera().toggleTorch();
+                        });
+                    }
+                    scanner.addListener('scan', function(content) {
+                        $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
+                        window.open(content, "_blank");
+                    });
                 });
-            });
-    }
-    else {
-        console.error("Nenhuma câmera encontrada.");
-    }
-    });
+            } else {
+                console.error("Nenhuma câmera encontrada.");
+            }
+        });
     });
 </script>
