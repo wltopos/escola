@@ -63,7 +63,7 @@
         video: document.getElementById('preview')
     });
     scanner.addListener('scan', function(content) {
-        alert('Escaneou o conteudo: ' + content);
+        $('#resposta').html(`Escaneou o conteudo:<a href="${content}">${content}</a>`);
         window.open(content, "_blank");
     });
     Instascan.Camera.getCameras().then(cameras => {
