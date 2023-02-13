@@ -148,9 +148,7 @@ $(document).ready(function () {
           captureImage: false,
           refractoryPeriod: 5000,
           scanPeriod: 1,
-          camera: {
-      facingMode: "environment"
-    }
+         
         });
         scanner.start(camera[1]);
       });
