@@ -58,16 +58,13 @@
                             <select id='camera-select'>
                                 <option>Selecione a camera</option>
                             </select>
-                            <a id="switch1" class="btn btn-primary btn-sm">
-                                <i class="fa fa-lightbulb-o"></i>
+                            <a id="switch1" class="btn btn-primary">
+                            <i class="fas fa-lightbulb"></i>
                             </a>
 
                             </a>
                             <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
-
-
-
 
                         </div>
                     </div>
@@ -188,7 +185,7 @@
                         flashEnabled = true;
                     }
                 });
-            });
+          
 
            
 
