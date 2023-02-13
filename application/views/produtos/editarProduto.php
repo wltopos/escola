@@ -146,7 +146,7 @@
                         <div class="control-group">
                             <label for="estoque" class="control-label">Estoque<span class="required">*</span></label>
                             <div class="controls">
-                                <input onkeydown='handleEnter(event)' class="input-numberProduto" id="estoque" type="number" name="estoque" value="<?php echo $estoque['valorConvertido']; ?>" />
+                                <input onkeydown='handleEnter(event)' class="input-numberProduto" id="estoque" type="number" min="0" name="estoque" value="<?php echo $estoque['valorConvertido']; ?>" />
                                 <select required onkeydown='handleEnter(event)' class="wh3" id="unidade" name="unidade">
 
                                     <?php if (!$resultMedida) {
@@ -177,7 +177,7 @@
                         <div class="control-group">
                             <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
                             <div class="controls">
-                                <input onkeydown='handleEnter(event)' id="estoqueMinimo" class="input-numberProduto" type="number" name="estoqueMinimo" value="<?php echo $estoque['valorConvertidoEstoqueMinimo']; ?>" />
+                                <input onkeydown='handleEnter(event)' id="estoqueMinimo" class="input-numberProduto" min="0" type="number" name="estoqueMinimo"  value="<?php echo $estoque['valorConvertidoEstoqueMinimo']; ?>" />
                                 <select required onkeydown='handleEnter(event)' title="locations" class="wh3" name="location" id="locations" value="<?php echo set_value('location'); ?>" >
 
                                     <?php if (!$resultLocations) {
