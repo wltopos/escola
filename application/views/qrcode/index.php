@@ -88,7 +88,7 @@
 
         Instascan.Camera.getCameras().then(function(cameras) {
             if (cameras.length > 0) {
-
+                selectedCameraId = cameras[0].id;
                 cameras.forEach(function(camera, index) {
                     var option = $("<option>", {
                         value: camera.id,
@@ -194,28 +194,3 @@ $(document).ready(function() {
     });
 });
 </script> -->
-
-<script>
-// Verifica se o navegador suporta a API de câmera
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  // Pega acesso somente ao flash da câmera
-  navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment", deviceId: "flash" } }).then(function (stream) {
-    // Botão para acender/apagar o flash
-    var btn = document.createElement("button");
-    btn.innerHTML = "Acender/Apagar flash";
-    document.body.appendChild(btn);
-    
-    // Obtém o track de vídeo da câmera
-    var track = stream.getVideoTracks()[0];
-    
-    // Adiciona um evento de clique ao botão
-    btn.addEventListener("click", function () {
-      // Alterna entre ativado e desativado
-      track.applyConstraints({
-        advanced: [{ torch: !track.getSettings().torch }]
-      });
-    });
-  });
-}
-
-</script>
