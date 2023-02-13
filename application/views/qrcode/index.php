@@ -35,6 +35,11 @@
         margin: 0 auto;
         font-size: 12px;
     }
+
+    .divSelectCamera {
+        margin: 4% auto;
+        text-align: center;
+    }
 </style>
 
 <div class="row-fluid" style="margin-top:0">
@@ -55,12 +60,14 @@
                         <div class="controls">
                             <label for="userfile" class="control-label"><span class="required">Scan de url do sistema</span></label>
                             <div class="divSelectCamera">
-                              <select id='camera-select'><option disabled>Selecione a camera</option></select>
-                              <a id="switch1" class="btn btn-primary"><i class="fas fa-lightbulb"></i></a>  
+                                <select id='camera-select'>
+                                    <option disabled>Selecione a camera</option>
+                                </select>
+                                <a id="switch1" class="btn btn-primary"><i class="fas fa-lightbulb"></i></a>
                             </div>
-                            
 
-                            
+
+
                             <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
 
@@ -184,19 +191,19 @@
                         flashEnabled = true;
                     }
                 });
-          
 
-           
 
-        // btn2.addEventListener('click', function() {
-        //     track.applyConstraints({
-        //         advanced: [{
-        //             torch: false
-        //         }]
-        //     });
-        // });
 
-    });
-    });
+
+                // btn2.addEventListener('click', function() {
+                //     track.applyConstraints({
+                //         advanced: [{
+                //             torch: false
+                //         }]
+                //     });
+                // });
+
+            });
+        });
     }
 </script>
