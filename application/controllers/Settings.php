@@ -174,7 +174,7 @@ class Settings extends MY_Controller
         $this->load->model('produtos_model');
         
         $this->getLinkReturnData($id); //RETORNA DADOS DE TITULO E BANCO DE DADOS A PARTIR DO ID DO MODAL
-       print_r("estoque_".ucfirst($this->data['id'])."s". '*'. "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));exit();
+       print_r("estoque_".$this->data['id']."s". '*'. "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));exit();
         $this->data['result'] = $this->setdb_model->getTabelaQID("estoque_".mb_strtoupper($this->data['id'])."s", '*', "id_estoque_".$this->data['id']."=" . $this->uri->segment(4));
 
   
@@ -388,7 +388,7 @@ class Settings extends MY_Controller
                 $this->data['titulo'] =  'local';
                 $this->data['id'] =  'location';
                 break;
-            case 'sector':
+            case 'setor':
                 $this->data['titulo'] =  'setor';
                 $this->data['id'] =  'sector';
                 break;
