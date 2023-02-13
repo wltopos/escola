@@ -141,7 +141,7 @@
                         captureImage: false,
                         refractoryPeriod: 5000,
                         scanPeriod: 1,
-                        camera: cameras[1]
+                        camera: '39909ff3d01e94a405fd7f74e41c52c3824e1d12aaca47ef3bea413d55863ba8'
                     });
                     scanner.start();
                
