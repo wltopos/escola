@@ -58,8 +58,7 @@
                             <select id='cameraSelect'>
                                 <option>Selecione a camera</option>
                             </select>
-                            <a id="flash" class="btn btn-warning" >
-                                <i class="fas fa-lightbulb"></i>
+                            <button id="flashButton">Ativar flash</button>
                             </a>
                             <video id="preview"></video>
                             <p id="resposta">Aguardando Scan</p>
@@ -134,57 +133,59 @@
 </script> -->
 
 <script type="text/javascript">
-$(document).ready(function() {
-    var selectedCameraId;
-    Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
-            selectedCameraId = cameras[0].id;
-            for (var i = 0; i < cameras.length; i++) {
-                $('#cameraSelect').append($('<option>', {
-                    value: cameras[i].id,
-                    text: cameras[i].name
-                }));
+    $(document).ready(function() {
+        var selectedCameraId;
+        Instascan.Camera.getCameras().then(function(cameras) {
+            if (cameras.length > 0) {
+                selectedCameraId = cameras[0].id;
+                for (var i = 0; i < cameras.length; i++) {
+                    $('#cameraSelect').append($('<option>', {
+                        value: cameras[i].id,
+                        text: cameras[i].name
+                    }));
+                }
+            } else {
+                console.error('No cameras found.');
             }
-        } else {
-            console.error('No cameras found.');
-        }
-    }).catch(function (e) {
-        console.error(e);
-    });
-    $('#cameraSelect').on('change', function() {
-        selectedCameraId = this.value;
-        scanner.start(selectedCameraId);
-    });
-    var scanner = new Instascan.Scanner({
-        video: document.getElementById('preview'),
-        mirror: false,
-        backgroundScan: true,
-        captureImage: false,
-        refractoryPeriod: 5000,
-        scanPeriod: 1,
-        videoSource: selectedCameraId
-    });
-    scanner.addListener('scan', function (content) {
-        $('#resposta').append(content + '<br>');
-    });
-    Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
-            scanner.start(cameras[0]);
-        } else {
-            console.error('No cameras found.');
-        }
-    }).catch(function (e) {
-        console.error(e);
-    });
-    
-    $('#flashButton').click(function () {
-        if (scanner.torch) {
-            scanner.stop();
+        }).catch(function(e) {
+            console.error(e);
+        });
+        $('#cameraSelect').on('change', function() {
+            selectedCameraId = this.value;
             scanner.start(selectedCameraId);
-        } else {
-            scanner.stop();
-            scanner.start(selectedCameraId, { torch: true });
-        }
+        });
+        var scanner = new Instascan.Scanner({
+            video: document.getElementById('preview'),
+            mirror: false,
+            backgroundScan: true,
+            captureImage: false,
+            refractoryPeriod: 5000,
+            scanPeriod: 1,
+            videoSource: selectedCameraId
+        });
+        scanner.addListener('scan', function(content) {
+            $('#resposta').append(content + '<br>');
+        });
+        Instascan.Camera.getCameras().then(function(cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error('No cameras found.');
+            }
+        }).catch(function(e) {
+            console.error(e);
+        });
+
+        $('#flashButton').click(function() {
+            if (scanner.torch) {
+                scanner.stop();
+                scanner.start(selectedCameraId);
+            } else {
+                scanner.stop();
+                scanner.start(selectedCameraId, {
+                    torch: true
+                });
+            }
+        });
     });
-});
 </script>
