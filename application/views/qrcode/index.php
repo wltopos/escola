@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css" />
-<script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>	
+<script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/uploadImage.css" />
 <style>
@@ -19,6 +19,11 @@
     .uploaded_file_view {
         margin: 10px 2px;
     }
+
+    video {
+        margin-left: 51px;
+        width: 40em;
+    }
 </style>
 
 <div class="row-fluid" style="margin-top:0">
@@ -33,7 +38,7 @@
             <div class="widget-content nopadding tab-content">
                 <?= $custom_error ?>
                 <video id="preview"></video>
-               
+
             </div>
         </div>
     </div>
@@ -42,27 +47,24 @@
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
 <script type="text/javascript">
-         let scanner = new Instascan.Scanner(
-            {
-                video: document.getElementById('preview')
-            }
-        );
-        scanner.addListener('scan', function(content) {
-            alert('Escaneou o conteudo: ' + content);
-            window.open(content, "_blank");
+    let scanner = new Instascan.Scanner({
+        video: document.getElementById('preview')
+    });
+    scanner.addListener('scan', function(content) {
+        alert('Escaneou o conteudo: ' + content);
+        window.open(content, "_blank");
+    });
+    Instascan.Camera.getCameras().then(cameras => {
+        console.log(cameras);
+        $.each(cameras, function(index, camera) {
+            console.log(camera.name);
+            // Will stop running after "three"
+
         });
-        Instascan.Camera.getCameras().then(cameras => 
-        {
-            console.log(cameras);
-            $.each(cameras, function(index, camera) {
-              console.log(camera.name);
-              // Will stop running after "three"
-              
-            });
-            if(cameras.length > 0){
-                scanner.start(cameras[1]);
-            } else {
-                console.error("Não existe câmera no dispositivo!");
-            }
-        });
+        if (cameras.length > 0) {
+            scanner.start(cameras[1]);
+        } else {
+            console.error("Não existe câmera no dispositivo!");
+        }
+    });
 </script>
