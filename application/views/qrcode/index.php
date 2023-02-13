@@ -163,6 +163,7 @@
                 //todo: check if camera has a torch
 
                 //let there be light!
+                let flashEnabled = false;
                 const btn1 = document.querySelector('#switch1');
                 const btn2 = document.querySelector('.switch2');
 
