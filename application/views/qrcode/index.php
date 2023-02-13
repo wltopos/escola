@@ -58,7 +58,7 @@
                             <select id='camera-select'>
                                 <option>Selecione a camera</option>
                             </select>
-                            <button id="flash" class="btn btn-warning" style="display:none;">
+                            <button id="flash" class="btn btn-warning" >
                                 <i class="fas fa-lightbulb"></i>
                             </button>
                             <video id="preview"></video>
