@@ -55,7 +55,7 @@
                         <div class="controls">
                             <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
                             <video id="preview"></video>
-                            <select id='selectCam' onchange="selectCamera(this.value)">
+                            <select id='camera-select' onchange="selectCamera(this.value)">
                                 <option>Selecione a camera</option>
                             </select>
                             <p id="resposta">Aguardando Scan</p>
@@ -120,7 +120,7 @@ $(document).ready(function () {
 
     });
     scanner.addListener('scan', function(content) {
-        console.log(content);
+       
         $('#resposta').html(`Escaneou o conteudo: <a href="${content}" target="_blank">${content}</a>`);
         window.open(content, "_blank");
     });
