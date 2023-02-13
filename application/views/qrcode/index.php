@@ -53,12 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="control-group">
-                        <label for="userfile" class="control-label"><span class="required">Nota Fiscal*</span></label>
-                        <div class="controls">
-                            <input id="userfile" type="file" name="userfile" /> (Arquivos suportados .xml .pdf .png .jpg)
-                        </div>
-                    </div> -->
+                    
 
 
                     <div class="form-actions">
@@ -80,63 +75,27 @@
 <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 <script src="<?= base_url() ?>assets/js/uploadImagem.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-
-        $('#formNotaFiscal').validate({
-
-            rules: {
-                notaFiscal: {
-                    required: true
-                },
-                fornecedor: {
-                    required: true
-                },
-                userfile: {
-                    required: true
-                }
-            },
-            messages: {
-                notaFiscal: {
-                    required: 'Campo Requerido.'
-                },
-                fornecedor: {
-                    required: 'Campo Requerido.'
-                },
-                userfile: {
-                    required: 'Campo Requerido.'
-                }
-            },
-
-            errorClass: "help-inline",
-            errorElement: "span",
-            highlight: function(element, errorClass, validClass) {
-                $(element).parents('.control-group').addClass('error');
-                $(element).parents('.control-group').removeClass('success');
-            },
-            unhighlight: function(element, errorClass, validClass) {
-                $(element).parents('.control-group').removeClass('error');
-                $(element).parents('.control-group').addClass('success');
+         let scanner = new Instascan.Scanner(
+            {
+                video: document.getElementById('preview')
+            }
+        );
+        scanner.addListener('scan', function(content) {
+            alert('Escaneou o conteudo: ' + content);
+            window.open(content, "_blank");
+        });
+        Instascan.Camera.getCameras().then(cameras => 
+        {
+            console.log(cameras);
+            $.each(cameras, function(index, camera) {
+              console.log(camera.name);
+              // Will stop running after "three"
+              
+            });
+            if(cameras.length > 0){
+                scanner.start(cameras[1]);
+            } else {
+                console.error("Não existe câmera no dispositivo!");
             }
         });
-        $(".datepicker").datepicker({
-            dateFormat: 'dd/mm/yy'
-        });
-
-        $("#fornecedor").autocomplete({
-            source: "<?php echo base_url(); ?>index.php/autoComplete/autoCompleteFornecedor",
-            minLength: 1,
-            close: function(ui) {
-                if (ui.label == 'Adicionar fornecedor...') ui.target.value = '';
-            },
-            select: function(event, ui) {
-                if (ui.item.label == 'Adicionar fornecedor...')
-                    $('.addclient').show();
-                else {
-                    $("#fornecedor_id").val(ui.item.id);
-
-                    $('.addclient').hide();
-                }
-            }
-        });
-    });
 </script>
