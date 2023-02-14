@@ -465,10 +465,10 @@ class Produtos extends MY_Controller
         }
         echo '<pre>';
 
-        print_r($this->data['imagens'] );
-        print_r($this->data['imagens_path'] );
+        array_diff($this->data['imagens'], $this->data['imagens_path'] );
+      
         echo '</pre>';
-
+exit();
         $i=0;
         foreach ($this->data['imagens_path'] as $arquivo) {
             if ($arquivo != "." && $arquivo != "..") {
@@ -480,7 +480,7 @@ class Produtos extends MY_Controller
                     print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
                     echo '</pre>';
                     
-                }
+                }else if (!in_array( $arquivo, $this->data['imagens']) && !in_array( $arquivo, $this->data['imagens'])) {
             }
         }
         exit();
