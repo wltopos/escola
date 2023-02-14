@@ -25,13 +25,12 @@ class Produtos extends MY_Controller
     public function index()
     {
         $this->gerenciar();
-       
     }
 
 
     public function getProdutos()
     {
-        
+
         $this->load->model('produtos_model');
 
 
@@ -44,7 +43,7 @@ class Produtos extends MY_Controller
 
         foreach ($this->data['results'] as $produto) {
             $estoque =  $this->produtos_model->converteMedida($produto->estoque, $produto->estoque_medida_id, 'D');
-            
+
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vProduto')) {
                 $v = '<a style="margin-right: 1%" href="' . base_url() . 'index.php/produtos/visualizar/' . $produto->id_estoque_produto . '" class="btn-nwe" title="Visualizar Produto" ><i class="bx bx-show bx-xs" > </i></a>  ';
             }
@@ -55,10 +54,10 @@ class Produtos extends MY_Controller
                 $d = '<a style="margin-right: 1%" href="#modal-excluir" role="button" data-toggle="modal" produto="' . $produto->id_estoque_produto . '" codigo="' . $produto->codDeBarra . '" class="btn-nwe4" title="Excluir Produto"><i class="bx bx-trash-alt bx-xs" ></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eProduto')) {
-                $a = '<a href="#atualizar-estoque" role="button" data-toggle="modal" produto="' . $produto->id_estoque_produto . '" medida="' . $produto->estoque_medida_id . '" estoqueTxt="' . $estoque['texto'] .'"." estoque="' . $produto->estoque .'" data_result="'.$produto->siglaMedida.'|'.$produto->siglaMedidaSistema.'|'.$produto->siglaFracaoSistema.'" class="btn-nwe5" title="Atualizar Estoque"><i class="bx bx-plus-circle bx-xs" > </i></a>';
+                $a = '<a href="#atualizar-estoque" role="button" data-toggle="modal" produto="' . $produto->id_estoque_produto . '" medida="' . $produto->estoque_medida_id . '" estoqueTxt="' . $estoque['texto'] . '"." estoque="' . $produto->estoque . '" data_result="' . $produto->siglaMedida . '|' . $produto->siglaMedidaSistema . '|' . $produto->siglaFracaoSistema . '" class="btn-nwe5" title="Atualizar Estoque"><i class="bx bx-plus-circle bx-xs" > </i></a>';
             }
 
-         
+
             $result[] = [
                 $produto->observacao,
                 $produto->codDeBarra,
@@ -70,12 +69,11 @@ class Produtos extends MY_Controller
                 "$v $e $d $a",
             ];
         }
-        
-       if(!isset($result)){
-        $result = 0;
-      
-       };
-       
+
+        if (!isset($result)) {
+            $result = 0;
+        };
+
         $produtos = [
             'data' => $result
         ];
@@ -85,8 +83,8 @@ class Produtos extends MY_Controller
 
     public function getAddCampos()
     {
-        
-        $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos','*','','','addCampo, asc');
+
+        $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos', '*', '', '', 'addCampo, asc');
         $this->data['result'] = true;
         echo json_encode($this->data);
     }
@@ -116,14 +114,14 @@ class Produtos extends MY_Controller
 
         return $this->layout();
     }
-    
+
     public function settings()
     {
         if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'vProduto')) {
             $this->session->set_flashdata('error', 'Você não tem permissão para visualizar produtos.');
             redirect(base_url());
         }
-       
+
 
         $this->data['view'] = 'produtos/settings/index.php';
 
@@ -141,11 +139,11 @@ class Produtos extends MY_Controller
 
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
-        $this->data['resultMarca'] = $this->setdb_model->getTabelaQ('estoque_marcas','*','','','marca, asc');
-        $this->data['resultMedida'] = $this->setdb_model->getTabelaQ('estoque_medidas','' ,'',$this->produtosJoin ,'siglaMedida,desc');
-        $this->data['resultTipo'] = $this->setdb_model->getTabelaQ('estoque_tipo_produtos','*','','','tipo_produto, asc');
-        $this->data['resultAddCampo'] = $this->setdb_model->getTabelaQ('estoque_addCampos','*','','','addCampo, asc');
-        $this->data['resultLocations'] = $this->setdb_model->getTabelaQ('estoque_locations','*','','','location, asc');
+        $this->data['resultMarca'] = $this->setdb_model->getTabelaQ('estoque_marcas', '*', '', '', 'marca, asc');
+        $this->data['resultMedida'] = $this->setdb_model->getTabelaQ('estoque_medidas', '', '', $this->produtosJoin, 'siglaMedida,desc');
+        $this->data['resultTipo'] = $this->setdb_model->getTabelaQ('estoque_tipo_produtos', '*', '', '', 'tipo_produto, asc');
+        $this->data['resultAddCampo'] = $this->setdb_model->getTabelaQ('estoque_addCampos', '*', '', '', 'addCampo, asc');
+        $this->data['resultLocations'] = $this->setdb_model->getTabelaQ('estoque_locations', '*', '', '', 'location, asc');
 
         if ($this->form_validation->run('produtos') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
@@ -158,7 +156,7 @@ class Produtos extends MY_Controller
             $campos = set_value('addCampoInput');
             $camposDB = NULL;
             if (is_array($campos)) {
-                
+
                 foreach ($campos as $campo => $valor) {
                     $valor = mb_strtoupper($valor);
                     $campo = explode("_", $campo);
@@ -166,7 +164,7 @@ class Produtos extends MY_Controller
                 }
             }
             $this->load->model('produtos_model');
-          
+
 
             $estoque =  $this->produtos_model->converteMedida($this->input->post('estoque'), $this->input->post('unidade'), 'S', $this->input->post('estoqueMinimo'));
 
@@ -191,7 +189,7 @@ class Produtos extends MY_Controller
             ];
 
             $this->do_upload();
-          
+
             if ($this->setdb_model->add('estoque_produtos', $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', 'Produto adicionado com sucesso!');
                 log_info('Adicionou um produto');
@@ -222,22 +220,22 @@ class Produtos extends MY_Controller
         $this->medidasJoin   = $this->setquery_model->getJoin('medidas');
 
         $this->data['custom_error']     = '';
-        $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos','*','','','addCampo, asc');
-        $this->data['resultLocations']  = $this->setdb_model->getTabelaQ('estoque_locations','*','','','location, asc');
-        $this->data['resultMarca']      = $this->setdb_model->getTabelaQ('estoque_marcas','*','','','marca, asc');
-        $this->data['resultMedida']     = $this->setdb_model->getTabelaQ('estoque_medidas','' ,'',$this->medidasJoin ,'siglaMedida,desc');
-        $this->data['resultTipo']       = $this->setdb_model->getTabelaQ('estoque_tipo_produtos','*','','','tipo_produto, asc');
+        $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos', '*', '', '', 'addCampo, asc');
+        $this->data['resultLocations']  = $this->setdb_model->getTabelaQ('estoque_locations', '*', '', '', 'location, asc');
+        $this->data['resultMarca']      = $this->setdb_model->getTabelaQ('estoque_marcas', '*', '', '', 'marca, asc');
+        $this->data['resultMedida']     = $this->setdb_model->getTabelaQ('estoque_medidas', '', '', $this->medidasJoin, 'siglaMedida,desc');
+        $this->data['resultTipo']       = $this->setdb_model->getTabelaQ('estoque_tipo_produtos', '*', '', '', 'tipo_produto, asc');
         $this->data['result']           = $this->setdb_model->getTabelaQID('estoque_produtos', $this->setquery_model->getFields('produtosID'), 'estoque_produtos.id_estoque_produto =' . $this->uri->segment(3), $this->setquery_model->getJoin('produtosID'));
-         
-        if($this->data['result'] == ''){
-            $this->session->set_flashdata('error', 'Produto '.$this->uri->segment(3).' não localizado');
+
+        if ($this->data['result'] == '') {
+            $this->session->set_flashdata('error', 'Produto ' . $this->uri->segment(3) . ' não localizado');
             redirect('produtos');
-        }else{
+        } else {
             $this->data['estoque'] =  $this->produtos_model->converteMedida($this->data['result']->estoque, $this->data['result']->estoque_medida_id, 'D', $this->data['result']->estoqueMinimo);
         };
-      
 
-        
+
+
 
         if ($this->form_validation->run('produtos') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
@@ -257,8 +255,8 @@ class Produtos extends MY_Controller
                 }
             }
 
-           
-           $estoque =  $this->produtos_model->converteMedida($this->input->post('estoque'), $this->input->post('unidade'), 'S', $this->input->post('estoqueMinimo'));
+
+            $estoque =  $this->produtos_model->converteMedida($this->input->post('estoque'), $this->input->post('unidade'), 'S', $this->input->post('estoqueMinimo'));
 
             $this->dataInsert = [
                 'codDeBarra'              => mb_strtoupper($this->input->post('codDeBarra')),
@@ -281,7 +279,7 @@ class Produtos extends MY_Controller
             ];
 
             $this->do_upload($this->input->post('id_estoque_produto'));
-          
+
             if ($this->setdb_model->edit('estoque_produtos', $this->dataInsert, 'id_estoque_produto', $this->input->post('id_estoque_produto')) == true) {
                 $this->session->set_flashdata('success', 'Produto editado com sucesso!');
                 log_info('Alterou um produto. ID: ' . $this->input->post('id_estoque_produto'));
@@ -292,7 +290,7 @@ class Produtos extends MY_Controller
             }
         }
 
-        
+
 
         $this->data['view'] = 'produtos/editarProduto';
         return $this->layout();
@@ -315,16 +313,16 @@ class Produtos extends MY_Controller
         $this->produtosJoin   = $this->setquery_model->getJoin('produtosID');
         $this->data['result'] = $this->setdb_model->getTabelaQID('estoque_produtos', $this->produtosFields, 'estoque_produtos.id_estoque_produto =' . $this->uri->segment(3), $this->produtosJoin, 'LEFT');
 
-       if($this->data['result'] ==''){
-        $this->session->set_flashdata('error', 'Produto não localizado');
-        redirect('produtos');
-       };
+        if ($this->data['result'] == '') {
+            $this->session->set_flashdata('error', 'Produto não localizado');
+            redirect('produtos');
+        };
 
-        $this->data['dateCadastro'] = ($this->setdb_model->validaDate($this->data['result']->dataCadastro) == true)?$this->setdb_model->hData($this->data['result']->dataCadastro).' às '.(new DateTime($this->data['result']->dataCadastro))->format('H:i:s'):'Não informado';
-        $this->data['dateUpdate'] = ($this->setdb_model->validaDate($this->data['result']->dateUpdate) == true)?$this->setdb_model->hData($this->data['result']->dateUpdate).' às '.(new DateTime($this->data['result']->dateUpdate))->format('H:i:s'):'Não informado';
-        $this->data['dateVencimento'] = ($this->setdb_model->validaDate($this->data['result']->dataVencimento, 'Y-m-d') == true)?$this->setdb_model->hData($this->data['result']->dataVencimento):'Não informado';
-        $this->data['dateEmissao'] = ($this->setdb_model->validaDate($this->data['result']->dataEmissao) == true)?$this->setdb_model->hData($this->data['result']->dataEmissao):'Não informado';
-        
+        $this->data['dateCadastro'] = ($this->setdb_model->validaDate($this->data['result']->dataCadastro) == true) ? $this->setdb_model->hData($this->data['result']->dataCadastro) . ' às ' . (new DateTime($this->data['result']->dataCadastro))->format('H:i:s') : 'Não informado';
+        $this->data['dateUpdate'] = ($this->setdb_model->validaDate($this->data['result']->dateUpdate) == true) ? $this->setdb_model->hData($this->data['result']->dateUpdate) . ' às ' . (new DateTime($this->data['result']->dateUpdate))->format('H:i:s') : 'Não informado';
+        $this->data['dateVencimento'] = ($this->setdb_model->validaDate($this->data['result']->dataVencimento, 'Y-m-d') == true) ? $this->setdb_model->hData($this->data['result']->dataVencimento) : 'Não informado';
+        $this->data['dateEmissao'] = ($this->setdb_model->validaDate($this->data['result']->dataEmissao) == true) ? $this->setdb_model->hData($this->data['result']->dataEmissao) : 'Não informado';
+
         $this->data['resultAddCampo']   = $this->setdb_model->getTabelaQ('estoque_addCampos');
 
         $medida               = $this->data['result']->estoque_medida_id;
@@ -332,7 +330,7 @@ class Produtos extends MY_Controller
         $estoqueMinimo        = $this->data['result']->estoqueMinimo;
 
         $this->load->model('produtos_model');
-     
+
         $this->data['estoque'] =  $this->produtos_model->converteMedida($estoqueAtual, $medida, 'D', $estoqueMinimo);
 
         if ($this->data['result'] == null) {
@@ -361,22 +359,22 @@ class Produtos extends MY_Controller
         $selectMedida  = $this->input->post('selectMedida');
         $estoqueAtual  = $this->input->post('estoqueAtual');
 
-        if($selectMedida == 'D'){
+        if ($selectMedida == 'D') {
             $estoque =  $this->produtos_model->converteMedida($updateEstoque, $medida, 'S');
             $updateEstoque = $estoque['valorConvertido'];
         }
-        if($selectMedida == 'F'){
+        if ($selectMedida == 'F') {
             $estoque =  $this->produtos_model->converteMedida($updateEstoque, $medida, 'FF');
             $updateEstoque = $estoque['valorConvertido'];
-        }     
+        }
 
-        if($operacao == '+'){
+        if ($operacao == '+') {
             $estoque = (int)$estoqueAtual + (int)$updateEstoque;
         }
-        if($operacao == '-'){
+        if ($operacao == '-') {
             $estoque = (int)$estoqueAtual - (int)$updateEstoque;
         }
-        
+
         $data = [
             'estoque' => $estoque,
         ];
@@ -446,91 +444,74 @@ class Produtos extends MY_Controller
         curl_close($curl);
     }
 
-    public function returnAddCampos(){
-     
+    public function returnAddCampos()
+    {
+
         echo json_encode($this->setdb_model->getTabelaQ('estoque_addCampos'));
     }
 
     private function do_upload($setting = null)
     {
-        $files = $this->setdb_model->getTabelaQ("estoque_produtos", 'pathImagem');
-        $this->data['imagens'] = array();
-        $this->data['imagens_path'] = scandir($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos');
-        foreach($files as $file){
-           
-            $imagens = explode("/",$file->pathImagem);
-            $this->data['imagens'][] =  $imagens[11];
-            
-        
-        }
-      
 
 
-        $i=0;
-        foreach ($this->data['imagens'] as $arquivo) {
-            if ($arquivo != "." && $arquivo != "..") {
-                // Verifica se o arquivo não está salvo no banco de dados
-                             
-                if (!in_array( $arquivo, $this->data['imagens_path'])) {
-                    $files = $this->setdb_model->getTabelaQID("estoque_produtos", '*', 'pathImagem='.$_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
-                    // Exclui o arquivo
-                    $i++;
-                  
-                    echo $arquivo.'-'.$files->id_estoque_produto.'<br>';
-                   // print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
-                   
-                    
-                } 
-            }
-        }
-        exit();
 
-        $config['upload_path'] = './assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/";
+        $config['upload_path'] = './assets/uploads/' . $this->session->userdata('dbEmpresa') . "/" . "imagemProdutos/";
         $config['allowed_types'] = 'jpg|jpeg|png|JPG|JPEG|PNG';
         $config['max_size'] = 0;
         $config['max_width'] = 0;
         $config['max_height'] = 0;
         $config['encrypt_name'] = true;
 
-        if (!is_dir('./assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/")) {
-            mkdir('./assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/", 0777, true);
+        if (!is_dir('./assets/uploads/' . $this->session->userdata('dbEmpresa') . "/" . "imagemProdutos/")) {
+            mkdir('./assets/uploads/' . $this->session->userdata('dbEmpresa') . "/" . "imagemProdutos/", 0777, true);
         }
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-       
+
         if (!$this->upload->do_upload()) {
-             $error = ['error' => $this->upload->display_errors()];
+            $error = ['error' => $this->upload->display_errors()];
 
             // $this->session->set_flashdata('error', 'Erro ao fazer upload do arquivo, verifique se a extensão do arquivo é permitida.');
             // redirect(site_url('settings/'));
-                    
-              try{
-                
-                $file = $this->setdb_model->getTabelaQID("estoque_produtos", 'pathImagem', "id_estoque_produto=" . $setting);
-                $imagens = explode('/',$file);
-                print_r($imagens);
-                echo file_exists($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png');
-                exit();
-                // If(file_exists($file->pathImagem)){
-                //     exit('Imagem localizada na pasta');
-                // }else{
-                //     exit('arquivo não encontrado - <br> '.$file->pathImagem.' <br> '.$_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png');
-                //     // unlink($file->pathImagem);
-                // }
-               
-              }catch(Exception $e){
+
+            try {
+
+                $files = $this->setdb_model->getTabelaQ("estoque_produtos", 'pathImagem');
+                $this->data['imagens'] = array();
+                $this->data['imagens_path'] = scandir($_SERVER['DOCUMENT_ROOT'] . '/assets/uploads/db_wltopos/imagemProdutos');
+                foreach ($files as $file) {
+
+                    $imagens = explode("/", $file->pathImagem);
+                    $this->data['imagens'][] =  $imagens[11];
+                }
+
+                $i = 0;
+                foreach ($this->data['imagens_path'] as $arquivo) {
+                    if ($arquivo != "." && $arquivo != "..") {
+                        // Verifica se o arquivo não está salvo no banco de dados
+
+                        if (!in_array($arquivo, $this->data['imagens'])) {
+                            // $files = $this->setdb_model->getTabelaQID("estoque_produtos", '*', 'pathImagem=' . $_SERVER['DOCUMENT_ROOT'] . '/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
+                            // // Exclui o arquivo
+                            // $i++;
+                            echo $arquivo . '-' . $files->id_estoque_produto . '<br>';
+                            unlink($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
+                        }
+                    }
+                }
+            } catch (Exception $e) {
                 echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-              }
-             echo $this->upload->display_errors();            
+            }
+            echo $this->upload->display_errors();
             return 0;
-        } 
-        
-        if($this->upload->do_upload()){
+        }
+
+        if ($this->upload->do_upload()) {
             //$data = array('upload_data' => $this->upload->data());
             $file = $this->upload->data('file_name');
             $path = $this->upload->data('full_path');
-            $url = base_url('assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/" . $file) ;
+            $url = base_url('assets/uploads/' . $this->session->userdata('dbEmpresa') . "/" . "imagemProdutos/" . $file);
             $tamanho = $this->upload->data('file_size');
             $tipo = $this->upload->data('file_ext');
 
@@ -541,9 +522,8 @@ class Produtos extends MY_Controller
             // $this->dataInsert["tipo"]     =  $tipo;
 
             $this->upload->data();
-            
+
             return  $this->upload->data();
         }
     }
-   
 }
