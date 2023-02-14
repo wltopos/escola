@@ -462,8 +462,9 @@ class Produtos extends MY_Controller
             
         
         }
-        var_dump($this->data['imagems'] );
+        echo '<pre>';
         print_r($this->data['imagems'] );
+        echo '</pre>';
         exit();
 
         $config['upload_path'] = './assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/";
