@@ -465,7 +465,7 @@ class Produtos extends MY_Controller
         }
         echo '<pre>';
 
-        $diferenca = array_diff($this->data['imagens_path'], $this->data['imagens']);
+        $diferenca = array_diff($this->data['imagens'], $this->data['imagens_path']);
         print_r($diferenca);
         print_r($this->data['imagens']);
         echo '</pre>';
