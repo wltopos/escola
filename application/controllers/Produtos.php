@@ -455,7 +455,7 @@ class Produtos extends MY_Controller
     {
         $files = $this->setdb_model->getTabelaQ("estoque_produtos", 'pathImagem');
         $this->data['imagems'] = array();
-        $this->data['imagens_path'] = scandir($_SERVER['DOCUMENT_ROOT'].'assets/uploads/db_wltopos/imagemProdutos');
+        $this->data['imagens_path'] = scandir($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos');
         foreach($files as $file){
            
             $imagens = explode("/",$file->pathImagem);
