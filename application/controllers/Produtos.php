@@ -480,7 +480,7 @@ class Produtos extends MY_Controller
                 If(is_file($file->pathImagem)){
                     exit('Imagem localizada na pasta');
                 }else{
-                    exit('arquivo não encontrado - '.$file->pathImagem);
+                    exit('arquivo não encontrado - '.$file->pathImagem.' **** '.$_SERVER['DOCUMENT_ROOT'].'assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png');
                     // unlink($file->pathImagem);
                 }
                
