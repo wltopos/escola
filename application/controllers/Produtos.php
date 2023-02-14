@@ -473,20 +473,16 @@ class Produtos extends MY_Controller
 
             // $this->session->set_flashdata('error', 'Erro ao fazer upload do arquivo, verifique se a extensão do arquivo é permitida.');
             // redirect(site_url('settings/'));
-            echo file_exists($_SERVER['DOCUMENT_ROOT'] . '/assets/uploads/db_wltopos/imagemProdutos/0cc78c520dc10d14a774dfb5860b0d6a.png');
-            
-
+                    
               try{
                 
                 $file = $this->setdb_model->getTabelaQID("estoque_produtos", '*', "id_estoque_produto=" . $setting);
-                exit($_SERVER['DOCUMENT_ROOT'] . '/assets/uploads/db_wltopos/imagemProdutos/0cc78c520dc10d14a774dfb5860b0d6a.png/   '.$file->pathImagem);
-                exit($_SERVER['DOCUMENT_ROOT'] . '/assets/uploads/db_wltopos/imagemProdutos/0cc78c520dc10d14a774dfb5860b0d6a.png');
-                // If(file_exists('sistema_dev/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png')){
-                //     exit('Imagem localizada na pasta');
-                // }else{
-                //     exit('arquivo não encontrado - '.$file->pathImagem);
-                //     // unlink($file->pathImagem);
-                // }
+                If(is_file($file->pathImagem)){
+                    exit('Imagem localizada na pasta');
+                }else{
+                    exit('arquivo não encontrado - '.$file->pathImagem);
+                    // unlink($file->pathImagem);
+                }
                
               }catch(Exception $e){
                 echo 'Exceção capturada: ',  $e->getMessage(), "\n";
