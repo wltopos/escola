@@ -480,12 +480,13 @@ class Produtos extends MY_Controller
                 $imagens = explode('/',$file);
                 print_r($imagens);
                 echo file_exists($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png');
-                If(file_exists($file->pathImagem)){
-                    exit('Imagem localizada na pasta');
-                }else{
-                    exit('arquivo não encontrado - <br> '.$file->pathImagem.' <br> '.$_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png');
-                    // unlink($file->pathImagem);
-                }
+                exit();
+                // If(file_exists($file->pathImagem)){
+                //     exit('Imagem localizada na pasta');
+                // }else{
+                //     exit('arquivo não encontrado - <br> '.$file->pathImagem.' <br> '.$_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png');
+                //     // unlink($file->pathImagem);
+                // }
                
               }catch(Exception $e){
                 echo 'Exceção capturada: ',  $e->getMessage(), "\n";
