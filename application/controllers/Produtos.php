@@ -472,6 +472,8 @@ class Produtos extends MY_Controller
                 // Verifica se o arquivo não está salvo no banco de dados
                 echo '<pre>';
                 echo $arquivo;
+                echo '<br>';
+                echo $this->data['imagens'][0];
                 echo '</pre>';
                 exit();
                 if (in_array( $arquivo, $this->data['imagens'])) {
