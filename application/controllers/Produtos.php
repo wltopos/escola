@@ -472,7 +472,9 @@ class Produtos extends MY_Controller
                 // Verifica se o arquivo não está salvo no banco de dados
                 if (!in_array(array('nome_do_arquivo' => $arquivo), $this->data['imagens'])) {
                     // Exclui o arquivo
+                    echo '<pre>';
                     print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos' . $arquivo);
+                    echo '</pre>';
                     
                 }
             }
