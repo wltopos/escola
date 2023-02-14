@@ -475,7 +475,7 @@ class Produtos extends MY_Controller
                     $files = $this->setdb_model->getTabelaQID("estoque_produtos", 'pathImagem', 'pathImagem='.$_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
                     // Exclui o arquivo
                     $i++;
-                   
+                   print_r($files->id_estoque_produto);
                     echo $arquivo.'-'.$files->id_estoque_produto.'<br>';
                    // print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
                    
