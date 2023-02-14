@@ -456,9 +456,9 @@ class Produtos extends MY_Controller
         $files = $this->setdb_model->getTabelaQ("estoque_produtos", 'pathImagem');
 
         foreach($files as $file){
-            print_r($file);
+            print_r($file->pathImagem);
             exit();
-            $imagens = explode("/",$file);
+            $imagens = explode("/",$file->pathImagem);
             echo $imagens[11];
             
         
