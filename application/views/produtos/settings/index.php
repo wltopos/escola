@@ -307,7 +307,7 @@
                             </div>
 
                         </div>
-                        <div class="tab-pane" id="tabGrupo">
+                        <div class="tab-pane" id="tabTipo_produto">
                             <div class="span12 well" id="divEditarTipoProduto">
 
                                 <div class="widget-box">
