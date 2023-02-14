@@ -454,19 +454,19 @@ class Produtos extends MY_Controller
     private function do_upload($setting = null)
     {
         $files = $this->setdb_model->getTabelaQ("estoque_produtos", 'pathImagem');
-        $this->data['imagems'] = array();
+        $this->data['imagens'] = array();
         $this->data['imagens_path'] = scandir($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos');
         foreach($files as $file){
            
             $imagens = explode("/",$file->pathImagem);
-            $this->data['imagems'][] =  $imagens[11];
+            $this->data['imagens'][] =  $imagens[11];
             
         
         }
-        echo '<pre>';
+        // echo '<pre>';
 
-        print_r($this->data['imagens_path'] );
-        echo '</pre>';
+        // print_r($this->data['imagens_path'] );
+        // echo '</pre>';
         foreach ($this->data['imagens_path'] as $arquivo) {
             if ($arquivo != "." && $arquivo != "..") {
                 // Verifica se o arquivo não está salvo no banco de dados
