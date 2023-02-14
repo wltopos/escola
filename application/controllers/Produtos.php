@@ -467,11 +467,11 @@ class Produtos extends MY_Controller
 
 
         $i=0;
-        foreach ($this->data['imagens_path'] as $arquivo) {
+        foreach ($this->data['imagens'] as $arquivo) {
             if ($arquivo != "." && $arquivo != "..") {
                 // Verifica se o arquivo não está salvo no banco de dados
                              
-                if (!in_array( $arquivo, $this->data['imagens'])) {
+                if (!in_array( $arquivo, $this->data['imagens_path'])) {
                     // Exclui o arquivo
                     $i++;
                    
@@ -479,7 +479,7 @@ class Produtos extends MY_Controller
                    // print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
                    
                     
-                }
+                } 
             }
         }
         exit();
