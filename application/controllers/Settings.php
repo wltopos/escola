@@ -144,7 +144,7 @@ class Settings extends MY_Controller
             if ($this->setdb_model->add("estoque_".$this->data['id'] . "s", $this->dataInsert) == true) {
                 $this->session->set_flashdata('success', mb_strtoupper($this->data['titulo']) . " adicionado com sucesso!");
                 log_info('Adicionou um produto');
-                redirect('settings/adicionar/'.$this->data['id']);
+                redirect('settings/adicionar/'.$this->data['titulo']);
             } else {
                 log_info("Houve um erro ao cadastrar ". $this->data['titulo']. " produto ");
                 $this->session->set_flashdata('error', "Erro ao adicionar " .mb_strtoupper($this->data['titulo']));
