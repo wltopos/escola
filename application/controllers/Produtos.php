@@ -473,7 +473,7 @@ class Produtos extends MY_Controller
 
             // $this->session->set_flashdata('error', 'Erro ao fazer upload do arquivo, verifique se a extensão do arquivo é permitida.');
             // redirect(site_url('settings/'));
-            print_r(file_exists('https://wltopos.com/sistema_dev/assets/uploads/db_wltopos/imagemProdutos/01da872d00367ae6008154ff3d445c74.png')?'1':'0');
+            print_r(file_exists('/sistema_dev/assets/uploads/db_wltopos/imagemProdutos/01da872d00367ae6008154ff3d445c74.png')?'1':'0');
             exit();
 
               try{
