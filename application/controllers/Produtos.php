@@ -456,7 +456,7 @@ class Produtos extends MY_Controller
         $files = $this->setdb_model->getTabelaQ("estoque_produtos", 'pathImagem');
         $this->data['imagems'] = '';
       
-        var_dump($files[1]);
+        var_dump($files["pathImagem"]);
         print_r($this->data['imagems'] );
         exit();
 
