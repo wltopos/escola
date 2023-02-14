@@ -463,17 +463,17 @@ class Produtos extends MY_Controller
             
         
         }
-        echo '<pre>';
+      
 
-        $diferenca = array_diff($this->data['imagens'], $this->data['imagens_path']);
-        print_r($diferenca);
-        print_r($this->data['imagens']);
-        echo '</pre>';
-exit();
+
         $i=0;
         foreach ($this->data['imagens_path'] as $arquivo) {
             if ($arquivo != "." && $arquivo != "..") {
                 // Verifica se o arquivo não está salvo no banco de dados
+                echo '<pre>';
+                echo $arquivo;
+                echo '</pre>';
+                exit();
                 if (in_array( $arquivo, $this->data['imagens'])) {
                     // Exclui o arquivo
                     $i++;
