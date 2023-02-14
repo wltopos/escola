@@ -458,7 +458,7 @@ class Produtos extends MY_Controller
         foreach($files as $file){
            
             $imagens = explode("/",$file->pathImagem);
-            $this->data['imagems'] += $imagens[11];
+            $this->data['imagems'] = array_push( $imagens[11]);
             
         
         }
