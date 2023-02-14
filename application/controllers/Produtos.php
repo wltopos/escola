@@ -477,7 +477,13 @@ class Produtos extends MY_Controller
               try{
                 
                 $file = $this->setdb_model->getTabelaQID("estoque_produtos", '*', "id_estoque_produto=" . $setting);
-                unlink($file->pathImagem);
+                If(file_exists($file->pathImagem)){
+                    exit('Imagem localizada na pasta');
+                }else{
+                    exit('arquivo não encontrado');
+                    // unlink($file->pathImagem);
+                }
+               
               }catch(Exception $e){
                 echo 'Exceção capturada: ',  $e->getMessage(), "\n";
               }
