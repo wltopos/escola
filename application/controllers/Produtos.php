@@ -477,6 +477,7 @@ class Produtos extends MY_Controller
               try{
                 
                 $file = $this->setdb_model->getTabelaQID("estoque_produtos", '*', "id_estoque_produto=" . $setting);
+                echo file_exists($file->pathImagem);
                 If(file_exists($file->pathImagem)){
                     exit('Imagem localizada na pasta');
                 }else{
