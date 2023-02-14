@@ -475,7 +475,7 @@ class Produtos extends MY_Controller
                     // Exclui o arquivo
                     $i++;
                    
-                    echo $arquivo.''.$i;
+                    echo $arquivo.''.$i.'<br>';
                    // print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
                    
                     
