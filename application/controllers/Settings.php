@@ -197,11 +197,11 @@ class Settings extends MY_Controller
         }
         
 
-        $a = "$id";
-        $b = "descricao" . ucfirst($id);
-        $c = "cadastro" . ucfirst($id);
-        $d = "update" . ucfirst($id);
-        $e = 'urlLogo' . ucfirst($id);
+        $a = $this->data['id'];
+        $b = "descricao" . ucfirst($this->data['id']);
+        $c = "cadastro" . ucfirst($this->data['id']);
+        $d = "update" . ucfirst($this->data['id']);
+        $e = 'urlLogo' . ucfirst($this->data['id']);
 
         $this->data['nome'] = $this->data['result']->$a;
         $this->data['descricao'] = $this->data['result']->$b;
