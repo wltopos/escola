@@ -472,10 +472,11 @@ class Produtos extends MY_Controller
                 // Verifica se o arquivo não está salvo no banco de dados
                              
                 if (!in_array( $arquivo, $this->data['imagens_path'])) {
+                    $files = $this->setdb_model->getTabelaQ("estoque_produtos", 'pathImagem', 'pathImagem='.$_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
                     // Exclui o arquivo
                     $i++;
                    
-                    echo $arquivo.''.$i.'<br>';
+                    echo $arquivo.''.$files->id_estoque_produto.'<br>';
                    // print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
                    
                     
