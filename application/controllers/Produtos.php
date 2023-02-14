@@ -466,6 +466,7 @@ class Produtos extends MY_Controller
         echo '<pre>';
 
         print_r($this->data['imagens'] );
+        print_r($this->data['imagens_path'] );
         echo '</pre>';
 
         $i=0;
@@ -476,7 +477,7 @@ class Produtos extends MY_Controller
                     // Exclui o arquivo
                     $i++;
                     echo '<pre>';
-                    print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos' . $arquivo.' '.$i);
+                    print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
                     echo '</pre>';
                     
                 }
