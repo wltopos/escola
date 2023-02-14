@@ -467,6 +467,16 @@ class Produtos extends MY_Controller
 
         print_r($this->data['imagens_path'] );
         echo '</pre>';
+        foreach ($this->data['imagens_path'] as $arquivo) {
+            if ($arquivo != "." && $arquivo != "..") {
+                // Verifica se o arquivo não está salvo no banco de dados
+                if (!in_array(array('nome_do_arquivo' => $arquivo), $this->data['imagens'])) {
+                    // Exclui o arquivo
+                    print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos' . $arquivo);
+                    
+                }
+            }
+        }
         exit();
 
         $config['upload_path'] = './assets/uploads/' . $this->session->userdata('dbEmpresa') . "/"."imagemProdutos/";
