@@ -470,17 +470,13 @@ class Produtos extends MY_Controller
         foreach ($this->data['imagens_path'] as $arquivo) {
             if ($arquivo != "." && $arquivo != "..") {
                 // Verifica se o arquivo não está salvo no banco de dados
-                echo '<pre>';
-                echo $arquivo;
-                echo '<br>';
-                echo $this->data['imagens'][0];
-                echo '</pre>';
-                exit();
-                if (in_array( $arquivo, $this->data['imagens'])) {
+                             
+                if (!in_array( $arquivo, $this->data['imagens'])) {
                     // Exclui o arquivo
                     $i++;
                     echo '<pre>';
-                    print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
+                    echo $arquivo;
+                   // print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
                     echo '</pre>';
                     
                 }
