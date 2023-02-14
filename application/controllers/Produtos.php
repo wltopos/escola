@@ -473,7 +473,7 @@ class Produtos extends MY_Controller
         foreach ($this->data['imagens_path'] as $arquivo) {
             if ($arquivo != "." && $arquivo != "..") {
                 // Verifica se o arquivo não está salvo no banco de dados
-                if (!in_array( $arquivo, $this->data['imagens'])) {
+                if (in_array( $arquivo, $this->data['imagens'])) {
                     // Exclui o arquivo
                     $i++;
                     echo '<pre>';
