@@ -456,7 +456,7 @@ class Produtos extends MY_Controller
         $files = $this->setdb_model->getTabelaQID("estoque_produtos", 'pathImagem', "id_estoque_produto=" . $setting);
         foreach($files as $file){
             $imagens = explode("/",$file);
-            print_r($imagens);
+            echo $imagens[11];
             echo file_exists($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png');
         
         }
