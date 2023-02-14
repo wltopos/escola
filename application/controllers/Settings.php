@@ -309,7 +309,7 @@ class Settings extends MY_Controller
         } else {
             $this->session->set_flashdata('error', "Ocorreu um erro ao tentar excluir setting $id.");
         }
-        redirect("produtos/settings/$id");
+        redirect("produtos/settings#tab".ucfirst($id));
     }
 
     public function consultaProduto($urlID)
