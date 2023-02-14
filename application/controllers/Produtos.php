@@ -463,10 +463,10 @@ class Produtos extends MY_Controller
             
         
         }
-        // echo '<pre>';
+        echo '<pre>';
 
-        // print_r($this->data['imagens_path'] );
-        // echo '</pre>';
+        print_r($this->data['imagens_path'] );
+        echo '</pre>';
         foreach ($this->data['imagens_path'] as $arquivo) {
             if ($arquivo != "." && $arquivo != "..") {
                 // Verifica se o arquivo não está salvo no banco de dados
