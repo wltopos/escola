@@ -480,7 +480,7 @@ exit();
                     print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
                     echo '</pre>';
                     
-                }else if (!in_array( $arquivo, $this->data['imagens']) && !in_array( $arquivo, $this->data['imagens'])) {
+                }
             }
         }
         exit();
