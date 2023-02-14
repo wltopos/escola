@@ -462,7 +462,7 @@ class Produtos extends MY_Controller
             
         
         }
-        var_dump($files);
+        var_dump($files->pathImagem);
         print_r($this->data['imagems'] );
         exit();
 
