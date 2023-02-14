@@ -462,6 +462,7 @@ class Produtos extends MY_Controller
             
         
         }
+        printf($files);
         print_r($this->data['imagems'] );
         exit();
 
