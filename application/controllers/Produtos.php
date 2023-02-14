@@ -477,8 +477,8 @@ class Produtos extends MY_Controller
               try{
                 
                 $file = $this->setdb_model->getTabelaQID("estoque_produtos", '*', "id_estoque_produto=" . $setting);
-                print_r(file_exists('sistema_dev/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png'));
-                exit('sistema_dev/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png');
+                print_r(file_exists('/b0303f9aeb5f9d40/files/public_html/sistema_dev/assets/uploads/db_wltopos/imagemProdutos/0cc78c520dc10d14a774dfb5860b0d6a.png'));
+                exit('/b0303f9aeb5f9d40/files/public_html/sistema_dev/assets/uploads/db_wltopos/imagemProdutos/0cc78c520dc10d14a774dfb5860b0d6a.png');
                 If(file_exists('sistema_dev/assets/uploads/db_wltopos/imagemProdutos/7a06afd5db315b2d979c6e42ec34e0e8.png')){
                     exit('Imagem localizada na pasta');
                 }else{
