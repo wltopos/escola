@@ -459,14 +459,15 @@ class Produtos extends MY_Controller
         foreach($files as $file){
            
             $imagens = explode("/",$file->pathImagem);
-            $this->data['imagens'][] =  $imagens[11];
+            $this->data['imagens'] =  $imagens[11];
             
         
         }
         echo '<pre>';
 
-        print_r($this->data['imagens_path'] );
+        print_r($this->data['imagens'] );
         echo '</pre>';
+
         $i=0;
         foreach ($this->data['imagens_path'] as $arquivo) {
             if ($arquivo != "." && $arquivo != "..") {
