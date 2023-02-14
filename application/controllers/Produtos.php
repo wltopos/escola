@@ -474,10 +474,10 @@ class Produtos extends MY_Controller
                 if (!in_array( $arquivo, $this->data['imagens'])) {
                     // Exclui o arquivo
                     $i++;
-                    echo '<pre>';
-                    echo $arquivo;
+                   
+                    echo $arquivo.''.$i;
                    // print_r($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo.' '.$i);
-                    echo '</pre>';
+                   
                     
                 }
             }
