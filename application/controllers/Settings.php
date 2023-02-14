@@ -209,7 +209,6 @@ class Settings extends MY_Controller
         $this->data['dataUpdate'] = ($this->setdb_model->validaDate($this->data['result']->$d) == true) ? $this->setdb_model->hData($this->data['result']->$d) : 'Não informado';
         $this->data['urlLogo'] = ($this->data['result']->$e != '' and $this->data['result']->$e != null) ? $this->data['result']->$e : 'https://sistema.wltopos.com/assets/img/sem_logo.png';
 
-        $this->data['id'] = $this->data['id'];
         $this->data['config'] = $this->data['titulo'];
         $this->data['view'] = 'produtos/settings/editar';
         return $this->layout();
