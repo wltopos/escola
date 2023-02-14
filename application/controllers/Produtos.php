@@ -473,8 +473,8 @@ class Produtos extends MY_Controller
 
             // $this->session->set_flashdata('error', 'Erro ao fazer upload do arquivo, verifique se a extensão do arquivo é permitida.');
             // redirect(site_url('settings/'));
-            echo file_exists($_SERVER['DOCUMENT_ROOT'] . '/teste.txt');
-            exit();
+            echo is_file($_SERVER['DOCUMENT_ROOT'] . '/teste.txt');
+            exit($_SERVER['DOCUMENT_ROOT'] . '/teste.txt');
 
               try{
                 
