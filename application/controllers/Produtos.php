@@ -495,8 +495,16 @@ class Produtos extends MY_Controller
                             // $files = $this->setdb_model->getTabelaQID("estoque_produtos", '*', 'pathImagem=' . $_SERVER['DOCUMENT_ROOT'] . '/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
                             // // Exclui o arquivo
                             // $i++;
-                            echo $arquivo . '-' . $files->id_estoque_produto . '<br>';
+                            //echo $arquivo . '-' . $files->id_estoque_produto . '<br>';
                             unlink($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
+                        }
+                        if (!in_array($arquivo, $this->data['imagens'])) {
+                            $files = $this->setdb_model->getTabelaQID("estoque_produtos", '*', 'pathImagem=' . $_SERVER['DOCUMENT_ROOT'] . '/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
+                           
+                            $i++;
+                            echo $arquivo . '-' . $files->id_estoque_produto . '<br>';
+                            exit();
+                            
                         }
                     }
                 }
