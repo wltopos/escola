@@ -30,7 +30,7 @@
             return 'Olá! Boa noite' . (empty($nome) ? '' : ', ' . $nome.'😊');
         }
     }
-$login = 'bem-vindos';
+$login = 'bem-vindo';
 echo saudacao($login);
 
 // Irá retornar conforme o horário:
