@@ -498,7 +498,7 @@ class Produtos extends MY_Controller
                             //echo $arquivo . '-' . $files->id_estoque_produto . '<br>';
                             unlink($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
                         }
-                        if (!in_array($arquivo, $this->data['imagens'])) {
+                        if (!in_array($this->data['imagens'], $arquivo)) {
                             $files = $this->setdb_model->getTabelaQID("estoque_produtos", '*', 'pathImagem=' . $_SERVER['DOCUMENT_ROOT'] . '/assets/uploads/db_wltopos/imagemProdutos/' . $arquivo);
                            
                             $i++;
@@ -525,9 +525,9 @@ class Produtos extends MY_Controller
 
             $this->dataInsert["imagemProduto"]  =  $url;
             $this->dataInsert["pathImagem"]     =  $path;
-            // $this->dataInsert["file"]     =  $file;
-            // $this->dataInsert["tamanho"]  =  $tamanho;
-            // $this->dataInsert["tipo"]     =  $tipo;
+            $this->dataInsert["file"]     =  $file;
+            $this->dataInsert["tamanho"]  =  $tamanho;
+            $this->dataInsert["tipo"]     =  $tipo;
 
             $this->upload->data();
 
