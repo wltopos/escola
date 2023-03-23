@@ -278,7 +278,7 @@ class Produtos extends MY_Controller
                 'entrada'                 => "1"
             ];
 
-            $this->do_upload($this->input->post('id_estoque_produto'));
+            exit($this->do_upload($this->input->post('id_estoque_produto')));
 
             if ($this->setdb_model->edit('estoque_produtos', $this->dataInsert, 'id_estoque_produto', $this->input->post('id_estoque_produto')) == true) {
                 $this->session->set_flashdata('success', 'Produto editado com sucesso!');
